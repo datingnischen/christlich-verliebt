@@ -45,6 +45,14 @@ test("every referenced imported asset exists on disk", async () => {
   }
 });
 
+test("WordPress magazine articles retain local editorial images and audio", () => {
+  const article = pages.find(page => page.market === "de" && page.path === "/magazin/antrag-ohne-ring/");
+  assert.ok(article, "WordPress reference article is missing");
+  assert.match(article.contentHtml, /<img\b[^>]*src=["']\/imported\/de\//i);
+  assert.match(article.contentHtml, /<audio\b[^>]*controls/i);
+  assert.match(article.contentHtml, /<source\b[^>]*src=["']\/imported\/de\/[^"']+\.mp3/i);
+});
+
 test("location heroes prefer real city imagery over statistics graphics", () => {
   for (const page of pages.filter(page => page.family === "location" && page.heroImage)) {
     assert.doesNotMatch(sourceByAsset.get(page.heroImage) ?? "", /statistik|infografik/i, page.path);
@@ -58,6 +66,7 @@ test("location and magazine registration contexts are wired", async () => {
   assert.match(source, /"magazin"/);
   assert.match(source, /renderedContentHtml/);
   assert.match(source, /selectPageImage/);
+  assert.match(source, /registration-cta/);
   const pageSource = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
   assert.match(pageSource, /registrationUrl\(page\)/);
   assert.match(pageSource, /registrationHref=\{register\}/);

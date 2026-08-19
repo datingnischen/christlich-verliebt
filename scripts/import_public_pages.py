@@ -41,14 +41,17 @@ EXCLUDED_EDITORIAL_PATHS = {"/magazin/beispiel-seite/"}
 DROP_SELECTORS = [
     "script", "style", "iframe", "form", "button", "input", "select", "textarea", "noscript",
     ".grid-view", ".userimage", ".registration-form", "#reg-form-panel", ".platform-footer", "header", "footer",
+    ".entry-header", ".aioseo-author-bio-compact",
 ]
 ALLOWED_TAGS = {
     "p", "br", "h2", "h3", "h4", "ul", "ol", "li", "strong", "em", "b", "i", "blockquote",
-    "a", "img", "figure", "figcaption", "div", "section", "span", "table", "thead", "tbody", "tr", "th", "td",
+    "a", "img", "audio", "source", "figure", "figcaption", "div", "section", "span", "table", "thead", "tbody", "tr", "th", "td",
 }
 ALLOWED_ATTRS = {
     "a": {"href", "title", "rel"},
     "img": {"src", "alt", "width", "height", "loading"},
+    "audio": {"controls", "preload"},
+    "source": {"src", "type"},
     "div": {"class"}, "section": {"class"}, "span": {"class"},
     "th": {"scope"}, "td": {"colspan", "rowspan"},
 }
@@ -134,7 +137,16 @@ def normalized_url_path(url: str) -> str:
     return posixpath.normpath("/" + path.lstrip("/")).lower()
 
 
+def unwrap_media_proxy_url(url: str) -> str:
+    parsed = urlparse(url)
+    if (parsed.hostname or "").lower() != "sp-ao.shortpixel.ai":
+        return url
+    nested_start = url.find("https://", len("https://"))
+    return url[nested_start:] if nested_start >= 0 else url
+
+
 def stable_asset_path(url: str, market: str) -> tuple[str, dict] | None:
+    url = unwrap_media_proxy_url(url)
     parsed = urlparse(url)
     host = (parsed.hostname or "").lower()
     if host in USER_MEDIA_HOSTS or "/user-media/" in normalized_url_path(url):
@@ -169,8 +181,10 @@ def source_container(soup: BeautifulSoup, path: str):
     if path == "/":
         cms = soup.select_one("#cms-content .text-container") or soup.select_one("#cms-content")
         return cms or soup.find("main")
+    if path == "/magazin/":
+        return soup.select_one("article .entry-content") or soup.select_one(".entry-content") or soup.find("main")
     if path.startswith("/magazin/"):
-        return soup.select_one("article .entry-content") or soup.select_one(".entry-content") or soup.find("article") or soup.find("main")
+        return soup.find("article") or soup.select_one(".entry-content") or soup.find("main")
     main = soup.find("main")
     if main and main.get("id") == "static":
         panels = main.select(".panel")
@@ -208,7 +222,7 @@ def clean_content(container, source_url: str, market: str, provenance: list[dict
             if parsed.hostname not in DOMAINS.values():
                 node["rel"] = "nofollow noopener"
         elif node.name == "img":
-            src = urljoin(source_url, str(node.get("src") or ""))
+            src = unwrap_media_proxy_url(urljoin(source_url, str(node.get("src") or "")))
             result = stable_asset_path(src, market)
             if result is None:
                 node.decompose()
@@ -218,8 +232,21 @@ def clean_content(container, source_url: str, market: str, provenance: list[dict
             node["src"] = local_path
             node["loading"] = "lazy"
             node["alt"] = str(node.get("alt") or "").strip()
+        elif node.name == "source":
+            if node.parent is None or node.parent.name != "audio":
+                node.decompose()
+                continue
+            src = unwrap_media_proxy_url(urljoin(source_url, str(node.get("src") or "")))
+            result = stable_asset_path(src, market)
+            if result is None:
+                node.decompose()
+                continue
+            local_path, record = result
+            provenance.append(record)
+            node["src"] = local_path
+            node["type"] = str(node.get("type") or "audio/mpeg")
     for empty in list(fragment.find_all(["div", "section", "span", "p"])):
-        if not empty.get_text(" ", strip=True) and not empty.find("img"):
+        if not empty.get_text(" ", strip=True) and not empty.find(["img", "audio"]):
             empty.decompose()
     return "\n".join(str(node) for node in fragment.body.contents if str(node).strip()).strip() if fragment.body else str(fragment).strip()
 

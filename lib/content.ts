@@ -52,9 +52,13 @@ export function registrationUrl(page: PublicPage): string {
 export function renderedContentHtml(page: PublicPage): string {
   const registration = registrationUrl(page).replace(/&/g, "&amp;");
   const escapedDomain = page.domain.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return page.contentHtml.replace(
+  const normalized = page.contentHtml.replace(
     new RegExp(`href=(["'])https://${escapedDomain}/registration/?(?:\\?[^"']*)?\\1`, "gi"),
     (_match, quote) => `href=${quote}${registration}${quote}`,
+  );
+  return normalized.replace(
+    /<a\b(?![^>]*\bclass=)([^>]*\bhref=(["'])https:\/\/[^"']+\/registration\/?[^"']*\2[^>]*)>/gi,
+    '<a class="registration-cta"$1>',
   );
 }
 

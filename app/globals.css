@@ -1,4 +1,4 @@
-:root { --ink:#22322a; --muted:#627067; --cream:#fbf8f1; --paper:#fff; --sage:#54745f; --sage-dark:#31513e; --gold:#d6a852; --line:#e6dfd2; }
+:root { --ink:#333333; --muted:#707070; --cream:#f4f4f4; --paper:#ffffff; --sage:#429a45; --sage-dark:#29842c; --gold:#ce302f; --partner:#ce302f; --partner-dark:#a62626; --partner-soft:#ffebeb; --green-soft:#e5f0e5; --line:#d2d2d2; }
 * { box-sizing:border-box; }
 html, body { max-width:100%; overflow-x:hidden; }
 body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial, Helvetica, sans-serif; }

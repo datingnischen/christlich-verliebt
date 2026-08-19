@@ -30,6 +30,13 @@ class ImportSecurityTests(unittest.TestCase):
             self.assertIn("/user-media/", importer.normalized_url_path(url))
             self.assertIsNone(importer.stable_asset_path(url, "de"))
 
+    def test_unwraps_shortpixel_wordpress_media(self):
+        proxied = "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://christlich-verliebt.de/magazin/wp-content/uploads/example.png"
+        self.assertEqual(
+            importer.unwrap_media_proxy_url(proxied),
+            "https://christlich-verliebt.de/magazin/wp-content/uploads/example.png",
+        )
+
     @patch.object(importer.socket, "getaddrinfo")
     def test_rejects_private_dns_answers(self, resolver):
         resolver.return_value = [(2, 1, 6, "", ("10.0.0.8", 443))]
