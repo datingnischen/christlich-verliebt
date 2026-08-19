@@ -72,5 +72,5 @@ test("routing recognizes all three markets and protects production canonicals", 
     assert.match(marketSource + proxySource, new RegExp(domain.replaceAll(".", "\\.")));
   }
   assert.match(proxySource, /NextResponse\.redirect\(canonical, 308\)/);
-  assert.match(proxySource, /x-forwarded-host/);
+  assert.doesNotMatch(proxySource, /headers\.get\("x-forwarded-host"\)/);
 });

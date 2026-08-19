@@ -1,5 +1,5 @@
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server.js";
+import { NextResponse } from "next/server.js";
 
 const HOST_MARKETS = new Map([
   ["christlich-verliebt.de", "de"],
@@ -9,7 +9,7 @@ const HOST_MARKETS = new Map([
 const TOKEN = globalThis.crypto.randomUUID();
 
 function hostname(request: NextRequest) {
-  return (request.headers.get("x-forwarded-host") || request.headers.get("host") || request.nextUrl.hostname)
+  return (request.headers.get("host") || request.nextUrl.hostname)
     .split(",")[0].trim().toLowerCase().replace(/:\d+$/, "").replace(/^www\./, "");
 }
 
