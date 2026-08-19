@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
-import { getChildPages, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage } from "@/lib/content";
+import { getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { isMarketCode, previewPath } from "@/lib/markets";
 import styles from "./page.module.css";
 
@@ -37,12 +37,27 @@ function excerpt(text: string) {
   return text.length > 165 ? `${text.slice(0, 162).trim()}…` : text;
 }
 
+function ContentCard({ child }: { child: PublicPage }) {
+  const image = selectPageImage(child);
+  const credit = getCityImageCredit(child);
+  return <article className={styles.card}>
+    {image ? <Image src={image} alt={child.family === "location" ? `Stadtansicht und christliche Partnersuche: ${child.heroTitle}` : `Titelbild: ${child.heroTitle}`} width={640} height={380} /> : <div className={styles.cardFallback}>✦</div>}
+    {credit ? <a className={styles.imageCredit} href={credit.sourcePage} target="_blank" rel="nofollow noopener">Bild: {credit.artist} · {credit.license}</a> : null}
+    <div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a href={previewPath(child.market, child.path)}>Mehr erfahren</a></div>
+  </article>;
+}
+
 export default async function PublicPageRoute({ params }: Props) {
   const page = await activePage(params);
   const children = getChildPages(page);
   const register = registrationUrl(page);
   const heroImage = selectPageImage(page);
   const contentHtml = renderedContentHtml(page);
+  const categoryGroups = page.family === "magazine-hub"
+    ? getMagazineCategories().map(category => ({ ...category, pages: children.filter(child => child.categories.includes(category.slug)) })).filter(category => category.pages.length)
+    : [];
+  const categorizedPaths = new Set(categoryGroups.flatMap(category => category.pages.map(child => child.path)));
+  const uncategorizedMagazinePages = page.family === "magazine-hub" ? children.filter(child => !categorizedPaths.has(child.path)) : [];
   return <SiteShell market={page.market} registrationHref={register}>
     <main className={styles.page}>
       <section className={styles.hero}>
@@ -56,6 +71,7 @@ export default async function PublicPageRoute({ params }: Props) {
           ? <Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
+      {categoryGroups.length ? <nav className={styles.categoryNav} id="magazin-kategorien" aria-label="Magazinkategorien"><div><span>Magazin-Themen</span><strong>Direkt zur Kategorie springen</strong></div>{categoryGroups.map(category => <a href={`#kategorie-${category.slug}`} key={category.slug}>{category.name}<small>{category.pages.length}</small></a>)}</nav> : null}
       <section className={styles.layout}>
         <article className={styles.article}>
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: contentHtml }} />
@@ -65,7 +81,7 @@ export default async function PublicPageRoute({ params }: Props) {
           <div className={styles.trust}><h2>Sicher kennenlernen</h2><ul><li>Redaktionell kontrollierte Profile</li><li>Kostenlose Basis-Mitgliedschaft</li><li>Persönlicher Support</li><li>Dating mit gemeinsamen Werten</li></ul></div>
         </aside>
       </section>
-      {children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{page.family === "location-hub" ? "Regionen entdecken" : "Weiterlesen"}</p><h2>{page.family === "location-hub" ? "Christliche Partnersuche in Deiner Nähe" : "Aktuelle Beiträge und Ratgeber"}</h2></div><div className={styles.grid}>{children.map(child => { const image = selectPageImage(child); return <article className={styles.card} key={child.path}>{image ? <Image src={image} alt={`Stadtansicht und christliche Partnersuche: ${child.heroTitle}`} width={640} height={380} /> : <div className={styles.cardFallback}>✦</div>}<div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a href={previewPath(child.market, child.path)}>Mehr erfahren</a></div></article>; })}</div></section> : null}
+      {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{page.family === "location-hub" ? "Regionen entdecken" : "Weiterlesen"}</p><h2>{page.family === "location-hub" ? "Christliche Partnersuche in Deiner Nähe" : "Aktuelle Beiträge und Ratgeber"}</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}
     </main>
   </SiteShell>;
 }

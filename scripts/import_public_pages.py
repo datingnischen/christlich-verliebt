@@ -19,6 +19,9 @@ from bs4 import BeautifulSoup, Comment
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 ASSET_DIR = ROOT / "public" / "imported"
+CITY_IMAGE_OVERRIDES_PATH = DATA_DIR / "city-image-overrides.json"
+MAGAZINE_CATEGORIES_PATH = DATA_DIR / "magazine-categories.json"
+MAGAZINE_CATEGORIES_URL = "https://christlich-verliebt.de/magazin/wp-json/wp/v2/categories?per_page=100&hide_empty=true&_fields=id,count,name,slug,link,parent"
 DOMAINS = {
     "de": "christlich-verliebt.de",
     "at": "christlich-verliebt.at",
@@ -306,6 +309,28 @@ def metadata(soup: BeautifulSoup, source_url: str) -> tuple[str, str, str]:
     return title, description, hero
 
 
+def magazine_category_slugs(soup: BeautifulSoup, path: str) -> list[str]:
+    if not path.startswith("/magazin/") or path == "/magazin/":
+        return []
+    article = soup.find("article")
+    return sorted({
+        str(class_name).removeprefix("category-")
+        for class_name in (article.get("class") if article else [])
+        if str(class_name).startswith("category-")
+    })
+
+
+def fetch_magazine_categories() -> list[dict]:
+    categories = json.loads(str(fetch(MAGAZINE_CATEGORIES_URL)))
+    return sorted(({
+        "count": int(category["count"]),
+        "id": int(category["id"]),
+        "link": str(category["link"]),
+        "name": html.unescape(str(category["name"])),
+        "slug": str(category["slug"]),
+    } for category in categories), key=lambda category: category["name"].casefold())
+
+
 def family_for(path: str) -> str:
     if path == "/": return "home"
     if path == "/partnersuche/": return "location-hub"
@@ -322,12 +347,28 @@ def normalize_path(url: str) -> str:
     return "/" if path == "/" else "/" + path.strip("/") + "/"
 
 
+def load_city_image_overrides() -> tuple[dict[tuple[str, str], str], list[dict]]:
+    if not CITY_IMAGE_OVERRIDES_PATH.is_file():
+        return {}, []
+    records = json.loads(CITY_IMAGE_OVERRIDES_PATH.read_text(encoding="utf-8")).get("images", [])
+    by_route: dict[tuple[str, str], str] = {}
+    for record in records:
+        local_path = str(record["localPath"])
+        local_file = ROOT / "public" / local_path.lstrip("/")
+        if not local_file.is_file():
+            raise RuntimeError(f"Missing city image override: {local_path}")
+        by_route[(str(record["market"]), str(record["path"]))] = local_path
+    return by_route, records
+
+
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
     records: list[dict] = []
     skipped: list[dict] = []
-    provenance: list[dict] = []
+    city_image_by_route, city_image_provenance = load_city_image_overrides()
+    magazine_categories = fetch_magazine_categories()
+    provenance: list[dict] = list(city_image_provenance)
     for market, sitemap_list in SITEMAPS.items():
         domain = DOMAINS[market]
         urls: list[str] = [f"https://{domain}/"]
@@ -366,7 +407,8 @@ def main() -> None:
                     "title": title,
                     "description": description,
                     "heroTitle": hero,
-                    "heroImage": preferred_image(content, path, provenance),
+                    "heroImage": city_image_by_route.get((market, path)) or preferred_image(content, path, provenance),
+                    "categories": magazine_category_slugs(soup, path),
                     "contentHtml": content,
                 })
                 print(f"IMPORTED {market} {path}")
@@ -385,6 +427,7 @@ def main() -> None:
     (DATA_DIR / "public-pages.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (DATA_DIR / "route-ownership.json").write_text(json.dumps({"migrated": [{"market": p["market"], "path": p["path"], "owner": "nextjs"} for p in records], "notMigrated": skipped}, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (DATA_DIR / "asset-provenance.json").write_text(json.dumps(sorted(unique_provenance.values(), key=lambda item: item["localPath"]), ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    MAGAZINE_CATEGORIES_PATH.write_text(json.dumps({"schemaVersion": 1, "categories": magazine_categories}, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"PAGES={len(records)} SKIPPED={len(skipped)} ASSETS={len(unique_provenance)}")
 
 

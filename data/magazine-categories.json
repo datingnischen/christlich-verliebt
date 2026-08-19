@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "count": 26,
+      "id": 1,
+      "link": "https://christlich-verliebt.de/magazin/category/allgemein/",
+      "name": "Allgemein",
+      "slug": "allgemein"
+    },
+    {
+      "count": 1,
+      "id": 12,
+      "link": "https://christlich-verliebt.de/magazin/category/beziehung-werte/",
+      "name": "Beziehung & Werte",
+      "slug": "beziehung-werte"
+    },
+    {
+      "count": 15,
+      "id": 2,
+      "link": "https://christlich-verliebt.de/magazin/category/christliche-feiertage/",
+      "name": "Christliche Feiertage",
+      "slug": "christliche-feiertage"
+    },
+    {
+      "count": 11,
+      "id": 11,
+      "link": "https://christlich-verliebt.de/magazin/category/christliche-persoenlichkeiten/",
+      "name": "Christliche Persönlichkeiten",
+      "slug": "christliche-persoenlichkeiten"
+    },
+    {
+      "count": 7,
+      "id": 9,
+      "link": "https://christlich-verliebt.de/magazin/category/christliche-singleboersen/",
+      "name": "Christliche Singlebörsen",
+      "slug": "christliche-singleboersen"
+    }
+  ],
+  "schemaVersion": 1
+}

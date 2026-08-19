@@ -1,4 +1,6 @@
 import snapshot from "@/data/public-pages.json";
+import categorySnapshot from "@/data/magazine-categories.json";
+import cityImageSnapshot from "@/data/city-image-overrides.json";
 import type { MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
@@ -13,11 +15,32 @@ export type PublicPage = {
   description: string;
   heroTitle: string;
   heroImage: string | null;
+  categories: string[];
   contentHtml: string;
+};
+
+export type MagazineCategory = {
+  count: number;
+  id: number;
+  link: string;
+  name: string;
+  slug: string;
+};
+
+export type CityImageCredit = {
+  artist: string;
+  license: string;
+  sourcePage: string;
 };
 
 const pages = snapshot.pages as PublicPage[];
 const pageIndex = new Map(pages.map((page) => [`${page.market}:${page.path}`, page]));
+const magazineCategories = categorySnapshot.categories as MagazineCategory[];
+const cityImageCredits = new Map<string, CityImageCredit>(cityImageSnapshot.images.map(image => [image.localPath, {
+  artist: image.artist,
+  license: image.license,
+  sourcePage: image.sourcePage,
+}]));
 
 
 export function normalizeContentPath(slug?: string[]): string {
@@ -37,6 +60,14 @@ export function getChildPages(page: PublicPage): PublicPage[] {
   if (page.family === "magazine-hub") return pages.filter((item) => item.market === page.market && item.family === "magazine");
   if (page.family === "guide-hub") return pages.filter((item) => item.market === page.market && item.family === "guide");
   return [];
+}
+
+export function getMagazineCategories(): MagazineCategory[] {
+  return magazineCategories;
+}
+
+export function getCityImageCredit(page: PublicPage): CityImageCredit | null {
+  return page.heroImage ? cityImageCredits.get(page.heroImage) ?? null : null;
 }
 
 export function registrationUrl(page: PublicPage): string {

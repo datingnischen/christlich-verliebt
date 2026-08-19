@@ -5,6 +5,8 @@ import test from "node:test";
 const snapshot = JSON.parse(await readFile(new URL("../data/public-pages.json", import.meta.url), "utf8"));
 const pages = snapshot.pages;
 const provenance = JSON.parse(await readFile(new URL("../data/asset-provenance.json", import.meta.url), "utf8"));
+const cityImageOverrides = JSON.parse(await readFile(new URL("../data/city-image-overrides.json", import.meta.url), "utf8"));
+const magazineCategories = JSON.parse(await readFile(new URL("../data/magazine-categories.json", import.meta.url), "utf8"));
 const sourceByAsset = new Map(provenance.map(asset => [asset.localPath, asset.sourceUrl]));
 
 test("contains public editorial inventories for DE, AT and CH", () => {
@@ -46,11 +48,38 @@ test("canonicals and imported resources stay market-specific", () => {
 });
 
 test("every referenced imported asset exists on disk", async () => {
-  const sources = new Set(pages.flatMap(page => [...page.contentHtml.matchAll(/src=["']([^"']+)/gi)].map(match => match[1])));
+  const sources = new Set(pages.flatMap(page => [page.heroImage, ...[...page.contentHtml.matchAll(/src=["']([^"']+)/gi)].map(match => match[1])]).filter(Boolean));
   for (const source of sources) {
-    if (!source.startsWith("/imported/")) continue;
+    if (!source.startsWith("/imported/") && !source.startsWith("/city-images/")) continue;
     await access(new URL(`../public${source}`, import.meta.url));
   }
+});
+
+test("every location card has a real local image with provenance", async () => {
+  const locations = pages.filter(page => page.family === "location");
+  assert.equal(locations.length, 51);
+  assert.ok(locations.every(page => page.heroImage), "A location still uses the decorative fallback");
+  assert.equal(cityImageOverrides.images.length, 20);
+  for (const image of cityImageOverrides.images) {
+    assert.match(image.sourcePage, /^https:\/\/commons\.wikimedia\.org\//);
+    assert.ok(image.license || image.rightsStatus.includes("Public domain"));
+    await access(new URL(`../public${image.localPath}`, import.meta.url));
+  }
+});
+
+test("magazine categories are imported and rendered as jump targets", async () => {
+  assert.deepEqual(magazineCategories.categories.map(category => category.name), [
+    "Allgemein",
+    "Beziehung & Werte",
+    "Christliche Feiertage",
+    "Christliche Persönlichkeiten",
+    "Christliche Singlebörsen",
+  ]);
+  const categorized = pages.filter(page => page.family === "magazine" && page.categories.length);
+  assert.ok(categorized.length >= 59, `Only ${categorized.length} magazine articles have categories`);
+  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /id="magazin-kategorien"/);
+  assert.match(source, /id=\{`kategorie-\$\{category\.slug\}`\}/);
 });
 
 test("WordPress magazine articles retain local editorial images and audio", () => {
