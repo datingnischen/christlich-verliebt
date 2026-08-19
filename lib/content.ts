@@ -1,4 +1,3 @@
-import provenanceSnapshot from "@/data/asset-provenance.json";
 import snapshot from "@/data/public-pages.json";
 import type { MarketCode } from "@/lib/markets";
 
@@ -13,15 +12,13 @@ export type PublicPage = {
   title: string;
   description: string;
   heroTitle: string;
+  heroImage: string | null;
   contentHtml: string;
 };
 
 const pages = snapshot.pages as PublicPage[];
 const pageIndex = new Map(pages.map((page) => [`${page.market}:${page.path}`, page]));
-const assetSources = new Map(
-  (provenanceSnapshot as { localPath: string; sourceUrl: string }[])
-    .map((asset) => [asset.localPath, asset.sourceUrl]),
-);
+
 
 export function normalizeContentPath(slug?: string[]): string {
   return !slug?.length ? "/" : `/${slug.join("/")}/`;
@@ -62,20 +59,7 @@ export function renderedContentHtml(page: PublicPage): string {
 }
 
 export function selectPageImage(page: PublicPage): string | null {
-  const images = [...page.contentHtml.matchAll(/<img[^>]+src=["']([^"']+)["']/gi)].map((match) => match[1]);
-  if (!images.length) return null;
-  const slug = page.path.split("/").filter(Boolean).at(-1)?.replace(/-/g, "") ?? "";
-  return images
-    .map((image, index) => {
-      const source = (assetSources.get(image) ?? image).toLowerCase();
-      const compactSource = source.replace(/[^a-z0-9]/g, "");
-      let score = -index;
-      if (slug && compactSource.includes(slug)) score += 20;
-      if (/statistik|infografik|logo|seal|siegel|badge|icon|testbericht/.test(source)) score -= 100;
-      if (/stadt|city|panorama|skyline|kirche|church|dom|muenster/.test(source)) score += 8;
-      return { image, score };
-    })
-    .sort((a, b) => b.score - a.score)[0]?.image ?? null;
+  return page.heroImage;
 }
 
 export function pageLabel(page: PublicPage): string {

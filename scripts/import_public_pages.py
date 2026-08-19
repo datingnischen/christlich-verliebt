@@ -224,6 +224,27 @@ def clean_content(container, source_url: str, market: str, provenance: list[dict
     return "\n".join(str(node) for node in fragment.body.contents if str(node).strip()).strip() if fragment.body else str(fragment).strip()
 
 
+def preferred_image(content: str, path: str, provenance: list[dict]) -> str | None:
+    sources = {item["localPath"]: item["sourceUrl"].lower() for item in provenance}
+    images = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', content, re.I)
+    slug = path.strip("/").split("/")[-1].replace("-", "") if path != "/" else ""
+    ranked: list[tuple[int, str]] = []
+    for index, image in enumerate(images):
+        source = sources.get(image, image)
+        filename = Path(urlparse(source).path).name.lower()
+        compact_source = re.sub(r"[^a-z0-9]", "", filename)
+        score = -index
+        if slug and slug in compact_source:
+            score += 20
+        if re.search(r"statistik|infografik|logo|seal|siegel|badge|icon|testbericht", filename):
+            score -= 100
+        if re.search(r"stadt|city|panorama|skyline|kirche|church|dom|muenster", filename):
+            score += 8
+        ranked.append((score, image))
+    best_score, best_image = max(ranked, default=(-1, None))
+    return best_image if best_score >= 0 else None
+
+
 def metadata(soup: BeautifulSoup, source_url: str) -> tuple[str, str, str]:
     title = " ".join((soup.title.get_text(" ", strip=True) if soup.title else "").split())
     description_node = soup.find("meta", attrs={"name": re.compile("^description$", re.I)})
@@ -293,6 +314,7 @@ def main() -> None:
                     "title": title,
                     "description": description,
                     "heroTitle": hero,
+                    "heroImage": preferred_image(content, path, provenance),
                     "contentHtml": content,
                 })
                 print(f"IMPORTED {market} {path}")
@@ -302,7 +324,7 @@ def main() -> None:
             time.sleep(0.03)
     records.sort(key=lambda item: (item["market"], item["path"]))
     skipped.sort(key=lambda item: (item["market"], item["path"]))
-    unique_provenance = {item["sha256"]: item for item in provenance}
+    unique_provenance = {item["localPath"]: item for item in provenance}
     referenced_assets = {ROOT / "public" / item["localPath"].lstrip("/") for item in unique_provenance.values()}
     for existing in ASSET_DIR.rglob("*"):
         if existing.is_file() and existing not in referenced_assets:

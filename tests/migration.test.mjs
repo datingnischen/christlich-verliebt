@@ -1,9 +1,11 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const snapshot = JSON.parse(await readFile(new URL("../data/public-pages.json", import.meta.url), "utf8"));
 const pages = snapshot.pages;
+const provenance = JSON.parse(await readFile(new URL("../data/asset-provenance.json", import.meta.url), "utf8"));
+const sourceByAsset = new Map(provenance.map(asset => [asset.localPath, asset.sourceUrl]));
 
 test("contains public editorial inventories for DE, AT and CH", () => {
   const counts = Object.fromEntries(["de", "at", "ch"].map(market => [market, pages.filter(page => page.market === market).length]));
@@ -32,6 +34,20 @@ test("canonicals and imported resources stay market-specific", () => {
     assert.equal(new URL(page.canonical).pathname, page.path);
     const sources = [...page.contentHtml.matchAll(/src=["']([^"']+)/gi)].map(match => match[1]);
     assert.ok(sources.every(src => src.startsWith("/imported/")), `${page.path} has remote src`);
+  }
+});
+
+test("every referenced imported asset exists on disk", async () => {
+  const sources = new Set(pages.flatMap(page => [...page.contentHtml.matchAll(/src=["']([^"']+)/gi)].map(match => match[1])));
+  for (const source of sources) {
+    if (!source.startsWith("/imported/")) continue;
+    await access(new URL(`../public${source}`, import.meta.url));
+  }
+});
+
+test("location heroes prefer real city imagery over statistics graphics", () => {
+  for (const page of pages.filter(page => page.family === "location" && page.heroImage)) {
+    assert.doesNotMatch(sourceByAsset.get(page.heroImage) ?? "", /statistik|infografik/i, page.path);
   }
 });
 
