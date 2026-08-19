@@ -11,6 +11,25 @@ spec.loader.exec_module(importer)
 
 
 class ImportSecurityTests(unittest.TestCase):
+    def test_removes_duplicate_de_city_lists_but_keeps_other_copy(self):
+        fragment = importer.BeautifulSoup(
+            '<div><p>Einführung bleibt.</p><p>Unsere Liste mit Städten und Regionen:</p>'
+            '<ul><li><a href="https://christlich-verliebt.de/partnersuche/berlin/">Berlin</a></li>'
+            '<li><a href="https://christlich-verliebt.de/partnersuche/hamburg/">Hamburg</a></li>'
+            '<li><a href="https://christlich-verliebt.de/partnersuche/koeln/">Köln</a></li></ul>'
+            '<h2>Weitere Hinweise</h2></div>',
+            "html.parser",
+        )
+        importer.remove_redundant_location_lists(
+            fragment,
+            "https://christlich-verliebt.de/partnersuche/",
+            "de",
+        )
+        self.assertIn("Einführung bleibt.", fragment.get_text(" ", strip=True))
+        self.assertIn("Weitere Hinweise", fragment.get_text(" ", strip=True))
+        self.assertNotIn("Berlin", fragment.get_text(" ", strip=True))
+        self.assertNotIn("Unsere Liste", fragment.get_text(" ", strip=True))
+
     def test_rejects_non_https_and_unapproved_hosts(self):
         with self.assertRaises(RuntimeError):
             importer.assert_public_https_url("http://christlich-verliebt.de/")

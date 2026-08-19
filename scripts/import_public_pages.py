@@ -195,6 +195,30 @@ def source_container(soup: BeautifulSoup, path: str):
     return main or soup.find("article") or soup.body
 
 
+def remove_redundant_location_lists(fragment: BeautifulSoup, source_url: str, market: str) -> None:
+    source = urlparse(source_url)
+    if market != "de" or source.path.rstrip("/") != "/partnersuche":
+        return
+    city_lists = []
+    for listing in fragment.find_all(["ul", "ol"]):
+        links = [urlparse(str(link.get("href") or "")) for link in listing.find_all("a", href=True)]
+        if len(links) >= 3 and all(
+            link.hostname == source.hostname
+            and link.path.startswith("/partnersuche/")
+            and link.path.rstrip("/") != "/partnersuche"
+            for link in links
+        ):
+            city_lists.append(listing)
+    if not city_lists:
+        return
+    for paragraph in fragment.find_all("p"):
+        text = paragraph.get_text(" ", strip=True)
+        if re.search(r"\bListe\b.*\b(?:Städten|Regionen)\b", text, re.I):
+            paragraph.decompose()
+    for listing in city_lists:
+        listing.decompose()
+
+
 def clean_content(container, source_url: str, market: str, provenance: list[dict]) -> str:
     fragment = BeautifulSoup(str(container), "html.parser")
     for selector in DROP_SELECTORS:
@@ -245,6 +269,7 @@ def clean_content(container, source_url: str, market: str, provenance: list[dict
             provenance.append(record)
             node["src"] = local_path
             node["type"] = str(node.get("type") or "audio/mpeg")
+    remove_redundant_location_lists(fragment, source_url, market)
     for empty in list(fragment.find_all(["div", "section", "span", "p"])):
         if not empty.get_text(" ", strip=True) and not empty.find(["img", "audio"]):
             empty.decompose()

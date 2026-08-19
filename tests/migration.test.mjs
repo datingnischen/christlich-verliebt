@@ -19,6 +19,14 @@ test("contains public editorial inventories for DE, AT and CH", () => {
   assert.equal(pages.some(page => page.path === "/magazin/beispiel-seite/"), false);
 });
 
+test("DE location hub uses city cards instead of a duplicate city link list", () => {
+  const hub = pages.find(page => page.market === "de" && page.path === "/partnersuche/");
+  assert.ok(hub, "DE location hub is missing");
+  assert.doesNotMatch(hub.contentHtml, /umfassende Liste mit Städten und Regionen/i);
+  assert.doesNotMatch(hub.contentHtml, /<a\b[^>]*href=["'][^"']+\/partnersuche\/(?!["'])/i);
+  assert.ok(pages.some(page => page.market === "de" && page.family === "location"));
+});
+
 test("snapshot excludes executable markup and private member media", () => {
   const html = pages.map(page => page.contentHtml).join("\n");
   assert.doesNotMatch(html, /<(?:script|iframe|form|input|button|select|textarea)\b/i);
