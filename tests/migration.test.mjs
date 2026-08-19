@@ -36,6 +36,12 @@ test("location cards use descriptive city-specific anchor text", async () => {
   assert.match(pageSource, />\{cardLinkLabel\(child\)\}<\/a>/);
 });
 
+test("footer copy speaks to customers instead of explaining platform plumbing", async () => {
+  const source = await readFile(new URL("../components/site-shell.tsx", import.meta.url), "utf8");
+  assert.doesNotMatch(source, /Mitgliederbereich.*Datingplattform/i);
+  assert.match(source, /gemeinsame Werte, ein respektvoller Austausch und ehrliches Kennenlernen/i);
+});
+
 test("snapshot excludes executable markup and private member media", () => {
   const html = pages.map(page => page.contentHtml).join("\n");
   assert.doesNotMatch(html, /<(?:script|iframe|form|input|button|select|textarea)\b/i);

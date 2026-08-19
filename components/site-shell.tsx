@@ -43,7 +43,7 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
         <section><h3>Vertrauen</h3><a href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a><a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionelle Kontrolle</a><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a></section>
         <section><h3>Service & Länder</h3><a href={publicUrl(market, "/hilfe/")}>Hilfe & Support</a><a href={publicUrl(market, "/datenschutz.html")}>Datenschutz</a><a href={publicUrl(market, "/impressum.html")}>Impressum</a>{MARKET_CODES.filter(code => code !== market).map(code => <a key={code} href={publicUrl(code)}>{getMarket(code).countryName} · {getMarket(code).domain}</a>)}</section>
       </div>
-      <p className={styles.legal}>Die Anmeldung und Dein persönlicher Mitgliederbereich werden sicher über unsere bewährte Datingplattform bereitgestellt.</p>
+      <p className={styles.legal}>Bei christlich-verliebt stehen gemeinsame Werte, ein respektvoller Austausch und ehrliches Kennenlernen im Mittelpunkt.</p>
     </footer>
   </div>;
 }
