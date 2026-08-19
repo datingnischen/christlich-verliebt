@@ -52,8 +52,8 @@ npm audit --omit=dev
 ## Cutover-Gate
 
 ```bash
-python scripts/validate_migration_contract.py .hermes/migration-contract.yaml
-python scripts/validate_migration_contract.py --require-cutover-ready .hermes/migration-contract.yaml
+python scripts/validate_migration_contract.py migration-contract.yaml
+python scripts/validate_migration_contract.py --require-cutover-ready migration-contract.yaml
 ```
 
 Der zweite Befehl muss unmittelbar vor einer Domain- oder DNS-Änderung erfolgreich sein. Bis Legacy-Origin, Sessions, Formulare, rechtliche Routen, Rollback-Daten und unabhängige Prüfung belegt sind, bleibt der Cutover blockiert.
