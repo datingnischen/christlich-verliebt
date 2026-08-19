@@ -1,0 +1,660 @@
+[
+  {
+    "bytes": 43086,
+    "localPath": "/imported/at/173c1e3edb634c0698a2.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "173c1e3edb634c0698a2fefd7d7fa06b6ead510f1795b24d4b1280e9f3ae24d2",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/8BECD01306BD42921E342264399472A1649D1BE7A16D04AFA8CDAC700F7B23A6/600/faq-(1).jpg"
+  },
+  {
+    "bytes": 98717,
+    "localPath": "/imported/at/1e810c00fb3a8eba645d.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "1e810c00fb3a8eba645daecfef78924670488921a2d3b9afe8d5f2765defd90d",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/F23844872387C9B1FB3A0E2EA5C228DFAD5F240E5A33D601DCAFB1160D08EFD3/1000/Leoben.jpg"
+  },
+  {
+    "bytes": 142724,
+    "localPath": "/imported/at/381dc983f19079f36a3b.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "381dc983f19079f36a3b2d302ad232fb5659692215a1e78cd716fb90e3306cd8",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BAE9FF34BC9F5319AA262D65C200FEABD843ED85104FC8B4493D1E11469666B2/1000/St.-Pölten.jpg"
+  },
+  {
+    "bytes": 137863,
+    "localPath": "/imported/at/45631fc23eeed18ac80e.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "45631fc23eeed18ac80e9644d82d0f3e2e6fc1bb848b8689718d7229b1b01a9e",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BBFBC70DA6C7E8C49CFBDAC201AA687FCD7033157DDCA149512E97158D23B74F/1000/Villach.jpg"
+  },
+  {
+    "bytes": 132841,
+    "localPath": "/imported/at/46e5642c3339c2824a2e.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "46e5642c3339c2824a2e384b540be9aed223db3adf280fd6c3e27e9cb3dff7cb",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/DC3AFB0402D197457330FDAEBE42599822162DB9F8D169FDF7759F81834F009E/1000/Linz.jpg"
+  },
+  {
+    "bytes": 174518,
+    "localPath": "/imported/at/52c5697a59d9d789fd73.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "52c5697a59d9d789fd73141ddbded9787bec01c8ec1df4162c46e540bc50ce22",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/2C7451419D7AC816C7AFE785F92A1C29073A7FC23FFBFD95988BC22C94E54591/1000/eisenstadt.jpg"
+  },
+  {
+    "bytes": 173205,
+    "localPath": "/imported/at/54690a87b3f7dc6927fa.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "54690a87b3f7dc6927fa13274931b0613b517de389a4f0054389653daeae04f1",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/CD2D8B6335B9ECBBBF8D4233F04394C6D0CD216B833578DC5472C812D5B8FD67/1000/Klagenfurt.jpg"
+  },
+  {
+    "bytes": 60850,
+    "localPath": "/imported/at/6df545bb5a57a12d36a7.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "6df545bb5a57a12d36a76fd924514aff4aab963380fee22c9227a245793515b4",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/AB75126F58F56DB496382E4100BF205E0D7BCD3E3159A15699A6F60D44557586/1000/christlich-verliebt.at---Österreich-(2).jpg"
+  },
+  {
+    "bytes": 196366,
+    "localPath": "/imported/at/7473cf13e0e4b586fd10.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "7473cf13e0e4b586fd10a591663a8cde3d594f06cc9197f3b5c726a97cee7201",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BFF2DB3F5809D4C25E4D09472E58F38D4CD8048F82078B8A215DA402F755B474/1000/Innsbruck.jpg"
+  },
+  {
+    "bytes": 201935,
+    "localPath": "/imported/at/812b68141b188d79c7a7.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "812b68141b188d79c7a7b5834d9c191e4b8dd26e82c86a70bf376091f9b9df07",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/86AFE6E5873EFB36A24174378D100349B8B7D16D3F15A04E699657070BCEC5D3/1000/Salzburg.jpg"
+  },
+  {
+    "bytes": 199520,
+    "localPath": "/imported/at/8a8610fe73fe6ba99d5b.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "8a8610fe73fe6ba99d5b8f1f2e01f1327e0c2731b647fb615c85b38e89ba28ed",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/EBA9423D3EDC457D4E0053C2910919D5A24BA6826E829514E98FE10071AE9EE6/1000/Dornbirn.jpg"
+  },
+  {
+    "bytes": 255941,
+    "localPath": "/imported/at/90a3f7a3b60b8b831917.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "90a3f7a3b60b8b83191784294bf195bf198f67d448fc8ad3f1287be2ec89c959",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/F2DCB229C1CF291C26BF6C0885633AC8B518E4C01D3AF5CEEC37447053BBF7D2/1000/Bregenz.jpg"
+  },
+  {
+    "bytes": 43260,
+    "localPath": "/imported/at/ade69eb9d33699621372.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "ade69eb9d33699621372f681d81055aac147402bb25a3293c4405c12f2075e76",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/6B8EDAAD02C0036348DC05E9E2BF93F42A8DFCD1114468096BE7E7585F4CAEA7/1000/christlich-verliebt.at---Österreich-(1).jpg"
+  },
+  {
+    "bytes": 175622,
+    "localPath": "/imported/at/b5e9d8a03ed399b1c920.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "b5e9d8a03ed399b1c9208c4d4e09cc013856ae2802b1d02fb743f535c4d5b4f9",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/076765D196563366E6BEB171173AD0DD2BA6BCC37F77BB9C81371FE987150538/1000/steyr.jpg"
+  },
+  {
+    "bytes": 133573,
+    "localPath": "/imported/at/bb1e6532cfb515d650c0.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "bb1e6532cfb515d650c04965dae2656e727041c0545815fae79731b62be688ca",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/3BF6496E5348CD7C9C738C95885ADBB0FB68E32A42376DA79BAB9CDE4D3FF7AA/1000/Wien.jpg"
+  },
+  {
+    "bytes": 196723,
+    "localPath": "/imported/at/c96fabe27697ebe666fd.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c96fabe27697ebe666fd7098306824464b0d1a0a79b7a51e8db1cae854a57301",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/3E7DD65CA4F614030969FF8455FC4603FBFE74F6DFA6CEDF57C22D164D46185A/1000/Wels.jpg"
+  },
+  {
+    "bytes": 70101,
+    "localPath": "/imported/at/cc4c71ef4d6602c3e1e3.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "cc4c71ef4d6602c3e1e3eaddfbee783f608631e7b2485d310347e71808e5f918",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/0BC125572D183C7F52F59B4BAB0E6C1431888C11B6B566EFC30556D6BD91EA76/1000/christliche-gemeinden.jpg"
+  },
+  {
+    "bytes": 42190,
+    "localPath": "/imported/at/d461ba42ecaa488e760f.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "d461ba42ecaa488e760f89ad68c9de755e8f2a849e38e9c1a39828b16c3796e2",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/8A8D315009EA1355A1C4FB8EFA72FF21A51A83EE279C63B22F3037499C7BDCB9/1000/Amstetten.jpg"
+  },
+  {
+    "bytes": 159358,
+    "localPath": "/imported/at/ff478e19b39847095064.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "ff478e19b39847095064db163602bd1d8daac5fb49689d1449a822d7b692c929",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/AB5C0D39AAB92E6EDF53822D1FC3219892F82E4FE10E4693E5E017020A4B40F4/1000/Graz.jpg"
+  },
+  {
+    "bytes": 74799,
+    "localPath": "/imported/ch/06542ab76b5bec8f3deb.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "06542ab76b5bec8f3deba434d08018940de4e265d02dbf8a0dec4956e66fcd49",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/10DE712457AC4EF8D98622E69D3FF826C273DB7722198D479C2DA970A2DB41AE/1000/Herausforderung-oder-Geschenk.jpg"
+  },
+  {
+    "bytes": 111867,
+    "localPath": "/imported/ch/0f124d30cc9db828aaf8.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "0f124d30cc9db828aaf878510ff4ca299b2d2bf47f9e115c40ce0ee3e4d49213",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/2983E0D6EFC9E1D913260FF6FB94F5F41C03F94DF059A6C56B84392B68B0762A/1000/christlich-verliebt-(2).jpg"
+  },
+  {
+    "bytes": 134766,
+    "localPath": "/imported/ch/18f8093414d62e5d7f45.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "18f8093414d62e5d7f45f97f7d6021e4b84dd9b81762d05f5c14db928ebb0108",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/230D02BF7F5E2AC9881AE2288E199E191F5F18E71D920B8E5135C7C23A0AB976/1000/basel.jpg"
+  },
+  {
+    "bytes": 197607,
+    "localPath": "/imported/ch/1d449290ae2657ea7321.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "1d449290ae2657ea7321531bab81e4113a66e3c516cc03604f336962c20f4664",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/211C3C4F6B309E5DDB82F42F6C3DA89C0BF82D1FB0F014B4A28C369A8AADB0C9/1000/thun.jpg"
+  },
+  {
+    "bytes": 78799,
+    "localPath": "/imported/ch/2951d9ec70e3a3a82bd0.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "2951d9ec70e3a3a82bd09d18e3d71dd0074e82643304aeddb20077406939a9d4",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/05141E5B4B53C4BE79A8413A9A6AD64AD33747813DD7D9E175170A7A8E01EC45/1000/christlich-verliebt-(1).jpg"
+  },
+  {
+    "bytes": 45444,
+    "localPath": "/imported/ch/2de4f1249763fb0732b2.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "2de4f1249763fb0732b2623b84c2afaeaab590b7d2f48704d5f603d52b2e75fe",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/C53912130D8CCB40F24B93A7C460CE472CC7E0E25DF5246849BF007D93C5F045/1000/die-besten-Tipps.jpg"
+  },
+  {
+    "bytes": 171777,
+    "localPath": "/imported/ch/3a351e6af6cdd81d1696.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "3a351e6af6cdd81d1696a9f1d53c2e1ff5e811f7b52cb7ba48a3426a0319c53f",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7A197438D48D5D1805B6EFB7C6C2F243418B56E9ED7798877B906B6A52F28881/1000/bern.jpg"
+  },
+  {
+    "bytes": 204179,
+    "localPath": "/imported/ch/453f91ecbfe1ac951965.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "453f91ecbfe1ac951965b1ae4aca907ac5309767547ed5022a2992c94b423746",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/2612FA9BB872906E4CC444A1F0413ADC1856952116A688886D1CA4D26B1A8AB5/1000/lausanne.jpg"
+  },
+  {
+    "bytes": 113906,
+    "localPath": "/imported/ch/4caacb51e290dd88134b.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "4caacb51e290dd88134b5b4211be7a4573bb251b3b3d9bcdc51ecb9eba6a95e6",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/1B040717C56536027BF524577D5C2FB40C39C2BEE4EDF2383F38D555768DC901/1000/iStock-1197834456.jpg"
+  },
+  {
+    "bytes": 62346,
+    "localPath": "/imported/ch/528894155adb0330cab1.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "528894155adb0330cab13eb350c63a46001d51c28d0d5d9e0cbe9a9ec6c8e036",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7332619F4EF6678377A3C1D5C7A7C1B77192184CE8B1F141D162305B86867440/1000/luzern.jpg"
+  },
+  {
+    "bytes": 51253,
+    "localPath": "/imported/ch/652519afd3125e819689.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "652519afd3125e819689d11681c8a6f7a6a7c93db15d7678d84d181a0f1dfa3a",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7DC75E144D21B360F3500626A465EA56DBBBBC2703365238278667365377B0F6/1000/5-Gebete-für-christliche-Singles-Zwischen-Vertrauen-und-Sehnsucht.jpg"
+  },
+  {
+    "bytes": 105760,
+    "localPath": "/imported/ch/74e43b5c100c3e37176a.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "74e43b5c100c3e37176a24013fd80b603ed02917f575c12c4e6af287a95ab66d",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/884ED3D77CEB4D674A1C27F6665307CCA10A459B77A8271669D6DF2D6912B621/1000/Typische-Fehler-.jpg"
+  },
+  {
+    "bytes": 146805,
+    "localPath": "/imported/ch/90efcb6088df4be559b3.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "90efcb6088df4be559b3c1ff755e988d3e22d066189a6c910c18a38037722491",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BB1514AEBFAF8EB8A08DD5B8E49A296A2C29CC33C6FB2975EDC5FE1D67C29172/1000/aarau.jpg"
+  },
+  {
+    "bytes": 152752,
+    "localPath": "/imported/ch/9d47fa739cce5e0401ac.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "9d47fa739cce5e0401ac179586f0a71d055f954431518a12218c15d1abed882f",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/711BC53E92B535B1960985517B2A7F48D7484C37BEF4B4EA818E917E0C13CFA8/1000/winterthur.jpg"
+  },
+  {
+    "bytes": 65121,
+    "localPath": "/imported/ch/9fb2636da65e4ee0f5fe.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "9fb2636da65e4ee0f5fe35fe61effaebdc88bbf1ac45e08d7c4f0cf2bce80511",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/9E420159AB72878E68DFDEFECA71348F6BAA109DB51232AC52513BAF803D2395/1000/Singles-mit-Glauben-finden-–-Christliche-Partnersuche-regional.jpg"
+  },
+  {
+    "bytes": 74699,
+    "localPath": "/imported/ch/aec8af45a3861a5019ce.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "aec8af45a3861a5019cea42485cda812badf8da0f4daf86f6e231a84cb0ffce4",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/D6FA57E42A5F4384B18F3352373796B29F249702413367A8300DBE71198866F1/1000/online-dating-fuer-christen.jpg"
+  },
+  {
+    "bytes": 83426,
+    "localPath": "/imported/ch/b55a90754bb8e52ecb09.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "b55a90754bb8e52ecb0927ed921f0ea8c9488868d066997fc2e663c7fbcdbb7e",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/70E0E91C752DF1B624B46FD02DA503CD6526AA4F68C71FDE6EF6CC52AD822142/1000/Treue,-Vertrauen-&-Glaube.jpg"
+  },
+  {
+    "bytes": 159321,
+    "localPath": "/imported/ch/c2b5512e0e18544bb397.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c2b5512e0e18544bb397ed0884c3715d70c5bc7f498ab87dd000c8e55052d21c",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/03BF529F1E06887C4C9C172C63D4C49E5D84076F1FA06277239CB3D12F68BF23/1000/stgallen.jpg"
+  },
+  {
+    "bytes": 128882,
+    "localPath": "/imported/ch/c697095eff377c8d4c3a.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c697095eff377c8d4c3a768314c029e9e4cf5a29b328bdab76cddecca6d33313",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/12BA3B6946D427FA7DC4081240DF3C5AF49487857441D72DDF524E4EF1964403/1000/biel.jpg"
+  },
+  {
+    "bytes": 62020,
+    "localPath": "/imported/ch/c6fe909c3af031827e4b.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c6fe909c3af031827e4b1fd255043d5290017b99a9f9be5adcc871c7602331bf",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/0F88856A8E541003D4905DB8D5E3844F279B2BBC1C0D8EC2E2F1458648278FC4/1000/Single-bleiben.jpg"
+  },
+  {
+    "bytes": 32198,
+    "localPath": "/imported/ch/c97e320b7fc8800fa6f5.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c97e320b7fc8800fa6f5160229becea5b043ca2c0c480cfc7ecaf4f77881da89",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/23D8277C4EE982B61F197A39D82EDB76C91D25492DDE343E7EC4D0D06341190E/1000/Glaube-und-Liebe.jpg"
+  },
+  {
+    "bytes": 23784,
+    "localPath": "/imported/ch/d26bacd26ecc58174316.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "d26bacd26ecc581743163591d9de0631edcca48ad4071c145611abf0c757c46a",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/50E0C27A6E7B456766902AC3F6A895FB541AE2B1AFCD170E8084C030BE001F5C/400/faq.jpg"
+  },
+  {
+    "bytes": 59559,
+    "localPath": "/imported/ch/e7902d59f0921c888a99.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "e7902d59f0921c888a99b948c2889dce26ce387f375bb52c45e3751e430e66ac",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/3899F92156FAA1E3DD95E698476C87970F78F39B9B3C1DA736B09B18B024A6BF/1000/erste-Nachricht.jpg"
+  },
+  {
+    "bytes": 68591,
+    "localPath": "/imported/ch/ebfd9a6cd1de6ebff732.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "ebfd9a6cd1de6ebff732ba71b676d464e390b21a1edc388a5b03501c01e8f336",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/9DF940C860B717CA83D7050C820DD48E35B64A064340FE8027A6EFBF97306CE4/1000/Späte-Liebe.jpg"
+  },
+  {
+    "bytes": 246808,
+    "localPath": "/imported/ch/ee1b56de9db525f6491d.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "ee1b56de9db525f6491db909b1e604bf63106c4452f803b8db2d7048953de0c6",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/F7EDDFA066E039EA4D29326F91A829DA55D911517876395F36CB35064D336029/1000/christliche-gemeinde.jpg"
+  },
+  {
+    "bytes": 169885,
+    "localPath": "/imported/ch/f9d3ad659c8ab69f8903.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f9d3ad659c8ab69f8903d6ac8bf693d5978104341434a55e071f29791a13826c",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/D4DD82CBBFFC50C8B1CCDEF01E1A96EFE6FAA03C71A9D93C74B69D165B2E7044/1000/zurich.jpg"
+  },
+  {
+    "bytes": 79590,
+    "localPath": "/imported/de/05eccf36346b11b4eba7.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "05eccf36346b11b4eba7cf830ff4cd81719dfbf7ad2ab1143e972604848369be",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/CB32B7E7A7900C73D5B05D9964BA4A6C68FF1F0DB5D9E4FD2762423378761AF2/iStock-1183622100.jpg"
+  },
+  {
+    "bytes": 393,
+    "localPath": "/imported/de/0af7ebd228f6d1c0f38a.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "0af7ebd228f6d1c0f38a68a729fae3e164422098d60460e115b06778f4e972a5",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/4E94C3DF277E3311154994DE020F15893BFA346736F26BE76114B58FD91F8049/icons-facebook-(1).jpg"
+  },
+  {
+    "bytes": 239891,
+    "localPath": "/imported/de/10805bbaa85346df4e51.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "10805bbaa85346df4e51c6fd2e26f59c0582023382c7695ace86866f6f700d81",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/C0DCBD0AE59032649CCDA706184FE5E220F8063F42684C9FD67B5A8765F9CA47/1000/christliche-singles-düsseldorf-statistik.jpg"
+  },
+  {
+    "bytes": 37266,
+    "localPath": "/imported/de/194a2707f8170cf354a1.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "194a2707f8170cf354a17989aedfd42bf36af478b3a426dc03d78d4080fb5048",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/0C188CF6221FD83F57564B16940172F4BED588AC2F56103140F3803CD142DC74/iStock-1251387803.jpg"
+  },
+  {
+    "bytes": 15601,
+    "localPath": "/imported/de/1ba6f7f941d6a0a5f55d.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "1ba6f7f941d6a0a5f55dc9aa79a97f75202a8003f7b1da6337eee77d11a86a1b",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/C16A34F9882B61A7348F966A259531BFD359F9D3BC76648352EE64958BCD7AF8/empfohlen-siegel-45sterne-330x60.jpg"
+  },
+  {
+    "bytes": 218965,
+    "localPath": "/imported/de/2167de79477b5c425cbf.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "2167de79477b5c425cbf6ad167929aca83d26579e7e507aff08f9909b9987147",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7089C5ABB3E5CB51C45B729E5AE7A9B892C7904408E45D7C9A3FE16B237EDA6F/1000/christliche-singles-leipzig-statistik.jpg"
+  },
+  {
+    "bytes": 74914,
+    "localPath": "/imported/de/231d03edb58f87b9fcb1.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "231d03edb58f87b9fcb14c41c8dd3d5870d765bfcd04b8101cc145c77a7e7ce7",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/91459E24174531C151B06E35BF49377D89C79D2DFA824C48D30997C96E322A14/iStock-1384949921.jpg"
+  },
+  {
+    "bytes": 127513,
+    "localPath": "/imported/de/2ea6759ba92cf135ae4c.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "2ea6759ba92cf135ae4cc5d8c0eb738949647b8601c9de4b692f931a38d8a753",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/8CDE8D8FE3778A26A855F0CB23C08CF55D43B887529F957B95A8B736AF9CD5B9/iStock-649101422.jpg"
+  },
+  {
+    "bytes": 56540,
+    "localPath": "/imported/de/304900ac31993d2d5d35.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "304900ac31993d2d5d35d853c887f6cd0b8b7dca02bb2e5f32a5259572e7d04a",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/D6580ECE54156E749B019E673AFE7FBD17729D60DD06CA87B60C8F2A5BE7C39A/iStock-866244036.jpg"
+  },
+  {
+    "bytes": 219247,
+    "localPath": "/imported/de/305b648b543c8dd616a9.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "305b648b543c8dd616a96df714d7a78a3c1877d572cd4fc3be52df902bade17d",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/97368265A1FA0921065B71CFBB409BC965708F0A2BFE4C39D7CE93FB5AFC4221/1000/christliche-singles-hannover-statistik.jpg"
+  },
+  {
+    "bytes": 223196,
+    "localPath": "/imported/de/330906f8037941d744e7.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "330906f8037941d744e79466b2aaada0faf8ec2f0564615a6fdeadeb63c67438",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BCF649F3642A77531E1A34303EC24B0DA873B1B9F6F5F553DEDA5D5769D0A1E3/1000/christliche-singles-nuernberg-statistik.jpg"
+  },
+  {
+    "bytes": 50718,
+    "localPath": "/imported/de/3c9629c49071676063db.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "3c9629c49071676063db95edb12f139f1c2ea6efdca057fc1b54f22838a82ee4",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/083841984D1E9CD2B1054FF7FA5BC19A1C254B7B2E5EBF2BB7356820ADB82B91/600/christlich-verliebt-Köln.jpg"
+  },
+  {
+    "bytes": 131342,
+    "localPath": "/imported/de/3e6e776d2c86f8dc6369.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "3e6e776d2c86f8dc636936a7ec4e9680e0151d0a8537122e0daf0e99dd18456e",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/03F181F24A3C12266F262DDF75168F278EE9D87819B452E5669EE8F5B0632CDA/1000/christlich-verliebt-in-muenchen.jpg"
+  },
+  {
+    "bytes": 207788,
+    "localPath": "/imported/de/42caca531caae454bf2d.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "42caca531caae454bf2dd45b570c876f32396f2b7e40fc9e6dfe309f4a7f99f7",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/1D20C1DDB755380D105B348B44C5A619DEFB6279660FE35DD9F81052F55870DE/1000/christliche-singles-bochum-statistik.jpg"
+  },
+  {
+    "bytes": 219282,
+    "localPath": "/imported/de/42fe0caa568a57666b40.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "42fe0caa568a57666b40edb32c11aa61c44bff378d2c259c363272a02b1a6a4f",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BBEA603B9E84A70636B2441E9F776A593DD0D5914C36F63BDAE49124F61EF2FA/1000/christliche-singles-magdeburg-statistik.jpg"
+  },
+  {
+    "bytes": 191264,
+    "localPath": "/imported/de/43417b2a7d62544ac6b4.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "43417b2a7d62544ac6b41594e81e3c823f6bf189415c5575f8db4a2b30b81965",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/C587FC5FF453895FF4AE09255FDB44D4FB3C2BF126463A1F64B5D2C32F3AE646/1000/Christlich-verliebt-in-Hamburg.jpg"
+  },
+  {
+    "bytes": 155467,
+    "localPath": "/imported/de/46d78b9edf784a53bf81.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "46d78b9edf784a53bf817c476bd972d98c80dd848ef745f44605e13237b7b946",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/1F9EAB0467CC1DAA464D7353D20EB061D61292C13ED2D261B3474F068AEC2FD5/1000/Kassel-christlich-verliebt.jpg"
+  },
+  {
+    "bytes": 43109,
+    "localPath": "/imported/de/4befcd230e9954a0a92f.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "4befcd230e9954a0a92f2cda4dfd2541323a69417b843e4a18366c6fb458ad06",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/01C9CA104E6C63B85D3C08AB1B1FEFEB0AC921DDED4AC9F7E336954423560C12/iStock-1166430990.jpg"
+  },
+  {
+    "bytes": 34782,
+    "localPath": "/imported/de/4d60c9c58b44657f8e01.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "4d60c9c58b44657f8e018265521eb632d7cf4d40eeab158327ddbb804408b6b7",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7E7236BC8E6F2AF2218DA32379A6FB09F936F0E6A1065592E008820681BD5644/iStock-1270382256.jpg"
+  },
+  {
+    "bytes": 17990,
+    "localPath": "/imported/de/5ba86f42e597c5298f14.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "5ba86f42e597c5298f14979765badfbccbc695d25833784b88c1ecd11d616fe0",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/BCEFF42DFF2E902825A254734E35C17E3EBEB306685C87F84E6437EFA4EA02DF/400/bewertung-und-erfahrungen-pic.jpg"
+  },
+  {
+    "bytes": 166409,
+    "localPath": "/imported/de/5fa958ae34d62e551293.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "5fa958ae34d62e551293faa8de33b77461781ed5cdad87caace9f21eaaede626",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/1A6C150FE3D7E355D970CCCC47529F943C5A081BD1AE8316E2C75D363D815725/1000/christlich-verliebt-hannover.jpg"
+  },
+  {
+    "bytes": 232988,
+    "localPath": "/imported/de/615bc6d48522de09d00e.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "615bc6d48522de09d00e41ac8d8b00604194ef86424ff5fbb58c840dba443cb9",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/AB50AB4246C794C2B24B1CDA11A81404077CB3414F9AB17378D37059154BDCFF/1000/christliche-singles-koeln-statistik.jpg"
+  },
+  {
+    "bytes": 222093,
+    "localPath": "/imported/de/61a8ae7c41cbd9a92928.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "61a8ae7c41cbd9a92928ccdf792b0eba7afe3fd86ee1da1f3167f260fb40625b",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/E86C482163D2510C5D0EAE75053FD887CCF29A75C2A8F54AB4F7642C55A3BDA3/1000/christliche-singles-berlin-statistik.jpg"
+  },
+  {
+    "bytes": 423,
+    "localPath": "/imported/de/629363ec34ba433430bc.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "629363ec34ba433430bcc9802390301004daea2c36c435b03bd8382d159735c9",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/5D0F5A4C51A08CECAB365D3A582FDA60EE888DC5953ADA449EFD715F4A4F40B2/icons-youtube-(1).jpg"
+  },
+  {
+    "bytes": 235729,
+    "localPath": "/imported/de/62a11f8e0cd98b06146d.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "62a11f8e0cd98b06146dbfc7b6cda4aae59fe73f768229416d7037b241c19d6c",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/13FFDBC40F1961B6E902270AACA86D73F73587A2EEF1DE61533739AD3F48EF3F/1000/christliche-singles-freiburg-statistik.jpg"
+  },
+  {
+    "bytes": 226624,
+    "localPath": "/imported/de/6dd99bc796a44ae34f7f.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "6dd99bc796a44ae34f7f239b97c1b62e91c35d47266209df400dded4b2c3d7e4",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/B8643065D08DB3B450E40BBE55CC250C66D97818E9AA27977461E0818F46105B/1000/christliche-singles-stuttgart-statistik.jpg"
+  },
+  {
+    "bytes": 224307,
+    "localPath": "/imported/de/73d670e0b348e80ab3b3.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "73d670e0b348e80ab3b3e023cb2dd7e6a7b5519eeb93cdee82d113505f8770c9",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/205212BFA073682F940D3F76F969FED3345C660C34DDB97D95810D08E97F15B9/1000/christliche-singles-hamburg-statistik.jpg"
+  },
+  {
+    "bytes": 235983,
+    "localPath": "/imported/de/7f08e4605d0b6a96f0a4.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "7f08e4605d0b6a96f0a41c1c7466ee6d608cfeb4067b7dcf8e36d6e639a4b050",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/436BD903ED9C854FFA82A20015A8F63C0E612840A169BEB9B936F3014CC19B38/1000/christliche-singles-münster-statistik.jpg"
+  },
+  {
+    "bytes": 209202,
+    "localPath": "/imported/de/84a46a4cb04bb2c4ba77.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "84a46a4cb04bb2c4ba770f880201ff04289586407685388e0b76b105592eda1c",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/253DEB50584C490338982CA5C6B8C312F105D41B3AC5FDD50A55F6A747B14809/1000/christliche-singles-kassel-statistik.jpg"
+  },
+  {
+    "bytes": 228488,
+    "localPath": "/imported/de/88444c20afa59d527056.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "88444c20afa59d5270562622cdc7a5c2837f7953d41767b89202a44da452e4d9",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/A572D53F7D0A1FB82A395415F3B70C20CE8BDF77A74EA116EE98F1A044A67627/1000/christliche-singles-augsburg-statistik.jpg"
+  },
+  {
+    "bytes": 233314,
+    "localPath": "/imported/de/8a97fe98592a5d9fd94f.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "8a97fe98592a5d9fd94fcc84057c90b589735544ea3f64d5de981e28fbf20187",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/3D2F810B75C0CACF8EDA7D84E8237F1712B75C97A9C9C6D776BCF3FF4D994D4B/1000/christliche-singles-bonn-statistik.jpg"
+  },
+  {
+    "bytes": 21117,
+    "localPath": "/imported/de/8cfdc2a3b933151dbfa7.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "8cfdc2a3b933151dbfa75054a4c1e2eaa10e701fed3cf04a4d60d377642850c4",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/013EECB94502447DBCDE4A287F8BCAA965C27D439D85FF58DAE27252E7742F27/iStock-997389536.jpg"
+  },
+  {
+    "bytes": 233298,
+    "localPath": "/imported/de/8d695712354cb88411ec.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "8d695712354cb88411ecf7db755b443473bc93117219eb93ca103e49ae20dff8",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/2806FC0A0CEA503CBF3396AAE7CE24110402E32835856A9B9879C226A098D1B3/1000/christliche-singles-bremen-statistik.jpg"
+  },
+  {
+    "bytes": 215594,
+    "localPath": "/imported/de/99147f8c60176b48d38c.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "99147f8c60176b48d38ca4066e3560b6226306b10c91cb5fd6b8fd317f70b2d5",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/2AA2D4023B33A65937DEAE8D7C8994FEAC6AB1FEB43AD62580D5B7F593691714/1000/christliche-singles-essen-statistik.jpg"
+  },
+  {
+    "bytes": 204739,
+    "localPath": "/imported/de/9ba79a98d04e9e9204f6.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "9ba79a98d04e9e9204f696482a131bff19eae73118e0127fd04172ab4c3499fc",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/B6897AE67AE06BEDFF8BA03B1921376BED1B8FEA5B809782F49C9EA736E82518/1000/christliche-singles-karlsruhe-statistik.jpg"
+  },
+  {
+    "bytes": 206743,
+    "localPath": "/imported/de/b21714e15181494061b8.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "b21714e15181494061b8d8df9c3e29d58aa81ee05b38203faeea7db2b7b52158",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/CD3E2E354B6A06BF5BF386906B6DFE51445DCE3F1DF8FFCD96AFF602F1457A3E/1000/christliche-singles-dortmund-statistik.jpg"
+  },
+  {
+    "bytes": 43477,
+    "localPath": "/imported/de/b87f9c708a392c7779f5.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "b87f9c708a392c7779f5131e4e7c91f68eeb2dbd4c95d9437c0af6ac1c546d62",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/0AD84C6408CEA392C05F987F5CA84B4475A8B511DA72EE8E6B1CDF911FACF80C/iStock-1291323086.jpg"
+  },
+  {
+    "bytes": 178251,
+    "localPath": "/imported/de/bc59a98db664f17b555c.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "bc59a98db664f17b555c1f8d019db462f0b384f6349bf4c8c618738e0e0775df",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/604C7D35898CE144FD5BF4D6CC648891C86186FCC45492F9DCE97009127196F3/1000/christlich-verliebt-in-berlin.jpg"
+  },
+  {
+    "bytes": 187773,
+    "localPath": "/imported/de/c24931862a3742920288.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c24931862a37429202883acdba1c21a0e0a0208cb4ffdd10046af2bcd6b67b23",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/67B3074A06125B30EF3A1EFF93F842646742DD8FBD89D576004E088FF2A243EB/1000/Frankfurt-am-Main-christlich-verliebt.jpg"
+  },
+  {
+    "bytes": 233968,
+    "localPath": "/imported/de/c3210ef314753e9e1560.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "c3210ef314753e9e15604976966f6e35762aac88a306453b348208a97da36572",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/63D0354E42BB89CB9726E7AAB676342A91D42F95FA2C93C66690759725A7633F/1000/christliche-singles-paderborn-statistik.jpg"
+  },
+  {
+    "bytes": 155126,
+    "localPath": "/imported/de/d3c698846a9bcb79d06f.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "d3c698846a9bcb79d06f2913d277589f28d7ab75e3a21dee998a4f23cd0718c1",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/6494055FE5E8F53CD24A411B44388A5B510804864480C497AAF85CB9E2BD797E/1000/christlich-verliebt-de-titelbild.jpg"
+  },
+  {
+    "bytes": 218492,
+    "localPath": "/imported/de/dabe40df082b371f89b4.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "dabe40df082b371f89b4354aec8eeb06b07624235a510ad361fec3b1df059e7b",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7369CA4CA304ECA31EF37C9AAC0063AEAE6D5DDA5E6CE5C9EEC38EBBE29F08B0/1000/christliche-singles-muenchen-statistik.jpg"
+  },
+  {
+    "bytes": 216424,
+    "localPath": "/imported/de/e5739703171ed683a8d3.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "e5739703171ed683a8d3a55d65b42b27a173dab452e468f13f4cf5c4f7737957",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/1A5C3ECEC13EE6384848CAA097FEC1EC7390A83F55DB9168818B032D0B4FB63D/1000/christliche-singles-würzburg-statistik.jpg"
+  },
+  {
+    "bytes": 233842,
+    "localPath": "/imported/de/f008490c15a783bdf6f3.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f008490c15a783bdf6f395c4eb93b1dc5754e6b7dcef7907a641aed39af27c58",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/31482090CBA34C035B960056D0779EA16C6314903D0CD02CD82A5D89807E7B4D/1000/christliche-singles-mainz-statistik.jpg"
+  },
+  {
+    "bytes": 45796,
+    "localPath": "/imported/de/f02daaad438128e9b79e.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f02daaad438128e9b79e5e6d03777f8fb4a460b2a94e51e0cefd92eacc7e3a78",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/3DD71CC89ACE7480F719BF1E5689D029B811470D39D4C74CA8DEFEF02A6264DC/iStock-1357517636.jpg"
+  },
+  {
+    "bytes": 12471,
+    "localPath": "/imported/de/f09f60f1983ea3791da3.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f09f60f1983ea3791da39e69758b356d2fd0e6a25d9ac256e0d2f58dde2714bd",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/398332904899412F492C8D080208F6BF29508D4CC670C73018046CB5B77D6AC1/singleboersen-vergleichen-siegel.jpg"
+  },
+  {
+    "bytes": 228986,
+    "localPath": "/imported/de/f15f7a3d04822adb4c60.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f15f7a3d04822adb4c6053a2402980e961abe802b808d0fff674c9f69b509632",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7E6714278D74E163501DA96EC634E6A022D36B38A4813BA5AB66FCC8197E99EC/1000/christliche-singles-trier-statistik.jpg"
+  },
+  {
+    "bytes": 230902,
+    "localPath": "/imported/de/f1b602bb1a045e739e30.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f1b602bb1a045e739e30a32393ecd5903ba4b03517881a8757e8ecf1879a3f32",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/D21F4BAA0F753A300D3994DCC6DEE4D940AEE1032BA23F863E7AC2B02A097CBF/1000/christliche-singles-frankfurt-statistik.jpg"
+  },
+  {
+    "bytes": 236423,
+    "localPath": "/imported/de/f4d75631bd8eb69865d4.jpg",
+    "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
+    "sha256": "f4d75631bd8eb69865d452339df57f810f91d7c5b7a89884ef2e0b40d460d575",
+    "sourceUrl": "https://static-cms.icony-hosting.de/cms/7D3F654033988BBF88BAE44BE3AEF7569D8CE9CB408F3FAA1A7458DDC3E6DEF9/1000/christliche-singles-dresden-statistik.jpg"
+  }
+]

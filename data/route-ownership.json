@@ -1,0 +1,989 @@
+{
+  "migrated": [
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/christliche-gemeinden/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/dating-tipps/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/faq/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/amstetten/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/bregenz/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/dornbirn/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/eisenstadt/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/graz/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/innsbruck/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/klagenfurt/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/leoben/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/linz/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/salzburg/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/st-poelten/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/steyr/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/villach/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/wels/"
+    },
+    {
+      "market": "at",
+      "owner": "nextjs",
+      "path": "/partnersuche/wien/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/christliche-gemeinden/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/dating-tipps/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/faq/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/aarau/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/basel/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/bern/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/biel/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/lausanne/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/luzern/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/st-gallen/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/thun/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/winterthur/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/partnersuche/zuerich/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/alleinstehend-und-glaeubig/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/als-christ-single-bleiben/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/christliche-dating-fehler-vermeiden/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/christliche-partnersuche-tipps/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/christliche-werte-in-der-partnerschaft/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/erste-nachricht-an-christliche-singles/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/gebet-fuer-die-partnersuche/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/glaube-und-liebe/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/online-dating-fuer-christen/"
+    },
+    {
+      "market": "ch",
+      "owner": "nextjs",
+      "path": "/ratgeber/partnersuche-ab-50/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/bewertungen-und-erfahrungen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/christliche-partnersuche/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/christliche-werte/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/christlicher-chat/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/dating-tipps/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/faq/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/advent/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/allerheiligen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/allerseelen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/antrag-ohne-ring/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/aschermittwoch/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/bibelverse/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/c-s-lewis/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/catholicsingles-com/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/chringles-de/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christen-fit-faktor/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christi-himmelfahrt/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christian-m-haas/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christine-caine/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christlich-verliebt-de/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-feiertage/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-filme/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-geburtstagswuensche/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-gemeinde/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-geschenke/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-neujahrswuensche/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-symbole/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/christliche-tattoos/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/corrie-ten-boom/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/cxsingle-com/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/die-10-gebote/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/dietrich-bonhoeffer/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/du-bist-ein-gott-der-mich-sieht/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/duerfen-christen-schweinefleisch-essen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/epiphanie-dreikoenigsfest/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/faschingsdienstag/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/fastenzeit/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/franz-von-assisi/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/fronleichnam/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/funkyfish-de/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/gruendonnerstag/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/himmlisch-plaudern/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/jesus/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/john-mark-comer/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/judas/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/karwoche/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/katholische-singles/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/kathtreff-org/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/kein-sex-vor-der-ehe/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/mariae-himmelfahrt/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/martin-luthers/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/martin-niemoeller/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/mormonen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/nick-vujicic/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/nikolaustag/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/ostern/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/papst-benedikt-xvi/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/papst-franziskus/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/pfingsten/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/samuel-koch/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/sehr-starke-gebete/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/top-10-staedte-christliche-singles-deutschland/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/trad-wife-rollenbilder-dating/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/vater-unser/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/weihnachten/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/wer-hat-die-bibel-geschrieben/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/magazin/wie-viele-christen-gibt-es/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche-unter-christen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/augsburg/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/berlin/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/bochum/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/bonn/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/bremen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/dortmund/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/dresden/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/duesseldorf/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/essen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/frankfurt-am-main/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/freiburg/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/hamburg/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/hannover/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/karlsruhe/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/kassel/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/leipzig/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/magdeburg/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/mainz/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/muenchen/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/muenster/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/nordrhein-westfalen/koeln/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/nuernberg/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/paderborn/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/stuttgart/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/trier/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/partnersuche/wuerzburg/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/social-media/"
+    },
+    {
+      "market": "de",
+      "owner": "nextjs",
+      "path": "/wahre-liebe/"
+    }
+  ],
+  "notMigrated": [
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/datenschutz.html/",
+      "sourceUrl": "https://christlich-verliebt.at/datenschutz.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/fotoflirt.html/",
+      "sourceUrl": "https://christlich-verliebt.at/fotoflirt.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/fragenflirt.html/",
+      "sourceUrl": "https://christlich-verliebt.at/fragenflirt.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/gutschein/",
+      "sourceUrl": "https://christlich-verliebt.at/gutschein/"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/impressum.html/",
+      "sourceUrl": "https://christlich-verliebt.at/impressum.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/kostenlose-basis-mitgliedschaft.html/",
+      "sourceUrl": "https://christlich-verliebt.at/kostenlose-basis-mitgliedschaft.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/login/",
+      "sourceUrl": "https://christlich-verliebt.at/login/"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/premium-mitgliedschaft.html/",
+      "sourceUrl": "https://christlich-verliebt.at/premium-mitgliedschaft.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/redaktionelle-kontrolle.html/",
+      "sourceUrl": "https://christlich-verliebt.at/redaktionelle-kontrolle.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/registration/",
+      "sourceUrl": "https://christlich-verliebt.at/registration/"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/sicherheit-und-datenschutz.html/",
+      "sourceUrl": "https://christlich-verliebt.at/sicherheit-und-datenschutz.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/suche/",
+      "sourceUrl": "https://christlich-verliebt.at/suche/"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/unsere-erfolgsgeschichten.html/",
+      "sourceUrl": "https://christlich-verliebt.at/unsere-erfolgsgeschichten.html"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
+      "path": "/videodating.html/",
+      "sourceUrl": "https://christlich-verliebt.at/videodating.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/datenschutz.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/datenschutz.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/fotoflirt.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/fotoflirt.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/fragenflirt.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/fragenflirt.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/gutschein/",
+      "sourceUrl": "https://christlich-verliebt.ch/gutschein/"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/impressum.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/impressum.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/kostenlose-basis-mitgliedschaft.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/kostenlose-basis-mitgliedschaft.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/login/",
+      "sourceUrl": "https://christlich-verliebt.ch/login/"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/premium-mitgliedschaft.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/premium-mitgliedschaft.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/redaktionelle-kontrolle.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/redaktionelle-kontrolle.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/registration/",
+      "sourceUrl": "https://christlich-verliebt.ch/registration/"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/sicherheit-und-datenschutz.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/sicherheit-und-datenschutz.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/suche/",
+      "sourceUrl": "https://christlich-verliebt.ch/suche/"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/unsere-erfolgsgeschichten.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/unsere-erfolgsgeschichten.html"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
+      "path": "/videodating.html/",
+      "sourceUrl": "https://christlich-verliebt.ch/videodating.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/datenschutz.html/",
+      "sourceUrl": "https://christlich-verliebt.de/datenschutz.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/fotoflirt.html/",
+      "sourceUrl": "https://christlich-verliebt.de/fotoflirt.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/fragenflirt.html/",
+      "sourceUrl": "https://christlich-verliebt.de/fragenflirt.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/gutschein/",
+      "sourceUrl": "https://christlich-verliebt.de/gutschein/"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/impressum.html/",
+      "sourceUrl": "https://christlich-verliebt.de/impressum.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/kostenlose-basis-mitgliedschaft.html/",
+      "sourceUrl": "https://christlich-verliebt.de/kostenlose-basis-mitgliedschaft.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/login/",
+      "sourceUrl": "https://christlich-verliebt.de/login/"
+    },
+    {
+      "market": "de",
+      "owner": "excluded low-value editorial",
+      "path": "/magazin/beispiel-seite/",
+      "sourceUrl": "https://christlich-verliebt.de/magazin/beispiel-seite/"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/premium-mitgliedschaft.html/",
+      "sourceUrl": "https://christlich-verliebt.de/premium-mitgliedschaft.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/redaktionelle-kontrolle.html/",
+      "sourceUrl": "https://christlich-verliebt.de/redaktionelle-kontrolle.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/registration/",
+      "sourceUrl": "https://christlich-verliebt.de/registration/"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/sicherheit-und-datenschutz.html/",
+      "sourceUrl": "https://christlich-verliebt.de/sicherheit-und-datenschutz.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/suche/",
+      "sourceUrl": "https://christlich-verliebt.de/suche/"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/unsere-erfolgsgeschichten.html/",
+      "sourceUrl": "https://christlich-verliebt.de/unsere-erfolgsgeschichten.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/videodating.html/",
+      "sourceUrl": "https://christlich-verliebt.de/videodating.html"
+    }
+  ]
+}
