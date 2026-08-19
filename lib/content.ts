@@ -41,6 +41,18 @@ const cityImageCredits = new Map<string, CityImageCredit>(cityImageSnapshot.imag
   license: image.license,
   sourcePage: image.sourcePage,
 }]));
+const LOCATION_NAME_OVERRIDES: Record<string, string> = {
+  duesseldorf: "Düsseldorf",
+  "frankfurt-am-main": "Frankfurt am Main",
+  koeln: "Köln",
+  muenchen: "München",
+  muenster: "Münster",
+  nuernberg: "Nürnberg",
+  "st-gallen": "St. Gallen",
+  "st-poelten": "St. Pölten",
+  wuerzburg: "Würzburg",
+  zuerich: "Zürich",
+};
 
 
 export function normalizeContentPath(slug?: string[]): string {
@@ -68,6 +80,15 @@ export function getMagazineCategories(): MagazineCategory[] {
 
 export function getCityImageCredit(page: PublicPage): CityImageCredit | null {
   return page.heroImage ? cityImageCredits.get(page.heroImage) ?? null : null;
+}
+
+export function locationName(page: PublicPage): string {
+  const slug = page.path.split("/").filter(Boolean).at(-1) ?? "";
+  return LOCATION_NAME_OVERRIDES[slug] ?? slug.split("-").map(part => `${part.slice(0, 1).toUpperCase()}${part.slice(1)}`).join(" ");
+}
+
+export function cardLinkLabel(page: PublicPage): string {
+  return page.family === "location" ? `Christliche Singles in ${locationName(page)}` : "Mehr erfahren";
 }
 
 export function registrationUrl(page: PublicPage): string {

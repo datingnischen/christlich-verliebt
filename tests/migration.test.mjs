@@ -29,6 +29,13 @@ test("DE location hub uses city cards instead of a duplicate city link list", ()
   assert.ok(pages.some(page => page.market === "de" && page.family === "location"));
 });
 
+test("location cards use descriptive city-specific anchor text", async () => {
+  const source = await readFile(new URL("../lib/content.ts", import.meta.url), "utf8");
+  const pageSource = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /Christliche Singles in \$\{locationName\(page\)\}/);
+  assert.match(pageSource, />\{cardLinkLabel\(child\)\}<\/a>/);
+});
+
 test("snapshot excludes executable markup and private member media", () => {
   const html = pages.map(page => page.contentHtml).join("\n");
   assert.doesNotMatch(html, /<(?:script|iframe|form|input|button|select|textarea)\b/i);

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
-import { getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { isMarketCode, previewPath } from "@/lib/markets";
 import styles from "./page.module.css";
 
@@ -43,7 +43,7 @@ function ContentCard({ child }: { child: PublicPage }) {
   return <article className={styles.card}>
     {image ? <Image src={image} alt={child.family === "location" ? `Stadtansicht und christliche Partnersuche: ${child.heroTitle}` : `Titelbild: ${child.heroTitle}`} width={640} height={380} /> : <div className={styles.cardFallback}>✦</div>}
     {credit ? <a className={styles.imageCredit} href={credit.sourcePage} target="_blank" rel="nofollow noopener">Bild: {credit.artist} · {credit.license}</a> : null}
-    <div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a href={previewPath(child.market, child.path)}>Mehr erfahren</a></div>
+    <div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a href={previewPath(child.market, child.path)}>{cardLinkLabel(child)}</a></div>
   </article>;
 }
 
