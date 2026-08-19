@@ -39,10 +39,8 @@ function excerpt(text: string) {
 
 function ContentCard({ child }: { child: PublicPage }) {
   const image = selectPageImage(child);
-  const credit = getCityImageCredit(child);
   return <article className={styles.card}>
     {image ? <Image src={image} alt={child.family === "location" ? `Stadtansicht und christliche Partnersuche: ${child.heroTitle}` : `Titelbild: ${child.heroTitle}`} width={640} height={380} /> : <div className={styles.cardFallback}>✦</div>}
-    {credit ? <a className={styles.imageCredit} href={credit.sourcePage} target="_blank" rel="nofollow noopener">Bild: {credit.artist} · {credit.license}</a> : null}
     <div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a href={previewPath(child.market, child.path)}>{cardLinkLabel(child)}</a></div>
   </article>;
 }
@@ -52,6 +50,7 @@ export default async function PublicPageRoute({ params }: Props) {
   const children = getChildPages(page);
   const register = registrationUrl(page);
   const heroImage = selectPageImage(page);
+  const heroCredit = getCityImageCredit(page);
   const contentHtml = renderedContentHtml(page);
   const categoryGroups = page.family === "magazine-hub"
     ? getMagazineCategories().map(category => ({ ...category, pages: children.filter(child => child.categories.includes(category.slug)) })).filter(category => category.pages.length)
@@ -68,7 +67,7 @@ export default async function PublicPageRoute({ params }: Props) {
           <div className={styles.heroActions}><a href={register}>Kostenlos registrieren</a>{page.family !== "location-hub" ? <a href={previewPath(page.market, "/partnersuche/")}>Singles nach Region entdecken</a> : null}</div>
         </div>
         {heroImage
-          ? <Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />
+          ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
       {categoryGroups.length ? <nav className={styles.categoryNav} id="magazin-kategorien" aria-label="Magazinkategorien"><div><span>Magazin-Themen</span><strong>Direkt zur Kategorie springen</strong></div>{categoryGroups.map(category => <a href={`#kategorie-${category.slug}`} key={category.slug}>{category.name}<small>{category.pages.length}</small></a>)}</nav> : null}

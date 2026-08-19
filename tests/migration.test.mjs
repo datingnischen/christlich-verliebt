@@ -74,6 +74,12 @@ test("every location card has a real local image with provenance", async () => {
   }
 });
 
+test("city image attribution is shown on the city article instead of its preview card", async () => {
+  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /className=\{styles\.heroCredit\}/);
+  assert.doesNotMatch(source, /className=\{styles\.imageCredit\}/);
+});
+
 test("magazine categories are imported and rendered as jump targets", async () => {
   assert.deepEqual(magazineCategories.categories.map(category => category.name), [
     "Allgemein",
