@@ -16,7 +16,7 @@ function hostname(request: NextRequest) {
 export function proxy(request: NextRequest) {
   if (request.headers.get("x-cv-rewrite-token") === TOKEN) return NextResponse.next();
   const path = request.nextUrl.pathname;
-  if (path.startsWith("/_next/") || path.startsWith("/brand/") || path.startsWith("/imported/") || path === "/favicon.ico") {
+  if (path.startsWith("/_next/") || path.startsWith("/brand/") || path.startsWith("/imported/") || path.startsWith("/city-images/") || path === "/favicon.ico") {
     return NextResponse.next();
   }
 
@@ -41,4 +41,4 @@ export function proxy(request: NextRequest) {
   return NextResponse.rewrite(destination, { request: { headers } });
 }
 
-export const config = { matcher: ["/((?!_next/static|_next/image|brand/|imported/).*)"] };
+export const config = { matcher: ["/((?!_next/static|_next/image|brand/|imported/|city-images/).*)"] };

@@ -29,3 +29,9 @@ test("direct internal sitemap implementation route is hidden", () => {
   const response = proxy(request("/de/sitemap-data.xml"));
   assert.equal(response.status, 404);
 });
+
+test("versioned city images bypass market rewrites", () => {
+  const response = proxy(request("/city-images/de/augsburg.webp"));
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("x-middleware-rewrite"), null);
+});
