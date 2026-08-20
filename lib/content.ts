@@ -1,6 +1,7 @@
 import snapshot from "@/data/public-pages.json";
 import categorySnapshot from "@/data/magazine-categories.json";
 import cityImageSnapshot from "@/data/city-image-overrides.json";
+import cityWidgetSnapshot from "@/data/city-widgets.json";
 import type { MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
@@ -33,6 +34,14 @@ export type CityImageCredit = {
   sourcePage: string;
 };
 
+export type CityWidget = {
+  market: MarketCode;
+  path: string;
+  postcode: string;
+  sourceUrl: string;
+  widgetUrl: string;
+};
+
 const pages = snapshot.pages as PublicPage[];
 const pageIndex = new Map(pages.map((page) => [`${page.market}:${page.path}`, page]));
 const magazineCategories = categorySnapshot.categories as MagazineCategory[];
@@ -41,6 +50,18 @@ const cityImageCredits = new Map<string, CityImageCredit>(cityImageSnapshot.imag
   license: image.license,
   sourcePage: image.sourcePage,
 }]));
+const CITY_WIDGET_PATTERNS: Record<MarketCode, RegExp> = {
+  de: /^https:\/\/js\.icony\.com\/frame\/\?h=300&id=christlichverliebt&pc=CE302F&z=([0-9]{5})&ds=&ctr=49&it=1$/,
+  at: /^https:\/\/js\.icony\.com\/frame\/\?h=300&id=christlichverliebtat&pc=CE302F&z=([0-9]{4})&ds=&ctr=43&it=1$/,
+  ch: /^https:\/\/js\.icony\.com\/frame\/\?h=300&id=christlichverliebtch&pc=CE302F&z=([0-9]{4})&ds=&ctr=41&it=1$/,
+};
+const cityWidgets = new Map((cityWidgetSnapshot.widgets as CityWidget[]).map(widget => {
+  const match = CITY_WIDGET_PATTERNS[widget.market].exec(widget.widgetUrl);
+  if (!match || match[1] !== widget.postcode || !widget.path.startsWith("/partnersuche/")) {
+    throw new Error(`Invalid city widget contract for ${widget.market}:${widget.path}`);
+  }
+  return [`${widget.market}:${widget.path}`, widget];
+}));
 const LOCATION_NAME_OVERRIDES: Record<string, string> = {
   duesseldorf: "Düsseldorf",
   "frankfurt-am-main": "Frankfurt am Main",
@@ -80,6 +101,10 @@ export function getMagazineCategories(): MagazineCategory[] {
 
 export function getCityImageCredit(page: PublicPage): CityImageCredit | null {
   return page.heroImage ? cityImageCredits.get(page.heroImage) ?? null : null;
+}
+
+export function getCityWidget(page: PublicPage): CityWidget | null {
+  return page.family === "location" ? cityWidgets.get(`${page.market}:${page.path}`) ?? null : null;
 }
 
 export function locationName(page: PublicPage): string {

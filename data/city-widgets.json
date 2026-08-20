@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "widgets": [
+    {
+      "market": "at",
+      "path": "/partnersuche/amstetten/",
+      "postcode": "3300",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/amstetten/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=3300&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/bregenz/",
+      "postcode": "6900",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/bregenz/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=6900&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/dornbirn/",
+      "postcode": "6850",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/dornbirn/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=6850&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/eisenstadt/",
+      "postcode": "7000",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/eisenstadt/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=7000&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/graz/",
+      "postcode": "8010",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/graz/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=8010&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/innsbruck/",
+      "postcode": "6020",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/innsbruck/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=6020&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/klagenfurt/",
+      "postcode": "9020",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/klagenfurt/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=9020&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/leoben/",
+      "postcode": "8700",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/leoben/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=8700&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/linz/",
+      "postcode": "4020",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/linz/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=4020&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/salzburg/",
+      "postcode": "5020",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/salzburg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=5020&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/st-poelten/",
+      "postcode": "3100",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/st-poelten/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=3100&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/steyr/",
+      "postcode": "4400",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/steyr/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=4400&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/villach/",
+      "postcode": "9500",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/villach/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=9500&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/wels/",
+      "postcode": "4600",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/wels/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=4600&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "at",
+      "path": "/partnersuche/wien/",
+      "postcode": "1010",
+      "sourceUrl": "https://christlich-verliebt.at/partnersuche/wien/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtat&pc=CE302F&z=1010&ds=&ctr=43&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/aarau/",
+      "postcode": "5000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/aarau/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=5000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/basel/",
+      "postcode": "4000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/basel/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=4000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/bern/",
+      "postcode": "3000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/bern/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=3000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/biel/",
+      "postcode": "2500",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/biel/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=2500&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/lausanne/",
+      "postcode": "1000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/lausanne/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=1000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/luzern/",
+      "postcode": "6000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/luzern/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=6000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/st-gallen/",
+      "postcode": "9000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/st-gallen/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=9000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/thun/",
+      "postcode": "3600",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/thun/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=3600&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/winterthur/",
+      "postcode": "8400",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/winterthur/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=8400&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/zuerich/",
+      "postcode": "8000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/zuerich/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=8000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/augsburg/",
+      "postcode": "86150",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/augsburg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=86150&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/berlin/",
+      "postcode": "10178",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/berlin/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=10178&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/bochum/",
+      "postcode": "44787",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/bochum/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=44787&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/bonn/",
+      "postcode": "53111",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/bonn/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=53111&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/bremen/",
+      "postcode": "28195",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/bremen/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=28195&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/dortmund/",
+      "postcode": "44135",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/dortmund/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=44135&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/dresden/",
+      "postcode": "01067",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/dresden/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=01067&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/duesseldorf/",
+      "postcode": "40210",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/duesseldorf/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=40210&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/essen/",
+      "postcode": "45127",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/essen/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=45127&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/frankfurt-am-main/",
+      "postcode": "60308",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/frankfurt-am-main/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=60308&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/freiburg/",
+      "postcode": "21729",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/freiburg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=21729&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/hamburg/",
+      "postcode": "20038",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/hamburg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=20038&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/hannover/",
+      "postcode": "30159",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/hannover/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=30159&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/karlsruhe/",
+      "postcode": "76006",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/karlsruhe/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=76006&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/kassel/",
+      "postcode": "34117",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/kassel/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=34117&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/leipzig/",
+      "postcode": "04103",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/leipzig/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=04103&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/magdeburg/",
+      "postcode": "39014",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/magdeburg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=39014&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/mainz/",
+      "postcode": "55116",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/mainz/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=55116&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/muenchen/",
+      "postcode": "80538",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/muenchen/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=80538&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/muenster/",
+      "postcode": "48079",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/muenster/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=48079&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/nordrhein-westfalen/koeln/",
+      "postcode": "50667",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/nordrhein-westfalen/koeln/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=50667&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/nuernberg/",
+      "postcode": "90402",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/nuernberg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=90402&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/paderborn/",
+      "postcode": "33098",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/paderborn/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=33098&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/stuttgart/",
+      "postcode": "70173",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/stuttgart/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=70173&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/trier/",
+      "postcode": "54290",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/trier/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=54290&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "de",
+      "path": "/partnersuche/wuerzburg/",
+      "postcode": "97070",
+      "sourceUrl": "https://christlich-verliebt.de/partnersuche/wuerzburg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=97070&ds=&ctr=49&it=1"
+    }
+  ]
+}

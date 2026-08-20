@@ -6,6 +6,7 @@ const snapshot = JSON.parse(await readFile(new URL("../data/public-pages.json", 
 const pages = snapshot.pages;
 const provenance = JSON.parse(await readFile(new URL("../data/asset-provenance.json", import.meta.url), "utf8"));
 const cityImageOverrides = JSON.parse(await readFile(new URL("../data/city-image-overrides.json", import.meta.url), "utf8"));
+const cityWidgets = JSON.parse(await readFile(new URL("../data/city-widgets.json", import.meta.url), "utf8"));
 const magazineCategories = JSON.parse(await readFile(new URL("../data/magazine-categories.json", import.meta.url), "utf8"));
 const sourceByAsset = new Map(provenance.map(asset => [asset.localPath, asset.sourceUrl]));
 
@@ -34,6 +35,7 @@ test("location cards use descriptive city-specific anchor text", async () => {
   const pageSource = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
   assert.match(source, /Christliche Singles in \$\{locationName\(page\)\}/);
   assert.match(pageSource, />\{cardLinkLabel\(child\)\}<\/a>/);
+  assert.match(pageSource, /child\.family === "location" \? styles\.cardButton : undefined/);
 });
 
 test("footer copy speaks to customers instead of explaining platform plumbing", async () => {
@@ -84,6 +86,28 @@ test("city image attribution is shown on the city article instead of its preview
   const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
   assert.match(source, /className=\{styles\.heroCredit\}/);
   assert.doesNotMatch(source, /className=\{styles\.imageCredit\}/);
+});
+
+test("every city page has one validated market-specific ICONY activity widget", async () => {
+  const locations = pages.filter(page => page.family === "location");
+  assert.equal(cityWidgets.widgets.length, locations.length);
+  assert.deepEqual(
+    cityWidgets.widgets.map(widget => `${widget.market}:${widget.path}`).sort(),
+    locations.map(page => `${page.market}:${page.path}`).sort(),
+  );
+  const patterns = {
+    de: /^https:\/\/js\.icony\.com\/frame\/\?h=300&id=christlichverliebt&pc=CE302F&z=[0-9]{5}&ds=&ctr=49&it=1$/,
+    at: /^https:\/\/js\.icony\.com\/frame\/\?h=300&id=christlichverliebtat&pc=CE302F&z=[0-9]{4}&ds=&ctr=43&it=1$/,
+    ch: /^https:\/\/js\.icony\.com\/frame\/\?h=300&id=christlichverliebtch&pc=CE302F&z=[0-9]{4}&ds=&ctr=41&it=1$/,
+  };
+  for (const widget of cityWidgets.widgets) {
+    assert.deepEqual(Object.keys(widget).sort(), ["market", "path", "postcode", "sourceUrl", "widgetUrl"]);
+    assert.match(widget.widgetUrl, patterns[widget.market]);
+  }
+  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /data-icony-city-widget/);
+  assert.match(source, /referrerPolicy="no-referrer"/);
+  assert.match(source, /sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"/);
 });
 
 test("magazine categories are imported and rendered as jump targets", async () => {

@@ -9,8 +9,9 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit --incremental false",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs && python tests/test_importer.py",
-    "import": "python scripts/import_public_pages.py"
+    "test": "node --experimental-strip-types --test tests/*.test.mjs && python -m unittest discover -s tests -p \"test_*.py\"",
+    "import": "python scripts/import_public_pages.py",
+    "import:widgets": "python scripts/import_city_widgets.py"
   },
   "dependencies": {
     "next": "^16.3.0",

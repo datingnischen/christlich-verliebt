@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
-import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { cardLinkLabel, getChildPages, getCityImageCredit, getCityWidget, getMagazineCategories, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { isMarketCode, previewPath } from "@/lib/markets";
 import styles from "./page.module.css";
 
@@ -41,7 +41,7 @@ function ContentCard({ child }: { child: PublicPage }) {
   const image = selectPageImage(child);
   return <article className={styles.card}>
     {image ? <Image src={image} alt={child.family === "location" ? `Stadtansicht und christliche Partnersuche: ${child.heroTitle}` : `Titelbild: ${child.heroTitle}`} width={640} height={380} /> : <div className={styles.cardFallback}>✦</div>}
-    <div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a href={previewPath(child.market, child.path)}>{cardLinkLabel(child)}</a></div>
+    <div><span>{pageLabel(child)}</span><h3>{child.heroTitle}</h3><p>{excerpt(child.description)}</p><a className={child.family === "location" ? styles.cardButton : undefined} href={previewPath(child.market, child.path)}>{cardLinkLabel(child)}</a></div>
   </article>;
 }
 
@@ -51,6 +51,7 @@ export default async function PublicPageRoute({ params }: Props) {
   const register = registrationUrl(page);
   const heroImage = selectPageImage(page);
   const heroCredit = getCityImageCredit(page);
+  const cityWidget = getCityWidget(page);
   const contentHtml = renderedContentHtml(page);
   const categoryGroups = page.family === "magazine-hub"
     ? getMagazineCategories().map(category => ({ ...category, pages: children.filter(child => child.categories.includes(category.slug)) })).filter(category => category.pages.length)
@@ -70,6 +71,25 @@ export default async function PublicPageRoute({ params }: Props) {
           ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
+      {cityWidget ? <section className={styles.cityWidget} data-icony-city-widget>
+        <div className={styles.cityWidgetFrame}>
+          <iframe
+            src={cityWidget.widgetUrl}
+            title={`Aktive christliche Singles aus ${locationName(page)} und Umgebung`}
+            width="440"
+            height="300"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+          />
+        </div>
+        <div className={styles.cityWidgetCopy}>
+          <p className={styles.eyebrow}>Gerade in Deiner Nähe aktiv</p>
+          <h2>Christliche Singles aus {locationName(page)} und Umgebung</h2>
+          <p>Entdecke Menschen aus Deiner Region, denen Glaube, gemeinsame Werte und eine ehrliche Beziehung wichtig sind.</p>
+          <a href={register}>Jetzt kostenlos kennenlernen</a>
+        </div>
+      </section> : null}
       {categoryGroups.length ? <nav className={styles.categoryNav} id="magazin-kategorien" aria-label="Magazinkategorien"><div><span>Magazin-Themen</span><strong>Direkt zur Kategorie springen</strong></div>{categoryGroups.map(category => <a href={`#kategorie-${category.slug}`} key={category.slug}>{category.name}<small>{category.pages.length}</small></a>)}</nav> : null}
       <section className={styles.layout}>
         <article className={styles.article}>
