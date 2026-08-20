@@ -7,6 +7,7 @@ const pages = snapshot.pages;
 const provenance = JSON.parse(await readFile(new URL("../data/asset-provenance.json", import.meta.url), "utf8"));
 const cityImageOverrides = JSON.parse(await readFile(new URL("../data/city-image-overrides.json", import.meta.url), "utf8"));
 const cityWidgets = JSON.parse(await readFile(new URL("../data/city-widgets.json", import.meta.url), "utf8"));
+const cityWidgetPostcodeOverrides = JSON.parse(await readFile(new URL("../data/city-widget-postcode-overrides.json", import.meta.url), "utf8"));
 const magazineCategories = JSON.parse(await readFile(new URL("../data/magazine-categories.json", import.meta.url), "utf8"));
 const sourceByAsset = new Map(provenance.map(asset => [asset.localPath, asset.sourceUrl]));
 
@@ -104,6 +105,13 @@ test("every city page has one validated market-specific ICONY activity widget", 
     assert.deepEqual(Object.keys(widget).sort(), ["market", "path", "postcode", "sourceUrl", "widgetUrl"]);
     assert.match(widget.widgetUrl, patterns[widget.market]);
   }
+  const freiburg = cityWidgets.widgets.find(widget => widget.market === "de" && widget.path === "/partnersuche/freiburg/");
+  assert.equal(freiburg?.postcode, "79098");
+  assert.match(freiburg?.widgetUrl ?? "", /&z=79098&/);
+  assert.deepEqual(cityWidgetPostcodeOverrides.overrides.map(override => [override.market, override.path, override.legacyPostcode, override.postcode]), [
+    ["de", "/partnersuche/freiburg/", "21729", "79098"],
+  ]);
+  assert.match(cityWidgetPostcodeOverrides.overrides[0].sourceUrl, /^https:\/\/nominatim\.openstreetmap\.org\//);
   const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
   assert.match(source, /data-icony-city-widget/);
   assert.match(source, /referrerPolicy="no-referrer"/);

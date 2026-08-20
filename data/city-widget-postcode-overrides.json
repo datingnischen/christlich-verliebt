@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "legacyPostcode": "21729",
+      "market": "de",
+      "path": "/partnersuche/freiburg/",
+      "postcode": "79098",
+      "reason": "Die Legacy-Konfiguration 21729 liefert Aktivitäten aus Freiburg (Elbe) und dem Landkreis Stade. 79098 gehört zur Altstadt von Freiburg im Breisgau und liefert im öffentlichen ICONY-Frame lokale Aktivitäten aus Freiburg im Breisgau.",
+      "sourceLabel": "OpenStreetMap/Nominatim",
+      "sourceUrl": "https://nominatim.openstreetmap.org/ui/search.html?q=79098%2C+Deutschland"
+    }
+  ],
+  "schemaVersion": 1
+}

@@ -52,6 +52,19 @@ class CityWidgetContractTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     importer.extract_widget_url(fixture, "de")
 
+    def test_applies_documented_freiburg_postcode_override_fail_closed(self):
+        legacy = self.VALID_DE.replace("z=10178", "z=21729")
+        overrides = importer.load_postcode_overrides()
+        corrected, postcode = importer.apply_postcode_override(
+            legacy, "21729", "de", "/partnersuche/freiburg/", overrides
+        )
+        self.assertEqual(postcode, "79098")
+        self.assertIn("&z=79098&", corrected)
+        with self.assertRaisesRegex(ValueError, "Legacy postcode changed"):
+            importer.apply_postcode_override(
+                legacy, "21728", "de", "/partnersuche/freiburg/", overrides
+            )
+
     def test_rejects_unexpected_legacy_source_urls(self):
         path = "/partnersuche/berlin/"
         importer.validate_source_url("https://christlich-verliebt.de/partnersuche/berlin/", "de", path)

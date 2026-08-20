@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = ROOT / "data" / "public-pages.json"
 OUTPUT_PATH = ROOT / "data" / "city-widgets.json"
+OVERRIDES_PATH = ROOT / "data" / "city-widget-postcode-overrides.json"
 USER_AGENT = "christlich-verliebt-public-widget-import/1.0"
 
 MARKET_CONTRACT = {
@@ -65,7 +66,43 @@ def extract_widget_url(html: str, market: str) -> tuple[str, str]:
     return validate_widget_url(src, market)
 
 
-def import_page(page: dict) -> dict:
+def load_postcode_overrides() -> dict[tuple[str, str], dict]:
+    payload = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
+    overrides: dict[tuple[str, str], dict] = {}
+    for record in payload.get("overrides", []):
+        market = str(record["market"])
+        path = str(record["path"])
+        legacy_postcode = str(record["legacyPostcode"])
+        postcode = str(record["postcode"])
+        contract = MARKET_CONTRACT.get(market)
+        if (
+            contract is None
+            or not re.fullmatch(contract["postcode"], legacy_postcode)
+            or not re.fullmatch(contract["postcode"], postcode)
+            or legacy_postcode == postcode
+            or not str(record.get("reason") or "").strip()
+            or not str(record.get("sourceUrl") or "").startswith("https://")
+        ):
+            raise ValueError(f"Invalid city widget postcode override for {market}:{path}")
+        key = (market, path)
+        if key in overrides:
+            raise ValueError(f"Duplicate city widget postcode override for {market}:{path}")
+        overrides[key] = record
+    return overrides
+
+
+def apply_postcode_override(widget_url: str, legacy_postcode: str, market: str, path: str, overrides: dict[tuple[str, str], dict]) -> tuple[str, str]:
+    override = overrides.get((market, path))
+    if override is None:
+        return widget_url, legacy_postcode
+    if str(override["legacyPostcode"]) != legacy_postcode:
+        raise ValueError(f"Legacy postcode changed for overridden widget {market}:{path}")
+    postcode = str(override["postcode"])
+    replaced = widget_url.replace(f"&z={legacy_postcode}&", f"&z={postcode}&", 1)
+    return validate_widget_url(replaced, market)
+
+
+def import_page(page: dict, overrides: dict[tuple[str, str], dict]) -> dict:
     market = str(page["market"])
     path = str(page["path"])
     source_url = str(page["sourceUrl"])
@@ -85,6 +122,7 @@ def import_page(page: dict) -> dict:
         time.sleep(1.5 * (attempt + 1))
     assert response is not None
     widget_url, postcode = extract_widget_url(response.text, market)
+    widget_url, postcode = apply_postcode_override(widget_url, postcode, market, path, overrides)
     return {
         "market": market,
         "path": path,
@@ -99,11 +137,16 @@ def main() -> None:
     locations = [page for page in pages if page["family"] == "location"]
     if len(locations) != 51:
         raise RuntimeError(f"Expected 51 location pages, found {len(locations)}")
+    overrides = load_postcode_overrides()
+    location_routes = {(str(page["market"]), str(page["path"])) for page in locations}
+    unknown_overrides = sorted(set(overrides) - location_routes)
+    if unknown_overrides:
+        raise RuntimeError(f"Postcode overrides reference unknown city routes: {unknown_overrides}")
 
     records: list[dict] = []
     failures: list[str] = []
     with ThreadPoolExecutor(max_workers=6) as pool:
-        futures = {pool.submit(import_page, page): page for page in locations}
+        futures = {pool.submit(import_page, page, overrides): page for page in locations}
         for future in as_completed(futures):
             page = futures[future]
             try:
