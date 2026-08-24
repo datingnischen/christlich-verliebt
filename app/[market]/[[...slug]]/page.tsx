@@ -37,6 +37,65 @@ function excerpt(text: string) {
   return text.length > 165 ? `${text.slice(0, 162).trim()}…` : text;
 }
 
+function safeJsonLd(value: unknown) {
+  return JSON.stringify(value)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
+}
+
+function christianProfileGraph(page: PublicPage) {
+  if (!(page.market === "de" && page.path === "/magazin/christian-m-haas/")) return null;
+  const canonical = "https://christlich-verliebt.de/magazin/christian-m-haas/";
+  const personId = "https://christlich-verliebt.de/magazin/christian-m-haas/#person";
+  const coverPath = page.contentHtml.match(/<img\b[^>]*src=["'](\/imported\/de\/[^"']+)["']/i)?.[1];
+  if (!coverPath) return null;
+  const cover = `https://${page.domain}${coverPath}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonical}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://christlich-verliebt.de/" },
+          { "@type": "ListItem", position: 2, name: "Magazin", item: "https://christlich-verliebt.de/magazin/" },
+          { "@type": "ListItem", position: 3, name: "Christian M. Haas", item: canonical },
+        ],
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${canonical}#profile-page`,
+        url: canonical,
+        name: "Christian M. Haas",
+        inLanguage: "de-DE",
+        breadcrumb: { "@id": `${canonical}#breadcrumb` },
+        mainEntity: { "@id": personId },
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: "Christian M. Haas",
+        url: canonical,
+      },
+      {
+        "@type": "Book",
+        "@id": `${canonical}#dating-ohne-bullshit`,
+        name: "Dating ohne Bullshit",
+        alternateName: "Der ungeschönte Insiderblick ins Online-Dating-Business",
+        isbn: "9783696371210",
+        datePublished: "2026-08-21",
+        inLanguage: "de-DE",
+        url: "https://www.amazon.de/dp/3696371211/",
+        image: cover,
+        author: { "@id": personId },
+      },
+    ],
+  };
+}
+
 function ContentCard({ child }: { child: PublicPage }) {
   const image = selectPageImage(child);
   return <article className={styles.card}>
@@ -53,12 +112,14 @@ export default async function PublicPageRoute({ params }: Props) {
   const heroCredit = getCityImageCredit(page);
   const cityWidget = getCityWidget(page);
   const contentHtml = renderedContentHtml(page);
+  const profileGraph = christianProfileGraph(page);
   const categoryGroups = page.family === "magazine-hub"
     ? getMagazineCategories().map(category => ({ ...category, pages: children.filter(child => child.categories.includes(category.slug)) })).filter(category => category.pages.length)
     : [];
   const categorizedPaths = new Set(categoryGroups.flatMap(category => category.pages.map(child => child.path)));
   const uncategorizedMagazinePages = page.family === "magazine-hub" ? children.filter(child => !categorizedPaths.has(child.path)) : [];
   return <SiteShell market={page.market} registrationHref={register}>
+    {profileGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profileGraph) }} /> : null}
     <main className={styles.page}>
       <section className={styles.hero}>
         <div>

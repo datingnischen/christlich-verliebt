@@ -141,6 +141,26 @@ test("WordPress magazine articles retain local editorial images and audio", () =
   assert.match(article.contentHtml, /<source\b[^>]*src=["']\/imported\/de\/[^"']+\.mp3/i);
 });
 
+test("Christian's canonical profile imports his book and renders a bounded safe entity graph", async () => {
+  const profile = pages.find(page => page.market === "de" && page.path === "/magazin/christian-m-haas/");
+  assert.ok(profile, "Christian's canonical profile is missing");
+  assert.match(profile.contentHtml, /Dating ohne Bullshit/);
+  assert.match(profile.contentHtml, /Der ungeschönte Insiderblick ins Online-Dating-Business/);
+  assert.match(profile.contentHtml, /ISBN 978-3-6963-7121-0/);
+  assert.match(profile.contentHtml, /21\. August 2026/);
+  assert.match(profile.contentHtml, /href=["']https:\/\/www\.amazon\.de\/dp\/3696371211\/["']/);
+  const cover = profile.contentHtml.match(/<img\b[^>]*src=["'](\/imported\/de\/[^"']+)["']/i)?.[1];
+  assert.ok(cover, "The imported local book cover is missing");
+  assert.equal(sourceByAsset.get(cover), "https://christlich-verliebt.de/magazin/wp-content/uploads/2026/08/dating-ohne-bullshit-cover.jpg");
+
+  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /page\.market === "de" && page\.path === "\/magazin\/christian-m-haas\/"/);
+  for (const type of ["BreadcrumbList", "ProfilePage", "Person", "Book"]) assert.match(source, new RegExp(`@type["']?: ["']${type}["']`));
+  assert.match(source, /https:\/\/christlich-verliebt\.de\/magazin\/christian-m-haas\/#person/);
+  assert.match(source, /safeJsonLd/);
+  assert.match(source, /dangerouslySetInnerHTML=\{\{ __html: safeJsonLd\(/);
+});
+
 test("location heroes prefer real city imagery over statistics graphics", () => {
   for (const page of pages.filter(page => page.family === "location" && page.heroImage)) {
     assert.doesNotMatch(sourceByAsset.get(page.heroImage) ?? "", /statistik|infografik/i, page.path);
