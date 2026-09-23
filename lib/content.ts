@@ -95,6 +95,14 @@ export function getChildPages(page: PublicPage): PublicPage[] {
   return [];
 }
 
+// Weitere Städte derselben Länderseite: rotierend ab der aktuellen Stadt, damit jede Stadtseite andere Nachbarn verlinkt.
+export function getMoreCities(page: PublicPage, count = 6): PublicPage[] {
+  if (page.family !== "location") return [];
+  const cities = pages.filter((item) => item.market === page.market && item.family === "location" && item.heroImage).sort((a, b) => a.path.localeCompare(b.path));
+  const start = cities.findIndex((item) => item.path === page.path) + 1;
+  return [...cities.slice(start), ...cities.slice(0, start)].filter((item) => item.path !== page.path).slice(0, count);
+}
+
 export function getMagazineCategories(): MagazineCategory[] {
   return magazineCategories;
 }
