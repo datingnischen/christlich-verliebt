@@ -5,7 +5,7 @@ import { FaqPage } from "@/components/faq-page";
 import { SiteShell } from "@/components/site-shell";
 import { cardLinkLabel, getChildPages, getCityImageCredit, getCityWidget, getMagazineCategories, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
-import { isMarketCode, previewPath } from "@/lib/markets";
+import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import styles from "./page.module.css";
 
 type Props = { params: Promise<{ market: string; slug?: string[] }> };
@@ -166,11 +166,38 @@ export default async function PublicPageRoute({ params }: Props) {
         </article>
         <aside className={styles.sidebar}>
           <div className={styles.cta}><span>Gemeinsame Werte</span><h2>Christliche Singles kennenlernen</h2><p>Erstelle kostenlos Dein Profil und entdecke Menschen, denen Glaube, Respekt und eine ehrliche Beziehung wichtig sind.</p><a href={register}>Jetzt kostenlos starten</a></div>
-          <div className={styles.trust}><h2>Sicher kennenlernen</h2><ul><li>Redaktionell kontrollierte Profile</li><li>Kostenlose Basis-Mitgliedschaft</li><li>Persönlicher Support</li><li>Dating mit gemeinsamen Werten</li></ul></div>
+          <TrustCard market={page.market} />
           <a className={styles.radarCard} href={register}><img src="/brand/umkreissuche-radar.svg" alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" /></a>
         </aside>
       </section> : null}
       {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{page.family === "location-hub" ? "Regionen entdecken" : "Weiterlesen"}</p><h2>{page.family === "location-hub" ? "Christliche Partnersuche in Deiner Nähe" : "Aktuelle Beiträge und Ratgeber"}</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}
     </main>
   </SiteShell>;
+}
+
+const trustIcon = {
+  shield: <><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z" /><path d="m9 12 2 2 4-4" /></>,
+  profile: <><circle cx="10" cy="8" r="4" /><path d="M3 20c0-3.5 3-6 7-6 1.2 0 2.3.2 3.2.6" /><path d="m15 18 2 2 4-4" /></>,
+  lock: <><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /><path d="M12 15v2" /></>,
+  gift: <><rect x="4" y="10" width="16" height="10" rx="1.5" /><path d="M3 7h18v3H3zM12 7v13" /><path d="M12 7C10.5 4 7 4 7 6s3 1 5 1c2 0 5 1 5-1s-3.5-2-5 1" /></>,
+  chat: <><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z" /><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" /></>,
+  heart: <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" />,
+};
+
+function TrustIcon({ name }: { name: keyof typeof trustIcon }) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{trustIcon[name]}</svg>;
+}
+
+function TrustCard({ market }: { market: MarketCode }) {
+  const items = [
+    { icon: "profile", title: "Redaktionell kontrollierte Profile", text: "Unser Team prüft neue Profile persönlich", href: "/redaktionelle-kontrolle.html" },
+    { icon: "lock", title: "Sicherheit & Datenschutz", text: "Deine Daten bleiben geschützt", href: "/sicherheit-und-datenschutz.html" },
+    { icon: "gift", title: "Kostenlose Basis-Mitgliedschaft", text: "Profil anlegen und in Ruhe umschauen", href: "/kostenlose-basis-mitgliedschaft.html" },
+    { icon: "chat", title: "Persönlicher Support", text: "Echte Menschen helfen Dir weiter", href: "/hilfe/" },
+  ] as const;
+  return <div className={styles.trust}>
+    <div className={styles.trustHead}><span className={styles.trustBadge}><TrustIcon name="shield" /></span><div><span>Dein Vertrauen zählt</span><h2>Sicher kennenlernen</h2></div></div>
+    <ul className={styles.trustList}>{items.map(item => <li key={item.href}><a href={publicUrl(market, item.href)}><span className={styles.trustIcon}><TrustIcon name={item.icon} /></span><span><strong>{item.title}</strong><small>{item.text}</small></span><span className={styles.trustArrow} aria-hidden="true">→</span></a></li>)}</ul>
+    <a className={styles.trustFoot} href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}><TrustIcon name="heart" />Paare, die sich hier gefunden haben</a>
+  </div>;
 }
