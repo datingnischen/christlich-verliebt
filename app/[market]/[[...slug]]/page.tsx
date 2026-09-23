@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { FaqPage } from "@/components/faq-page";
 import { SiteShell } from "@/components/site-shell";
 import { cardLinkLabel, getChildPages, getCityImageCredit, getCityWidget, getMagazineCategories, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { isMarketCode, previewPath } from "@/lib/markets";
 import styles from "./page.module.css";
 
@@ -24,12 +26,15 @@ async function activePage(params: Props["params"]) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = await activePage(params);
   const hero = selectPageImage(page);
+  const faq = isFaqPage(page) ? parseFaq(page.contentHtml) : null;
+  const title = faq ? faqTitle(page) : page.title;
+  const description = faq ? faqDescription(page, faq) : page.description;
   return {
-    title: { absolute: page.title },
-    description: page.description,
+    title: { absolute: title },
+    description,
     alternates: { canonical: page.canonical },
     robots: { index: true, follow: true },
-    openGraph: { title: page.title, description: page.description, url: page.canonical, locale: page.locale.replace("-", "_"), type: "website", ...(hero ? { images: [{ url: `https://${page.domain}${hero}` }] } : {}) },
+    openGraph: { title, description, url: page.canonical, locale: page.locale.replace("-", "_"), type: "website", ...(hero ? { images: [{ url: `https://${page.domain}${hero}` }] } : {}) },
   };
 }
 
@@ -113,6 +118,8 @@ export default async function PublicPageRoute({ params }: Props) {
   const cityWidget = getCityWidget(page);
   const contentHtml = renderedContentHtml(page);
   const profileGraph = christianProfileGraph(page);
+  const faq = isFaqPage(page) ? parseFaq(contentHtml) : null;
+  const faqGraph = faq ? faqJsonLd(page, faq, faqTitle(page), faqDescription(page, faq)) : null;
   const categoryGroups = page.family === "magazine-hub"
     ? getMagazineCategories().map(category => ({ ...category, pages: children.filter(child => child.categories.includes(category.slug)) })).filter(category => category.pages.length)
     : [];
@@ -120,12 +127,13 @@ export default async function PublicPageRoute({ params }: Props) {
   const uncategorizedMagazinePages = page.family === "magazine-hub" ? children.filter(child => !categorizedPaths.has(child.path)) : [];
   return <SiteShell market={page.market} registrationHref={register}>
     {profileGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profileGraph) }} /> : null}
+    {faqGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqGraph) }} /> : null}
     <main className={styles.page}>
       <section className={styles.hero}>
         <div>
-          <p className={styles.eyebrow}>{pageLabel(page)}</p>
+          <p className={styles.eyebrow}>{faq ? "Hilfe & Antworten" : pageLabel(page)}</p>
           <h1>{page.heroTitle}</h1>
-          {page.description ? <p className={styles.lead}>{page.description}</p> : null}
+          {faq ? <p className={styles.lead}>{faqDescription(page, faq)}</p> : page.description ? <p className={styles.lead}>{page.description}</p> : null}
           <div className={styles.heroActions}><a href={register}>Kostenlos registrieren</a>{page.family !== "location-hub" ? <a href={previewPath(page.market, "/partnersuche/")}>Singles nach Region entdecken</a> : null}</div>
         </div>
         {heroImage
@@ -152,12 +160,13 @@ export default async function PublicPageRoute({ params }: Props) {
         </div>
       </section> : null}
       {categoryGroups.length ? <nav className={styles.categoryNav} id="magazin-kategorien" aria-label="Magazinkategorien"><div><span>Magazin-Themen</span><strong>Direkt zur Kategorie springen</strong></div>{categoryGroups.map(category => <a href={`#kategorie-${category.slug}`} key={category.slug}>{category.name}<small>{category.pages.length}</small></a>)}</nav> : null}
-      {contentHtml.trim() ? <section className={styles.layout}>
+      {faq ? <FaqPage faq={faq} market={page.market} registrationHref={register} /> : contentHtml.trim() ? <section className={styles.layout}>
         <article className={styles.article}>
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
         <aside className={styles.sidebar}>
           <div className={styles.cta}><span>Gemeinsame Werte</span><h2>Christliche Singles kennenlernen</h2><p>Erstelle kostenlos Dein Profil und entdecke Menschen, denen Glaube, Respekt und eine ehrliche Beziehung wichtig sind.</p><a href={register}>Jetzt kostenlos starten</a></div>
+          <a className={styles.radarCard} href={register}><img src="/brand/umkreissuche-radar.svg" alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" /></a>
           <div className={styles.trust}><h2>Sicher kennenlernen</h2><ul><li>Redaktionell kontrollierte Profile</li><li>Kostenlose Basis-Mitgliedschaft</li><li>Persönlicher Support</li><li>Dating mit gemeinsamen Werten</li></ul></div>
         </aside>
       </section> : null}
