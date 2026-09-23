@@ -123,7 +123,7 @@ export function registrationUrl(page: PublicPage): string {
       ? "magazin"
       : null;
   const base = `https://${page.domain}/registration/`;
-  return aid ? `${base}?aid=${aid}` : base;
+  return aid ? `${base}?AID=${aid}` : base;
 }
 
 export function renderedContentHtml(page: PublicPage): string {

@@ -170,7 +170,7 @@ test("location heroes prefer real city imagery over statistics graphics", () => 
 test("location and magazine registration contexts are wired", async () => {
   const source = await readFile(new URL("../lib/content.ts", import.meta.url), "utf8");
   assert.match(source, /family === "location"/);
-  assert.match(source, /\?aid=\$\{aid\}/);
+  assert.match(source, /\?AID=\$\{aid\}/);
   assert.match(source, /"magazin"/);
   assert.match(source, /renderedContentHtml/);
   assert.match(source, /selectPageImage/);
