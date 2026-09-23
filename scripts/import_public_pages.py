@@ -394,7 +394,10 @@ def main() -> None:
                 if container is None:
                     raise RuntimeError("No public content container")
                 content = clean_content(container, response.url, market, provenance)
-                if len(BeautifulSoup(content, "html.parser").get_text(" ", strip=True)) < 80:
+                # Die WordPress-Magazinseite ist eine Beitragsliste; ihr erster Treffer ist nur der Anreißer des neuesten Artikels.
+                if family_for(path) == "magazine-hub":
+                    content = ""
+                elif len(BeautifulSoup(content, "html.parser").get_text(" ", strip=True)) < 80:
                     raise RuntimeError("Public content too short after sanitization")
                 records.append({
                     "market": market,
