@@ -133,7 +133,7 @@ export default async function PublicPageRoute({ params }: Props) {
         <div>
           <p className={styles.eyebrow}>{faq ? "Hilfe & Antworten" : pageLabel(page)}</p>
           <h1>{page.heroTitle}</h1>
-          {faq ? <p className={styles.lead}>{faqDescription(page, faq)}</p> : page.description ? <p className={styles.lead}>{page.description}</p> : null}
+          {faq ? <p className={styles.lead}>{faq.intro ?? faqDescription(page, faq)}</p> : page.description ? <p className={styles.lead}>{page.description}</p> : null}
           <div className={styles.heroActions}><a href={register}>Kostenlos registrieren</a>{page.family !== "location-hub" ? <a href={previewPath(page.market, "/partnersuche/")}>Singles nach Region entdecken</a> : null}</div>
         </div>
         {heroImage
