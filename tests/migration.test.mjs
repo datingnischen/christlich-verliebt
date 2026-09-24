@@ -153,10 +153,12 @@ test("Christian's canonical profile imports his book and renders a bounded safe 
   assert.ok(cover, "The imported local book cover is missing");
   assert.equal(sourceByAsset.get(cover), "https://christlich-verliebt.de/magazin/wp-content/uploads/2026/08/dating-ohne-bullshit-cover.jpg");
 
-  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
-  assert.match(source, /page\.market === "de" && page\.path === "\/magazin\/christian-m-haas\/"/);
+  const source = await readFile(new URL("../app/[market]/magazin/christian-m-haas/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /PROFILE_PATH = "\/magazin\/christian-m-haas\/"/);
+  assert.match(source, /market === "de" \? getPage\("de", PROFILE_PATH\)/);
   for (const type of ["BreadcrumbList", "ProfilePage", "Person", "Book"]) assert.match(source, new RegExp(`@type["']?: ["']${type}["']`));
-  assert.match(source, /https:\/\/christlich-verliebt\.de\/magazin\/christian-m-haas\/#person/);
+  assert.match(source, /CANONICAL = "https:\/\/christlich-verliebt\.de\/magazin\/christian-m-haas\/"/);
+  assert.match(source, /PERSON_ID = `\$\{CANONICAL\}#person`/);
   assert.match(source, /safeJsonLd/);
   assert.match(source, /dangerouslySetInnerHTML=\{\{ __html: safeJsonLd\(/);
 });

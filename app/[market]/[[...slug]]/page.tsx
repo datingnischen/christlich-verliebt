@@ -11,8 +11,11 @@ import styles from "./page.module.css";
 
 type Props = { params: Promise<{ market: string; slug?: string[] }> };
 
+// Seiten mit eigener Route (z. B. app/[market]/magazin/christian-m-haas) nicht doppelt erzeugen.
+const DEDICATED_ROUTES = new Set(["de:/magazin/christian-m-haas/"]);
+
 export function generateStaticParams() {
-  return getPages().map(page => ({ market: page.market, slug: page.path === "/" ? undefined : page.path.split("/").filter(Boolean) }));
+  return getPages().filter(page => !DEDICATED_ROUTES.has(`${page.market}:${page.path}`)).map(page => ({ market: page.market, slug: page.path === "/" ? undefined : page.path.split("/").filter(Boolean) }));
 }
 export const dynamicParams = false;
 
@@ -52,56 +55,6 @@ function safeJsonLd(value: unknown) {
     .replace(/\u2029/g, "\\u2029");
 }
 
-function christianProfileGraph(page: PublicPage) {
-  if (!(page.market === "de" && page.path === "/magazin/christian-m-haas/")) return null;
-  const canonical = "https://christlich-verliebt.de/magazin/christian-m-haas/";
-  const personId = "https://christlich-verliebt.de/magazin/christian-m-haas/#person";
-  const coverPath = page.contentHtml.match(/<img\b[^>]*src=["'](\/imported\/de\/[^"']+)["']/i)?.[1];
-  if (!coverPath) return null;
-  const cover = `https://${page.domain}${coverPath}`;
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${canonical}#breadcrumb`,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Startseite", item: "https://christlich-verliebt.de/" },
-          { "@type": "ListItem", position: 2, name: "Magazin", item: "https://christlich-verliebt.de/magazin/" },
-          { "@type": "ListItem", position: 3, name: "Christian M. Haas", item: canonical },
-        ],
-      },
-      {
-        "@type": "ProfilePage",
-        "@id": `${canonical}#profile-page`,
-        url: canonical,
-        name: "Christian M. Haas",
-        inLanguage: "de-DE",
-        breadcrumb: { "@id": `${canonical}#breadcrumb` },
-        mainEntity: { "@id": personId },
-      },
-      {
-        "@type": "Person",
-        "@id": personId,
-        name: "Christian M. Haas",
-        url: canonical,
-      },
-      {
-        "@type": "Book",
-        "@id": `${canonical}#dating-ohne-bullshit`,
-        name: "Dating ohne Bullshit",
-        alternateName: "Der ungeschönte Insiderblick ins Online-Dating-Business",
-        isbn: "9783696371210",
-        datePublished: "2026-08-21",
-        inLanguage: "de-DE",
-        url: "https://www.amazon.de/dp/3696371211/",
-        image: cover,
-        author: { "@id": personId },
-      },
-    ],
-  };
-}
-
 function ContentCard({ child }: { child: PublicPage }) {
   const image = selectPageImage(child);
   return <article className={styles.card}>
@@ -119,7 +72,6 @@ export default async function PublicPageRoute({ params }: Props) {
   const heroCredit = getCityImageCredit(page);
   const cityWidget = getCityWidget(page);
   const contentHtml = renderedContentHtml(page);
-  const profileGraph = christianProfileGraph(page);
   const faq = isFaqPage(page) ? parseFaq(contentHtml) : null;
   const faqGraph = faq ? faqJsonLd(page, faq, faqTitle(page), faqDescription(page, faq)) : null;
   const categoryGroups = page.family === "magazine-hub"
@@ -128,7 +80,6 @@ export default async function PublicPageRoute({ params }: Props) {
   const categorizedPaths = new Set(categoryGroups.flatMap(category => category.pages.map(child => child.path)));
   const uncategorizedMagazinePages = page.family === "magazine-hub" ? children.filter(child => !categorizedPaths.has(child.path)) : [];
   return <SiteShell market={page.market} registrationHref={register}>
-    {profileGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profileGraph) }} /> : null}
     {faqGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqGraph) }} /> : null}
     <main className={styles.page}>
       <section className={styles.hero}>
