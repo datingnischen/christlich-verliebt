@@ -2,6 +2,7 @@ import snapshot from "@/data/public-pages.json";
 import categorySnapshot from "@/data/magazine-categories.json";
 import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
+import { movedAboutPath } from "@/lib/about";
 import type { MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
@@ -42,7 +43,10 @@ export type CityWidget = {
   widgetUrl: string;
 };
 
-const pages = snapshot.pages as PublicPage[];
+const pages = (snapshot.pages as PublicPage[]).map((page) => {
+  const path = movedAboutPath(page.market, page.path);
+  return path === page.path ? page : { ...page, path, canonical: `https://${page.domain}${path}` };
+});
 const pageIndex = new Map(pages.map((page) => [`${page.market}:${page.path}`, page]));
 const magazineCategories = categorySnapshot.categories as MagazineCategory[];
 const cityImageCredits = new Map<string, CityImageCredit>(cityImageSnapshot.images.map(image => [image.localPath, {
@@ -152,6 +156,7 @@ export function selectPageImage(page: PublicPage): string | null {
 }
 
 export function pageLabel(page: PublicPage): string {
+  if (page.path.startsWith("/ueber-uns/")) return "Über christlich-verliebt";
   if (page.family === "location" || page.family === "location-hub") return "Christliche Partnersuche vor Ort";
   if (page.family === "magazine" || page.family === "magazine-hub") return "Magazin für Glaube, Liebe und Beziehung";
   if (page.family === "guide" || page.family === "guide-hub") return "Ratgeber für christliche Singles";
