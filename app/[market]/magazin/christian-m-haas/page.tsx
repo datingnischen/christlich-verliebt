@@ -23,6 +23,7 @@ const SOCIALS = [
 const STATS = [
   { value: "2008", label: "im Online-Dating aktiv" },
   { value: "8 Jahre", label: "Singlebörsen entwickelt und betrieben" },
+  { value: "Seit 2016", label: "Datingexperte von christlich-verliebt" },
   { value: "2026", label: "Buch „Dating ohne Bullshit“" },
 ];
 
@@ -37,8 +38,7 @@ const FOCUS = [
 const TIMELINE = [
   { year: "2008", title: "Einstieg ins Online-Dating", text: "Arbeit an Produkt, Inhalten und Community spezialisierter Datingplattformen." },
   { year: "2008–2016", title: "Singlebörsen aufgebaut und betrieben", text: "Entwicklung und Betrieb eigener Plattformen mit PHP, MySQL und Template-Engines." },
-  { year: "Danach", title: "Neue technische Lösungen", text: "Umsetzung von Plattform-Lösungen mit dem Java Spring Framework." },
-  { year: "Heute", title: "Magazin von christlich-verliebt", text: "Ratgeber, Magazinbeiträge und Qualitätskontrolle für gläubige Singles im DACH-Raum." },
+  { year: "Seit 2016", title: "Zusammenarbeit mit ICONY & Datingexperte von christlich-verliebt", text: "Zusammenarbeit mit der ICONY GmbH, die christlich-verliebt betreibt, unter anderem mit Plattform-Lösungen auf Basis des Java Spring Framework. Als Datingexperte begleitet er Ratgeber, Magazinbeiträge und die Qualitätskontrolle für gläubige Singles im DACH-Raum." },
 ];
 
 const FAQ = [
@@ -193,7 +193,7 @@ export default async function ChristianProfilePage({ params }: Props) {
           <h2 id="ueber-christian">Technik, Community und ein klarer Blick auf das, was zählt</h2>
         </div>
         <div className={styles.aboutText}>
-          <p>Christian M. Haas hat sich auf Datingplattformen für bestimmte Zielgruppen spezialisiert. Auf christlich-verliebt.de unterstützt er als Experte und Berater das Magazin mit praxisnahen Ratgebern rund um die seriöse Partnersuche für gläubige Singles im DACH-Raum.</p>
+          <p>Christian M. Haas hat sich auf Datingplattformen für bestimmte Zielgruppen spezialisiert. Seit 2016 arbeitet er mit der ICONY GmbH zusammen und ist Datingexperte von christlich-verliebt.de: Als Experte und Berater unterstützt er das Magazin mit praxisnahen Ratgebern rund um die seriöse Partnersuche für gläubige Singles im DACH-Raum.</p>
           <p>Durch seine langjährige Arbeit an Datingprojekten kennt er beide Seiten: die Technik hinter einer Plattform ebenso wie Community-Aufbau, Inhalte und Suchmaschinenoptimierung.</p>
           <blockquote>Menschen mit gemeinsamen Werten und Glauben zusammenführen – respektvoll, sicher und authentisch.</blockquote>
         </div>

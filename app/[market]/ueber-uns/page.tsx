@@ -41,9 +41,9 @@ const AUTHOR = {
   name: "Christian M. Haas",
   jobTitle: "Datingexperte & Autor",
   image: "/brand/christian-m-haas.jpg",
-  bio: "Christian M. Haas beschäftigt sich seit 2008 mit Online-Dating und hat sich auf Plattformen für bestimmte Zielgruppen spezialisiert. Für christlich-verliebt schreibt und begleitet er das Magazin mit praxisnahen Ratgebern zur seriösen Partnersuche für gläubige Singles im DACH-Raum. Sein Fokus: Menschen mit gemeinsamen Werten und Glauben zusammenzuführen – respektvoll, sicher und authentisch.",
+  bio: "Christian M. Haas beschäftigt sich seit 2008 mit Online-Dating und hat sich auf Plattformen für bestimmte Zielgruppen spezialisiert. Seit 2016 arbeitet er mit der ICONY GmbH zusammen und ist Datingexperte von christlich-verliebt: Er schreibt und begleitet das Magazin mit praxisnahen Ratgebern zur seriösen Partnersuche für gläubige Singles im DACH-Raum. Sein Fokus: Menschen mit gemeinsamen Werten und Glauben zusammenzuführen – respektvoll, sicher und authentisch.",
   topics: ["Christliche Partnersuche", "Profil & Kommunikation", "Sicherheit beim Kennenlernen", "Glaube im Profil"],
-  facts: ["Seit 2008 im Online-Dating aktiv", "Entwicklung und Betrieb von Singlebörsen", "Buch „Dating ohne Bullshit“ (2026)"],
+  facts: ["Seit 2008 im Online-Dating aktiv", "2008–2016 Entwicklung und Betrieb von Singlebörsen", "Seit 2016 Zusammenarbeit mit ICONY und Datingexperte von christlich-verliebt", "Buch „Dating ohne Bullshit“ (2026)"],
   sameAs: ["https://www.linkedin.com/in/christian-m-haas-457323379", "https://gravatar.com/automatic8c1daff973", "https://datingnischen.de/christian"],
 };
 
