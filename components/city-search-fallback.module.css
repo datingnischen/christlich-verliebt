@@ -1,0 +1,9 @@
+.fallback{margin-top:34px;padding:clamp(24px,4vw,36px);display:flex;align-items:center;justify-content:space-between;gap:32px;border:1px solid var(--line);border-radius:24px;background:radial-gradient(circle at 100% 0,rgba(206,48,47,.08),transparent 40%),linear-gradient(135deg,#fff,var(--green-soft));box-shadow:0 15px 45px rgba(51,51,51,.07)}
+.copy{max-width:760px;min-width:0}
+.eyebrow{color:var(--partner);text-transform:uppercase;letter-spacing:.13em;font-size:13px;font-weight:900;margin:0 0 12px}
+.copy h2{margin:0;font:700 clamp(26px,3vw,34px)/1.15 Georgia,serif;color:var(--ink)}
+.copy>p:not(.eyebrow){margin:14px 0 0;color:var(--muted);font-size:17px;line-height:1.65}
+.button{flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border-radius:999px;background:var(--sage);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 8px 20px rgba(41,132,44,.18);transition:background-color .18s ease,transform .18s ease}
+.button:hover{background:var(--sage-dark);transform:translateY(-1px)}
+.button:focus-visible{outline:3px solid rgba(206,48,47,.34);outline-offset:3px}
+@media(max-width:720px){.fallback{flex-direction:column;align-items:stretch;gap:22px;border-radius:20px}.button{width:100%;text-align:center}}

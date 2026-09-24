@@ -29,6 +29,11 @@ export function publicUrl(market: MarketCode, pathname = "/"): string {
   return `https://${getMarket(market).domain}${path}`;
 }
 
+// Individuelle ICONY-Suche: nur auf der Live-Domain vorhanden, nie auf dem Vercel-Host.
+export function individualSearchUrl(market: MarketCode): string {
+  return `https://${getMarket(market).domain}/suche/?AID=location`;
+}
+
 export function previewPath(market: MarketCode, pathname = "/"): string {
   const path = pathname === "/" ? "" : `/${pathname.replace(/^\/+|\/+$/g, "")}`;
   return `/${market}${path}`;
