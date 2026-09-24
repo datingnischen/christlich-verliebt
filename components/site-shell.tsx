@@ -2,6 +2,12 @@ import Image from "next/image";
 import { getMarket, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import styles from "./site-shell.module.css";
 
+function Flag({ market }: { market: MarketCode }) {
+  if (market === "ch") return <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#d52b1e" /><path d="M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z" fill="#fff" /></svg>;
+  const stripes = market === "at" ? ["#c8102e", "#fff", "#c8102e"] : ["#000", "#dd0000", "#ffce00"];
+  return <svg viewBox="0 0 30 18" aria-hidden="true">{stripes.map((fill, i) => <rect key={i} y={i * 6} width="30" height="6" fill={fill} />)}</svg>;
+}
+
 export function SiteShell({ children, market, registrationHref }: { children: React.ReactNode; market: MarketCode; registrationHref?: string }) {
   const config = getMarket(market);
   const registration = registrationHref ?? publicUrl(market, "/registration/");
@@ -40,8 +46,10 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
       <div className={styles.footerGrid}>
         <section><h3>Entdecken</h3><a href={previewPath(market, "/partnersuche/")}>Partnersuche nach Region</a>{market === "de" ? <a href={previewPath(market, "/magazin/")}>Magazin</a> : null}<a href={previewPath(market, "/dating-tipps/")}>Dating-Tipps</a><a href={previewPath(market, "/faq/")}>Häufige Fragen</a></section>
         <section><h3>Mitgliedschaft</h3><a href={registration}>Kostenlos registrieren</a><a href={login}>Login</a><a href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}>Basis-Mitgliedschaft</a><a href={publicUrl(market, "/premium-mitgliedschaft.html")}>Premium-Mitgliedschaft</a></section>
-        <section><h3>Vertrauen</h3><a href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a><a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionelle Kontrolle</a><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a></section>
-        <section><h3>Service & Länder</h3><a href={publicUrl(market, "/hilfe/")}>Hilfe & Support</a><a href={publicUrl(market, "/datenschutz.html")}>Datenschutz</a><a href={publicUrl(market, "/impressum.html")}>Impressum</a>{MARKET_CODES.filter(code => code !== market).map(code => <a key={code} href={publicUrl(code)}>{getMarket(code).countryName} · {getMarket(code).domain}</a>)}</section>
+        <section><h3>Über uns</h3><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a>{market === "de" ? <a href={previewPath(market, "/bewertungen-und-erfahrungen/")}>Bewertungen & Erfahrungen</a> : null}<a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionelle Kontrolle</a><a href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a>{market === "de" ? <a href={previewPath(market, "/social-media/")}>Social Media</a> : null}</section>
+        <section><h3>Service</h3><a href={publicUrl(market, "/hilfe/")}>Hilfe & Support</a><a href={publicUrl(market, "/datenschutz.html")}>Datenschutz</a><a href={publicUrl(market, "/impressum.html")}>Impressum</a>
+          <div className={styles.flags}>{MARKET_CODES.filter(code => code !== market).map(code => <a key={code} href={publicUrl(code)} aria-label={`${getMarket(code).countryName}: ${getMarket(code).domain}`} title={`${getMarket(code).countryName} · ${getMarket(code).domain}`}><Flag market={code} /></a>)}</div>
+        </section>
       </div>
       <p className={styles.legal}>Bei christlich-verliebt stehen gemeinsame Werte, ein respektvoller Austausch und ehrliches Kennenlernen im Mittelpunkt.</p>
     </footer>
