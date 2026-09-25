@@ -1,0 +1,106 @@
+# Cutover-Vertrag für christlich-verliebt.de / .at / .ch
+#
+# Prüfen:  python scripts/validate_migration_contract.py migration-contract.yaml
+# Gate:    python scripts/validate_migration_contract.py --require-cutover-ready migration-contract.yaml
+#
+# Stand 2026-09-25: bewusst NICHT gültig. Alles, was noch nicht belegt ist, steht als
+# „[REQUIRED] …“ oder `false` drin – der Validator listet genau diese Punkte als Fehler.
+# Erst wenn beide Befehle ohne Fehler durchlaufen, darf DNS/Domain umgestellt werden.
+# Werte nur eintragen, wenn sie nachgewiesen sind (Prüfprotokoll, curl-Ausgabe, Commit).
+
+version: 1
+project: christlich-verliebt
+
+state:
+  preview: ready                # christlich-verliebt.vercel.app, /de /at /ch
+  production_deployment: blocked
+  dns_cutover: blocked
+
+snapshot:
+  serializer: scripts/import_public_pages.py
+  serializer_version: adfd782   # letzter Commit am Importer
+  dependency_lock_sha256: 6081ea8c3e0f233984eb862106b42e7203d5d1b7878ccb029de5d3daaa4ed8ba  # package-lock.json
+  source_fixture_sha256: "[REQUIRED] SHA-256 der Roh-Quellen des Imports – der Importer speichert noch keine Fixtures"
+  output_sha256: 93f44324673f8a5cd6f173fb4d5ba916559bac7dd6f15f815f2265d25c315357  # data/public-pages.json
+  acquisition_timestamp_policy: separate-audit-artifact
+
+# Entspricht dem, was scripts/import_public_pages.py heute erzwingt (fetch_response, assert_public_https_url).
+fetch_policy:
+  source_hosts:
+    - christlich-verliebt.de
+    - christlich-verliebt.at
+    - christlich-verliebt.ch
+    - static-cms.icony-hosting.de
+    - static2.icony-hosting.de
+  allowed_ports: [443]
+  connect_timeout_seconds: 10
+  read_timeout_seconds: 45
+  total_timeout_seconds: 55
+  max_redirects: 5
+  max_response_bytes: 15000000
+  # Soll-Liste: der Importer prüft den Content-Type noch nicht selbst.
+  allowed_content_types:
+    - text/html
+    - application/xml
+    - text/xml
+    - application/json
+    - image/jpeg
+    - image/png
+    - image/webp
+    - image/gif
+    - image/svg+xml
+    - audio/mpeg
+  reject_non_public_ips: true
+
+# Pfadfamilien je Eigentümer. Einzelrouten stehen in data/route-ownership.json.
+# verified/query_preserved erst auf true, wenn auf allen drei Domains per curl geprüft.
+route_ownership:
+  # --- Next.js (Vercel) ---
+  - {path_family: /, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /partnersuche/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /magazin/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /ratgeber/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /faq/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /ueber-uns/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /ueber-uns/bewertungen/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /bewertungen-und-erfahrungen/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 308, upstream: null, verified: false}
+  - {path_family: /christliche-gemeinden/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /christliche-partnersuche/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /christliche-werte/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /christlicher-chat/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /partnersuche-unter-christen/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /social-media/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  - {path_family: /wahre-liebe/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
+  # --- ICONY (Legacy-Origin) ---
+  # /dating-tipps/ gehört laut Decision 2026-09-23 ICONY, wird im Repo aber noch von Next.js gerendert
+  # (data/public-pages.json, route-ownership.json) – vor dem Cutover aus Next.js entfernen.
+  - {path_family: /dating-tipps/, owner: legacy, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  - {path_family: /login/, owner: legacy, methods: [GET, HEAD, POST], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  - {path_family: /registration/, owner: legacy, methods: [GET, HEAD, POST], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  - {path_family: /suche/, owner: legacy, methods: [GET, HEAD, POST], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  - {path_family: /gutschein/, owner: legacy, methods: [GET, HEAD, POST], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  - {path_family: /hilfe/, owner: legacy, methods: [GET, HEAD, POST], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  - {path_family: /kontakt/, owner: legacy, methods: [GET, HEAD, POST], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+  # *.html = Rechtstexte, Mitgliedschaft, Sicherheit, Redaktion, Erfolgsgeschichten, Fragen-/Fotoflirt, Videodating
+  - {path_family: "/*.html", owner: legacy, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: "[REQUIRED] Legacy-Origin", verified: false}
+
+cutover:
+  legacy_origin: "[REQUIRED] separat erreichbarer HTTPS-Origin der ICONY-Plattform, je Domain nachgewiesen"
+  certificate_verified: false
+  redirects_verified: false
+  forms_verified: false
+  cookies_verified: false
+  sessions_verified: false
+  legal_verified: false
+  magazine_verified: false
+  rollback:
+    previous_dns_values: "[REQUIRED] aktuelle A/AAAA/CNAME-Werte von .de/.at/.ch vor der Umstellung"
+    target: "[REQUIRED] Rücksprungziel (bisheriger ICONY-Host)"
+    responsible_operator: "[REQUIRED] wer schaltet zurück"
+    ttl_seconds: 300
+
+review:
+  immutable_range: "[REQUIRED] <erster>..<letzter> Commit-SHA des geprüften Stands"
+  passed: false
+  security_concerns: []
+  logic_errors: []
