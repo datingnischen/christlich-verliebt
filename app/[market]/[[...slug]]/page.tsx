@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { CityPage } from "@/components/city-page";
 import { CitySearchFallback } from "@/components/city-search-fallback";
 import { FaqPage } from "@/components/faq-page";
 import { SiteShell } from "@/components/site-shell";
-import { cardLinkLabel, getChildPages, getCityImageCredit, getCityWidget, getMagazineCategories, getMoreCities, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
@@ -68,10 +69,10 @@ export default async function PublicPageRoute({ params }: Props) {
   const page = await activePage(params);
   const children = getChildPages(page);
   const register = registrationUrl(page);
+  if (page.family === "location") return <SiteShell market={page.market} registrationHref={register}><CityPage page={page} /></SiteShell>;
   const heroImage = selectPageImage(page);
   const hubCities = page.family === "location-hub" ? hubCollageCities(page.market, children) : [];
   const heroCredit = getCityImageCredit(page);
-  const cityWidget = getCityWidget(page);
   const contentHtml = renderedContentHtml(page);
   const faq = isFaqPage(page) ? parseFaq(contentHtml) : null;
   const faqGraph = faq ? faqJsonLd(page, faq, faqTitle(page), faqDescription(page, faq)) : null;
@@ -96,25 +97,6 @@ export default async function PublicPageRoute({ params }: Props) {
           ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
-      {cityWidget ? <section className={styles.cityWidget} data-icony-city-widget>
-        <div className={styles.cityWidgetFrame}>
-          <iframe
-            src={cityWidget.widgetUrl}
-            title={`Aktive christliche Singles aus ${locationName(page)} und Umgebung`}
-            width="440"
-            height="300"
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
-          />
-        </div>
-        <div className={styles.cityWidgetCopy}>
-          <p className={styles.eyebrow}>Gerade in Deiner Nähe aktiv</p>
-          <h2>Christliche Singles aus {locationName(page)} und Umgebung</h2>
-          <p>Entdecke Menschen aus Deiner Region, denen Glaube, gemeinsame Werte und eine ehrliche Beziehung wichtig sind.</p>
-          <a href={register}>Jetzt kostenlos kennenlernen</a>
-        </div>
-      </section> : null}
       {categoryGroups.length ? <nav className={styles.categoryNav} id="magazin-kategorien" aria-label="Magazinkategorien"><div><span>Magazin-Themen</span><strong>Direkt zur Kategorie springen</strong></div>{categoryGroups.map(category => <a href={`#kategorie-${category.slug}`} key={category.slug}>{category.name}<small>{category.pages.length}</small></a>)}</nav> : null}
       {faq ? <FaqPage faq={faq} market={page.market} registrationHref={register} /> : contentHtml.trim() ? <section className={styles.layout}>
         <article className={styles.article}>
@@ -127,7 +109,6 @@ export default async function PublicPageRoute({ params }: Props) {
         </aside>
       </section> : null}
       {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{page.family === "location-hub" ? "Regionen entdecken" : "Weiterlesen"}</p><h2>{page.family === "location-hub" ? "Christliche Partnersuche in Deiner Nähe" : "Aktuelle Beiträge und Ratgeber"}</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div>{page.family === "location-hub" ? <CitySearchFallback market={page.market} /> : null}</section> : null}
-      {page.family === "location" ? <MoreCities page={page} /> : null}
     </main>
   </SiteShell>;
 }
@@ -179,21 +160,4 @@ function HubCollage({ cities, total, market }: { cities: PublicPage[]; total: nu
       <div className={styles.hubBadge}><strong>{total}</strong><small>Städte</small></div>
     </div>
   </div>;
-}
-
-function MoreCities({ page }: { page: PublicPage }) {
-  const cities = getMoreCities(page);
-  if (!cities.length) return null;
-  const total = getChildPages(getPage(page.market, "/partnersuche/") ?? page).length;
-  return <section className={styles.moreCities} aria-labelledby="weitere-staedte">
-    <div className={styles.moreCitiesHead}>
-      <div><p className={styles.eyebrow}>Auch in Deiner Nähe</p><h2 id="weitere-staedte">Christliche Singles in weiteren Städten</h2></div>
-      <a href={previewPath(page.market, "/partnersuche/")}>{total > cities.length ? `Alle ${total} Städte` : "Zur Städteübersicht"} <span aria-hidden="true">→</span></a>
-    </div>
-    <div className={styles.cityTiles}>{cities.map(city => <a className={styles.cityTile} href={previewPath(city.market, city.path)} key={city.path}>
-      <Image src={staticAsset(city.heroImage!)} alt={`Christliche Singles in ${locationName(city)}`} width={480} height={360} sizes="(max-width: 640px) 50vw, (max-width: 960px) 33vw, 400px" />
-      <span><small>Singles in</small><strong>{locationName(city)}</strong></span>
-      <i aria-hidden="true">→</i>
-    </a>)}</div>
-  </section>;
 }

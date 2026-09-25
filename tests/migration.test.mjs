@@ -84,7 +84,7 @@ test("every location card has a real local image with provenance", async () => {
 });
 
 test("city image attribution is shown on the city article instead of its preview card", async () => {
-  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  const source = await readFile(new URL("../components/city-page.tsx", import.meta.url), "utf8");
   assert.match(source, /className=\{styles\.heroCredit\}/);
   assert.doesNotMatch(source, /className=\{styles\.imageCredit\}/);
 });
@@ -112,7 +112,7 @@ test("every city page has one validated market-specific ICONY activity widget", 
     ["de", "/partnersuche/freiburg/", "21729", "79098"],
   ]);
   assert.match(cityWidgetPostcodeOverrides.overrides[0].sourceUrl, /^https:\/\/nominatim\.openstreetmap\.org\//);
-  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  const source = await readFile(new URL("../components/city-page.tsx", import.meta.url), "utf8");
   assert.match(source, /data-icony-city-widget/);
   assert.match(source, /referrerPolicy="no-referrer"/);
   assert.match(source, /sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"/);
@@ -192,4 +192,16 @@ test("routing recognizes all three markets and protects production canonicals", 
   }
   assert.match(proxySource, /NextResponse\.redirect\(canonical, 308\)/);
   assert.doesNotMatch(proxySource, /headers\.get\("x-forwarded-host"\)/);
+});
+
+test("every city page has coordinates and a region on the market map", async () => {
+  const { cityGeo } = await import("../lib/city-geo.ts");
+  const cityMap = JSON.parse(await readFile(new URL("../data/city-map.json", import.meta.url), "utf8"));
+  const locations = pages.filter(page => page.family === "location");
+  assert.equal(locations.length, 51);
+  for (const page of locations) {
+    const geo = cityGeo(page.market, page.path);
+    assert.ok(geo, `Missing coordinates for ${page.market}:${page.path}`);
+    assert.ok(cityMap[page.market].regions[geo.region], `Unknown region ${geo.region} for ${page.path}`);
+  }
 });
