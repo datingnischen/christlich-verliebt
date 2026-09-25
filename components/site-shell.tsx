@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getMarket, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { ABOUT_REVIEWS_PATH, ABOUT_ROOT_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages } from "@/lib/about";
+import { staticAsset } from "@/lib/static-asset";
 import styles from "./site-shell.module.css";
 
 // Alle Flaggen im selben 3:2-Rahmen, damit sie im Footer gleich breit sind (auch die eigentlich quadratische Schweizer Flagge).
@@ -29,7 +30,7 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
       <div className={styles.topbar}>Christliche Partnersuche mit Respekt, Sicherheit und gemeinsamen Werten</div>
       <div className={styles.headerInner}>
         <a className={styles.brand} href={previewPath(market)}>
-          <Image src={config.logoPath} alt={`${config.domain} Logo`} width={300} height={48} priority />
+          <Image src={staticAsset(config.logoPath)} alt={`${config.domain} Logo`} width={300} height={48} priority />
         </a>
         <nav aria-label="Hauptnavigation" className={styles.nav}>
           {nav.map(([label, href]) => <a key={href} href={previewPath(market, href)}>{label}</a>)}

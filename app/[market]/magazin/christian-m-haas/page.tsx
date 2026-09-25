@@ -4,13 +4,14 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { getPage, getPages, pageLabel, type PublicPage } from "@/lib/content";
 import { previewPath, publicUrl } from "@/lib/markets";
+import { staticAsset } from "@/lib/static-asset";
 import styles from "./profile.module.css";
 
 // Eigene Profilseite statt der Artikelvorlage; das Autorenprofil gibt es nur auf .de.
 const PROFILE_PATH = "/magazin/christian-m-haas/";
 const CANONICAL = "https://christlich-verliebt.de/magazin/christian-m-haas/";
 const PERSON_ID = `${CANONICAL}#person`;
-const PORTRAIT = "/brand/christian-m-haas.jpg";
+const PORTRAIT = staticAsset("/brand/christian-m-haas.jpg");
 const BOOK_URL = "https://www.amazon.de/dp/3696371211/";
 const REGISTRATION = "https://christlich-verliebt.de/registration/?AID=magazin";
 
@@ -77,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: page.description,
     alternates: { canonical: page.canonical },
     robots: { index: true, follow: true },
-    openGraph: { title: page.title, description: page.description, url: page.canonical, locale: "de_DE", type: "profile", images: [{ url: `https://${page.domain}${PORTRAIT}` }] },
+    openGraph: { title: page.title, description: page.description, url: page.canonical, locale: "de_DE", type: "profile", images: [{ url: PORTRAIT }] },
   };
 }
 
@@ -109,7 +110,7 @@ function profileGraph(page: PublicPage) {
         "@id": PERSON_ID,
         name: "Christian M. Haas",
         url: CANONICAL,
-        image: `https://${page.domain}${PORTRAIT}`,
+        image: PORTRAIT,
         jobTitle: "Datingexperte & Autor",
         knowsAbout: FOCUS.map(item => item.title),
         sameAs: SOCIALS.map(social => social.href),
@@ -125,7 +126,7 @@ function profileGraph(page: PublicPage) {
         bookFormat: "https://schema.org/Paperback",
         inLanguage: "de-DE",
         url: BOOK_URL,
-        image: `https://${page.domain}${bookCover(page)}`,
+        image: staticAsset(bookCover(page)),
         author: { "@id": PERSON_ID },
       },
     ],
@@ -154,7 +155,8 @@ function Icon({ name }: { name: keyof typeof icons }) {
 
 export default async function ChristianProfilePage({ params }: Props) {
   const page = await profilePage(params);
-  const cover = bookCover(page);
+  const coverPath = bookCover(page);
+  const cover = coverPath ? staticAsset(coverPath) : "";
   const articles = authorArticles();
   const articleCount = getPages("de").filter(item => item.family === "magazine" && item.path !== PROFILE_PATH).length;
 
@@ -229,7 +231,7 @@ export default async function ChristianProfilePage({ params }: Props) {
         <div className={styles.sectionHead}><p className={styles.eyebrow}>Aus dem Magazin</p><h2 id="artikel-titel">Lesetipps von Christian</h2></div>
         <div className={styles.articles}>
           {articles.map(article => <a className={styles.article} href={previewPath("de", article.path)} key={article.path}>
-            <Image src={article.heroImage!} alt={`Titelbild: ${article.heroTitle}`} width={480} height={300} sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 380px" />
+            <Image src={staticAsset(article.heroImage!)} alt={`Titelbild: ${article.heroTitle}`} width={480} height={300} sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 380px" />
             <span className={styles.articleBody}><small>{pageLabel(article)}</small><strong>{article.heroTitle}</strong></span>
           </a>)}
         </div>

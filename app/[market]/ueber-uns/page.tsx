@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SiteShell } from "@/components/site-shell";
 import { aboutCanonical, ABOUT_REVIEWS_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages, REVIEW_PORTALS, SOCIAL_CHANNELS } from "@/lib/about";
 import { getMarket, isMarketCode, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
+import { staticAsset } from "@/lib/static-asset";
 import pageStyles from "../[[...slug]]/page.module.css";
 import styles from "./about.module.css";
 
@@ -40,7 +41,7 @@ const AUTHOR_PATH = "/magazin/christian-m-haas/";
 const AUTHOR = {
   name: "Christian M. Haas",
   jobTitle: "Datingexperte & Autor",
-  image: "/brand/christian-m-haas.jpg",
+  image: staticAsset("/brand/christian-m-haas.jpg"),
   bio: "Christian M. Haas beschäftigt sich seit 2008 mit Online-Dating und hat sich auf Plattformen für bestimmte Zielgruppen spezialisiert. Seit 2016 arbeitet er mit der ICONY GmbH zusammen und ist Datingexperte von christlich-verliebt: Er schreibt und begleitet das Magazin mit praxisnahen Ratgebern zur seriösen Partnersuche für gläubige Singles im DACH-Raum. Sein Fokus: Menschen mit gemeinsamen Werten und Glauben zusammenzuführen – respektvoll, sicher und authentisch.",
   topics: ["Christliche Partnersuche", "Profil & Kommunikation", "Sicherheit beim Kennenlernen", "Glaube im Profil"],
   facts: ["Seit 2008 im Online-Dating aktiv", "2008–2016 Entwicklung und Betrieb von Singlebörsen", "Seit 2016 Zusammenarbeit mit ICONY und Datingexperte von christlich-verliebt", "Buch „Dating ohne Bullshit“ (2026)"],
@@ -68,7 +69,7 @@ function aboutGraph(market: MarketCode) {
         { "@type": "ListItem", position: 2, name: "Über uns", item: canonical },
       ] },
       { "@type": "Organization", "@id": `${home}#organization`, name: config.domain, url: home, parentOrganization: { "@type": "Organization", name: "ICONY GmbH" }, sameAs: SOCIAL_CHANNELS.map(channel => channel.href) },
-      { "@type": "Person", "@id": "https://christlich-verliebt.de/magazin/christian-m-haas/#person", name: AUTHOR.name, jobTitle: AUTHOR.jobTitle, url: "https://christlich-verliebt.de/magazin/christian-m-haas/", image: `https://${config.domain}${AUTHOR.image}`, sameAs: AUTHOR.sameAs },
+      { "@type": "Person", "@id": "https://christlich-verliebt.de/magazin/christian-m-haas/#person", name: AUTHOR.name, jobTitle: AUTHOR.jobTitle, url: "https://christlich-verliebt.de/magazin/christian-m-haas/", image: AUTHOR.image, sameAs: AUTHOR.sameAs },
       { "@type": "AboutPage", "@id": `${canonical}#webpage`, url: canonical, name: "Über uns", description: DESCRIPTION, inLanguage: config.locale, breadcrumb: { "@id": `${canonical}#breadcrumb` }, about: { "@id": `${home}#organization` }, mentions: { "@id": "https://christlich-verliebt.de/magazin/christian-m-haas/#person" } },
     ],
   };

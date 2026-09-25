@@ -3,6 +3,7 @@ import categorySnapshot from "@/data/magazine-categories.json";
 import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
 import { movedAboutPath } from "@/lib/about";
+import { staticAsset } from "@/lib/static-asset";
 import type { MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
@@ -148,11 +149,15 @@ export function renderedContentHtml(page: PublicPage): string {
   return normalized.replace(
     /<a\b(?![^>]*\bclass=)([^>]*\bhref=(["'])https:\/\/[^"']+\/registration\/?[^"']*\2[^>]*)>/gi,
     '<a class="registration-cta"$1>',
+  ).replace(
+    // Importierte Bilder/Audio liegen in public/ und kommen absolut vom Vercel-Host (nginx reicht sie nicht durch).
+    /\b(src|href|poster)=(["'])(\/(?:imported|city-images|brand)\/[^"']*)\2/gi,
+    (_match, attr, quote, path) => `${attr}=${quote}${staticAsset(path)}${quote}`,
   );
 }
 
 export function selectPageImage(page: PublicPage): string | null {
-  return page.heroImage;
+  return page.heroImage ? staticAsset(page.heroImage) : null;
 }
 
 export function pageLabel(page: PublicPage): string {

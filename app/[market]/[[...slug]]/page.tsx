@@ -7,6 +7,7 @@ import { SiteShell } from "@/components/site-shell";
 import { cardLinkLabel, getChildPages, getCityImageCredit, getCityWidget, getMagazineCategories, getMoreCities, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
+import { staticAsset } from "@/lib/static-asset";
 import styles from "./page.module.css";
 
 type Props = { params: Promise<{ market: string; slug?: string[] }> };
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: page.canonical },
     robots: { index: true, follow: true },
-    openGraph: { title, description, url: page.canonical, locale: page.locale.replace("-", "_"), type: "website", ...(hero ? { images: [{ url: `https://${page.domain}${hero}` }] } : {}) },
+    openGraph: { title, description, url: page.canonical, locale: page.locale.replace("-", "_"), type: "website", ...(hero ? { images: [{ url: hero }] } : {}) },
   };
 }
 
@@ -122,7 +123,7 @@ export default async function PublicPageRoute({ params }: Props) {
         <aside className={styles.sidebar}>
           <div className={styles.cta}><span>Gemeinsame Werte</span><h2>Christliche Singles kennenlernen</h2><p>Erstelle kostenlos Dein Profil und entdecke Menschen, denen Glaube, Respekt und eine ehrliche Beziehung wichtig sind.</p><a href={register}>Jetzt kostenlos starten</a></div>
           <TrustCard market={page.market} />
-          <a className={styles.radarCard} href={register}><img src="/brand/umkreissuche-radar.svg" alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" /></a>
+          <a className={styles.radarCard} href={register}><img src={staticAsset("/brand/umkreissuche-radar.svg")} alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" /></a>
         </aside>
       </section> : null}
       {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{page.family === "location-hub" ? "Regionen entdecken" : "Weiterlesen"}</p><h2>{page.family === "location-hub" ? "Christliche Partnersuche in Deiner Nähe" : "Aktuelle Beiträge und Ratgeber"}</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div>{page.family === "location-hub" ? <CitySearchFallback market={page.market} /> : null}</section> : null}
@@ -172,7 +173,7 @@ function HubCollage({ cities, total, market }: { cities: PublicPage[]; total: nu
   return <div className={styles.heroMedia}>
     <div className={styles.hubCollage}>
       {cities.map((city, index) => <a className={styles.hubTile} href={previewPath(market, city.path)} key={city.path}>
-        <Image src={city.heroImage!} alt={`Christliche Singles in ${locationName(city)}`} width={420} height={420} sizes="(max-width: 960px) 1px, 320px" priority={index < 2} />
+        <Image src={staticAsset(city.heroImage!)} alt={`Christliche Singles in ${locationName(city)}`} width={420} height={420} sizes="(max-width: 960px) 1px, 320px" priority={index < 2} />
         <span>{locationName(city)}</span>
       </a>)}
       <div className={styles.hubBadge}><strong>{total}</strong><small>Städte</small></div>
@@ -190,7 +191,7 @@ function MoreCities({ page }: { page: PublicPage }) {
       <a href={previewPath(page.market, "/partnersuche/")}>{total > cities.length ? `Alle ${total} Städte` : "Zur Städteübersicht"} <span aria-hidden="true">→</span></a>
     </div>
     <div className={styles.cityTiles}>{cities.map(city => <a className={styles.cityTile} href={previewPath(city.market, city.path)} key={city.path}>
-      <Image src={city.heroImage!} alt={`Christliche Singles in ${locationName(city)}`} width={480} height={360} sizes="(max-width: 640px) 50vw, (max-width: 960px) 33vw, 400px" />
+      <Image src={staticAsset(city.heroImage!)} alt={`Christliche Singles in ${locationName(city)}`} width={480} height={360} sizes="(max-width: 640px) 50vw, (max-width: 960px) 33vw, 400px" />
       <span><small>Singles in</small><strong>{locationName(city)}</strong></span>
       <i aria-hidden="true">→</i>
     </a>)}</div>
