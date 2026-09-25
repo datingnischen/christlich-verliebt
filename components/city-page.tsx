@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CityIcon } from "@/components/city-icons";
 import { CityMap, RegionShape } from "@/components/city-map";
 import { CityStickyCta } from "@/components/city-sticky-cta";
@@ -5,7 +6,7 @@ import { cityGeo } from "@/lib/city-geo";
 import { regionName } from "@/lib/city-map";
 import { marketCities, nearestCities, parseCityContent, sectionIcon } from "@/lib/city-page";
 import { getCityImageCredit, getCityWidget, locationName, registrationUrl, selectPageImage, type PublicPage } from "@/lib/content";
-import { getMarket, previewPath, publicUrl } from "@/lib/markets";
+import { getMarket, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./city-page.module.css";
 
@@ -166,8 +167,7 @@ export function CityPage({ page }: { page: PublicPage }) {
       <ol className={styles.distances}>
         {nearest.map(item => <li key={item.page.path}>
           <a href={previewPath(item.page.market, item.page.path)}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            {item.page.heroImage ? <img src={staticAsset(item.page.heroImage)} alt="" width={56} height={56} loading="lazy" decoding="async" /> : <span className={styles.distanceThumb} />}
+            {item.page.heroImage ? <Image src={staticAsset(item.page.heroImage)} alt="" width={96} height={96} sizes="48px" /> : <span className={styles.distanceThumb} />}
             <span className={styles.distanceName}>{locationName(item.page)}<small>{regionName(page.market, item.geo.region)}</small></span>
             <span className={styles.distanceBar} style={{ ["--w" as string]: `${Math.max(8, (item.km / maxKm) * 100)}%` }}><span /></span>
             <span className={styles.distanceKm}>{item.km} km</span>
@@ -184,23 +184,27 @@ export function CityPage({ page }: { page: PublicPage }) {
       </ul>
     </section>
 
-    <section className={styles.ctaBand}>
-      <div className={styles.ctaCopy}>
-        <p className={styles.eyebrow}>Glaube verbindet</p>
-        <h2>Bereit für Dein erstes Date in {city}?</h2>
-        <ul className={styles.trust}>
-          <li><CityIcon name="shield" /><a href={publicUrl(page.market, "/redaktionelle-kontrolle.html")}>Redaktionell kontrollierte Profile</a></li>
-          <li><CityIcon name="check" /><a href={publicUrl(page.market, "/kostenlose-basis-mitgliedschaft.html")}>Kostenlose Basis-Mitgliedschaft</a></li>
-          <li><CityIcon name="heart" /><a href={publicUrl(page.market, "/unsere-erfolgsgeschichten.html")}>Paare, die sich hier gefunden haben</a></li>
-        </ul>
-        <a className={styles.buttonPrimary} href={register}>Zur kostenlosen Registrierung</a>
-      </div>
-      <a className={styles.radar} href={register}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={staticAsset("/brand/umkreissuche-radar.svg")} alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" />
-      </a>
-    </section>
+    <CtaBand market={page.market} register={register} heading={`Bereit für Dein erstes Date in ${city}?`} />
 
     <CityStickyCta href={register} city={city} />
   </main>;
+}
+
+export function CtaBand({ market, register, heading }: { market: MarketCode; register: string; heading: string }) {
+  return <section className={styles.ctaBand}>
+    <div className={styles.ctaCopy}>
+      <p className={styles.eyebrow}>Glaube verbindet</p>
+      <h2>{heading}</h2>
+      <ul className={styles.trust}>
+        <li><CityIcon name="shield" /><a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionell kontrollierte Profile</a></li>
+        <li><CityIcon name="check" /><a href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}>Kostenlose Basis-Mitgliedschaft</a></li>
+        <li><CityIcon name="heart" /><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Paare, die sich hier gefunden haben</a></li>
+      </ul>
+      <a className={styles.buttonPrimary} href={register}>Zur kostenlosen Registrierung</a>
+    </div>
+    <a className={styles.radar} href={register}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={staticAsset("/brand/umkreissuche-radar.svg")} alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" />
+    </a>
+  </section>;
 }

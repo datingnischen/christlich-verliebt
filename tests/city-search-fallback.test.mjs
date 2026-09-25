@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { MARKET_CODES, getMarket, individualSearchUrl } from "../lib/markets.ts";
 
-const pageSource = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+const pageSource = await readFile(new URL("../components/city-hub.tsx", import.meta.url), "utf8");
 const componentSource = await readFile(new URL("../components/city-search-fallback.tsx", import.meta.url), "utf8");
 
 test("city overview renders the individual search fallback", () => {

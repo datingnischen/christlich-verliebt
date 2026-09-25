@@ -1251,3 +1251,433 @@
     animation: none;
   }
 }
+
+/* Städteübersicht */
+.hubHero {
+  padding-bottom: clamp(56px, 7vw, 96px);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(66, 154, 69, 0.35), transparent 42%),
+    radial-gradient(circle at 92% 90%, rgba(206, 48, 47, 0.32), transparent 45%),
+    linear-gradient(150deg, var(--forest-deep), var(--forest) 60%, #2c5a36);
+}
+
+.hubHero::before {
+  content: "♥";
+  position: absolute;
+  left: -40px;
+  bottom: -120px;
+  color: rgba(255, 255, 255, 0.04);
+  font-size: 420px;
+  line-height: 1;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+
+.heroEyebrow {
+  margin: 0 0 14px;
+  color: #ffb7b6;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hubStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.hubStats li {
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+}
+
+.hubStats strong {
+  color: #fff;
+  font: 700 19px Georgia, serif;
+}
+
+.hubHero .heroGrid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+}
+
+.hubMapCard {
+  padding: 16px 10px 12px;
+  transform: rotate(-1deg);
+}
+
+.hubMap {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  overflow: visible;
+}
+
+.hubRegion,
+.hubRegionActive {
+  stroke: #fff;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  transition: fill 0.25s;
+}
+
+.hubRegion {
+  fill: #e4eee4;
+}
+
+.hubRegionActive {
+  fill: #c9e1ca;
+}
+
+.hubRegionActive:hover {
+  fill: #f6c3c2;
+}
+
+.hubDot {
+  fill: var(--partner);
+  stroke: #fff;
+  stroke-width: 2.5;
+  transition: r 0.2s, fill 0.2s;
+}
+
+.hubLabel,
+.hubHoverLabel {
+  fill: var(--ink);
+  font: 700 19px Arial, sans-serif;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: fill 0.2s, opacity 0.2s;
+}
+
+.hubHoverLabel {
+  opacity: 0;
+}
+
+.hubPin:hover .hubDot,
+.hubPin:focus-visible .hubDot {
+  fill: var(--partner-dark);
+  r: 10;
+}
+
+.hubPin:hover .hubLabel,
+.hubPin:focus-visible .hubLabel {
+  fill: var(--partner);
+}
+
+.hubPin:hover .hubHoverLabel,
+.hubPin:focus-visible .hubHoverLabel {
+  opacity: 1;
+  fill: var(--partner);
+}
+
+.hubText,
+.hubFinder,
+.hubFallback {
+  max-width: 1192px;
+  margin: 56px auto 0;
+}
+
+.hubText {
+  display: grid;
+  gap: 22px;
+  max-width: 900px;
+}
+
+.hubIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  max-width: 1192px;
+  margin: 56px auto 0;
+}
+
+.hubIntro .hubText {
+  margin: 0;
+}
+
+.hubIntroImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transform: rotate(-1.5deg);
+}
+
+.hubText .card h2 {
+  margin-bottom: 12px;
+}
+
+.hubText .prose img {
+  max-height: 460px;
+}
+
+.hubFinderHead {
+  max-width: 760px;
+  margin-bottom: 26px;
+}
+
+.hubFinderHead h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.1;
+}
+
+.hubFinderHead > p:not(.eyebrow) {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.finderSearch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 560px;
+  margin-bottom: 26px;
+  padding: 6px 8px 6px 20px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.finderSearch:focus-within {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(66, 154, 69, 0.15);
+}
+
+.finderSearch svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: var(--sage-dark);
+}
+
+.finderSearch input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 17px Arial, sans-serif;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.regionGrid {
+  columns: 3 320px;
+  column-gap: 20px;
+}
+
+.regionCard {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.regionCard header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.regionIcon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  flex: none;
+  place-items: center;
+  border-radius: 17px;
+  background: var(--rose);
+}
+
+.regionIcon .regionShape {
+  width: 44px;
+  height: 44px;
+  padding: 2px;
+  background: transparent;
+}
+
+.regionCard h3 {
+  margin: 0;
+  color: var(--ink);
+  font: 700 22px/1.2 Georgia, serif;
+}
+
+.regionCard header p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.regionCard ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cityTile {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 7px 16px 7px 7px;
+  border-radius: 18px;
+  background: var(--cream);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.18s, transform 0.18s;
+}
+
+.cityTile img,
+.cityTile > span:first-child {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: var(--leaf);
+}
+
+.cityTile small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cityTile strong {
+  font-size: 17px;
+}
+
+.cityTile i {
+  color: var(--partner);
+  font-style: normal;
+  font-weight: 900;
+  transition: transform 0.18s;
+}
+
+.cityTile:hover {
+  background: var(--leaf);
+  transform: translateX(3px);
+}
+
+.cityTile:hover i {
+  transform: translateX(3px);
+}
+
+.cityTile:focus-visible {
+  outline: 3px solid rgba(206, 48, 47, 0.5);
+  outline-offset: 2px;
+}
+
+.finderEmpty {
+  column-span: all;
+  margin: 0;
+  padding: 22px;
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.finderEmpty a {
+  color: var(--partner);
+}
+
+.hubFallback > * {
+  margin-top: 0;
+}
+
+.hubCredit {
+  max-width: 900px;
+  margin: 10px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hubCredit a {
+  color: inherit;
+}
+
+@media (max-width: 1240px) {
+  .hubIntro,
+  .hubText,
+  .hubFinder,
+  .hubFallback,
+  .hubCredit {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .hubHero .heroGrid,
+  .hubIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .hubMapCard {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hubIntro,
+  .hubText,
+  .hubFinder,
+  .hubFallback,
+  .hubCredit {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .hubText,
+  .hubFinder,
+  .hubFallback {
+    margin-top: 36px;
+  }
+
+  .regionGrid {
+    columns: 1;
+  }
+
+  .regionCard {
+    padding: 16px;
+  }
+
+  .hubStats li {
+    font-size: 14px;
+  }
+}

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { CityHub } from "@/components/city-hub";
 import { CityPage } from "@/components/city-page";
-import { CitySearchFallback } from "@/components/city-search-fallback";
 import { FaqPage } from "@/components/faq-page";
 import { SiteShell } from "@/components/site-shell";
-import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, locationName, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
@@ -70,8 +70,8 @@ export default async function PublicPageRoute({ params }: Props) {
   const children = getChildPages(page);
   const register = registrationUrl(page);
   if (page.family === "location") return <SiteShell market={page.market} registrationHref={register}><CityPage page={page} /></SiteShell>;
+  if (page.family === "location-hub") return <SiteShell market={page.market} registrationHref={register}><CityHub page={page} /></SiteShell>;
   const heroImage = selectPageImage(page);
-  const hubCities = page.family === "location-hub" ? hubCollageCities(page.market, children) : [];
   const heroCredit = getCityImageCredit(page);
   const contentHtml = renderedContentHtml(page);
   const faq = isFaqPage(page) ? parseFaq(contentHtml) : null;
@@ -89,11 +89,9 @@ export default async function PublicPageRoute({ params }: Props) {
           <p className={styles.eyebrow}>{faq ? "Hilfe & Antworten" : pageLabel(page)}</p>
           <h1>{page.heroTitle}</h1>
           {faq ? <p className={styles.lead}>{faq.intro ?? faqDescription(page, faq)}</p> : page.description ? <p className={styles.lead}>{page.description}</p> : null}
-          <div className={styles.heroActions}><a href={register}>Kostenlos registrieren</a>{page.family !== "location-hub" ? <a href={previewPath(page.market, "/partnersuche/")}>Singles nach Region entdecken</a> : null}</div>
+          <div className={styles.heroActions}><a href={register}>Kostenlos registrieren</a><a href={previewPath(page.market, "/partnersuche/")}>Singles nach Region entdecken</a></div>
         </div>
-        {hubCities.length === 4
-          ? <HubCollage cities={hubCities} total={children.length} market={page.market} />
-          : heroImage
+        {heroImage
           ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
@@ -108,7 +106,7 @@ export default async function PublicPageRoute({ params }: Props) {
           <a className={styles.radarCard} href={register}><img src={staticAsset("/brand/umkreissuche-radar.svg")} alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" /></a>
         </aside>
       </section> : null}
-      {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>{page.family === "location-hub" ? "Regionen entdecken" : "Weiterlesen"}</p><h2>{page.family === "location-hub" ? "Christliche Partnersuche in Deiner Nähe" : "Aktuelle Beiträge und Ratgeber"}</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div>{page.family === "location-hub" ? <CitySearchFallback market={page.market} /> : null}</section> : null}
+      {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Weiterlesen</p><h2>Aktuelle Beiträge und Ratgeber</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}
     </main>
   </SiteShell>;
 }
@@ -137,27 +135,5 @@ function TrustCard({ market }: { market: MarketCode }) {
     <div className={styles.trustHead}><span className={styles.trustBadge}><TrustIcon name="shield" /></span><div><span>Dein Vertrauen zählt</span><h2>Sicher kennenlernen</h2></div></div>
     <ul className={styles.trustList}>{items.map(item => <li key={item.href}><a href={publicUrl(market, item.href)}><span className={styles.trustIcon}><TrustIcon name={item.icon} /></span><span><strong>{item.title}</strong><small>{item.text}</small></span><span className={styles.trustArrow} aria-hidden="true">→</span></a></li>)}</ul>
     <a className={styles.trustFoot} href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}><TrustIcon name="heart" />Paare, die sich hier gefunden haben</a>
-  </div>;
-}
-
-// Städteübersicht: vier Aushängeschilder der Region statt eines einzelnen Motivs.
-const HUB_COLLAGE: Partial<Record<MarketCode, string[]>> = {
-  at: ["wien", "salzburg", "innsbruck", "graz"],
-  ch: ["zuerich", "bern", "luzern", "basel"],
-};
-
-function hubCollageCities(market: MarketCode, cities: PublicPage[]): PublicPage[] {
-  return (HUB_COLLAGE[market] ?? []).map(slug => cities.find(city => city.path === `/partnersuche/${slug}/` && city.heroImage)).filter((city): city is PublicPage => Boolean(city));
-}
-
-function HubCollage({ cities, total, market }: { cities: PublicPage[]; total: number; market: MarketCode }) {
-  return <div className={styles.heroMedia}>
-    <div className={styles.hubCollage}>
-      {cities.map((city, index) => <a className={styles.hubTile} href={previewPath(market, city.path)} key={city.path}>
-        <Image src={staticAsset(city.heroImage!)} alt={`Christliche Singles in ${locationName(city)}`} width={420} height={420} sizes="(max-width: 960px) 1px, 320px" priority={index < 2} />
-        <span>{locationName(city)}</span>
-      </a>)}
-      <div className={styles.hubBadge}><strong>{total}</strong><small>Städte</small></div>
-    </div>
   </div>;
 }

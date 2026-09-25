@@ -17,7 +17,7 @@ export type CityContent = {
 const RELATED_HEADING = /<h[2-6]>[^<]*(?:Nicht aus|Weitere Regionen|Weitere regionale Links)[\s\S]*$/i;
 const FIT_BLOCK = /<h3>\s*⭐\s*Christen-Fit-Faktor:\s*(\d+)\s*\/\s*100\s*<\/h3>([\s\S]*?)<p>\s*📖[\s\S]*?<\/p>/;
 
-function stripTags(html: string) {
+export function stripTags(html: string) {
   return html.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 }
 
@@ -72,7 +72,7 @@ function parseRelated(page: PublicPage, tail: string): RelatedCity[] {
 }
 
 /** Teilt den Text an h2 (oder h3, wenn es kaum h2 gibt), damit jeder Abschnitt als Karte erscheint. */
-function splitSections(html: string): GuideSection[] {
+export function splitSections(html: string): GuideSection[] {
   const h2 = (html.match(/<h2[\s>]/g) ?? []).length;
   const level = h2 >= 2 ? "h2" : "h3";
   const parts = html.split(new RegExp(`(?=<${level}[\\s>])`));
