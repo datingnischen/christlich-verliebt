@@ -35,3 +35,35 @@ test("versioned city images bypass market rewrites", () => {
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("x-middleware-rewrite"), null);
 });
+
+test("page paths without trailing slash on the preview host keep the host", () => {
+  const response = proxy(request("/partnersuche/berlin?x=1"));
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get("location"), "https://preview.example/partnersuche/berlin/?x=1");
+});
+
+test("internal market prefix redirects absolutely to the public market domain", () => {
+  for (const [path, location] of [
+    ["/at/ueber-uns", "https://christlich-verliebt.at/ueber-uns/"],
+    ["/ch/ratgeber/glaube-und-liebe?utm=1", "https://christlich-verliebt.ch/ratgeber/glaube-und-liebe/?utm=1"],
+    ["/de/magazin", "https://christlich-verliebt.de/magazin/"],
+    ["/at", "https://christlich-verliebt.at/"],
+  ]) {
+    const response = proxy(request(path));
+    assert.equal(response.status, 308, path);
+    assert.equal(response.headers.get("location"), location, path);
+  }
+});
+
+test("production host adds the trailing slash on the same host and drops a prefix", () => {
+  const at = (path) => proxy(new NextRequest(`https://christlich-verliebt.at${path}`, { headers: { host: "christlich-verliebt.at" } }));
+  assert.equal(at("/faq").headers.get("location"), "https://christlich-verliebt.at/faq/");
+  assert.equal(at("/at/faq?a=b").headers.get("location"), "https://christlich-verliebt.at/faq/?a=b");
+});
+
+test("slashed pages, files and the root are not redirected", () => {
+  for (const path of ["/", "/de/", "/de/magazin/", "/sitemap.xml", "/robots.txt", "/favicon.ico", "/brand/logo.svg"]) {
+    const response = proxy(request(path));
+    assert.notEqual(response.status, 308, path);
+  }
+});

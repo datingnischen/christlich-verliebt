@@ -28,6 +28,8 @@ export default function nextConfig(phase: string): NextConfig {
   return {
     poweredByHeader: false,
     trailingSlash: true,
+    // Die Slash-Umleitung macht proxy.ts: bei Länderpräfix absolut auf die Landesdomain (nginx ruft /at/... auf).
+    skipTrailingSlashRedirect: true,
     assetPrefix: isDev ? undefined : `${assetHost}${assetPathPrefix}`,
     images: {
       // nginx vor den Live-Domains reicht /_next/image nicht weiter, darum optimiert der Vercel-Host.
@@ -42,10 +44,11 @@ export default function nextConfig(phase: string): NextConfig {
       ],
     },
     async redirects() {
-      // Live-Host ohne Länderpräfix (nur .de hat diese Seiten) und Vercel-Vorschau mit /de-Präfix.
+      // Live-Host ohne Länderpräfix (nur .de hat diese Seiten). Mit /de-Präfix (Vercel-Host, nginx-Upstream)
+      // absolut auf die Live-Domain, sonst landen Besucher hinter nginx auf christlich-verliebt.de/de/...
       return Object.entries(ABOUT_PAGE_MOVES.de ?? {}).flatMap(([source, destination]) => [
         { source, destination, permanent: true, has: [{ type: "host" as const, value: "(?:www\.)?christlich-verliebt\.de" }] },
-        { source: `/de${source}`, destination: `/de${destination}`, permanent: true },
+        { source: `/de${source}`, destination: `https://christlich-verliebt.de${destination}`, permanent: true },
       ]);
     },
     async headers() {

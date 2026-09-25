@@ -50,7 +50,7 @@ const AUTHOR = {
 
 // Das Autorenprofil gibt es nur auf .de; .at und .ch verlinken es absolut auf der Live-Domain.
 function authorUrl(market: MarketCode) {
-  return market === "de" ? previewPath("de", AUTHOR_PATH) : `${publicUrl("de", AUTHOR_PATH)}/`;
+  return market === "de" ? previewPath("de", AUTHOR_PATH) : publicUrl("de", AUTHOR_PATH);
 }
 
 function safeJsonLd(value: unknown) {

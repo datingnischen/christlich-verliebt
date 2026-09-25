@@ -16,7 +16,7 @@ export function movedAboutPath(market: MarketCode, path: string): string {
   return ABOUT_PAGE_MOVES[market]?.[path] ?? path;
 }
 
-// Kanonische URL mit Schrägstrich am Ende wie bei allen anderen Seiten (publicUrl schneidet ihn ab).
+// Kanonische URL mit Schrägstrich am Ende wie bei allen anderen Seiten.
 export function aboutCanonical(market: MarketCode): string {
   return `https://${getMarket(market).domain}${ABOUT_ROOT_PATH}`;
 }

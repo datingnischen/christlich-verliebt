@@ -24,9 +24,23 @@ export function getMarket(code: MarketCode): MarketConfig {
   return MARKETS[code];
 }
 
+const FILE_PATH_PATTERN = /\/[^/]*\.[a-z0-9]+$/i;
+
+// Seitenpfade enden immer auf "/" (wie die ICONY-Plattform). Dateien (/sitemap.xml, *.html, *.png) bleiben
+// ohne; Query und Anker wandern hinter den Schrägstrich.
+export function withTrailingSlash(pathname: string): string {
+  const match = pathname.match(/^([^?#]*)(.*)$/);
+  const path = match?.[1] ?? pathname;
+  const suffix = match?.[2] ?? "";
+  if (!path || path.endsWith("/") || FILE_PATH_PATTERN.test(path)) {
+    return `${path || "/"}${suffix}`;
+  }
+  return `${path}/${suffix}`;
+}
+
 export function publicUrl(market: MarketCode, pathname = "/"): string {
-  const path = pathname === "/" ? "/" : `/${pathname.replace(/^\/+|\/+$/g, "")}`;
-  return `https://${getMarket(market).domain}${path}`;
+  const trimmed = pathname.replace(/^\/+/, "");
+  return `https://${getMarket(market).domain}${withTrailingSlash(`/${trimmed}`)}`;
 }
 
 // Individuelle ICONY-Suche: nur auf der Live-Domain vorhanden, nie auf dem Vercel-Host.
@@ -35,6 +49,6 @@ export function individualSearchUrl(market: MarketCode): string {
 }
 
 export function previewPath(market: MarketCode, pathname = "/"): string {
-  const path = pathname === "/" ? "" : `/${pathname.replace(/^\/+|\/+$/g, "")}`;
-  return `/${market}${path}`;
+  const trimmed = pathname.replace(/^\/+/, "");
+  return withTrailingSlash(`/${market}/${trimmed}`);
 }

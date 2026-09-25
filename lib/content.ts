@@ -4,7 +4,7 @@ import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
 import { movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
-import type { MarketCode } from "@/lib/markets";
+import { withTrailingSlash, type MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
   market: MarketCode;
@@ -139,10 +139,24 @@ export function registrationUrl(page: PublicPage): string {
   return aid ? `${base}?AID=${aid}` : base;
 }
 
+// Links auf die eigenen Domains enden wie alle Seiten-URLs auf "/" (spart die 308-Umleitung).
+// Repariert dabei zwei im WordPress-Import kaputte Links mit typografischen Anführungszeichen.
+function withSlashedSiteLinks(html: string): string {
+  return html
+    .replace(/(href=["'])https:\/\/christlich-verliebt\.(de|at|ch)\/[^"']*?“https:\/\/?(christlich-verliebt\.(?:de|at|ch)\/[^"'„]*)„(["'])/gi,
+      (_match, start, _tld, url, end) => `${start}https://${url}${end}`)
+    .replace(/(href=["']https:\/\/christlich-verliebt\.(?:de|at|ch)\/[^"']*?\/)&amp;bdquo(["'])/gi, "$1$2")
+    .replace(/(href=["'])((?:https:\/\/(?:www\.)?christlich-verliebt\.(?:de|at|ch))?\/[^"'?#\s]*)([?#][^"']*)?(["'])/gi,
+      (match, start, url, suffix = "", end) => {
+        if (url.startsWith("//")) return match;
+        return `${start}${withTrailingSlash(url)}${suffix}${end}`;
+      });
+}
+
 export function renderedContentHtml(page: PublicPage): string {
   const registration = registrationUrl(page).replace(/&/g, "&amp;");
   const escapedDomain = page.domain.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const normalized = page.contentHtml.replace(
+  const normalized = withSlashedSiteLinks(page.contentHtml).replace(
     new RegExp(`href=(["'])https://${escapedDomain}/registration/?(?:\\?[^"']*)?\\1`, "gi"),
     (_match, quote) => `href=${quote}${registration}${quote}`,
   );
