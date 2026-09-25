@@ -41,4 +41,4 @@ export function proxy(request: NextRequest) {
   return NextResponse.rewrite(destination, { request: { headers } });
 }
 
-export const config = { matcher: ["/((?!_next/static|_next/image|brand/|imported/|city-images/).*)"] };
+export const config = { matcher: ["/((?!_next/static|_next/image|icon.png|apple-icon.png|brand/|imported/|city-images/).*)"] };
