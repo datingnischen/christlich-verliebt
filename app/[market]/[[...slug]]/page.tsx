@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CityHub } from "@/components/city-hub";
 import { CityPage } from "@/components/city-page";
 import { FaqPage } from "@/components/faq-page";
+import { HomePage } from "@/components/home-page";
 import { SiteShell } from "@/components/site-shell";
 import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
@@ -71,6 +72,7 @@ export default async function PublicPageRoute({ params }: Props) {
   const register = registrationUrl(page);
   if (page.family === "location") return <SiteShell market={page.market} registrationHref={register}><CityPage page={page} /></SiteShell>;
   if (page.family === "location-hub") return <SiteShell market={page.market} registrationHref={register}><CityHub page={page} /></SiteShell>;
+  if (page.family === "home") return <SiteShell market={page.market} registrationHref={register}><HomePage page={page} /></SiteShell>;
   const heroImage = selectPageImage(page);
   const heroCredit = getCityImageCredit(page);
   const contentHtml = renderedContentHtml(page);
