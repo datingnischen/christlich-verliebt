@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
-import { buildSearchIndex, normalizeSearch, SEARCH_PATH, searchIndex } from "../lib/search.ts";
+import { buildSearchIndex, normalizeSearch, SEARCH_PATH, searchIndex, stripBrandSuffix } from "../lib/search.ts";
 
 const source = path => readFile(new URL(`../${path}`, import.meta.url), "utf8");
 const exists = path => access(new URL(`../${path}`, import.meta.url)).then(() => true, () => false);
@@ -40,4 +40,40 @@ test("search normalises umlauts and ranks title hits first", () => {
   assert.deepEqual(hits.map(hit => hit.path), ["/partnersuche/muenchen/", "/magazin/a/"]);
   assert.equal(hits[0].section, "Stadt");
   assert.deepEqual(searchIndex(index, "   "), []);
+});
+
+test("search results drop the imported brand suffix from titles", () => {
+  assert.equal(stripBrandSuffix("Sehr starke Gebete - Christlich-Verliebt.de"), "Sehr starke Gebete");
+  assert.equal(stripBrandSuffix("Advent – Bedeutung– christlich-verliebt.de"), "Advent – Bedeutung");
+  assert.equal(stripBrandSuffix("Das Gebet \"Das Vater unser\"- Christlich-Verliebt.de"), "Das Gebet \"Das Vater unser\"");
+  assert.equal(stripBrandSuffix("Glaube | Christlich-Verliebt"), "Glaube");
+  assert.equal(stripBrandSuffix("Christlich-verliebt auf Social Media"), "Christlich-verliebt auf Social Media");
+  const [entry] = buildSearchIndex([{ market: "de", path: "/magazin/g/", family: "magazine", title: "Gebete - Christlich-Verliebt.de", heroTitle: "Gebete", description: "", contentHtml: "" }]);
+  assert.equal(entry.title, "Gebete");
+  assert.doesNotMatch(entry.titleKey, /verliebt/);
+});
+
+test("search ranks by relevance tier, then by frequency, then alphabetically", () => {
+  const page = (path, family, title, description, contentHtml) => ({ market: "de", path, family, title, heroTitle: "", description, contentHtml });
+  const index = buildSearchIndex([
+    page("/partnersuche/augsburg/", "location", "Christliche Partnersuche in Augsburg", "", "<p>Nahe München.</p>"),
+    page("/partnersuche/berlin/", "location", "Christliche Partnersuche in Berlin", "", "<p>Weit weg von München.</p>"),
+    page("/magazin/staedte/", "magazine", "Top Städte - Christlich-Verliebt.de", "", "<p>München, München und nochmals München.</p>"),
+    page("/magazin/bayern/", "magazine", "Glaube in Bayern", "Kirchen in München entdecken.", "<p>Text</p>"),
+    page("/magazin/muenchen-tipps/", "magazine", "München für Paare", "", "<p>Tipps</p>"),
+    page("/magazin/leben/", "magazine", "Leben und Glauben in München", "", "<p>Mehr</p>"),
+    page("/partnersuche/muenchen/", "location", "Christliche Partnersuche in München", "", "<p>Stadt</p>"),
+  ]);
+  assert.deepEqual(searchIndex(index, "München").map(hit => hit.path), [
+    "/partnersuche/muenchen/",
+    "/magazin/muenchen-tipps/",
+    "/magazin/leben/",
+    "/magazin/bayern/",
+    "/magazin/staedte/",
+    "/partnersuche/augsburg/",
+    "/partnersuche/berlin/",
+  ]);
+  const hits = searchIndex(index, "münchen");
+  assert.equal(hits.find(hit => hit.path === "/magazin/staedte/").count, 3);
+  assert.equal(hits.find(hit => hit.path === "/magazin/staedte/").title, "Top Städte");
 });

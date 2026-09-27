@@ -10,10 +10,20 @@ export type SearchEntry = {
   title: string;
   excerpt: string;
   titleKey: string;
+  nameKeys: string[];
+  excerptKey: string;
   textKey: string;
 };
 
-export type SearchHit = SearchEntry & { score: number };
+// score = Relevanzstufe (5 exakter Titel/Stadtname … 1 nur im Text), count = Vorkommen des Suchbegriffs.
+export type SearchHit = SearchEntry & { score: number; count: number };
+
+// Marken-Zusatz aus dem Import („… - Christlich-Verliebt.de“, „| Christlich-Verliebt“) – nur für die Anzeige in der Suche.
+const BRAND_SUFFIX = /\s*[-–—|:]\s*christlich[\s-]?verliebt(?:\.(?:de|at|ch))?\s*$/iu;
+export function stripBrandSuffix(title: string): string {
+  const stripped = title.replace(BRAND_SUFFIX, "").trim();
+  return stripped || title;
+}
 
 // Kleinschreibung, Umlaute als ae/oe/ue/ss, übrige Diakritika weg: „Zürich“ findet „zuerich“ und umgekehrt.
 export function normalizeSearch(value: string): string {
@@ -55,35 +65,53 @@ function shorten(text: string, max = 180): string {
 export function buildSearchIndex(pages: PublicPage[]): SearchEntry[] {
   return pages.filter(page => page.family !== "home").map(page => {
     const text = plainText(page.contentHtml);
+    const title = stripBrandSuffix(page.title);
+    const heroTitle = stripBrandSuffix(page.heroTitle);
+    const excerpt = shorten(page.description || text);
+    const citySlug = page.family === "location" ? page.path.split("/").filter(Boolean).at(-1) ?? "" : "";
     return {
       path: page.path,
       section: sectionLabel(page),
-      title: page.title,
-      excerpt: shorten(page.description || text),
-      titleKey: normalizeSearch(`${page.title} ${page.heroTitle}`),
+      title,
+      excerpt,
+      titleKey: normalizeSearch(`${title} ${heroTitle}`),
+      nameKeys: [title, heroTitle, citySlug.replace(/-/g, " ")].map(normalizeSearch).filter(Boolean),
+      excerptKey: normalizeSearch(page.description),
       textKey: normalizeSearch(`${page.description} ${text}`),
     };
   });
 }
 
-// Titel-Treffer zählen deutlich mehr als Treffer in Beschreibung oder Text; alle Suchwörter müssen vorkommen.
+function occurrences(haystack: string, needle: string): number {
+  let count = 0;
+  for (let at = haystack.indexOf(needle); at !== -1; at = haystack.indexOf(needle, at + needle.length)) count++;
+  return count;
+}
+
+// Relevanz: Titel (exakt/Stadtname > beginnt mit > enthält) vor Auszug vor Text; alle Suchwörter müssen vorkommen.
+// Innerhalb einer Stufe entscheidet die Häufigkeit des Suchbegriffs, erst danach das Alphabet.
+function relevance(entry: SearchEntry, needle: string, terms: string[]): number {
+  const all = (key: string) => terms.every(term => key.includes(term));
+  if (entry.nameKeys.includes(needle)) return 5;
+  if (entry.nameKeys.some(key => key.startsWith(needle))) return 4;
+  if (all(entry.titleKey)) return 3;
+  if (all(entry.excerptKey)) return 2;
+  return 1;
+}
+
 export function searchIndex(index: SearchEntry[], query: string, limit = SEARCH_LIMIT): SearchHit[] {
   const needle = normalizeSearch(query);
   if (!needle) return [];
   const terms = needle.split(" ");
   const hits: SearchHit[] = [];
   for (const entry of index) {
-    let score = 0;
-    let matchedAll = true;
-    for (const term of terms) {
-      const inTitle = entry.titleKey.includes(term);
-      const inText = entry.textKey.includes(term);
-      if (!inTitle && !inText) { matchedAll = false; break; }
-      score += (inTitle ? 10 : 0) + (inText ? 1 : 0);
-    }
-    if (!matchedAll) continue;
-    if (entry.titleKey.includes(needle)) score += 20;
-    hits.push({ ...entry, score });
+    if (!terms.every(term => entry.titleKey.includes(term) || entry.textKey.includes(term))) continue;
+    const haystack = `${entry.titleKey} ${entry.textKey}`;
+    const phrase = occurrences(haystack, needle);
+    const count = phrase || Math.min(...terms.map(term => occurrences(haystack, term)));
+    hits.push({ ...entry, score: relevance(entry, needle, terms), count });
   }
-  return hits.sort((a, b) => b.score - a.score || a.title.localeCompare(b.title, "de")).slice(0, limit);
+  return hits
+    .sort((a, b) => b.score - a.score || b.count - a.count || a.title.localeCompare(b.title, "de"))
+    .slice(0, limit);
 }
