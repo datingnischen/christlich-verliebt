@@ -1,0 +1,13 @@
+.head{text-align:center;padding:48px 24px;border-radius:30px;border:1px solid var(--line);background:radial-gradient(circle at 90% 15%,rgba(206,48,47,.12),transparent 35%),linear-gradient(135deg,var(--green-soft),#fff)}
+.head h1{font:700 clamp(34px,5vw,56px)/1.05 Georgia,serif;margin:0;color:var(--ink)}
+.intro{color:var(--muted);font-size:18px;line-height:1.6;max-width:640px;margin:14px auto 0}
+.state{max-width:720px;margin:40px auto 0;text-align:center;color:var(--muted);font-size:17px;line-height:1.6}
+.state a{color:var(--sage-dark);font-weight:800}
+.count{font:700 26px/1.2 Georgia,serif;color:var(--ink);margin:48px 0 18px}
+.results{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.result{display:block;padding:22px 24px;background:#fff;border:1px solid var(--line);border-radius:20px;text-decoration:none;color:inherit;box-shadow:0 10px 28px rgba(51,51,51,.05);transition:transform .15s,box-shadow .15s;overflow-wrap:anywhere}
+.result:hover,.result:focus-visible{transform:translateY(-2px);box-shadow:0 16px 36px rgba(51,51,51,.1)}
+.result span{display:block;color:var(--partner);font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.result strong{display:block;margin-top:6px;font:700 22px/1.25 Georgia,serif;color:var(--ink)}
+.result p{margin:8px 0 0;color:var(--muted);line-height:1.55}
+@media(max-width:640px){.head{padding:32px 16px;border-radius:20px}.result{padding:18px}.result strong{font-size:19px}}

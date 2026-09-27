@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { SiteShell } from "@/components/site-shell";
+import { SiteSearchForm } from "@/components/site-search-form";
 import { aboutCanonical, ABOUT_REVIEWS_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages, REVIEW_PORTALS, SOCIAL_CHANNELS } from "@/lib/about";
 import { getMarket, isMarketCode, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
@@ -103,6 +104,15 @@ export default async function AboutPage({ params }: Props) {
           </ul>
         </div>
         <div className={pageStyles.heroMark} aria-hidden="true"><span>✦</span><strong>Über uns</strong><small>Glaube · Werte · Vertrauen</small></div>
+      </section>
+
+      <section className={styles.section} id="suche" aria-labelledby="suche-title">
+        <div className={pageStyles.sectionHeading}>
+          <p className={pageStyles.eyebrow}>Suche</p>
+          <h2 id="suche-title">Du suchst etwas Bestimmtes?</h2>
+          <p className={styles.intro}>Durchsuche Magazin, Ratgeber und die Partnersuche nach Städten und Regionen.</p>
+          <SiteSearchForm market={market} />
+        </div>
       </section>
 
       <section className={styles.section} id="wer-wir-sind" aria-labelledby="wer-wir-sind-title">

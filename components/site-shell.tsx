@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getMarket, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { ABOUT_REVIEWS_PATH, ABOUT_ROOT_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages } from "@/lib/about";
+import { SEARCH_PATH } from "@/lib/search";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./site-shell.module.css";
 
@@ -36,6 +37,7 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
           {nav.map(([label, href]) => <a key={href} href={previewPath(market, href)}>{label}</a>)}
         </nav>
         <div className={styles.actions}>
+          <a className={styles.search} href={previewPath(market, SEARCH_PATH)} aria-label="Suche" title="Suche"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg></a>
           <a className={styles.login} href={login}>Login</a>
           <a className={styles.primary} href={registration}>Kostenlos registrieren</a>
         </div>
