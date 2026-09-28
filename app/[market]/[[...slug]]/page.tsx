@@ -5,8 +5,9 @@ import { CityHub } from "@/components/city-hub";
 import { CityPage } from "@/components/city-page";
 import { FaqPage } from "@/components/faq-page";
 import { HomePage } from "@/components/home-page";
+import { MAGAZINE_DESCRIPTION, MAGAZINE_TITLE, MagazineHub } from "@/components/magazine-hub";
 import { SiteShell } from "@/components/site-shell";
-import { cardLinkLabel, getChildPages, getCityImageCredit, getMagazineCategories, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { cardLinkLabel, getChildPages, getCityImageCredit, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = await activePage(params);
   const hero = selectPageImage(page);
   const faq = isFaqPage(page) ? parseFaq(page.contentHtml) : null;
-  const title = faq ? faqTitle(page) : page.title;
-  const description = faq ? faqDescription(page, faq) : page.description;
+  const magazine = page.family === "magazine-hub";
+  const title = faq ? faqTitle(page) : magazine ? MAGAZINE_TITLE : page.title;
+  const description = faq ? faqDescription(page, faq) : magazine ? MAGAZINE_DESCRIPTION : page.description;
   return {
     title: { absolute: title },
     description,
@@ -73,16 +75,12 @@ export default async function PublicPageRoute({ params }: Props) {
   if (page.family === "location") return <SiteShell market={page.market} registrationHref={register}><CityPage page={page} /></SiteShell>;
   if (page.family === "location-hub") return <SiteShell market={page.market} registrationHref={register}><CityHub page={page} /></SiteShell>;
   if (page.family === "home") return <SiteShell market={page.market} registrationHref={register}><HomePage page={page} /></SiteShell>;
+  if (page.family === "magazine-hub") return <SiteShell market={page.market} registrationHref={register}><MagazineHub page={page} /></SiteShell>;
   const heroImage = selectPageImage(page);
   const heroCredit = getCityImageCredit(page);
   const contentHtml = renderedContentHtml(page);
   const faq = isFaqPage(page) ? parseFaq(contentHtml) : null;
   const faqGraph = faq ? faqJsonLd(page, faq, faqTitle(page), faqDescription(page, faq)) : null;
-  const categoryGroups = page.family === "magazine-hub"
-    ? getMagazineCategories().map(category => ({ ...category, pages: children.filter(child => child.categories.includes(category.slug)) })).filter(category => category.pages.length)
-    : [];
-  const categorizedPaths = new Set(categoryGroups.flatMap(category => category.pages.map(child => child.path)));
-  const uncategorizedMagazinePages = page.family === "magazine-hub" ? children.filter(child => !categorizedPaths.has(child.path)) : [];
   return <SiteShell market={page.market} registrationHref={register}>
     {faqGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqGraph) }} /> : null}
     <main className={styles.page}>
@@ -97,7 +95,6 @@ export default async function PublicPageRoute({ params }: Props) {
           ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
-      {categoryGroups.length ? <nav className={styles.categoryNav} id="magazin-kategorien" aria-label="Magazinkategorien"><div><span>Magazin-Themen</span><strong>Direkt zur Kategorie springen</strong></div>{categoryGroups.map(category => <a href={`#kategorie-${category.slug}`} key={category.slug}>{category.name}<small>{category.pages.length}</small></a>)}</nav> : null}
       {faq ? <FaqPage faq={faq} market={page.market} registrationHref={register} /> : contentHtml.trim() ? <section className={styles.layout}>
         <article className={styles.article}>
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: contentHtml }} />
@@ -108,7 +105,7 @@ export default async function PublicPageRoute({ params }: Props) {
           <a className={styles.radarCard} href={register}><img src={staticAsset("/brand/umkreissuche-radar.svg")} alt="Umkreissuche: Christliche Singles in Deiner Nähe – kostenlos anmelden" width={320} height={480} loading="lazy" decoding="async" /></a>
         </aside>
       </section> : null}
-      {categoryGroups.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Magazin entdecken</p><h2>Artikel nach Themen</h2></div>{categoryGroups.map(category => <section className={styles.categoryGroup} id={`kategorie-${category.slug}`} key={category.slug}><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>{category.name}</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{category.pages.map(child => <ContentCard child={child} key={`${category.slug}:${child.path}`} />)}</div></section>)}{uncategorizedMagazinePages.length ? <section className={styles.categoryGroup} id="kategorie-weitere"><div className={styles.categoryHeading}><div><p className={styles.eyebrow}>Kategorie</p><h3>Weitere Beiträge</h3></div><a href="#magazin-kategorien">Alle Themen ↑</a></div><div className={styles.grid}>{uncategorizedMagazinePages.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}</section> : children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Weiterlesen</p><h2>Aktuelle Beiträge und Ratgeber</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}
+      {children.length ? <section className={styles.children}><div className={styles.sectionHeading}><p className={styles.eyebrow}>Weiterlesen</p><h2>Aktuelle Beiträge und Ratgeber</h2></div><div className={styles.grid}>{children.map(child => <ContentCard child={child} key={child.path} />)}</div></section> : null}
     </main>
   </SiteShell>;
 }

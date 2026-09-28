@@ -130,7 +130,7 @@ test("magazine categories are imported and rendered as jump targets", async () =
   ]);
   const categorized = pages.filter(page => page.family === "magazine" && page.categories.length);
   assert.ok(categorized.length >= 59, `Only ${categorized.length} magazine articles have categories`);
-  const source = await readFile(new URL("../app/[market]/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  const source = await readFile(new URL("../components/magazine-hub.tsx", import.meta.url), "utf8");
   assert.match(source, /id="magazin-kategorien"/);
   assert.match(source, /id=\{`kategorie-\$\{category\.slug\}`\}/);
 });
