@@ -16,7 +16,7 @@ const CATEGORY_META: Record<string, { label: string; intro: string; icon: CityIc
   allgemein: { label: "Glaube & Alltag", intro: "Gebete, Bibelverse, Symbole und die Fragen, die Christen im Alltag bewegen.", icon: "book" },
 };
 const LEAD_STORY = "/magazin/trad-wife-rollenbilder-dating/";
-const EDITOR_PICKS = ["/magazin/katholische-singles/", "/magazin/top-10-staedte-christliche-singles-deutschland/", "/magazin/antrag-ohne-ring/"];
+const EDITOR_PICKS = ["/magazin/dating-unter-christen-gemeinsame-werte/", "/magazin/katholische-singles/", "/magazin/top-10-staedte-christliche-singles-deutschland/", "/magazin/antrag-ohne-ring/"];
 const AUTHOR_PROFILE = "/magazin/christian-m-haas/";
 // Aufmacher plus sechs Karten sichtbar, der Rest steckt aufklappbar darunter.
 const VISIBLE_CARDS = 7;

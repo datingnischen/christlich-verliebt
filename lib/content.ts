@@ -1,4 +1,5 @@
 import snapshot from "@/data/public-pages.json";
+import editorialSnapshot from "@/data/editorial-pages.json";
 import categorySnapshot from "@/data/magazine-categories.json";
 import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
@@ -20,6 +21,9 @@ export type PublicPage = {
   heroImage: string | null;
   categories: string[];
   contentHtml: string;
+  // Nur eigene redaktionelle Seiten (data/editorial-pages.json): eingebettetes Video (lib/videos.ts), sichtbares Datum.
+  videoId?: string;
+  updated?: string;
 };
 
 export type MagazineCategory = {
@@ -44,7 +48,8 @@ export type CityWidget = {
   widgetUrl: string;
 };
 
-const pages = (snapshot.pages as PublicPage[]).map((page) => {
+// Eigene Artikel (ohne WordPress-Quelle) zuerst, damit sie in den Magazin-Rubriken vorn stehen.
+const pages = [...(editorialSnapshot.pages as PublicPage[]), ...(snapshot.pages as PublicPage[])].map((page) => {
   const path = movedAboutPath(page.market, page.path);
   return path === page.path ? page : { ...page, path, canonical: `https://${page.domain}${path}` };
 });
@@ -172,6 +177,11 @@ export function renderedContentHtml(page: PublicPage): string {
 
 export function selectPageImage(page: PublicPage): string | null {
   return page.heroImage ? staticAsset(page.heroImage) : null;
+}
+
+// „Aktualisiert am 28. September 2026“ – nur Artikel mit gepflegtem Datum zeigen es an.
+export function formatUpdated(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
 
 export function pageLabel(page: PublicPage): string {

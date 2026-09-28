@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
+import { VideoEmbed } from "@/components/video-embed";
 import { getPage, getPages, pageLabel, type PublicPage } from "@/lib/content";
 import { previewPath, publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
+import { getVideo, videoJsonLd, YOUTUBE_CHANNEL } from "@/lib/videos";
 import styles from "./profile.module.css";
 
 // Eigene Profilseite statt der Artikelvorlage; das Autorenprofil gibt es nur auf .de.
@@ -14,8 +16,11 @@ const PERSON_ID = `${CANONICAL}#person`;
 const PORTRAIT = staticAsset("/brand/christian-m-haas.jpg");
 const BOOK_URL = "https://www.amazon.de/dp/3696371211/";
 const REGISTRATION = "https://christlich-verliebt.de/registration/?AID=magazin";
+// Videofolge „Dating Insider“ zum Thema christliche Partnersuche (lib/videos.ts).
+const VIDEO_ID = "pRVuae0ts00";
 
 const SOCIALS = [
+  { label: "YouTube", href: YOUTUBE_CHANNEL },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/christian-m-haas-457323379" },
   { label: "Ausführliche Vita", href: "https://datingnischen.de/christian" },
   { label: "Gravatar", href: "https://gravatar.com/automatic8c1daff973" },
@@ -40,6 +45,7 @@ const TIMELINE = [
   { year: "2008", title: "Einstieg ins Online-Dating", text: "Arbeit an Produkt, Inhalten und Community spezialisierter Datingplattformen." },
   { year: "2008–2016", title: "Singlebörsen aufgebaut und betrieben", text: "Entwicklung und Betrieb eigener Plattformen mit PHP, MySQL und Template-Engines." },
   { year: "Seit 2016", title: "Zusammenarbeit mit ICONY & Datingexperte von christlich-verliebt", text: "Zusammenarbeit mit der ICONY GmbH, die christlich-verliebt betreibt, unter anderem mit Plattform-Lösungen auf Basis des Java Spring Framework. Als Datingexperte begleitet er Ratgeber, Magazinbeiträge und die Qualitätskontrolle für gläubige Singles im DACH-Raum." },
+  { year: "2026", title: "Buch „Dating ohne Bullshit“ und Videoreihe „Dating Insider“", text: "Ein persönlicher Blick hinter die Kulissen des Online-Dating-Business als Buch. Parallel startet die Videoreihe „Dating Insider“ auf YouTube und als Podcast, mit einer eigenen Folge zur christlichen Partnersuche." },
 ];
 
 const FAQ = [
@@ -49,12 +55,12 @@ const FAQ = [
 
 // Handverlesen: Ratgeber rund um Glaube, Liebe und Partnersuche statt Plattform-Vorstellungen.
 const FEATURED_ARTICLES = [
+  "/magazin/dating-unter-christen-gemeinsame-werte/",
   "/magazin/katholische-singles/",
   "/magazin/trad-wife-rollenbilder-dating/",
   "/magazin/kein-sex-vor-der-ehe/",
   "/magazin/antrag-ohne-ring/",
   "/magazin/top-10-staedte-christliche-singles-deutschland/",
-  "/magazin/c-s-lewis/",
 ];
 
 type Props = { params: Promise<{ market: string }> };
@@ -92,9 +98,11 @@ function safeJsonLd(value: unknown) {
 }
 
 function profileGraph(page: PublicPage) {
+  const video = getVideo(VIDEO_ID);
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...(video ? [videoJsonLd(video, `${CANONICAL}#video`)] : []),
       {
         "@type": "BreadcrumbList",
         "@id": `${CANONICAL}#breadcrumb`,
@@ -159,6 +167,7 @@ export default async function ChristianProfilePage({ params }: Props) {
   const cover = coverPath ? staticAsset(coverPath) : "";
   const articles = authorArticles();
   const articleCount = getPages("de").filter(item => item.family === "magazine" && item.path !== PROFILE_PATH).length;
+  const video = getVideo(VIDEO_ID);
 
   return <SiteShell market="de" registrationHref={REGISTRATION}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profileGraph(page)) }} />
@@ -200,6 +209,22 @@ export default async function ChristianProfilePage({ params }: Props) {
           <blockquote>Menschen mit gemeinsamen Werten und Glauben zusammenführen – respektvoll, sicher und authentisch.</blockquote>
         </div>
       </section>
+
+      {video ? <section className={`${styles.section} ${styles.video}`} id="video-folge" aria-labelledby="video-titel">
+        <div className={styles.sectionHead}>
+          <p className={styles.eyebrow}>Christian im Video</p>
+          <h2 id="video-titel">{video.title}</h2>
+          <p>Eine Folge der Reihe „Dating Insider“: Warum der Eintrag „christlich“ im Profil wenig verrät, welche Erwartungen an Ehe und Gemeinde früh geklärt gehören und woran Vertrauen beim Online-Dating wirklich entsteht.</p>
+        </div>
+        <div className={styles.videoGrid}>
+          <VideoEmbed video={video} />
+          <div className={styles.chapters}>
+            <h3>Kapitel der Folge</h3>
+            <ol>{video.chapters.map(chapter => <li key={chapter.time}><span>{chapter.time}</span>{chapter.title}</li>)}</ol>
+            <a href={previewPath("de", video.articlePath)}>Alle Gedanken aus der Folge zum Nachlesen →</a>
+          </div>
+        </div>
+      </section> : null}
 
       <section className={styles.section} aria-labelledby="schwerpunkte">
         <div className={styles.sectionHead}><p className={styles.eyebrow}>Schwerpunkte</p><h2 id="schwerpunkte">Worüber Christian schreibt</h2></div>

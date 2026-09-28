@@ -7,7 +7,9 @@ import { FaqPage } from "@/components/faq-page";
 import { HomePage } from "@/components/home-page";
 import { MAGAZINE_DESCRIPTION, MAGAZINE_TITLE, MagazineHub } from "@/components/magazine-hub";
 import { SiteShell } from "@/components/site-shell";
-import { cardLinkLabel, getChildPages, getCityImageCredit, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { VideoEmbed } from "@/components/video-embed";
+import { cardLinkLabel, formatUpdated, getChildPages, getCityImageCredit, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { getVideo, videoDurationLabel, videoJsonLd } from "@/lib/videos";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
@@ -81,22 +83,30 @@ export default async function PublicPageRoute({ params }: Props) {
   const contentHtml = renderedContentHtml(page);
   const faq = isFaqPage(page) ? parseFaq(contentHtml) : null;
   const faqGraph = faq ? faqJsonLd(page, faq, faqTitle(page), faqDescription(page, faq)) : null;
+  // Eigene Videoartikel: Video oben im Artikel (Zwei-Klick), im Hero nur ein Play-Verweis statt des Titelbilds.
+  const video = getVideo(page.videoId);
+  const videoGraph = video ? { "@context": "https://schema.org", ...videoJsonLd(video, `${page.canonical}#video`) } : null;
   return <SiteShell market={page.market} registrationHref={register}>
     {faqGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqGraph) }} /> : null}
+    {videoGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(videoGraph) }} /> : null}
     <main className={styles.page}>
       <section className={styles.hero}>
         <div>
           <p className={styles.eyebrow}>{faq ? "Hilfe & Antworten" : pageLabel(page)}</p>
           <h1>{page.heroTitle}</h1>
           {faq ? <p className={styles.lead}>{faq.intro ?? faqDescription(page, faq)}</p> : page.description ? <p className={styles.lead}>{page.description}</p> : null}
+          {page.updated ? <p className={styles.updated}>Aktualisiert am {formatUpdated(page.updated)}</p> : null}
           <div className={styles.heroActions}><a href={register}>Kostenlos registrieren</a><a href={previewPath(page.market, "/partnersuche/")}>Singles nach Region entdecken</a></div>
         </div>
-        {heroImage
+        {video
+          ? <div className={styles.heroMedia}><a className={styles.heroVideo} href="#video"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span><strong>Video</strong><small>{videoDurationLabel(video)} mit Christian M. Haas</small></a></div>
+          : heroImage
           ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
       {faq ? <FaqPage faq={faq} market={page.market} registrationHref={register} /> : contentHtml.trim() ? <section className={styles.layout}>
         <article className={styles.article}>
+          {video ? <VideoEmbed video={video} priority /> : null}
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
         <aside className={styles.sidebar}>
