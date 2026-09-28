@@ -13,11 +13,6 @@
     {
       "market": "at",
       "owner": "nextjs",
-      "path": "/dating-tipps/"
-    },
-    {
-      "market": "at",
-      "owner": "nextjs",
       "path": "/faq/"
     },
     {
@@ -109,11 +104,6 @@
       "market": "ch",
       "owner": "nextjs",
       "path": "/christliche-gemeinden/"
-    },
-    {
-      "market": "ch",
-      "owner": "nextjs",
-      "path": "/dating-tipps/"
     },
     {
       "market": "ch",
@@ -254,11 +244,6 @@
       "market": "de",
       "owner": "nextjs",
       "path": "/christlicher-chat/"
-    },
-    {
-      "market": "de",
-      "owner": "nextjs",
-      "path": "/dating-tipps/"
     },
     {
       "market": "de",
@@ -736,6 +721,12 @@
     {
       "market": "at",
       "owner": "ICONY platform/legal",
+      "path": "/dating-tipps/",
+      "sourceUrl": "https://christlich-verliebt.at/dating-tipps/"
+    },
+    {
+      "market": "at",
+      "owner": "ICONY platform/legal",
       "path": "/fotoflirt.html/",
       "sourceUrl": "https://christlich-verliebt.at/fotoflirt.html"
     },
@@ -820,6 +811,12 @@
     {
       "market": "ch",
       "owner": "ICONY platform/legal",
+      "path": "/dating-tipps/",
+      "sourceUrl": "https://christlich-verliebt.ch/dating-tipps/"
+    },
+    {
+      "market": "ch",
+      "owner": "ICONY platform/legal",
       "path": "/fotoflirt.html/",
       "sourceUrl": "https://christlich-verliebt.ch/fotoflirt.html"
     },
@@ -900,6 +897,12 @@
       "owner": "ICONY platform/legal",
       "path": "/datenschutz.html/",
       "sourceUrl": "https://christlich-verliebt.de/datenschutz.html"
+    },
+    {
+      "market": "de",
+      "owner": "ICONY platform/legal",
+      "path": "/dating-tipps/",
+      "sourceUrl": "https://christlich-verliebt.de/dating-tipps/"
     },
     {
       "market": "de",

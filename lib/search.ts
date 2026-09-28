@@ -54,7 +54,6 @@ export function sectionLabel(page: Pick<PublicPage, "family" | "path">): string 
   if (page.family === "magazine" || page.family === "magazine-hub") return "Magazin";
   if (page.family === "guide" || page.family === "guide-hub") return "Ratgeber";
   if (page.path === "/faq/") return "FAQ";
-  if (page.path === "/dating-tipps/") return "Dating-Tipps";
   return "Seite";
 }
 

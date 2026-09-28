@@ -21,7 +21,8 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
     ["Partnersuche", "/partnersuche/"],
     ...(market === "de" ? [["Magazin", "/magazin/"]] : []),
     ...(market === "ch" ? [["Ratgeber", "/ratgeber/"]] : []),
-    ["Dating-Tipps", "/dating-tipps/"],
+    // ICONY-Seite: nie in Next.js rendern, immer absolut auf die Live-Domain.
+    ["Dating-Tipps", publicUrl(market, "/dating-tipps/")],
     ["FAQ", "/faq/"],
     ["Über uns", ABOUT_ROOT_PATH],
   ];
@@ -34,7 +35,7 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
           <Image src={staticAsset(config.logoPath)} alt={`${config.domain} Logo`} width={300} height={48} priority />
         </a>
         <nav aria-label="Hauptnavigation" className={styles.nav}>
-          {nav.map(([label, href]) => <a key={href} href={previewPath(market, href)}>{label}</a>)}
+          {nav.map(([label, href]) => <a key={href} href={href.startsWith("https://") ? href : previewPath(market, href)}>{label}</a>)}
         </nav>
         <div className={styles.actions}>
           <a className={styles.search} href={previewPath(market, SEARCH_PATH)} aria-label="Suche" title="Suche"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg></a>
@@ -50,7 +51,7 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
         <a href={registration}>Jetzt kostenlos registrieren</a>
       </div>
       <div className={styles.footerGrid}>
-        <section><h3>Entdecken</h3><a href={previewPath(market, "/partnersuche/")}>Partnersuche nach Region</a>{market === "de" ? <a href={previewPath(market, "/magazin/")}>Magazin</a> : null}<a href={previewPath(market, "/dating-tipps/")}>Dating-Tipps</a><a href={previewPath(market, "/faq/")}>Häufige Fragen</a></section>
+        <section><h3>Entdecken</h3><a href={previewPath(market, "/partnersuche/")}>Partnersuche nach Region</a>{market === "de" ? <a href={previewPath(market, "/magazin/")}>Magazin</a> : null}<a href={publicUrl(market, "/dating-tipps/")}>Dating-Tipps</a><a href={previewPath(market, "/faq/")}>Häufige Fragen</a></section>
         <section><h3>Mitgliedschaft</h3><a href={registration}>Kostenlos registrieren</a><a href={login}>Login</a><a href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}>Basis-Mitgliedschaft</a><a href={publicUrl(market, "/premium-mitgliedschaft.html")}>Premium-Mitgliedschaft</a></section>
         <section><h3>Über uns</h3><a href={previewPath(market, ABOUT_ROOT_PATH)}>Über christlich-verliebt</a>{hasAboutSubpages(market) ? <><a href={previewPath(market, ABOUT_REVIEWS_PATH)}>Bewertungen & Erfahrungen</a><a href={previewPath(market, ABOUT_SOCIAL_PATH)}>Social Media</a></> : null}<a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionelle Kontrolle</a><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a></section>
         <section><h3>Service</h3><a href={publicUrl(market, "/hilfe/")}>Hilfe & Support</a><a href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a><a href={publicUrl(market, "/datenschutz.html")}>Datenschutz</a><a href={publicUrl(market, "/impressum.html")}>Impressum</a>

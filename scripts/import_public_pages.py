@@ -37,7 +37,7 @@ SITEMAPS = {
     "ch": ["https://christlich-verliebt.ch/sitemap.php"],
 }
 PLATFORM_PATTERNS = [
-    re.compile(r"^/(?:registration|login|suche|gutschein|hilfe|kontakt)(?:/|$)"),
+    re.compile(r"^/(?:registration|login|suche|gutschein|hilfe|kontakt|dating-tipps)(?:/|$)"),
     re.compile(r"^/(?:fragenflirt|fotoflirt|videodate|videodating|unsere-erfolgsgeschichten|kostenlose-basis-mitgliedschaft|premium-mitgliedschaft|sicherheit-und-datenschutz|redaktionelle-kontrolle|datenschutz|impressum|agb|barrierefreiheit)\.html/?$"),
 ]
 EXCLUDED_EDITORIAL_PATHS = {"/magazin/beispiel-seite/"}

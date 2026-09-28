@@ -14,13 +14,15 @@ const sourceByAsset = new Map(provenance.map(asset => [asset.localPath, asset.so
 test("contains public editorial inventories for DE, AT and CH", () => {
   const counts = Object.fromEntries(["de", "at", "ch"].map(market => [market, pages.filter(page => page.market === market).length]));
   assert.ok(counts.de >= 90, `DE only has ${counts.de} pages`);
-  assert.ok(counts.at >= 20, `AT only has ${counts.at} pages`);
+  assert.ok(counts.at >= 19, `AT only has ${counts.at} pages`);
   assert.ok(counts.ch >= 25, `CH only has ${counts.ch} pages`);
   for (const market of ["de", "at", "ch"]) {
     assert.ok(pages.some(page => page.market === market && page.path === "/"));
     assert.ok(pages.some(page => page.market === market && page.path === "/partnersuche/"));
   }
   assert.equal(pages.some(page => page.path === "/magazin/beispiel-seite/"), false);
+  // ICONY-Seite: bleibt auf der Live-Domain, nie in Next.js.
+  assert.equal(pages.some(page => page.path === "/dating-tipps/"), false);
 });
 
 test("DE location hub uses city cards instead of a duplicate city link list", () => {

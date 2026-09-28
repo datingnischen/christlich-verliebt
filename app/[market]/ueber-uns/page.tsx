@@ -85,7 +85,7 @@ export default async function AboutPage({ params }: Props) {
     ? { kicker: "Magazin", title: "Wissen rund um Glaube und Partnerschaft", text: "Im Magazin geht es um christliches Dating, Beziehungen und die Fragen, die gläubige Singles bewegen.", label: "Zum Magazin", href: previewPath(market, "/magazin/") }
     : market === "ch"
       ? { kicker: "Ratgeber", title: "Orientierung für gläubige Singles", text: "Unsere Ratgeber greifen typische Fragen auf: vom ersten Kontakt über gemeinsame Werte bis zum Gebet für die Partnersuche.", label: "Zu den Ratgebern", href: previewPath(market, "/ratgeber/") }
-      : { kicker: "Dating-Tipps", title: "Gut vorbereitet ins Kennenlernen", text: "Unsere Dating-Tipps helfen Dir bei Profil, erster Nachricht und dem ersten Treffen – mit Blick auf das, was Dir wichtig ist.", label: "Zu den Dating-Tipps", href: previewPath(market, "/dating-tipps/") };
+      : { kicker: "Dating-Tipps", title: "Gut vorbereitet ins Kennenlernen", text: "Unsere Dating-Tipps helfen Dir bei Profil, erster Nachricht und dem ersten Treffen – mit Blick auf das, was Dir wichtig ist.", label: "Zu den Dating-Tipps", href: publicUrl(market, "/dating-tipps/") };
 
   return <SiteShell market={market}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(aboutGraph(market)) }} />
