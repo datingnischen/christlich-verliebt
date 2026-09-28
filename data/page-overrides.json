@@ -1,0 +1,174 @@
+{
+  "_comment": "Gezielte Korrekturen am WordPress-Import. import_public_pages.py ersetzt ein Feld nur, wenn der importierte Wert exakt 'from' entspricht; sonst Warnung (Quelle geändert, Override prüfen).",
+  "pages": [
+    {
+      "fields": {
+        "title": {
+          "from": "Christlich-Verliebt.de C.S.Lewis - Die Chroniken von Narnia",
+          "to": "C. S. Lewis - Die Chroniken von Narnia - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/c-s-lewis/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr Information über Christine Caine und ihre Kampf gegen moderne Sklaverei lesen. Als Gründerin von A21 sie setzt sich für Menschenhandel ein.",
+          "to": "Hier kann man mehr Information über Christine Caine und ihren Kampf gegen moderne Sklaverei lesen. Als Gründerin von A21 setzt sie sich gegen Menschenhandel ein."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de Christine Caine und Ihre Kampf",
+          "to": "Christine Caine und ihr Kampf - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/christine-caine/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr Information über die Corrie ten Boom bekommen, die ihre härteste Prüfung erlebte – Zeit des Widerstands.",
+          "to": "Hier kann man mehr Information über Corrie ten Boom bekommen, die ihre härteste Prüfung erlebte – Zeit des Widerstands."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de Corrie ten Boom - Leben in der KZ",
+          "to": "Corrie ten Boom - Leben im KZ - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/corrie-ten-boom/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr über den evangelischen Theologe Dietrich Bonhoeffer lesen. Sein Beispiel inspiriert bis heute christliche Gemeinden auf der ganzen Welt.",
+          "to": "Hier kann man mehr über den evangelischen Theologen Dietrich Bonhoeffer lesen. Sein Beispiel inspiriert bis heute christliche Gemeinden auf der ganzen Welt."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de Dietrich Bonhoeffer",
+          "to": "Dietrich Bonhoeffer - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/dietrich-bonhoeffer/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "title": {
+          "from": "Christlich-Verliebt.de Franz von Assisi - erfülltes Leben",
+          "to": "Franz von Assisi - erfülltes Leben - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/franz-von-assisi/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr Information über John Mark Comer lesen. Wenn Stress und Burnout schon zum Leben dazugehören, soll man den Weg zur Glaube zurückfinden.",
+          "to": "Hier kann man mehr Information über John Mark Comer lesen. Wenn Stress und Burnout schon zum Leben dazugehören, soll man den Weg zum Glauben zurückfinden."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de John Mark Comer und Leben ohne Stress",
+          "to": "John Mark Comer und Leben ohne Stress - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/john-mark-comer/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr Information über Martin Luthers Reformation lesen. Die Verbreitung Der Schriften durch den Buchdruck machten Martin Luther bekannt.",
+          "to": "Hier kann man mehr Information über Martin Luthers Reformation lesen. Die Verbreitung der Schriften durch den Buchdruck machte Martin Luther bekannt."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de Martin Luthers Reformation",
+          "to": "Martin Luthers Reformation - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/martin-luthers/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr Information über evangelischen Pfarrer Martin Niemöller und seinen Weg lesen. Nach dem Jahr 1945 setzt er sich für den Wiederaufbau im Land.",
+          "to": "Hier kann man mehr Information über den evangelischen Pfarrer Martin Niemöller und seinen Weg lesen. Nach dem Jahr 1945 setzte er sich für den Wiederaufbau im Land ein."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de Martin Niemöller und die Glaube",
+          "to": "Martin Niemöller und der Glaube - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/martin-niemoeller/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "title": {
+          "from": "Christlich-Verliebt.de Nick Vujicic und die Hoffnung",
+          "to": "Nick Vujicic und die Hoffnung - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/nick-vujicic/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier kann man mehr Information über das Leben und geistliche Mission des Papst Franziskus bekommen. Er steht für soziale Gerechtigkeit und Schutz der Armen.",
+          "to": "Hier kann man mehr Information über das Leben und die geistliche Mission von Papst Franziskus bekommen. Er steht für soziale Gerechtigkeit und Schutz der Armen."
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de Papst Franziskus und die Glaube",
+          "to": "Papst Franziskus und der Glaube - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/papst-franziskus/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "title": {
+          "from": "Christlich-Verliebt.de Samuel Koch und sein Botschaft",
+          "to": "Samuel Koch und seine Botschaft - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/samuel-koch/",
+      "reason": "Marken-Präfix im Titel entfernt, Grammatik korrigiert"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Die christliche Partnersuche die Glaube & Religion verbindet",
+          "to": "Impulse für christliche Singles: Feiertage, Gebete, Bibelverse, bekannte Christen, Singlebörsen im Porträt und Gedanken zu Beziehung und Werten."
+        },
+        "heroTitle": {
+          "from": "Christlich-Verliebt.de",
+          "to": "Magazin"
+        },
+        "title": {
+          "from": "Christlich-Verliebt.de - Die christliche Partnersuche die Glaube & Religion verbindet",
+          "to": "Magazin für christliche Singles: Glaube, Liebe & Beziehung"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/",
+      "reason": "Magazin-Übersicht: Titel/Beschreibung wie gerendert (MAGAZINE_TITLE/MAGAZINE_DESCRIPTION), statt Marken-Titel"
+    }
+  ],
+  "schemaVersion": 1
+}

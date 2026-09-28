@@ -53,6 +53,36 @@ test("search results drop the imported brand suffix from titles", () => {
   assert.doesNotMatch(entry.titleKey, /verliebt/);
 });
 
+test("search drops a glued brand prefix but keeps titles about the brand", () => {
+  assert.equal(stripBrandSuffix("Christlich-Verliebt.de Dietrich Bonhoeffer"), "Dietrich Bonhoeffer");
+  assert.equal(stripBrandSuffix("Christlich-Verliebt.de Samuel Koch - Christlich-Verliebt.de"), "Samuel Koch");
+  assert.equal(stripBrandSuffix("christlich-verliebt.ch Glaube"), "Glaube");
+  assert.equal(stripBrandSuffix("Christlich-verliebt.de – die christliche Singlebörse"), "Christlich-verliebt.de – die christliche Singlebörse");
+  assert.equal(stripBrandSuffix("Christlich-Verliebt.de"), "Christlich-Verliebt.de");
+});
+
+test("no magazine title starts with the brand; page overrides are applied to the snapshot", async () => {
+  const pages = JSON.parse(await source("data/public-pages.json")).pages;
+  const overrides = JSON.parse(await source("data/page-overrides.json")).pages;
+  const brandPrefix = /^\s*christlich[\s-]?verliebt(?:\.(?:de|at|ch))?\b/i;
+  // Ausnahme: das Porträt der eigenen Singlebörse, dort ist die Marke das Thema.
+  const offenders = pages.filter(page => page.family.startsWith("magazine") && page.path !== "/magazin/christlich-verliebt-de/")
+    .filter(page => brandPrefix.test(page.title) || brandPrefix.test(page.heroTitle) || brandPrefix.test(page.description));
+  assert.deepEqual(offenders.map(page => `${page.market}:${page.path}`), []);
+  assert.ok(overrides.length >= 11);
+  for (const override of overrides) {
+    const page = pages.find(item => item.market === override.market && item.path === override.path);
+    assert.ok(page, `${override.market}:${override.path} missing`);
+    for (const [field, change] of Object.entries(override.fields)) {
+      assert.equal(page[field], change.to, `${override.path} ${field}`);
+      assert.doesNotMatch(change.to, /sein Botschaft|Ihre Kampf|die Glaube|in der KZ|zur Glaube/);
+    }
+  }
+  const [bonhoeffer] = searchIndex(buildSearchIndex(pages.filter(page => page.market === "de")), "Bonhoeffer");
+  assert.equal(bonhoeffer.path, "/magazin/dietrich-bonhoeffer/");
+  assert.equal(bonhoeffer.title, "Dietrich Bonhoeffer");
+});
+
 test("search ranks by relevance tier, then by frequency, then alphabetically", () => {
   const page = (path, family, title, description, contentHtml) => ({ market: "de", path, family, title, heroTitle: "", description, contentHtml });
   const index = buildSearchIndex([

@@ -20,8 +20,11 @@ export type SearchHit = SearchEntry & { score: number; count: number };
 
 // Marken-Zusatz aus dem Import („… - Christlich-Verliebt.de“, „| Christlich-Verliebt“) – nur für die Anzeige in der Suche.
 const BRAND_SUFFIX = /\s*[-–—|:]\s*christlich[\s-]?verliebt(?:\.(?:de|at|ch))?\s*$/iu;
+// Marken-Präfix ohne Trenner („Christlich-Verliebt.de Dietrich Bonhoeffer“) – nur mit Domain-Endung, damit
+// Titel, in denen die Marke Thema ist („Christlich-verliebt auf Social Media“, „Christlich-verliebt.de – die …“), bleiben.
+const BRAND_PREFIX = /^\s*christlich[\s-]?verliebt\.(?:de|at|ch)\s+(?=[^\s\-–—|:])/iu;
 export function stripBrandSuffix(title: string): string {
-  const stripped = title.replace(BRAND_SUFFIX, "").trim();
+  const stripped = title.replace(BRAND_PREFIX, "").replace(BRAND_SUFFIX, "").trim();
   return stripped || title;
 }
 

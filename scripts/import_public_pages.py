@@ -20,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 ASSET_DIR = ROOT / "public" / "imported"
 CITY_IMAGE_OVERRIDES_PATH = DATA_DIR / "city-image-overrides.json"
+PAGE_OVERRIDES_PATH = DATA_DIR / "page-overrides.json"
+OVERRIDABLE_FIELDS = {"title", "description", "heroTitle"}
 MAGAZINE_CATEGORIES_PATH = DATA_DIR / "magazine-categories.json"
 MAGAZINE_CATEGORIES_URL = "https://christlich-verliebt.de/magazin/wp-json/wp/v2/categories?per_page=100&hide_empty=true&_fields=id,count,name,slug,link,parent"
 DOMAINS = {
@@ -361,6 +363,33 @@ def load_city_image_overrides() -> tuple[dict[tuple[str, str], str], list[dict]]
     return by_route, records
 
 
+def load_page_overrides() -> dict[tuple[str, str], dict[str, dict[str, str]]]:
+    if not PAGE_OVERRIDES_PATH.is_file():
+        return {}
+    records = json.loads(PAGE_OVERRIDES_PATH.read_text(encoding="utf-8")).get("pages", [])
+    by_route: dict[tuple[str, str], dict[str, dict[str, str]]] = {}
+    for record in records:
+        fields = record["fields"]
+        unknown = set(fields) - OVERRIDABLE_FIELDS
+        if unknown:
+            raise RuntimeError(f"Unsupported page override fields {sorted(unknown)} for {record['market']}:{record['path']}")
+        by_route[(str(record["market"]), str(record["path"]))] = fields
+    return by_route
+
+
+# Gezielte Korrekturen (Titel, Description, H1) ueberstehen jeden Neuimport. Ersetzt wird nur, wenn der
+# importierte Wert noch exakt dem erfassten Original entspricht; hat sich die Quelle geaendert, bleibt ihr
+# Wert stehen und eine Warnung fordert zur Pruefung des Overrides auf.
+def apply_page_overrides(record: dict, overrides: dict[tuple[str, str], dict[str, dict[str, str]]]) -> list[str]:
+    warnings: list[str] = []
+    for field, change in overrides.get((record["market"], record["path"]), {}).items():
+        if record[field] == change["from"]:
+            record[field] = change["to"]
+        elif record[field] != change["to"]:
+            warnings.append(f"STALE OVERRIDE {record['market']} {record['path']} {field}: source is now {record[field]!r}")
+    return warnings
+
+
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
@@ -419,6 +448,10 @@ def main() -> None:
                 skipped.append({"market": market, "path": path, "sourceUrl": url, "owner": "unresolved", "error": str(error)})
                 print(f"SKIPPED {market} {path}: {error}")
             time.sleep(0.03)
+    page_overrides = load_page_overrides()
+    for record in records:
+        for warning in apply_page_overrides(record, page_overrides):
+            print(warning)
     records.sort(key=lambda item: (item["market"], item["path"]))
     skipped.sort(key=lambda item: (item["market"], item["path"]))
     unique_provenance = {item["localPath"]: item for item in provenance}

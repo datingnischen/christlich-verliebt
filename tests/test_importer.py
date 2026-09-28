@@ -75,6 +75,22 @@ class ImportSecurityTests(unittest.TestCase):
             importer.fetch_response("https://christlich-verliebt.de/")
         self.assertEqual(get.call_count, 1)
 
+    def test_page_overrides_replace_only_the_recorded_source_value(self):
+        overrides = {("de", "/magazin/x/"): {"title": {"from": "Christlich-Verliebt.de X und sein Botschaft", "to": "X und seine Botschaft - Christlich-Verliebt.de"}}}
+        record = {"market": "de", "path": "/magazin/x/", "title": "Christlich-Verliebt.de X und sein Botschaft"}
+        self.assertEqual(importer.apply_page_overrides(record, overrides), [])
+        self.assertEqual(record["title"], "X und seine Botschaft - Christlich-Verliebt.de")
+        changed = {"market": "de", "path": "/magazin/x/", "title": "Neuer WP-Titel"}
+        warnings = importer.apply_page_overrides(changed, overrides)
+        self.assertEqual(changed["title"], "Neuer WP-Titel")
+        self.assertEqual(len(warnings), 1)
+
+    def test_page_override_file_matches_supported_fields(self):
+        overrides = importer.load_page_overrides()
+        self.assertGreaterEqual(len(overrides), 11)
+        for fields in overrides.values():
+            self.assertTrue(set(fields) <= importer.OVERRIDABLE_FIELDS)
+
 
 if __name__ == "__main__":
     unittest.main()
