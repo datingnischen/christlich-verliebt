@@ -15,12 +15,21 @@ function hostname(request: NextRequest) {
     .split(",")[0].trim().toLowerCase().replace(/:\d+$/, "").replace(/^www\./, "");
 }
 
+// WordPress-kompatibler REST-Endpunkt für ICONY (/magazin/wp-json/..., /magazin/index.php?rest_route=...,
+// /magazin/?rest_route=...): ICONY ruft ohne Slash am Ende auf, die Antwort muss 200 JSON sein (keine 308).
+function isWpRestRequest(request: NextRequest) {
+  const path = request.nextUrl.pathname.replace(/^\/(?:de|at|ch)(?=\/)/, "");
+  if (path === "/magazin/wp-json" || path.startsWith("/magazin/wp-json/") || path === "/magazin/index.php") return true;
+  return (path === "/magazin" || path === "/magazin/") && request.nextUrl.searchParams.has("rest_route");
+}
+
 // Ersetzt die eingebaute Slash-Umleitung von Next.js (skipTrailingSlashRedirect): Seitenpfade enden
 // immer auf "/". Next.js kannte nur den Upstream-Pfad: nginx ruft für christlich-verliebt.at/faq hier
 // /at/faq auf, und Besucher landeten auf christlich-verliebt.at/at/faq/ (404). Pfade mit Länderpräfix
 // gehen darum absolut auf die öffentliche Landesdomain ohne Präfix.
 function trailingSlashRedirect(request: NextRequest, hostMarket: MarketCode | undefined) {
   const { pathname, search } = request.nextUrl;
+  if (isWpRestRequest(request)) return null;
   if (pathname.endsWith("/") || withTrailingSlash(pathname) === pathname) return null;
 
   const target = withTrailingSlash(pathname);
@@ -63,9 +72,12 @@ export function proxy(request: NextRequest) {
     return new NextResponse("Not found", { status: 404 });
   }
   const destination = request.nextUrl.clone();
+  const restIndex = (publicPath === "/magazin" || publicPath === "/magazin/") && request.nextUrl.searchParams.has("rest_route");
   destination.pathname = publicPath === "/sitemap.xml"
     ? `/${market}/sitemap-data.xml`
-    : `/${market}${publicPath === "/" ? "" : publicPath}`;
+    : restIndex
+      ? `/${market}/magazin/index.php`
+      : `/${market}${publicPath === "/" ? "" : publicPath}`;
   const headers = new Headers(request.headers);
   headers.set("x-cv-rewrite-token", TOKEN);
   return NextResponse.rewrite(destination, { request: { headers } });

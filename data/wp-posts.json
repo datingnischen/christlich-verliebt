@@ -1,0 +1,823 @@
+{
+  "source": "https://christlich-verliebt.de/magazin/wp-json/wp/v2",
+  "fetchedAt": "2026-10-02T21:03:31Z",
+  "posts": [
+    {
+      "id": 11,
+      "date": "2021-04-08T19:43:20",
+      "modified": "2026-08-01T22:02:42",
+      "slug": "duerfen-christen-schweinefleisch-essen",
+      "link": "https://christlich-verliebt.de/magazin/duerfen-christen-schweinefleisch-essen/",
+      "author": 2,
+      "featured_media": 12,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 16,
+      "date": "2021-04-13T20:35:09",
+      "modified": "2025-08-18T16:40:25",
+      "slug": "wie-viele-christen-gibt-es",
+      "link": "https://christlich-verliebt.de/magazin/wie-viele-christen-gibt-es/",
+      "author": 2,
+      "featured_media": 20,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 29,
+      "date": "2021-04-19T21:30:09",
+      "modified": "2025-08-18T16:40:25",
+      "slug": "christliche-feiertage",
+      "link": "https://christlich-verliebt.de/magazin/christliche-feiertage/",
+      "author": 2,
+      "featured_media": 34,
+      "categories": [
+        1,
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 37,
+      "date": "2021-04-21T12:01:22",
+      "modified": "2026-07-30T06:03:57",
+      "slug": "christi-himmelfahrt",
+      "link": "https://christlich-verliebt.de/magazin/christi-himmelfahrt/",
+      "author": 2,
+      "featured_media": 38,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 52,
+      "date": "2021-04-25T21:39:33",
+      "modified": "2025-08-18T16:40:24",
+      "slug": "pfingsten",
+      "link": "https://christlich-verliebt.de/magazin/pfingsten/",
+      "author": 2,
+      "featured_media": 53,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 63,
+      "date": "2021-04-29T09:28:14",
+      "modified": "2025-08-18T16:40:24",
+      "slug": "fronleichnam",
+      "link": "https://christlich-verliebt.de/magazin/fronleichnam/",
+      "author": 2,
+      "featured_media": 64,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 72,
+      "date": "2021-05-11T22:23:55",
+      "modified": "2025-08-18T16:40:24",
+      "slug": "mariae-himmelfahrt",
+      "link": "https://christlich-verliebt.de/magazin/mariae-himmelfahrt/",
+      "author": 2,
+      "featured_media": 73,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 80,
+      "date": "2021-05-13T20:09:44",
+      "modified": "2026-07-27T06:02:57",
+      "slug": "allerheiligen",
+      "link": "https://christlich-verliebt.de/magazin/allerheiligen/",
+      "author": 2,
+      "featured_media": 81,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 87,
+      "date": "2021-05-24T20:39:07",
+      "modified": "2026-07-31T14:07:08",
+      "slug": "allerseelen",
+      "link": "https://christlich-verliebt.de/magazin/allerseelen/",
+      "author": 2,
+      "featured_media": 88,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 95,
+      "date": "2021-06-10T08:39:54",
+      "modified": "2026-07-26T22:03:56",
+      "slug": "advent",
+      "link": "https://christlich-verliebt.de/magazin/advent/",
+      "author": 2,
+      "featured_media": 96,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 109,
+      "date": "2021-07-04T20:59:23",
+      "modified": "2026-08-07T16:02:28",
+      "slug": "nikolaustag",
+      "link": "https://christlich-verliebt.de/magazin/nikolaustag/",
+      "author": 2,
+      "featured_media": 112,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 120,
+      "date": "2021-07-13T15:10:02",
+      "modified": "2025-08-18T16:40:06",
+      "slug": "weihnachten",
+      "link": "https://christlich-verliebt.de/magazin/weihnachten/",
+      "author": 2,
+      "featured_media": 121,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 133,
+      "date": "2021-07-19T13:38:53",
+      "modified": "2026-08-02T06:05:09",
+      "slug": "epiphanie-dreikoenigsfest",
+      "link": "https://christlich-verliebt.de/magazin/epiphanie-dreikoenigsfest/",
+      "author": 2,
+      "featured_media": 134,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 143,
+      "date": "2021-07-22T07:43:43",
+      "modified": "2026-08-02T10:03:31",
+      "slug": "faschingsdienstag",
+      "link": "https://christlich-verliebt.de/magazin/faschingsdienstag/",
+      "author": 2,
+      "featured_media": 146,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 152,
+      "date": "2021-07-26T14:22:40",
+      "modified": "2025-08-18T16:40:06",
+      "slug": "aschermittwoch",
+      "link": "https://christlich-verliebt.de/magazin/aschermittwoch/",
+      "author": 2,
+      "featured_media": 153,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 161,
+      "date": "2021-07-30T11:02:10",
+      "modified": "2026-08-06T14:02:25",
+      "slug": "karwoche",
+      "link": "https://christlich-verliebt.de/magazin/karwoche/",
+      "author": 2,
+      "featured_media": 162,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 176,
+      "date": "2021-08-12T17:18:24",
+      "modified": "2026-08-07T20:05:30",
+      "slug": "ostern",
+      "link": "https://christlich-verliebt.de/magazin/ostern/",
+      "author": 2,
+      "featured_media": 177,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 196,
+      "date": "2021-12-14T11:40:15",
+      "modified": "2025-08-18T16:40:06",
+      "slug": "christliche-geburtstagswuensche",
+      "link": "https://christlich-verliebt.de/magazin/christliche-geburtstagswuensche/",
+      "author": 2,
+      "featured_media": 206,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 225,
+      "date": "2022-01-17T20:54:44",
+      "modified": "2026-08-08T00:04:00",
+      "slug": "papst-benedikt-xvi",
+      "link": "https://christlich-verliebt.de/magazin/papst-benedikt-xvi/",
+      "author": 2,
+      "featured_media": 226,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 233,
+      "date": "2022-03-09T17:05:32",
+      "modified": "2026-08-02T14:02:03",
+      "slug": "fastenzeit",
+      "link": "https://christlich-verliebt.de/magazin/fastenzeit/",
+      "author": 2,
+      "featured_media": 234,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 243,
+      "date": "2022-09-05T09:49:47",
+      "modified": "2026-08-03T18:03:12",
+      "slug": "christliche-symbole",
+      "link": "https://christlich-verliebt.de/magazin/christliche-symbole/",
+      "author": 2,
+      "featured_media": 245,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 256,
+      "date": "2022-09-10T20:28:27",
+      "modified": "2026-07-29T16:03:27",
+      "slug": "christliche-filme",
+      "link": "https://christlich-verliebt.de/magazin/christliche-filme/",
+      "author": 2,
+      "featured_media": 257,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 259,
+      "date": "2022-09-18T22:39:01",
+      "modified": "2026-08-09T00:02:48",
+      "slug": "wer-hat-die-bibel-geschrieben",
+      "link": "https://christlich-verliebt.de/magazin/wer-hat-die-bibel-geschrieben/",
+      "author": 2,
+      "featured_media": 261,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 280,
+      "date": "2022-10-04T15:57:55",
+      "modified": "2025-08-18T16:40:05",
+      "slug": "mormonen",
+      "link": "https://christlich-verliebt.de/magazin/mormonen/",
+      "author": 2,
+      "featured_media": 281,
+      "categories": [
+        1
+      ],
+      "tags": [
+        4,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 286,
+      "date": "2022-10-27T21:25:39",
+      "modified": "2025-08-18T16:40:05",
+      "slug": "himmlisch-plaudern",
+      "link": "https://christlich-verliebt.de/magazin/himmlisch-plaudern/",
+      "author": 2,
+      "featured_media": 288,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 290,
+      "date": "2022-10-27T21:40:59",
+      "modified": "2025-08-18T16:06:57",
+      "slug": "cxsingle-com",
+      "link": "https://christlich-verliebt.de/magazin/cxsingle-com/",
+      "author": 2,
+      "featured_media": 291,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 294,
+      "date": "2022-10-31T07:55:33",
+      "modified": "2026-08-03T04:01:53",
+      "slug": "funkyfish-de",
+      "link": "https://christlich-verliebt.de/magazin/funkyfish-de/",
+      "author": 2,
+      "featured_media": 295,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 299,
+      "date": "2022-11-09T09:19:58",
+      "modified": "2025-08-18T16:06:57",
+      "slug": "sehr-starke-gebete",
+      "link": "https://christlich-verliebt.de/magazin/sehr-starke-gebete/",
+      "author": 2,
+      "featured_media": 301,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 304,
+      "date": "2022-11-17T16:24:41",
+      "modified": "2025-08-18T16:06:57",
+      "slug": "kein-sex-vor-der-ehe",
+      "link": "https://christlich-verliebt.de/magazin/kein-sex-vor-der-ehe/",
+      "author": 2,
+      "featured_media": 305,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 308,
+      "date": "2022-11-18T21:16:07",
+      "modified": "2026-08-01T18:03:15",
+      "slug": "chringles-de",
+      "link": "https://christlich-verliebt.de/magazin/chringles-de/",
+      "author": 2,
+      "featured_media": 311,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 312,
+      "date": "2022-11-18T22:00:33",
+      "modified": "2026-07-30T10:02:34",
+      "slug": "christliche-tattoos",
+      "link": "https://christlich-verliebt.de/magazin/christliche-tattoos/",
+      "author": 2,
+      "featured_media": 313,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 315,
+      "date": "2022-11-18T22:16:59",
+      "modified": "2026-07-30T02:04:01",
+      "slug": "christliche-neujahrswuensche",
+      "link": "https://christlich-verliebt.de/magazin/christliche-neujahrswuensche/",
+      "author": 2,
+      "featured_media": 316,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 323,
+      "date": "2022-11-29T23:24:23",
+      "modified": "2026-07-31T00:02:21",
+      "slug": "christliche-geschenke",
+      "link": "https://christlich-verliebt.de/magazin/christliche-geschenke/",
+      "author": 2,
+      "featured_media": 324,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 337,
+      "date": "2023-04-06T11:29:51",
+      "modified": "2026-08-06T20:03:28",
+      "slug": "kathtreff-org",
+      "link": "https://christlich-verliebt.de/magazin/kathtreff-org/",
+      "author": 2,
+      "featured_media": 339,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 342,
+      "date": "2023-04-06T12:00:01",
+      "modified": "2025-08-18T16:06:57",
+      "slug": "catholicsingles-com",
+      "link": "https://christlich-verliebt.de/magazin/catholicsingles-com/",
+      "author": 2,
+      "featured_media": 344,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 346,
+      "date": "2023-04-06T12:40:27",
+      "modified": "2026-08-02T18:03:16",
+      "slug": "christlich-verliebt-de",
+      "link": "https://christlich-verliebt.de/magazin/christlich-verliebt-de/",
+      "author": 2,
+      "featured_media": 348,
+      "categories": [
+        9
+      ],
+      "tags": []
+    },
+    {
+      "id": 353,
+      "date": "2023-06-28T18:56:53",
+      "modified": "2026-08-08T20:02:53",
+      "slug": "vater-unser",
+      "link": "https://christlich-verliebt.de/magazin/vater-unser/",
+      "author": 2,
+      "featured_media": 355,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 358,
+      "date": "2023-07-03T11:22:55",
+      "modified": "2025-08-18T16:06:57",
+      "slug": "judas",
+      "link": "https://christlich-verliebt.de/magazin/judas/",
+      "author": 2,
+      "featured_media": 359,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 363,
+      "date": "2023-07-05T18:10:14",
+      "modified": "2026-08-01T02:04:17",
+      "slug": "gruendonnerstag",
+      "link": "https://christlich-verliebt.de/magazin/gruendonnerstag/",
+      "author": 2,
+      "featured_media": 360,
+      "categories": [
+        2
+      ],
+      "tags": []
+    },
+    {
+      "id": 367,
+      "date": "2023-09-12T11:14:14",
+      "modified": "2026-08-03T08:03:14",
+      "slug": "christliche-gemeinde",
+      "link": "https://christlich-verliebt.de/magazin/christliche-gemeinde/",
+      "author": 2,
+      "featured_media": 369,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 378,
+      "date": "2023-10-05T13:30:14",
+      "modified": "2025-12-03T13:41:23",
+      "slug": "du-bist-ein-gott-der-mich-sieht",
+      "link": "https://christlich-verliebt.de/magazin/du-bist-ein-gott-der-mich-sieht/",
+      "author": 2,
+      "featured_media": 380,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 384,
+      "date": "2024-01-10T16:40:59",
+      "modified": "2026-08-04T08:03:39",
+      "slug": "die-10-gebote",
+      "link": "https://christlich-verliebt.de/magazin/die-10-gebote/",
+      "author": 2,
+      "featured_media": 385,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 388,
+      "date": "2024-01-10T17:09:04",
+      "modified": "2026-08-01T10:02:22",
+      "slug": "jesus",
+      "link": "https://christlich-verliebt.de/magazin/jesus/",
+      "author": 2,
+      "featured_media": 390,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 433,
+      "date": "2024-01-17T10:26:56",
+      "modified": "2026-07-28T10:03:09",
+      "slug": "bibelverse",
+      "link": "https://christlich-verliebt.de/magazin/bibelverse/",
+      "author": 2,
+      "featured_media": 434,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 442,
+      "date": "2025-06-25T16:25:26",
+      "modified": "2026-08-06T16:04:19",
+      "slug": "katholische-singles",
+      "link": "https://christlich-verliebt.de/magazin/katholische-singles/",
+      "author": 2,
+      "featured_media": 443,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 475,
+      "date": "2025-11-24T23:12:03",
+      "modified": "2026-05-12T19:55:12",
+      "slug": "dietrich-bonhoeffer",
+      "link": "https://christlich-verliebt.de/magazin/dietrich-bonhoeffer/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 481,
+      "date": "2025-11-27T21:41:31",
+      "modified": "2026-08-07T06:03:41",
+      "slug": "martin-luthers",
+      "link": "https://christlich-verliebt.de/magazin/martin-luthers/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 484,
+      "date": "2025-11-28T22:55:05",
+      "modified": "2026-07-31T18:04:16",
+      "slug": "franz-von-assisi",
+      "link": "https://christlich-verliebt.de/magazin/franz-von-assisi/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 488,
+      "date": "2025-11-28T23:08:57",
+      "modified": "2026-08-05T00:04:21",
+      "slug": "corrie-ten-boom",
+      "link": "https://christlich-verliebt.de/magazin/corrie-ten-boom/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 492,
+      "date": "2025-11-30T15:47:56",
+      "modified": "2026-05-12T18:55:12",
+      "slug": "c-s-lewis",
+      "link": "https://christlich-verliebt.de/magazin/c-s-lewis/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 497,
+      "date": "2025-11-30T20:41:25",
+      "modified": "2026-05-12T18:40:12",
+      "slug": "martin-niemoeller",
+      "link": "https://christlich-verliebt.de/magazin/martin-niemoeller/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 500,
+      "date": "2025-11-30T21:06:54",
+      "modified": "2026-05-12T18:25:12",
+      "slug": "papst-franziskus",
+      "link": "https://christlich-verliebt.de/magazin/papst-franziskus/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 503,
+      "date": "2025-11-30T21:31:42",
+      "modified": "2026-05-22T22:18:04",
+      "slug": "nick-vujicic",
+      "link": "https://christlich-verliebt.de/magazin/nick-vujicic/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 507,
+      "date": "2025-11-30T21:42:56",
+      "modified": "2026-05-12T18:00:13",
+      "slug": "christine-caine",
+      "link": "https://christlich-verliebt.de/magazin/christine-caine/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 510,
+      "date": "2025-11-30T21:50:17",
+      "modified": "2026-08-03T20:02:01",
+      "slug": "samuel-koch",
+      "link": "https://christlich-verliebt.de/magazin/samuel-koch/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 513,
+      "date": "2025-11-30T22:01:26",
+      "modified": "2026-08-01T12:04:09",
+      "slug": "john-mark-comer",
+      "link": "https://christlich-verliebt.de/magazin/john-mark-comer/",
+      "author": 2,
+      "featured_media": 0,
+      "categories": [
+        11
+      ],
+      "tags": []
+    },
+    {
+      "id": 553,
+      "date": "2026-05-01T12:25:15",
+      "modified": "2026-08-04T02:04:23",
+      "slug": "top-10-staedte-christliche-singles-deutschland",
+      "link": "https://christlich-verliebt.de/magazin/top-10-staedte-christliche-singles-deutschland/",
+      "author": 1,
+      "featured_media": 563,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 600,
+      "date": "2026-05-27T07:12:11",
+      "modified": "2026-05-27T18:11:16",
+      "slug": "antrag-ohne-ring",
+      "link": "https://christlich-verliebt.de/magazin/antrag-ohne-ring/",
+      "author": 2,
+      "featured_media": 603,
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 606,
+      "date": "2026-07-11T07:02:22",
+      "modified": "2026-07-11T17:42:10",
+      "slug": "trad-wife-rollenbilder-dating",
+      "link": "https://christlich-verliebt.de/magazin/trad-wife-rollenbilder-dating/",
+      "author": 2,
+      "featured_media": 607,
+      "categories": [
+        12
+      ],
+      "tags": []
+    }
+  ],
+  "tags": [
+    {
+      "id": 3,
+      "count": 1,
+      "description": "",
+      "name": "Mormonen",
+      "slug": "mormonen"
+    },
+    {
+      "id": 4,
+      "count": 1,
+      "description": "",
+      "name": "Glauben",
+      "slug": "glauben"
+    },
+    {
+      "id": 5,
+      "count": 0,
+      "description": "",
+      "name": "Christen",
+      "slug": "christen"
+    },
+    {
+      "id": 6,
+      "count": 1,
+      "description": "",
+      "name": "Regeln",
+      "slug": "regeln"
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "description": "",
+      "name": "Sekte",
+      "slug": "sekte"
+    },
+    {
+      "id": 8,
+      "count": 1,
+      "description": "",
+      "name": "Symbole",
+      "slug": "symbole"
+    }
+  ]
+}
