@@ -63,7 +63,6 @@ route_ownership:
   - {path_family: /faq/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
   - {path_family: /ueber-uns/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
   - {path_family: /ueber-uns/bewertungen/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
-  - {path_family: /bewertungen-und-erfahrungen/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 308, upstream: null, verified: false}
   - {path_family: /christliche-gemeinden/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
   - {path_family: /christliche-partnersuche/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}
   - {path_family: /christliche-werte/, owner: nextjs, methods: [GET, HEAD], query_preserved: false, expected_status: 200, upstream: null, verified: false}

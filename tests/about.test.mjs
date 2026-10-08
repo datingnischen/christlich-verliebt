@@ -22,6 +22,7 @@ test("old about paths redirect permanently and header and footer link the about 
   const shell = await source("components/site-shell.tsx");
   assert.match(config, /ABOUT_PAGE_MOVES\.de/);
   assert.match(config, /permanent: true/);
+  assert.match(config, /destination !== ABOUT_REVIEWS_PATH/); // Alt-Pfad /bewertungen-und-erfahrungen/ liefert 404
   assert.match(shell, /<h3>Über uns<\/h3>/);
   assert.match(shell, /\["Über uns", ABOUT_ROOT_PATH\]/);
 });

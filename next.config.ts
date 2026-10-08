@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import { PHASE_DEVELOPMENT_SERVER } from "next/constants.js";
-import { ABOUT_PAGE_MOVES } from "./lib/about";
+import { ABOUT_PAGE_MOVES, ABOUT_REVIEWS_PATH } from "./lib/about";
 
 // Der nginx vor den Live-Domains reicht nur Seitenrouten an Vercel weiter.
 // Assets (/_next, /_next/image, public-Dateien) kommen darum absolut vom Vercel-Host.
@@ -46,7 +46,8 @@ export default function nextConfig(phase: string): NextConfig {
     async redirects() {
       // Live-Host ohne Länderpräfix (nur .de hat diese Seiten). Mit /de-Präfix (Vercel-Host, nginx-Upstream)
       // absolut auf die Live-Domain, sonst landen Besucher hinter nginx auf christlich-verliebt.de/de/...
-      return Object.entries(ABOUT_PAGE_MOVES.de ?? {}).flatMap(([source, destination]) => [
+      // Der Alt-Pfad /bewertungen-und-erfahrungen/ wird bewusst nicht mehr bedient (404); das Mapping in ABOUT_PAGE_MOVES lädt nur den Inhalt.
+      return Object.entries(ABOUT_PAGE_MOVES.de ?? {}).filter(([, destination]) => destination !== ABOUT_REVIEWS_PATH).flatMap(([source, destination]) => [
         { source, destination, permanent: true, has: [{ type: "host" as const, value: "(?:www\.)?christlich-verliebt\.de" }] },
         { source: `/de${source}`, destination: `https://christlich-verliebt.de${destination}`, permanent: true },
       ]);
