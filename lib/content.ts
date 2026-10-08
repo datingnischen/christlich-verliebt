@@ -5,7 +5,7 @@ import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
 import { movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
-import { withTrailingSlash, type MarketCode } from "@/lib/markets";
+import { getMarket, withTrailingSlash, type MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
   market: MarketCode;
@@ -24,6 +24,8 @@ export type PublicPage = {
   // Nur eigene redaktionelle Seiten (data/editorial-pages.json): eingebettetes Video (lib/videos.ts), sichtbares Datum.
   videoId?: string;
   updated?: string;
+  // Spiegelseite: dieselbe Seite einer anderen Länderausgabe (AT/CH-Magazin), Canonical zeigt auf die Originalseite.
+  mirrorOf?: MarketCode;
 };
 
 export type MagazineCategory = {
@@ -53,6 +55,16 @@ const pages = [...(editorialSnapshot.pages as PublicPage[]), ...(snapshot.pages 
   const path = movedAboutPath(page.market, page.path);
   return path === page.path ? page : { ...page, path, canonical: `https://${page.domain}${path}` };
 });
+// Das Magazin gibt es nur in Deutschland. Damit /at/magazin/ und /ch/magazin/ wie alle anderen Länderpfade antworten
+// (ICONY/nginx setzt für jedes Land dieselbe Pfadstruktur voraus), spiegeln AT und CH die deutschen Magazinseiten.
+// Canonical bleibt die deutsche Fassung, die Spiegel stehen auf noindex und fehlen in der Sitemap (kein Duplicate Content).
+// Das Autorenprofil hat eine eigene Route und gibt es nur auf .de.
+const MIRRORED_MAGAZINE_MARKETS: readonly MarketCode[] = ["at", "ch"];
+const MAGAZINE_MIRROR_EXCLUDED = new Set(["/magazin/christian-m-haas/"]);
+const magazineMirrors: PublicPage[] = pages
+  .filter((page) => page.market === "de" && (page.family === "magazine-hub" || page.family === "magazine") && !MAGAZINE_MIRROR_EXCLUDED.has(page.path))
+  .flatMap((page) => MIRRORED_MAGAZINE_MARKETS.map((market): PublicPage => ({ ...page, market, domain: getMarket(market).domain, locale: getMarket(market).locale, mirrorOf: "de" })));
+pages.push(...magazineMirrors);
 const pageIndex = new Map(pages.map((page) => [`${page.market}:${page.path}`, page]));
 const magazineCategories = categorySnapshot.categories as MagazineCategory[];
 const cityImageCredits = new Map<string, CityImageCredit>(cityImageSnapshot.images.map(image => [image.localPath, {

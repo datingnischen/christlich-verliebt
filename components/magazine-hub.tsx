@@ -3,7 +3,7 @@ import { CityIcon, type CityIconName } from "@/components/city-icons";
 import { CtaBand } from "@/components/city-page";
 import { MagazineFilter } from "@/components/magazine-filter";
 import { getChildPages, getMagazineCategories, registrationUrl, selectPageImage, type PublicPage } from "@/lib/content";
-import { previewPath } from "@/lib/markets";
+import { previewPath, publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./magazine-hub.module.css";
 
@@ -164,7 +164,7 @@ export function MagazineHub({ page }: { page: PublicPage }) {
         <p className={styles.eyebrow}>Aus der Redaktion</p>
         <h2>Geschrieben mit Herz und Haltung</h2>
         <p><strong>Christian M. Haas</strong> ist Datingexperte für werteorientierte Partnersuche. Im Magazin verbindet er Wissen rund um Glauben und Kirchenjahr mit ehrlichen Gedanken zu Liebe und Beziehung.</p>
-        <a href={previewPath(page.market, AUTHOR_PROFILE)}>Mehr über Christian M. Haas <CityIcon name="arrow" /></a>
+        <a href={page.market === "de" ? previewPath("de", AUTHOR_PROFILE) : publicUrl("de", AUTHOR_PROFILE)}>Mehr über Christian M. Haas <CityIcon name="arrow" /></a>
       </div>
     </section>
   </main>;

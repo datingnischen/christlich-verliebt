@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: title },
     description,
     alternates: { canonical: page.canonical },
-    robots: { index: true, follow: true },
+    robots: page.mirrorOf ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: { title, description, url: page.canonical, locale: page.locale.replace("-", "_"), type: "website", ...(hero ? { images: [{ url: hero }] } : {}) },
   };
 }
