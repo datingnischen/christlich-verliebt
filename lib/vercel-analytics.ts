@@ -7,12 +7,14 @@ const LEGACY_ENDPOINTS = {
   scriptSrc: "/_vercel/insights/script.js",
   viewEndpoint: "/_vercel/insights/view",
   eventEndpoint: "/_vercel/insights/event",
+  sessionEndpoint: "/_vercel/insights/session",
 };
 
 export type VercelAnalyticsEndpoints = {
   scriptSrc?: string;
   viewEndpoint?: string;
   eventEndpoint?: string;
+  sessionEndpoint?: string;
 };
 
 function configuredEndpoints(): VercelAnalyticsEndpoints {
@@ -36,5 +38,6 @@ export function vercelAnalyticsProps(assetHost: string | undefined): VercelAnaly
     scriptSrc: absolute(configured.scriptSrc ?? LEGACY_ENDPOINTS.scriptSrc),
     viewEndpoint: absolute(configured.viewEndpoint ?? LEGACY_ENDPOINTS.viewEndpoint),
     eventEndpoint: absolute(configured.eventEndpoint ?? LEGACY_ENDPOINTS.eventEndpoint),
+    sessionEndpoint: absolute(configured.sessionEndpoint ?? LEGACY_ENDPOINTS.sessionEndpoint),
   };
 }
