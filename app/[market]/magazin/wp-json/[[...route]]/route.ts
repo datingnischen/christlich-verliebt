@@ -1,4 +1,5 @@
 import { handleWpRest, wpRestPreflight, wpRestResponse } from "@/lib/wp-rest-compat";
+import { isTeaserImageRoute, teaserImageResponse } from "@/lib/teaser-image";
 
 // WordPress-kompatibler REST-Endpunkt je Markt (aus den Magazin-Dateien erzeugt), siehe lib/wp-rest-compat.ts.
 // Intern /<market>/magazin/wp-json/wp/v2/posts; auf den Produktionshosts ohne Länderpräfix sichtbar:
@@ -9,6 +10,8 @@ type RouteContext = { params: Promise<{ market: string; route?: string[] }> };
 
 export async function GET(request: Request, context: RouteContext) {
   const { market, route = [] } = await context.params;
+  // Teaserbilder für ICONY ohne Dateiendung (lib/teaser-image.ts)
+  if (isTeaserImageRoute(route)) return teaserImageResponse(route, request.method);
   const result = handleWpRest(`/${route.join("/")}`, new URL(request.url).searchParams, market);
   return wpRestResponse(result, request.method);
 }

@@ -6,6 +6,7 @@ import wpSnapshot from "../data/wp-posts.json" with { type: "json" };
 import { getMarket, isMarketCode, type MarketCode } from "./markets.ts";
 import { staticAsset } from "./static-asset.ts";
 
+import { teaserImageUrl } from "./teaser-image.ts";
 /**
  * WordPress-kompatibler REST-Endpunkt für die Magazin-Beiträge, erzeugt aus den Dateien im Repo.
  *
@@ -162,7 +163,7 @@ function absoluteContent(html: string, origin: string): string {
  * nginx muss den Pfad an Vercel weiterleiten.
  */
 export function ownDomainMediaUrl(origin: string, imagePath: string) {
-  return `${origin}/magazin/media${imagePath}`;
+  return teaserImageUrl(`${origin}/magazin/wp-json`, imagePath);
 }
 
 const articleSlug = (path: string) => path.match(/^\/magazin\/([a-z0-9-]+)\/$/)?.[1] ?? null;
@@ -263,7 +264,7 @@ function mediaObject(media: SourceMedia, source: MagazineSource): Json {
     mime_type: media.mimeType,
     source_url: media.sourceUrl,
   };
-  const sizes: Record<string, unknown> = { medium: size, medium_large: size, large: size, full: size };
+  const sizes: Record<string, unknown> = { thumbnail: size, medium: size, medium_large: size, large: size, full: size };
   return {
     id: media.id,
     date: media.date,
