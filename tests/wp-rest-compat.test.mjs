@@ -87,7 +87,11 @@ test("posts: Teaser-Abruf wie bei ICONY liefert drei Beiträge im WordPress-Form
 
     const media = post._embedded["wp:featuredmedia"][0];
     assert.equal(media.id, post.featured_media);
-    assert.match(media.source_url, /^https:\/\/christlich-verliebt\.vercel\.app\/app-assets\/(?:imported\/de|brand)\/[^/]+\.(?:jpe?g|png)$/, "absolut auf dem Asset-Host");
+    // Eigene Domain statt Asset-Host: die ICONY-Startseite darf Bilder nur von der eigenen Domain laden (CSP, Heiko 2026-10-14)
+    assert.match(media.source_url, /^https:\/\/christlich-verliebt\.de\/magazin\/media\/(?:imported\/de|brand)\/[^/]+\.(?:jpe?g|png)$/, "eigene Domain unter /magazin/media/");
+    assert.equal(media.media_details.sizes.full.source_url, media.source_url);
+    assert.equal(media.media_details.sizes.medium.source_url, media.source_url);
+    assert.doesNotMatch(JSON.stringify(media), /_next\/image|vercel\.app/);
     assert.ok(media.media_details.width > 0 && media.media_details.height > 0);
     assert.ok(media.alt_text.trim(), "Alt-Text nie leer");
     assert.ok(media.media_details.sizes.full);
@@ -226,6 +230,13 @@ test("Proxy: /magazin/wp-json und ?rest_route= werden ohne Slash und ohne 308 an
   }
   // Normale Seiten behalten ihre Slash-Umleitung.
   assert.equal(at("christlich-verliebt.de", "/magazin").status, 308);
+  // "?_embed" ohne Wert (ICONY-Schreibweise) überlebt den Rewrite als _embed=1
+  assert.match(at("christlich-verliebt.de", "/magazin/wp-json/wp/v2/posts/?per_page=3&_embed").headers.get("x-middleware-rewrite") ?? "", /per_page=3&_embed=1$/);
+  assert.match(at("christlich-verliebt.vercel.app", "/de/magazin/wp-json/wp/v2/posts?_embed").headers.get("x-middleware-rewrite") ?? "", /\?_embed=1$/);
+  // Teaserbilder: /magazin/media/<pfad> ist die Datei in public/, auch mit Upstream-Präfix
+  assert.match(at("christlich-verliebt.de", "/magazin/media/imported/de/bild.jpg").headers.get("x-middleware-rewrite") ?? "", /^https:\/\/christlich-verliebt\.de\/imported\/de\/bild\.jpg$/);
+  assert.match(at("christlich-verliebt.vercel.app", "/at/magazin/media/brand/logo.png").headers.get("x-middleware-rewrite") ?? "", /\/brand\/logo\.png$/);
+  assert.equal(at("christlich-verliebt.de", "/magazin/media/imported/de/bild.jpg").status, 200);
 });
 
 test("Routen: wp-json und ?rest_route= sind je Markt verdrahtet, Sitemap, Suche und Catch-all bleiben unberührt", () => {

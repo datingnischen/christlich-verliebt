@@ -4,7 +4,7 @@ import categorySnapshot from "../data/magazine-categories.json" with { type: "js
 import mediaSnapshot from "../data/wp-media.json" with { type: "json" };
 import wpSnapshot from "../data/wp-posts.json" with { type: "json" };
 import { getMarket, isMarketCode, type MarketCode } from "./markets.ts";
-import { assetHost, staticAsset } from "./static-asset.ts";
+import { staticAsset } from "./static-asset.ts";
 
 /**
  * WordPress-kompatibler REST-Endpunkt für die Magazin-Beiträge, erzeugt aus den Dateien im Repo.
@@ -156,16 +156,14 @@ function absoluteContent(html: string, origin: string): string {
     .replace(/\bhref="(\/[^"]*)"/g, (_match, href: string) => `href="${origin}${href}"`);
 }
 
-/** Verkleinerte Varianten über den Bildoptimierer des Asset-Hosts (Breiten aus den Next.js-Standardgrößen). */
-function optimizedUrl(imagePath: string, width: number) {
-  return `${assetHost}/_next/image/?url=${encodeURIComponent(imagePath)}&w=${width}&q=75`;
+/**
+ * Beitragsbild für ICONY auf der eigenen Domain unter /magazin/media/…: Die CSP der ICONY-Startseiten lässt Bilder nur
+ * von der eigenen Domain zu (Heiko, 2026-10-14). proxy.ts reicht /magazin/media/<pfad> an die Datei in public/ durch,
+ * nginx muss den Pfad an Vercel weiterleiten.
+ */
+export function ownDomainMediaUrl(origin: string, imagePath: string) {
+  return `${origin}/magazin/media${imagePath}`;
 }
-
-const SIZE_STEPS: Array<[string, number]> = [
-  ["medium", 384],
-  ["medium_large", 750],
-  ["large", 1080],
-];
 
 const articleSlug = (path: string) => path.match(/^\/magazin\/([a-z0-9-]+)\/$/)?.[1] ?? null;
 
@@ -196,7 +194,7 @@ export function buildMagazineSource(market: MarketCode): MagazineSource {
             slug: page.heroImage.split("/").pop()!.replace(/\.[^.]+$/, ""),
             title: page.title,
             altText: (page.heroTitle || page.title).trim() || page.title,
-            sourceUrl: staticAsset(page.heroImage),
+            sourceUrl: ownDomainMediaUrl(origin, page.heroImage),
             mimeType: info.mime,
             width: info.width,
             height: info.height,
@@ -256,24 +254,16 @@ const hubLink = (source: MagazineSource) => `${source.origin}/magazin/`;
 
 function mediaObject(media: SourceMedia, source: MagazineSource): Json {
   const base = restBase(source);
-  const sizes: Record<string, unknown> = {};
-  for (const [name, width] of SIZE_STEPS) {
-    if (media.width <= width || !/^image\/(jpeg|png|webp)$/.test(media.mimeType)) continue;
-    sizes[name] = {
-      file: media.imagePath.split("/").pop(),
-      width,
-      height: Math.round((media.height * width) / media.width),
-      mime_type: media.mimeType,
-      source_url: optimizedUrl(media.imagePath, width),
-    };
-  }
-  sizes.full = {
+  // Eine Datei je Bild; medium/medium_large/large sind Aliase derselben Datei (keine /_next/image-Varianten vom
+  // Asset-Host: die CSP der ICONY-Startseiten lässt nur die eigene Domain zu).
+  const size = {
     file: media.imagePath.split("/").pop(),
     width: media.width,
     height: media.height,
     mime_type: media.mimeType,
     source_url: media.sourceUrl,
   };
+  const sizes: Record<string, unknown> = { medium: size, medium_large: size, large: size, full: size };
   return {
     id: media.id,
     date: media.date,

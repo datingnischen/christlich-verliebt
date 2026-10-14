@@ -56,6 +56,14 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Teaserbilder für ICONY: /magazin/media/<pfad> (auch mit Upstream-Präfix /de/…) ist die Datei public/<pfad>.
+  const mediaFile = path.match(/^(?:\/(?:de|at|ch))?\/magazin\/media\/((?:imported|brand|city-images)\/.+\.[a-z0-9]+)$/i);
+  if (mediaFile) {
+    const file = request.nextUrl.clone();
+    file.pathname = `/${mediaFile[1]}`;
+    return NextResponse.rewrite(file);
+  }
+
   const hostMarket = HOST_MARKETS.get(hostname(request));
   const slashRedirect = trailingSlashRedirect(request, hostMarket);
   if (slashRedirect) return slashRedirect;
@@ -78,6 +86,10 @@ export function proxy(request: NextRequest) {
     : restIndex
       ? `/${market}/magazin/index.php`
       : `/${market}${publicPath === "/" ? "" : publicPath}`;
+  // Vercel verwirft bei Rewrites Parameter ohne Wert; ICONY ruft "?_embed" ohne Wert auf (WordPress-Schreibweise).
+  if (destination.searchParams.has("_embed") && destination.searchParams.get("_embed") === "") {
+    destination.searchParams.set("_embed", "1");
+  }
   const headers = new Headers(request.headers);
   headers.set("x-cv-rewrite-token", TOKEN);
   return NextResponse.rewrite(destination, { request: { headers } });
