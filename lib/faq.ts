@@ -86,7 +86,8 @@ export function faqDescription(page: Pick<PublicPage, "domain">, faq: FaqContent
 export function faqJsonLd(page: Pick<PublicPage, "canonical" | "domain" | "locale" | "heroTitle">, faq: FaqContent, title: string, description: string) {
   const home = `https://${page.domain}/`;
   const canonical = page.canonical;
-  const organizationId = `${home}#organization`;
+  // Dieselbe Betreiber-@id wie im Site-Graph (lib/site-entities.ts), damit WebSite überall gleich verknüpft ist.
+  const organizationId = `${home}#operator`;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -94,7 +95,7 @@ export function faqJsonLd(page: Pick<PublicPage, "canonical" | "domain" | "local
         "@type": "Organization",
         "@id": organizationId,
         name: "ICONY GmbH",
-        url: `${home}impressum.html`,
+        url: "https://www.icony.com",
       },
       {
         "@type": "WebSite",

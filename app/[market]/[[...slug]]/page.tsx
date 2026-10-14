@@ -6,12 +6,15 @@ import { CityPage } from "@/components/city-page";
 import { FaqPage } from "@/components/faq-page";
 import { HomePage } from "@/components/home-page";
 import { MAGAZINE_DESCRIPTION, MAGAZINE_TITLE, MagazineHub } from "@/components/magazine-hub";
+import { SiteJsonLd } from "@/components/site-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { VideoEmbed } from "@/components/video-embed";
-import { cardLinkLabel, formatUpdated, getChildPages, getCityImageCredit, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { articleDates, cardLinkLabel, formatUpdated, getChildPages, getCityImageCredit, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
 import { getVideo, videoDurationLabel, videoJsonLd } from "@/lib/videos";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
+import { ABOUT_SOCIAL_PATH, aboutCanonical, brandSameAs } from "@/lib/about";
 import { isMarketCode, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
+import { buildMagazineArticleGraph, safeJsonLd } from "@/lib/site-entities";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./page.module.css";
 
@@ -53,13 +56,49 @@ function excerpt(text: string) {
   return text.length > 165 ? `${text.slice(0, 162).trim()}…` : text;
 }
 
-function safeJsonLd(value: unknown) {
-  return JSON.stringify(value)
-    .replace(/</g, "\\u003c")
-    .replace(/>/g, "\\u003e")
-    .replace(/&/g, "\\u0026")
-    .replace(/\u2028/g, "\\u2028")
-    .replace(/\u2029/g, "\\u2029");
+// schema.org je Seitentyp: Startseite, Magazin-Übersicht und Über-uns-Unterseiten bekommen den Site-Graph
+// (ICONY, Marke, Website), Magazinbeiträge BlogPosting mit Christian M. Haas als Autor, Breadcrumb und Website.
+function siteRootOf(page: PublicPage) {
+  return `${new URL(page.canonical).origin}/`;
+}
+
+function PageJsonLd({ page }: { page: PublicPage }) {
+  const siteRoot = siteRootOf(page);
+  const home = { name: "Startseite", url: siteRoot };
+  if (page.family === "home") {
+    return <SiteJsonLd siteRoot={siteRoot} page={{ type: "WebPage", url: page.canonical, name: page.title, description: page.description }} />;
+  }
+  if (page.family === "magazine-hub") {
+    return <SiteJsonLd siteRoot={siteRoot} page={{ type: "CollectionPage", url: page.canonical, name: MAGAZINE_TITLE, description: MAGAZINE_DESCRIPTION, breadcrumb: [home, { name: "Magazin", url: page.canonical }] }} />;
+  }
+  if (page.path.startsWith("/ueber-uns/")) {
+    return <SiteJsonLd siteRoot={siteRoot} page={{
+      type: page.path === ABOUT_SOCIAL_PATH ? "CollectionPage" : "WebPage",
+      url: page.canonical,
+      name: page.heroTitle,
+      description: page.description,
+      breadcrumb: [home, { name: "Über uns", url: aboutCanonical(page.market) }, { name: page.heroTitle, url: page.canonical }],
+    }} />;
+  }
+  if (page.family === "magazine") {
+    const dates = articleDates(page);
+    const graph = buildMagazineArticleGraph({
+      siteRoot,
+      sameAs: brandSameAs(),
+      kind: dates ? "post" : "page",
+      magazineName: "Magazin",
+      magazineUrl: `${siteRoot}magazin/`,
+      url: page.canonical,
+      headline: page.heroTitle,
+      description: page.description,
+      image: selectPageImage(page),
+      datePublished: dates?.published,
+      dateModified: dates?.modified,
+      authorImage: staticAsset("/brand/christian-m-haas.jpg"),
+    });
+    return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(graph) }} />;
+  }
+  return null;
 }
 
 function ContentCard({ child }: { child: PublicPage }) {
@@ -76,8 +115,8 @@ export default async function PublicPageRoute({ params }: Props) {
   const register = registrationUrl(page);
   if (page.family === "location") return <SiteShell market={page.market} registrationHref={register}><CityPage page={page} /></SiteShell>;
   if (page.family === "location-hub") return <SiteShell market={page.market} registrationHref={register}><CityHub page={page} /></SiteShell>;
-  if (page.family === "home") return <SiteShell market={page.market} registrationHref={register}><HomePage page={page} /></SiteShell>;
-  if (page.family === "magazine-hub") return <SiteShell market={page.market} registrationHref={register}><MagazineHub page={page} /></SiteShell>;
+  if (page.family === "home") return <SiteShell market={page.market} registrationHref={register}><PageJsonLd page={page} /><HomePage page={page} /></SiteShell>;
+  if (page.family === "magazine-hub") return <SiteShell market={page.market} registrationHref={register}><PageJsonLd page={page} /><MagazineHub page={page} /></SiteShell>;
   const heroImage = selectPageImage(page);
   const heroCredit = getCityImageCredit(page);
   const contentHtml = renderedContentHtml(page);
@@ -87,6 +126,7 @@ export default async function PublicPageRoute({ params }: Props) {
   const video = getVideo(page.videoId);
   const videoGraph = video ? { "@context": "https://schema.org", ...videoJsonLd(video, `${page.canonical}#video`) } : null;
   return <SiteShell market={page.market} registrationHref={register}>
+    <PageJsonLd page={page} />
     {faqGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqGraph) }} /> : null}
     {videoGraph ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(videoGraph) }} /> : null}
     <main className={styles.page}>

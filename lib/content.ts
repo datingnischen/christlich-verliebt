@@ -3,6 +3,7 @@ import editorialSnapshot from "@/data/editorial-pages.json";
 import categorySnapshot from "@/data/magazine-categories.json";
 import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
+import wpPostSnapshot from "@/data/wp-posts.json";
 import { movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
 import { getMarket, withTrailingSlash, type MarketCode } from "@/lib/markets";
@@ -123,6 +124,18 @@ export function getMoreCities(page: PublicPage, count = 6): PublicPage[] {
   const cities = pages.filter((item) => item.market === page.market && item.family === "location" && item.heroImage).sort((a, b) => a.path.localeCompare(b.path));
   const start = cities.findIndex((item) => item.path === page.path) + 1;
   return [...cities.slice(start), ...cities.slice(0, start)].filter((item) => item.path !== page.path).slice(0, count);
+}
+
+// Veröffentlichungs-/Änderungsdatum eines Magazinbeitrags: WordPress-Abzug (data/wp-posts.json, Berliner Ortszeit ohne Zone)
+// oder `updated` eigener Artikel. Magazinseiten ohne beides (Werkzeug-/Autorenseiten) sind keine Beiträge → null.
+const wpPostDates = new Map((wpPostSnapshot.posts as Array<{ slug: string; date: string; modified: string }>).map(post => [post.slug, post]));
+
+export function articleDates(page: PublicPage): { published: string; modified: string } | null {
+  if (page.family !== "magazine") return null;
+  const slug = page.path.match(/^\/magazin\/([a-z0-9-]+)\/$/)?.[1];
+  const wp = slug ? wpPostDates.get(slug) : undefined;
+  if (wp) return { published: wp.date, modified: wp.modified || wp.date };
+  return page.updated ? { published: page.updated, modified: page.updated } : null;
 }
 
 export function getMagazineCategories(): MagazineCategory[] {

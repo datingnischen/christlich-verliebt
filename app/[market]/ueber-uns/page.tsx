@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { SiteJsonLd } from "@/components/site-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { SiteSearchForm } from "@/components/site-search-form";
 import { aboutCanonical, ABOUT_REVIEWS_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages, REVIEW_PORTALS, SOCIAL_CHANNELS } from "@/lib/about";
 import { getMarket, isMarketCode, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
+import { AUTHOR as SCHEMA_AUTHOR, type SiteGraphPage } from "@/lib/site-entities";
 import { staticAsset } from "@/lib/static-asset";
 import pageStyles from "../[[...slug]]/page.module.css";
 import styles from "./about.module.css";
@@ -54,27 +56,20 @@ function authorUrl(market: MarketCode) {
   return market === "de" ? previewPath("de", AUTHOR_PATH) : publicUrl("de", AUTHOR_PATH);
 }
 
-function safeJsonLd(value: unknown) {
-  return JSON.stringify(value).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
-}
-
-function aboutGraph(market: MarketCode) {
-  const config = getMarket(market);
-  const home = publicUrl(market);
+// Site-Graph (ICONY, Marke, Website) plus AboutPage und Christian als Person mit derselben @id wie auf seinem Profil.
+function aboutPage(market: MarketCode): SiteGraphPage {
   const canonical = aboutCanonical(market);
   return {
-    "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "BreadcrumbList", "@id": `${canonical}#breadcrumb`, itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Startseite", item: home },
-        { "@type": "ListItem", position: 2, name: "Über uns", item: canonical },
-      ] },
-      { "@type": "Organization", "@id": `${home}#organization`, name: config.domain, url: home, parentOrganization: { "@type": "Organization", name: "ICONY GmbH" }, sameAs: SOCIAL_CHANNELS.map(channel => channel.href) },
-      { "@type": "Person", "@id": "https://christlich-verliebt.de/magazin/christian-m-haas/#person", name: AUTHOR.name, jobTitle: AUTHOR.jobTitle, url: "https://christlich-verliebt.de/magazin/christian-m-haas/", image: AUTHOR.image, sameAs: AUTHOR.sameAs },
-      { "@type": "AboutPage", "@id": `${canonical}#webpage`, url: canonical, name: "Über uns", description: DESCRIPTION, inLanguage: config.locale, breadcrumb: { "@id": `${canonical}#breadcrumb` }, about: { "@id": `${home}#organization` }, mentions: { "@id": "https://christlich-verliebt.de/magazin/christian-m-haas/#person" } },
-    ],
+    type: "AboutPage",
+    url: canonical,
+    name: "Über uns",
+    description: DESCRIPTION,
+    breadcrumb: [{ name: "Startseite", url: publicUrl(market) }, { name: "Über uns", url: canonical }],
+    mentions: SCHEMA_AUTHOR.personId,
   };
 }
+
+const authorNode = { "@type": "Person", "@id": SCHEMA_AUTHOR.personId, name: AUTHOR.name, jobTitle: AUTHOR.jobTitle, url: SCHEMA_AUTHOR.profileUrl, image: AUTHOR.image, sameAs: AUTHOR.sameAs };
 
 export default async function AboutPage({ params }: Props) {
   const market = await activeMarket(params);
@@ -88,7 +83,7 @@ export default async function AboutPage({ params }: Props) {
       : { kicker: "Dating-Tipps", title: "Gut vorbereitet ins Kennenlernen", text: "Unsere Dating-Tipps helfen Dir bei Profil, erster Nachricht und dem ersten Treffen – mit Blick auf das, was Dir wichtig ist.", label: "Zu den Dating-Tipps", href: publicUrl(market, "/dating-tipps/") };
 
   return <SiteShell market={market}>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(aboutGraph(market)) }} />
+    <SiteJsonLd siteRoot={publicUrl(market)} page={aboutPage(market)} extraNodes={[authorNode]} />
     <main className={pageStyles.page}>
       <nav className={styles.breadcrumbs} aria-label="Breadcrumb"><ol><li><a href={previewPath(market)}>Startseite</a></li><li><span aria-current="page">Über uns</span></li></ol></nav>
       <section className={pageStyles.hero}>

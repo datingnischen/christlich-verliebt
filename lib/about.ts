@@ -25,10 +25,17 @@ export function hasAboutSubpages(market: MarketCode): boolean {
   return Boolean(ABOUT_PAGE_MOVES[market]);
 }
 
+// Einzige Quelle für Social-Media-Links (Über uns, Social-Media-Seite) und für Brand.sameAs im JSON-LD.
+// brandProfile: true nur für eigene offizielle Profile der Marke; Gruppen, Communities oder Bewertungsportale
+// dürfen hier sichtbar stehen, aber ohne brandProfile und damit nicht in sameAs.
 export const SOCIAL_CHANNELS = [
-  { name: "Facebook", href: "https://www.facebook.com/christlichverliebt/", text: "Neuigkeiten, Inspiration und Beiträge rund um christlich-verliebt." },
-  { name: "YouTube", href: "https://www.youtube.com/@Christlich-Verliebt", text: "Videos, Erfahrungsberichte und Impulse für Liebe, Glaube und Partnerschaft." },
+  { name: "Facebook", href: "https://www.facebook.com/christlichverliebt/", text: "Neuigkeiten, Inspiration und Beiträge rund um christlich-verliebt.", brandProfile: true },
+  { name: "YouTube", href: "https://www.youtube.com/@Christlich-Verliebt", text: "Videos, Erfahrungsberichte und Impulse für Liebe, Glaube und Partnerschaft.", brandProfile: true },
 ] as const;
+
+export function brandSameAs(): string[] {
+  return SOCIAL_CHANNELS.filter(channel => channel.brandProfile).map(channel => channel.href);
+}
 
 export const REVIEW_PORTALS = [
   { name: "Trustpilot", href: "https://www.trustpilot.com/review/christlich-verliebt.de", text: "Mitglieder bewerten ihre Erfahrungen mit der Plattform öffentlich und unabhängig." },

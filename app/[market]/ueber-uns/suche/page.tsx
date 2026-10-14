@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { SiteJsonLd } from "@/components/site-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { SiteSearchForm } from "@/components/site-search-form";
-import { ABOUT_ROOT_PATH } from "@/lib/about";
+import { ABOUT_ROOT_PATH, aboutCanonical } from "@/lib/about";
 import { getPages } from "@/lib/content";
 import { getMarket, isMarketCode, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { buildSearchIndex, SEARCH_LIMIT, SEARCH_PATH, searchIndex, type SearchEntry } from "@/lib/search";
@@ -56,7 +57,17 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const query = (Array.isArray(q) ? q[0] : q ?? "").trim().slice(0, 100);
   const hits = query ? searchIndex(marketIndex(market), query) : [];
 
+  const canonical = publicUrl(market, SEARCH_PATH);
+  const searchPage = {
+    type: "WebPage" as const,
+    url: canonical,
+    name: `Suche auf ${getMarket(market).domain}`,
+    description: "Durchsuche Magazin, Ratgeber und die christliche Partnersuche in Deiner Region.",
+    breadcrumb: [{ name: "Startseite", url: publicUrl(market) }, { name: "Über uns", url: aboutCanonical(market) }, { name: "Suche", url: canonical }],
+  };
+
   return <SiteShell market={market}>
+    <SiteJsonLd siteRoot={publicUrl(market)} page={searchPage} />
     <main className={pageStyles.page}>
       <nav className={aboutStyles.breadcrumbs} aria-label="Breadcrumb"><ol>
         <li><a href={previewPath(market)}>Startseite</a></li>
