@@ -22,6 +22,7 @@ const VIDEO_ID = "pRVuae0ts00";
 const SOCIALS = [
   { label: "YouTube", href: YOUTUBE_CHANNEL },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/christian-m-haas-457323379" },
+  { label: "Amazon-Autorenseite", href: "https://www.amazon.com/author/christian-m-haas" },
   { label: "Ausführliche Vita", href: "https://datingnischen.de/christian" },
   { label: "Gravatar", href: "https://gravatar.com/automatic8c1daff973" },
 ];
