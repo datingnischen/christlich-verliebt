@@ -16,7 +16,7 @@ Gemeinsames Next.js/Vercel-Frontend für die **öffentlichen redaktionellen Inha
 - `/at` → Österreich
 - `/ch` → Schweiz
 
-Produktionshosts werden ohne sichtbaren Länderpräfix auf die jeweilige Marktansicht umgeschrieben.
+Produktionshosts werden ohne sichtbaren Länderpräfix auf die jeweilige Marktansicht umgeschrieben. Interne Links stehen im HTML darum absolut auf der Live-Domain ohne Präfix (`previewPath` → `publicUrl`); auf Vorschau-Hosts (localhost, `*.vercel.app`) biegt `components/preview-links.tsx` sie nach dem Laden auf `/de/…`, `/at/…`, `/ch/…` um, damit Klicks in der Vorschau bleiben.
 
 ## Datenimport
 

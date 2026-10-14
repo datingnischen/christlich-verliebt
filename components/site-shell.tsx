@@ -3,6 +3,7 @@ import { getMarket, MARKET_CODES, previewPath, publicUrl, type MarketCode } from
 import { ABOUT_REVIEWS_PATH, ABOUT_ROOT_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages } from "@/lib/about";
 import { SEARCH_PATH } from "@/lib/search";
 import { staticAsset } from "@/lib/static-asset";
+import { PreviewLinks } from "./preview-links";
 import styles from "./site-shell.module.css";
 
 // Alle Flaggen im selben 3:2-Rahmen, damit sie im Footer gleich breit sind (auch die eigentlich quadratische Schweizer Flagge).
@@ -28,6 +29,7 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
   ];
 
   return <div className={styles.shell}>
+    <PreviewLinks />
     <header className={styles.header}>
       <div className={styles.topbar}>Christliche Partnersuche mit Respekt, Sicherheit und gemeinsamen Werten</div>
       <div className={styles.headerInner}>
