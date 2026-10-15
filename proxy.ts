@@ -81,7 +81,8 @@ export function proxy(request: NextRequest) {
   }
   const destination = request.nextUrl.clone();
   const restIndex = (publicPath === "/magazin" || publicPath === "/magazin/") && request.nextUrl.searchParams.has("rest_route");
-  destination.pathname = publicPath === "/sitemap.xml"
+  // Magazin-Sitemap: ICONYs sitemap.php verweist auf /magazin/sitemap.xml (nginx reicht /sitemap.xml nicht durch).
+  destination.pathname = publicPath === "/sitemap.xml" || publicPath === "/magazin/sitemap.xml"
     ? `/${market}/sitemap-data.xml`
     : restIndex
       ? `/${market}/magazin/index.php`

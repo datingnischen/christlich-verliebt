@@ -30,6 +30,15 @@ test("direct internal sitemap implementation route is hidden", () => {
   assert.equal(response.status, 404);
 });
 
+test("magazine sitemap (ICONY sitemap.php) is served with and without the nginx /de prefix", () => {
+  for (const path of ["/magazin/sitemap.xml", "/de/magazin/sitemap.xml"]) {
+    const response = proxy(request(path));
+    assert.equal(response.status, 200, path);
+    assert.equal(response.headers.get("location"), null, path);
+    assert.match(response.headers.get("x-middleware-rewrite") ?? "", /\/de\/sitemap-data\.xml$/, path);
+  }
+});
+
 test("versioned city images bypass market rewrites", () => {
   const response = proxy(request("/city-images/de/augsburg.webp"));
   assert.equal(response.status, 200);
