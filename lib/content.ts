@@ -6,6 +6,7 @@ import cityWidgetSnapshot from "@/data/city-widgets.json";
 import wpPostSnapshot from "@/data/wp-posts.json";
 import { movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
+import { collapseSourceSections } from "@/lib/collapse-sources";
 import { getMarket, withTrailingSlash, type MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
@@ -190,7 +191,7 @@ export function renderedContentHtml(page: PublicPage): string {
     new RegExp(`href=(["'])https://${escapedDomain}/registration/?(?:\\?[^"']*)?\\1`, "gi"),
     (_match, quote) => `href=${quote}${registration}${quote}`,
   );
-  return normalized.replace(
+  const html = normalized.replace(
     /<a\b(?![^>]*\bclass=)([^>]*\bhref=(["'])https:\/\/[^"']+\/registration\/?[^"']*\2[^>]*)>/gi,
     '<a class="registration-cta"$1>',
   ).replace(
@@ -198,6 +199,8 @@ export function renderedContentHtml(page: PublicPage): string {
     /\b(src|href|poster)=(["'])(\/(?:imported|city-images|brand)\/[^"']*)\2/gi,
     (_match, attr, quote, path) => `${attr}=${quote}${staticAsset(path)}${quote}`,
   );
+  // Magazin und Ratgeber: Quellen klein und zugeklappt ans Ende des Beitrags.
+  return page.family === "magazine" || page.family === "guide" ? collapseSourceSections(html) : html;
 }
 
 export function selectPageImage(page: PublicPage): string | null {

@@ -4,3 +4,87 @@ html, body { max-width:100%; overflow-x:hidden; overflow-x:clip; }
 body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial, Helvetica, sans-serif; }
 a { color:inherit; }
 img { max-width:100%; }
+
+/* Quellen im Magazin: eigener, kleiner Block am Beitragsende, standardmäßig zugeklappt */
+details.magazine-sources {
+  margin: 32px 0 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+details.magazine-sources > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+}
+
+details.magazine-sources > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.magazine-sources > summary::before {
+  content: "\25B8";
+  font-size: 11px;
+  transition: transform 0.15s ease;
+}
+
+details.magazine-sources[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details.magazine-sources > summary:hover,
+details.magazine-sources > summary:focus-visible {
+  color: var(--ink);
+}
+
+details.magazine-sources > summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+details.magazine-sources .magazine-sources__body {
+  padding: 4px 0 0;
+}
+
+details.magazine-sources .magazine-sources__body p,
+details.magazine-sources .magazine-sources__body li {
+  margin: 0 0 6px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+details.magazine-sources .magazine-sources__body ul,
+details.magazine-sources .magazine-sources__body ol {
+  margin: 0 0 8px;
+  padding-left: 18px;
+}
+
+details.magazine-sources .magazine-sources__label {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+details.magazine-sources .magazine-sources__body a {
+  font-size: inherit;
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.magazine-sources > summary::before {
+    transition: none;
+  }
+}
