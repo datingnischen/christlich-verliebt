@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { VideoEmbed } from "@/components/video-embed";
 import { getPage, getPages, pageLabel, type PublicPage } from "@/lib/content";
+import { seoDescription } from "@/lib/seo-meta";
 import { previewPath, publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import { getVideo, videoJsonLd, YOUTUBE_CHANNEL } from "@/lib/videos";
@@ -82,10 +83,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = await profilePage(params);
   return {
     title: { absolute: page.title },
-    description: page.description,
+    description: seoDescription(page),
     alternates: { canonical: page.canonical },
     robots: { index: true, follow: true },
-    openGraph: { title: page.title, description: page.description, url: page.canonical, locale: "de_DE", type: "profile", images: [{ url: PORTRAIT }] },
+    openGraph: { title: page.title, description: seoDescription(page), url: page.canonical, locale: "de_DE", type: "profile", images: [{ url: PORTRAIT }] },
   };
 }
 

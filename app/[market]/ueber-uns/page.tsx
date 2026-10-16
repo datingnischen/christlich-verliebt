@@ -29,7 +29,8 @@ async function activeMarket(params: Props["params"]): Promise<MarketCode> {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const market = await activeMarket(params);
   const config = getMarket(market);
-  const title = `Über uns: Wer hinter ${config.domain} steht`;
+  // Ohne Domain im Titel (Seobility).
+  const title = "Über uns: Wer hinter Christlich-Verliebt steht";
   const canonical = aboutCanonical(market);
   return {
     title: { absolute: title },

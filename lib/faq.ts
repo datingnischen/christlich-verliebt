@@ -75,12 +75,15 @@ export function parseFaq(contentHtml: string): FaqContent | null {
   return { intro: introParagraphs.join(" ") || null, groups: filled, count };
 }
 
-export function faqTitle(page: Pick<PublicPage, "domain">): string {
-  return `FAQ ${page.domain}: Kosten, Sicherheit & Ablauf erklärt`;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Signatur bleibt, der Aufrufer übergibt die Seite.
+export function faqTitle(_page: Pick<PublicPage, "domain">): string {
+  // Ohne Domain im Titel (Seobility); die Marke folgt als Suffix.
+  return "FAQ: Kosten, Sicherheit & Ablauf | Christlich-Verliebt";
 }
 
-export function faqDescription(page: Pick<PublicPage, "domain">, faq: FaqContent): string {
-  return `${faq.count} Antworten zur christlichen Partnersuche bei ${page.domain}: Anmeldung, Kosten, Premium, Profilprüfung, Fake-Profile, Datenschutz & Kündigung.`;
+export function faqDescription(_page: Pick<PublicPage, "domain">, faq: FaqContent): string {
+  // Unter 150 Zeichen (Seobility misst Descriptions in Pixeln, Grenze ~1.000 px).
+  return `${faq.count} Antworten zur christlichen Partnersuche: Anmeldung, Kosten, Premium, Profilprüfung, Fake-Profile, Datenschutz & Kündigung.`;
 }
 
 export function faqJsonLd(page: Pick<PublicPage, "canonical" | "domain" | "locale" | "heroTitle">, faq: FaqContent, title: string, description: string) {
