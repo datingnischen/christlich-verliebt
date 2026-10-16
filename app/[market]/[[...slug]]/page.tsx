@@ -10,6 +10,7 @@ import { SiteJsonLd } from "@/components/site-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { VideoEmbed } from "@/components/video-embed";
 import { articleDates, cardLinkLabel, formatUpdated, getChildPages, getCityImageCredit, getPage, getPages, normalizeContentPath, pageLabel, registrationUrl, renderedContentHtml, selectPageImage, type PublicPage } from "@/lib/content";
+import { seoDescription, seoTitle } from "@/lib/seo-meta";
 import { getVideo, videoDurationLabel, videoJsonLd } from "@/lib/videos";
 import { faqDescription, faqJsonLd, faqTitle, isFaqPage, parseFaq } from "@/lib/faq";
 import { ABOUT_SOCIAL_PATH, aboutCanonical, brandSameAs } from "@/lib/about";
@@ -41,8 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const hero = selectPageImage(page);
   const faq = isFaqPage(page) ? parseFaq(page.contentHtml) : null;
   const magazine = page.family === "magazine-hub";
-  const title = faq ? faqTitle(page) : magazine ? MAGAZINE_TITLE : page.title;
-  const description = faq ? faqDescription(page, faq) : magazine ? MAGAZINE_DESCRIPTION : page.description;
+  // Importtitel tragen oft „- Christlich-Verliebt.de“, Descriptions bis über 400 Zeichen (lib/seo-meta.ts).
+  const title = faq ? faqTitle(page) : magazine ? MAGAZINE_TITLE : seoTitle(page);
+  const description = faq ? faqDescription(page, faq) : magazine ? MAGAZINE_DESCRIPTION : seoDescription(page);
   return {
     title: { absolute: title },
     description,

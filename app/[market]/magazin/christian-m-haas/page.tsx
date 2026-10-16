@@ -256,10 +256,10 @@ export default async function ChristianProfilePage({ params }: Props) {
       {articles.length ? <section className={styles.section} id="artikel" aria-labelledby="artikel-titel">
         <div className={styles.sectionHead}><p className={styles.eyebrow}>Aus dem Magazin</p><h2 id="artikel-titel">Lesetipps von Christian</h2></div>
         <div className={styles.articles}>
-          {articles.map(article => <a className={styles.article} href={previewPath("de", article.path)} key={article.path}>
+          {articles.map(article => <div className={styles.article} key={article.path}>
             <Image src={staticAsset(article.heroImage!)} alt={`Titelbild: ${article.heroTitle}`} width={480} height={300} sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 380px" />
-            <span className={styles.articleBody}><small>{pageLabel(article)}</small><strong>{article.heroTitle}</strong></span>
-          </a>)}
+            <span className={styles.articleBody}><small>{pageLabel(article)}</small><strong><a className={styles.articleLink} href={previewPath("de", article.path)}>{article.heroTitle}</a></strong></span>
+          </div>)}
         </div>
         <div className={styles.more}><a href={previewPath("de", "/magazin/")}>Alle {articleCount} Artikel im Magazin →</a></div>
       </section> : null}

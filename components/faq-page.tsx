@@ -30,7 +30,7 @@ export function FaqPage({ faq, market, registrationHref }: { faq: FaqContent; ma
           </header>
           <div className={styles.items}>
             {group.items.map((item, itemIndex) => <details className={styles.item} id={item.id} key={item.id} open={groupIndex === 0 && itemIndex === 0} data-faq-item>
-              <summary><h3>{item.question}</h3><span className={styles.icon} aria-hidden="true" /></summary>
+              <summary><span className={styles.question}>{item.question}</span><span className={styles.icon} aria-hidden="true" /></summary>
               <div className={styles.answer} dangerouslySetInnerHTML={{ __html: item.answerHtml }} />
             </details>)}
           </div>

@@ -73,13 +73,14 @@ export function CityPage({ page }: { page: PublicPage }) {
           <h1>{titleMain}{titleSub ? <span>{titleSub}</span> : null}</h1>
           {page.description ? <p className={styles.heroLead}>{page.description}</p> : null}
           <div className={styles.heroActions}>
-            <a className={styles.buttonPrimary} href={register}>Singles in {city} finden</a>
+            {/* „Singles in X finden“ verlinkt im Stadttext die Stadtseite; die Registrierung bekommt einen eigenen Text (Seobility). */}
+            <a className={styles.buttonPrimary} href={register}>Singles in {city} kennenlernen</a>
             <a className={styles.buttonGhost} href="#guide">Tipps lesen</a>
           </div>
         </div>
         {geo ? <figure className={styles.mapCard}>
           <CityMap market={page.market} cities={cities} activePath={page.path} activeRegion={geo.region} title={`Lage von ${city} in ${market.countryName === "Schweiz" ? "der Schweiz" : market.countryName}`} />
-          <figcaption><strong>{city}</strong> · {region}</figcaption>
+          <figcaption><span className={styles.strongText}>{city}</span> · {region}</figcaption>
         </figure> : null}
       </div>
       {wikimediaCredit
@@ -88,10 +89,10 @@ export function CityPage({ page }: { page: PublicPage }) {
     </section>
 
     <div className={styles.facts} role="list">
-      <div role="listitem"><CityIcon name="pin" /><span>Suche rund um<strong>{city}</strong></span></div>
-      {nearest[0] ? <div role="listitem"><CityIcon name="route" /><span>Nächste Stadtseite<strong>{locationName(nearest[0].page)} · {nearest[0].km} km</strong></span></div> : null}
-      <div role="listitem"><CityIcon name="clock" /><span>Lesezeit<strong>{content.minutes} Minuten</strong></span></div>
-      <div role="listitem"><CityIcon name="check" /><span>Anmeldung<strong>kostenlos</strong></span></div>
+      <div role="listitem"><CityIcon name="pin" /><span>Suche rund um<span className={styles.strongText}>{city}</span></span></div>
+      {nearest[0] ? <div role="listitem"><CityIcon name="route" /><span>Nächste Stadtseite<span className={styles.strongText}>{locationName(nearest[0].page)} · {nearest[0].km} km</span></span></div> : null}
+      <div role="listitem"><CityIcon name="clock" /><span>Lesezeit<span className={styles.strongText}>{content.minutes} Minuten</span></span></div>
+      <div role="listitem"><CityIcon name="check" /><span>Anmeldung<span className={styles.strongText}>kostenlos</span></span></div>
     </div>
 
     {cityWidget ? <section className={styles.widget} data-icony-city-widget>
@@ -120,7 +121,7 @@ export function CityPage({ page }: { page: PublicPage }) {
           <circle cx="60" cy="60" r="50" className={styles.fitTrack} />
           <circle cx="60" cy="60" r="50" className={styles.fitValue} pathLength={100} strokeDasharray={`${content.fit.score} 100`} />
         </svg>
-        <strong>{content.fit.score}<small>/100</small></strong>
+        <span className={styles.strongText}>{content.fit.score}<small>/100</small></span>
       </div>
       <div className={styles.fitCopy}>
         <p className={styles.eyebrow}>⭐ Christen-Fit-Faktor</p>
@@ -130,7 +131,7 @@ export function CityPage({ page }: { page: PublicPage }) {
       </div>
       <ul className={styles.fitValues}>
         {content.fit.values.map(value => <li key={value.label}>
-          <div className={styles.fitValueHead}><span aria-hidden="true">{value.emoji}</span><strong>{value.label}</strong><b>{value.score}<small>/100</small></b></div>
+          <div className={styles.fitValueHead}><span aria-hidden="true">{value.emoji}</span><span className={styles.strongText}>{value.label}</span><b>{value.score}<small>/100</small></b></div>
           <span className={styles.fitBar} style={{ ["--w" as string]: `${value.score}%` }}><span /></span>
           <p dangerouslySetInnerHTML={{ __html: value.html }} />
         </li>)}
@@ -167,7 +168,7 @@ export function CityPage({ page }: { page: PublicPage }) {
       <ol className={styles.distances}>
         {nearest.map(item => <li key={item.page.path}>
           <a href={previewPath(item.page.market, item.page.path)}>
-            {item.page.heroImage ? <Image src={staticAsset(item.page.heroImage)} alt="" width={96} height={96} sizes="48px" /> : <span className={styles.distanceThumb} />}
+            {item.page.heroImage ? <Image src={staticAsset(item.page.heroImage)} alt={`Stadtansicht ${locationName(item.page)}`} width={96} height={96} sizes="48px" /> : <span className={styles.distanceThumb} />}
             <span className={styles.distanceName}>{locationName(item.page)}<small>{regionName(page.market, item.geo.region)}</small></span>
             <span className={styles.distanceBar} style={{ ["--w" as string]: `${Math.max(8, (item.km / maxKm) * 100)}%` }}><span /></span>
             <span className={styles.distanceKm}>{item.km} km</span>

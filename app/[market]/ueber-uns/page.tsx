@@ -190,9 +190,9 @@ export default async function AboutPage({ params }: Props) {
           <h2 id="vertrauen-title">Darauf kannst Du Dich verlassen</h2>
         </div>
         <div className={styles.grid}>
-          <a className={`${styles.card} ${styles.linkCard}`} href={publicUrl(market, "/sicherheit-und-datenschutz.html")}><h3>Sicherheit & Datenschutz</h3><p>Wie wir Deine Daten schützen und worauf Du beim Kennenlernen achten solltest.</p><span>Mehr erfahren →</span></a>
-          <a className={`${styles.card} ${styles.linkCard}`} href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}><h3>Kostenlose Basis-Mitgliedschaft</h3><p>Profil anlegen und Dich in Ruhe umschauen, bevor Du Dich für mehr entscheidest.</p><span>Mehr erfahren →</span></a>
-          <a className={`${styles.card} ${styles.linkCard}`} href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}><h3>Erfolgsgeschichten</h3><p>Paare erzählen, wie sie sich bei christlich-verliebt kennengelernt haben.</p><span>Mehr erfahren →</span></a>
+          <div className={`${styles.card} ${styles.linkCard}`}><h3><a className={styles.cardTitleLink} href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a></h3><p>Wie wir Deine Daten schützen und worauf Du beim Kennenlernen achten solltest.</p><span aria-hidden="true">Mehr erfahren →</span></div>
+          <div className={`${styles.card} ${styles.linkCard}`}><h3><a className={styles.cardTitleLink} href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}>Kostenlose Basis-Mitgliedschaft</a></h3><p>Profil anlegen und Dich in Ruhe umschauen, bevor Du Dich für mehr entscheidest.</p><span aria-hidden="true">Mehr erfahren →</span></div>
+          <div className={`${styles.card} ${styles.linkCard}`}><h3><a className={styles.cardTitleLink} href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a></h3><p>Paare erzählen, wie sie sich bei christlich-verliebt kennengelernt haben.</p><span aria-hidden="true">Mehr erfahren →</span></div>
         </div>
       </section>
 

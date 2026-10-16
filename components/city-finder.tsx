@@ -29,8 +29,8 @@ export function CityFinder({ regions, shapes, regionLabel }: { regions: HubRegio
         </header>
         <ul>
           {region.cities.map(city => <li key={city.href}><a href={city.href} className={styles.cityTile}>
-            {city.image ? <Image src={city.image} alt="" width={104} height={104} sizes="52px" /> : <span />}
-            <span><small>Christliche Singles in</small><strong>{city.name}</strong></span>
+            {city.image ? <Image src={city.image} alt={`Stadtansicht ${city.name}`} width={104} height={104} sizes="52px" /> : <span />}
+            <span><small>Christliche Singles in</small><span className={styles.strongText}>{city.name}</span></span>
             <i aria-hidden="true">→</i>
           </a></li>)}
         </ul>

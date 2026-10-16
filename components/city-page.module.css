@@ -207,7 +207,7 @@
   color: var(--muted);
 }
 
-.mapCard figcaption strong {
+.mapCard figcaption strong, .mapCard figcaption .strongText {
   color: var(--partner);
 }
 
@@ -352,7 +352,7 @@
   line-height: 1.35;
 }
 
-.facts strong {
+.facts strong, .facts .strongText {
   color: var(--ink);
   font-size: 16px;
 }
@@ -488,7 +488,7 @@
   stroke-linecap: round;
 }
 
-.fitScore strong {
+.fitScore strong, .fitScore .strongText {
   font: 700 64px/1 Georgia, serif;
 }
 
@@ -546,11 +546,11 @@
   line-height: 1.25;
 }
 
-.fitValueHead > span {
+.fitValueHead > span:not(.strongText) {
   font-size: 22px;
 }
 
-.fitValueHead strong {
+.fitValueHead strong, .fitValueHead .strongText {
   display: flex;
   align-items: center;
   min-height: 2.5em;
@@ -588,7 +588,7 @@
   line-height: 1.55;
 }
 
-.fitValues p strong {
+.fitValues p strong, .fitValues p .strongText {
   color: #fff;
 }
 
@@ -1195,7 +1195,7 @@
     padding: 8px;
   }
 
-  .facts strong {
+  .facts strong, .facts .strongText {
     font-size: 14px;
   }
 
@@ -1300,7 +1300,7 @@
   font-size: 15px;
 }
 
-.hubStats strong {
+.hubStats strong, .hubStats .strongText {
   color: #fff;
   font: 700 19px Georgia, serif;
 }
@@ -1577,7 +1577,7 @@
   font-size: 12px;
 }
 
-.cityTile strong {
+.cityTile strong, .cityTile .strongText {
   font-size: 17px;
 }
 
@@ -1680,4 +1680,9 @@
   .hubStats li {
     font-size: 14px;
   }
+}
+
+/* Ehemalige <strong> der Vorlage (Seobility „viele Strong-Tags“): gleiche Fettschrift wie vorher. */
+.strongText {
+  font-weight: 700;
 }

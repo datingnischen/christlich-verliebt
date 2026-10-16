@@ -41,8 +41,8 @@
 .item summary{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 22px;cursor:pointer;list-style:none;border-radius:18px}
 .item summary::-webkit-details-marker{display:none}
 .item summary:focus-visible{outline:3px solid rgba(206,48,47,.34);outline-offset:2px}
-.item summary h3{margin:0;font:700 18px/1.4 Arial,sans-serif;color:var(--ink)}
-.item[open] summary h3{color:var(--sage-dark)}
+.item summary h3,.item summary .question{margin:0;font:700 18px/1.4 Arial,sans-serif;color:var(--ink)}
+.item[open] summary h3,.item[open] summary .question{color:var(--sage-dark)}
 .icon{position:relative;flex:none;width:32px;height:32px;border-radius:999px;background:var(--green-soft);transition:background-color .18s ease,transform .25s ease}
 .icon::before,.icon::after{content:"";position:absolute;top:50%;left:50%;width:12px;height:2px;margin:-1px 0 0 -6px;border-radius:2px;background:var(--sage-dark);transition:transform .25s ease}
 .icon::after{transform:rotate(90deg)}
@@ -93,7 +93,7 @@
 .topics a{flex:none;scroll-snap-align:start;white-space:nowrap}
 .groupHeading>span{width:38px;height:38px;border-radius:12px;font-size:13px}
 .item summary{padding:17px 16px;gap:12px}
-.item summary h3{font-size:17px}
+.item summary h3,.item summary .question{font-size:17px}
 .answer{padding:0 16px 18px;font-size:16px}
 .sidebar{grid-template-columns:1fr}
 .closing{flex-direction:column;align-items:stretch;margin-top:46px;border-radius:20px}

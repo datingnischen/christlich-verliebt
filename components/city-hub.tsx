@@ -74,9 +74,9 @@ export function CityHub({ page }: { page: PublicPage }) {
           <h1>{titleMain}{titleSub ? <span>{titleSub}</span> : null}</h1>
           {page.description ? <p className={styles.heroLead}>{page.description}</p> : null}
           <ul className={styles.hubStats}>
-            <li><strong>{cities.length}</strong> Städte</li>
-            <li><strong>{regions.length}</strong> {regions.length === 1 ? regionOne : regionMany}</li>
-            <li><strong>kostenlos</strong> anmelden</li>
+            <li><span className={styles.strongText}>{cities.length}</span> Städte</li>
+            <li><span className={styles.strongText}>{regions.length}</span> {regions.length === 1 ? regionOne : regionMany}</li>
+            <li><span className={styles.strongText}>kostenlos</span> anmelden</li>
           </ul>
           <div className={styles.heroActions}>
             <a className={styles.buttonPrimary} href="#staedte">Deine Stadt finden</a>

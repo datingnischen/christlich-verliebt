@@ -34,7 +34,7 @@ export function HomePage({ page }: { page: PublicPage }) {
   return <main className={styles.page}>
     <section className={styles.hero}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {hero ? <img className={styles.heroImage} src={hero} alt="" width={1280} height={720} fetchPriority="high" /> : null}
+      {hero ? <img className={styles.heroImage} src={hero} alt={page.heroTitle} width={1280} height={720} fetchPriority="high" /> : null}
       <div className={styles.heroShade} aria-hidden="true" />
       <div className={styles.heroGrid}>
         <div className={styles.heroCopy}>
@@ -73,7 +73,7 @@ export function HomePage({ page }: { page: PublicPage }) {
         <p>Treffpunkte, Gemeinden und Ideen fürs erste Date: Für {cities.length} Städte in {regions.length} {page.market === "ch" ? "Kantonen" : "Bundesländern"} haben wir lokale Tipps zusammengestellt.</p>
         <ul className={styles.cityTiles}>
           {featured.map(city => <li key={city.path}><a href={previewPath(city.market, city.path)}>
-            <Image src={staticAsset(city.heroImage!)} alt="" width={360} height={260} sizes="(max-width: 640px) 45vw, 200px" />
+            <Image src={staticAsset(city.heroImage!)} alt={`Stadtansicht ${locationName(city)}`} width={360} height={260} sizes="(max-width: 640px) 45vw, 200px" />
             <span>{locationName(city)}</span>
           </a></li>)}
         </ul>
@@ -112,7 +112,7 @@ export function HomePage({ page }: { page: PublicPage }) {
       </div>
       <ul>
         {teasers.map(article => <li key={article.path}><a href={previewPath(article.market, article.path)}>
-          {article.heroImage ? <Image src={staticAsset(article.heroImage)} alt="" width={640} height={400} sizes="(max-width: 960px) 100vw, 380px" /> : null}
+          {article.heroImage ? <Image src={staticAsset(article.heroImage)} alt={article.heroTitle} width={640} height={400} sizes="(max-width: 960px) 100vw, 380px" /> : null}
           <strong>{article.heroTitle}</strong>
           <span>Weiterlesen <CityIcon name="arrow" /></span>
         </a></li>)}

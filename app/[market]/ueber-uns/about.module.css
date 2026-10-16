@@ -39,3 +39,9 @@
 .authorActions a{padding:12px 20px;border-radius:999px;border:1px solid var(--sage);color:var(--sage-dark);text-decoration:none;font-weight:900}
 .authorActions a:first-child{background:var(--sage);color:#fff}
 @media(max-width:760px){.author{grid-template-columns:1fr;padding:24px;gap:20px}.authorImage{width:160px}.author h3{font-size:28px}}
+/* Nur der Kartentitel ist Link (kurzer Linktext); die Karte bleibt über ::after vollflächig klickbar. */
+.linkCard{position:relative}
+.cardTitleLink{color:inherit;text-decoration:none}
+.cardTitleLink::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.cardTitleLink:focus-visible{outline:none}
+.linkCard:focus-within{outline:2px solid var(--sage-dark);outline-offset:3px}

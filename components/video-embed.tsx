@@ -20,7 +20,7 @@ export function VideoEmbed({ video, priority = false }: { video: SiteVideo; prio
             referrerPolicy="strict-origin-when-cross-origin"
           />
         : <button type="button" className={styles.poster} onClick={() => setPlaying(true)} aria-label={`Video abspielen: ${video.title}`}>
-            <Image src={staticAsset(video.thumbnail)} alt="" fill sizes="(max-width: 960px) 100vw, 800px" priority={priority} />
+            <Image src={staticAsset(video.thumbnail)} alt={`Vorschaubild: ${video.title}`} fill sizes="(max-width: 960px) 100vw, 800px" priority={priority} />
             <span className={styles.play} aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
             <span className={styles.duration} aria-hidden="true">{videoDurationLabel(video)}</span>
           </button>}

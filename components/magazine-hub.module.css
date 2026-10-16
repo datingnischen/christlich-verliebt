@@ -907,3 +907,26 @@
     transition: none !important;
   }
 }
+
+/* Kartentitel als Absatz statt h3 (Seobility „zu viele Überschriften“), Optik wie .cardBody h3. */
+.cardBody .cardTitle {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.cardBody .cardTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover .cardTitle a {
+  color: var(--sage-dark);
+}
+
+.cardLead .cardBody .cardTitle {
+  font-size: clamp(24px, 2.4vw, 30px);
+}

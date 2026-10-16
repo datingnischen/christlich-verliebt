@@ -48,12 +48,13 @@ function ArticleCard({ article, label, lead = false }: { article: PublicPage; la
   return <article className={lead ? `${styles.card} ${styles.cardLead}` : styles.card} data-mag-card data-path={article.path} data-search={`${title} ${article.description} ${label}`.toLowerCase()}>
     <div className={styles.cardMedia}>
       {image
-        ? <Image src={image} alt="" width={lead ? 880 : 520} height={lead ? 560 : 330} sizes={lead ? "(max-width: 760px) 100vw, 640px" : "(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 380px"} />
+        ? <Image src={image} alt={title} width={lead ? 880 : 520} height={lead ? 560 : 330} sizes={lead ? "(max-width: 760px) 100vw, 640px" : "(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 380px"} />
         : <div className={styles.cardFallback} aria-hidden="true"><CityIcon name="church" /></div>}
       <span className={styles.cardTag}>{label}</span>
     </div>
     <div className={styles.cardBody}>
-      <h3><a className={styles.cardLink} href={previewPath(article.market, article.path)}>{title}</a></h3>
+      {/* Kartentitel als Absatz: die Übersicht hatte über 70 Überschriften (Seobility), Optik über .cardTitle. */}
+      <p className={styles.cardTitle}><a className={styles.cardLink} href={previewPath(article.market, article.path)}>{title}</a></p>
       <p>{excerpt(article.description, lead ? 220 : 130)}</p>
       <span className={styles.cardMeta}><span><CityIcon name="clock" />{readingMinutes(article)} Min. Lesezeit</span><span className={styles.cardMore}>Weiterlesen <CityIcon name="arrow" /></span></span>
     </div>
@@ -95,7 +96,7 @@ export function MagazineHub({ page }: { page: PublicPage }) {
           </div>
         </div>
         {lead ? <article className={styles.leadStory}>
-          {leadImage ? <Image className={styles.leadImage} src={leadImage} alt="" width={900} height={1000} sizes="(max-width: 960px) 100vw, 520px" priority /> : null}
+          {leadImage ? <Image className={styles.leadImage} src={leadImage} alt={cleanTitle(lead)} width={900} height={1000} sizes="(max-width: 960px) 100vw, 520px" priority /> : null}
           <div className={styles.leadShade} aria-hidden="true" />
           <div className={styles.leadCopy}>
             <span className={styles.leadTag}>Titelthema · {categoryLabel(lead)}</span>
@@ -113,7 +114,7 @@ export function MagazineHub({ page }: { page: PublicPage }) {
         {picks.map(pick => {
           const image = selectPageImage(pick);
           return <li key={pick.path}>
-            {image ? <Image src={image} alt="" width={180} height={180} sizes="96px" /> : null}
+            {image ? <Image src={image} alt={cleanTitle(pick)} width={180} height={180} sizes="96px" /> : null}
             <div><span>{categoryLabel(pick)}</span><a className={styles.cardLink} href={previewPath(pick.market, pick.path)}>{cleanTitle(pick)}</a><small>{readingMinutes(pick)} Min. Lesezeit</small></div>
           </li>;
         })}

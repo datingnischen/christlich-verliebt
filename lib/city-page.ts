@@ -1,4 +1,5 @@
 import { getPage, getPages, locationName, renderedContentHtml, type PublicPage } from "@/lib/content";
+import { limitStrong } from "@/lib/html-cleanup";
 import { cityGeo, type CityGeo } from "@/lib/city-geo";
 import { staticAsset } from "@/lib/static-asset";
 
@@ -108,10 +109,17 @@ export function parseCityContent(page: PublicPage): CityContent {
     html = html.replace(new RegExp(`<(p|h2)>\\s*<img[^>]*src="${hero}"[^>]*/?>\\s*</\\1>`), "");
   }
   html = html.replace(/<h([2-6])>(?:\s|&nbsp;)*<\/h\1>/g, "");
+  // Erst nach dem Auslesen des Flirt-Faktors (der steht in <strong>): höchstens vier Hervorhebungen im Fließtext (Seobility).
+  html = limitStrong(html);
 
   const words = stripTags(html).split(" ").length + (fit ? stripTags(fit.values.map(value => value.html).join(" ")).split(" ").length : 0);
   return {
-    sections: splitSections(html.trim()),
+    // Ein Kapitel, das wörtlich die H1 wiederholt („Christliche Partnersuche in Hamburg“), heißt „Hamburg im Überblick“
+    // (Seobility „doppelte Überschrift“); Anker und Text bleiben.
+    sections: splitSections(html.trim()).map(section => {
+      const h1s = [stripTags(page.heroTitle), `Christliche Partnersuche in ${locationName(page)}`].map(text => text.toLowerCase());
+      return section.heading && h1s.includes(section.heading.toLowerCase()) ? { ...section, heading: `${locationName(page)} im Überblick` } : section;
+    }),
     fit,
     related: parseRelated(page, tail),
     credit,

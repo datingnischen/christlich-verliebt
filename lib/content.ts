@@ -7,6 +7,8 @@ import wpPostSnapshot from "@/data/wp-posts.json";
 import { movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
 import { collapseSourceSections } from "@/lib/collapse-sources";
+import { limitStrong, withImageAlt, withoutEmptyHeadings, withoutHeadingSkips } from "@/lib/html-cleanup";
+import { withUniqueLinkTargets } from "@/lib/link-targets";
 import { getMarket, withTrailingSlash, type MarketCode } from "@/lib/markets";
 
 export type PublicPage = {
@@ -53,10 +55,14 @@ export type CityWidget = {
 };
 
 // Eigene Artikel (ohne WordPress-Quelle) zuerst, damit sie in den Magazin-Rubriken vorn stehen.
-const pages = [...(editorialSnapshot.pages as PublicPage[]), ...(snapshot.pages as PublicPage[])].map((page) => {
+const rawPages = [...(editorialSnapshot.pages as PublicPage[]), ...(snapshot.pages as PublicPage[])].map((page) => {
   const path = movedAboutPath(page.market, page.path);
   return path === page.path ? page : { ...page, path, canonical: `https://${page.domain}${path}` };
 });
+// Gleicher Linktext → gleiches Ziel in allen Artikeln, tote Schlagwort-Links entlinkt (lib/link-targets.ts).
+const isArticle = (page: PublicPage) => page.family === "magazine" || page.family === "guide";
+const linkedArticles = new Map(withUniqueLinkTargets(rawPages.filter(isArticle)).map((page) => [`${page.market}:${page.path}`, page]));
+const pages = rawPages.map((page) => linkedArticles.get(`${page.market}:${page.path}`) ?? page);
 // Das Magazin gibt es nur in Deutschland. Damit /at/magazin/ und /ch/magazin/ wie alle anderen Länderpfade antworten
 // (ICONY/nginx setzt für jedes Land dieselbe Pfadstruktur voraus), spiegeln AT und CH die deutschen Magazinseiten.
 // Canonical bleibt die deutsche Fassung, die Spiegel stehen auf noindex und fehlen in der Sitemap (kein Duplicate Content).
@@ -199,8 +205,13 @@ export function renderedContentHtml(page: PublicPage): string {
     /\b(src|href|poster)=(["'])(\/(?:imported|city-images|brand)\/[^"']*)\2/gi,
     (_match, attr, quote, path) => `${attr}=${quote}${staticAsset(path)}${quote}`,
   );
+  // Seobility: importierte Bilder ohne Alt-Text bekommen den Seitentitel. Artikel zusätzlich ohne leere oder übersprungene
+  // Überschriften und mit höchstens vier Hervorhebungen. Stadt-, FAQ- und Startseite lesen ihre Struktur aus Überschriften und
+  // <strong> (lib/city-page.ts, lib/faq.ts) und bereinigen selbst.
+  const article = page.family === "magazine" || page.family === "guide";
+  const cleaned = withImageAlt(article ? limitStrong(withoutHeadingSkips(withoutEmptyHeadings(html))) : html, page.heroTitle);
   // Magazin und Ratgeber: Quellen klein und zugeklappt ans Ende des Beitrags.
-  return page.family === "magazine" || page.family === "guide" ? collapseSourceSections(html) : html;
+  return article ? collapseSourceSections(cleaned) : cleaned;
 }
 
 export function selectPageImage(page: PublicPage): string | null {
