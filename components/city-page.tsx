@@ -45,7 +45,7 @@ export function CityPage({ page }: { page: PublicPage }) {
   const toc = content.sections.filter(section => section.heading);
   const [titleMain, titleSub] = splitTitle(page.heroTitle);
   const crumbs = [
-    { label: "Start", href: previewPath(page.market), url: publicUrl(page.market) },
+    { label: "Startseite", href: previewPath(page.market), url: publicUrl(page.market) },
     { label: "Partnersuche", href: hub, url: `${publicUrl(page.market, "/partnersuche")}/` },
     { label: city, href: null, url: page.canonical },
   ];

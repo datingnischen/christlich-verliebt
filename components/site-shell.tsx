@@ -18,7 +18,8 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
   const registration = registrationHref ?? publicUrl(market, "/registration/");
   const login = publicUrl(market, "/login/");
   const nav = [
-    ["Start", "/"],
+    // „Startseite“ statt „Start“: Semrush wertete „Start“ auf 122 Seiten als nicht beschreibenden Ankertext (2026-10-18).
+    ["Startseite", "/"],
     ["Partnersuche", "/partnersuche/"],
     ...(market === "de" ? [["Magazin", "/magazin/"]] : []),
     ...(market === "ch" ? [["Ratgeber", "/ratgeber/"]] : []),

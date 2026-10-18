@@ -49,7 +49,7 @@ export function CityHub({ page }: { page: PublicPage }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Start", item: publicUrl(page.market) },
+          { "@type": "ListItem", position: 1, name: "Startseite", item: publicUrl(page.market) },
           { "@type": "ListItem", position: 2, name: "Partnersuche", item: page.canonical },
         ],
       },
@@ -68,7 +68,7 @@ export function CityHub({ page }: { page: PublicPage }) {
       <div className={styles.heroGrid}>
         <div className={styles.heroCopy}>
           <nav className={styles.breadcrumbs} aria-label="Brotkrumen">
-            <ol><li><a href={previewPath(page.market)}>Start</a></li><li><span aria-current="page">Partnersuche</span></li></ol>
+            <ol><li><a href={previewPath(page.market)}>Startseite</a></li><li><span aria-current="page">Partnersuche</span></li></ol>
           </nav>
           <p className={styles.heroEyebrow}>Christliche Partnersuche vor Ort · {market.countryName}</p>
           <h1>{titleMain}{titleSub ? <span>{titleSub}</span> : null}</h1>
