@@ -9,7 +9,8 @@ import { staticAsset } from "@/lib/static-asset";
 import { collapseSourceSections } from "@/lib/collapse-sources";
 import { limitStrong, withImageAlt, withoutEmptyHeadings, withoutHeadingSkips } from "@/lib/html-cleanup";
 import { withUniqueLinkTargets } from "@/lib/link-targets";
-import { getMarket, withTrailingSlash, type MarketCode } from "@/lib/markets";
+import { getMarket, previewPath, withTrailingSlash, type MarketCode } from "@/lib/markets";
+import { cleanArticleTitle, MAGAZINE_AUTHOR_PROFILE, pickRelatedArticles, relatedArticlesHtml } from "@/lib/magazine-related";
 
 export type PublicPage = {
   market: MarketCode;
@@ -210,8 +211,18 @@ export function renderedContentHtml(page: PublicPage): string {
   // <strong> (lib/city-page.ts, lib/faq.ts) und bereinigen selbst.
   const article = page.family === "magazine" || page.family === "guide";
   const cleaned = withImageAlt(article ? limitStrong(withoutHeadingSkips(withoutEmptyHeadings(html))) : html, page.heroTitle);
-  // Magazin und Ratgeber: Quellen klein und zugeklappt ans Ende des Beitrags.
-  return article ? collapseSourceSections(cleaned) : cleaned;
+  // Magazinbeiträge: „Weiterlesen im Magazin“ mit vier verwandten Beiträgen (Semrush: Beiträge mit nur einem
+  // eingehenden Link, Trello #1249). Magazin und Ratgeber: Quellen klein und zugeklappt ans Ende des Beitrags.
+  const withRelated = page.family === "magazine" && articleDates(page)
+    ? `${cleaned}${relatedArticlesHtml(getRelatedArticles(page).map((item) => ({ href: previewPath(item.market, item.path), title: cleanArticleTitle(item.heroTitle) })))}`
+    : cleaned;
+  return article ? collapseSourceSections(withRelated) : withRelated;
+}
+
+// Verwandte Magazinbeiträge desselben Markts: nur echte Beiträge (mit Datum), ohne Autorenprofil.
+export function getRelatedArticles(page: PublicPage): PublicPage[] {
+  const articles = pages.filter((item) => item.market === page.market && item.family === "magazine" && item.path !== MAGAZINE_AUTHOR_PROFILE && articleDates(item));
+  return pickRelatedArticles(page, articles);
 }
 
 export function selectPageImage(page: PublicPage): string | null {

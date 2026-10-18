@@ -61,7 +61,7 @@ test("bereits transformiertes HTML bleibt stabil", () => {
 test("Magazin und Ratgeber klappen Quellen ein, Städteseiten bleiben unberührt", () => {
   const content = readFileSync(new URL("../lib/content.ts", import.meta.url), "utf8");
   assert.match(content, /const article = page\.family === "magazine" \|\| page\.family === "guide";/);
-  assert.match(content, /return article \? collapseSourceSections\(cleaned\) : cleaned;/);
+  assert.match(content, /return article \? collapseSourceSections\(withRelated\) : withRelated;/);
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /details\.magazine-sources \{[\s\S]*?font-size: 13px;/);
 });
