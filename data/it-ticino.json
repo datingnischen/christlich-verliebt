@@ -1,0 +1,206 @@
+{
+  "home": {
+    "metaTitle": "Single cristiani in Ticino: incontri con valori comuni",
+    "title": "Single cristiani nella Svizzera italiana",
+    "description": "Conosci single cristiani in Ticino: guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso con idee per incontri basati su fede e valori comuni.",
+    "lead": "Per chi cerca una relazione in cui la fede non è un dettaglio ma una base comune: profili reali dalla Svizzera e guide per le città del Ticino.",
+    "sections": [
+      {
+        "heading": "Fede e amore in Ticino",
+        "icon": "church",
+        "html": "<p>Il Ticino è una regione di tradizione cattolica: nel 2022 circa il 59 per cento della popolazione si dichiarava cattolica romana, secondo i dati federali ripresi da <a href=\"https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone\">tio.ch</a>. Accanto alla Diocesi di Lugano vivono comunità evangeliche riformate e altre chiese cristiane.</p><p>Appartenere a una chiesa però non significa ancora trovare qualcuno con cui condividere la fede nella vita di tutti i giorni. christlich-verliebt.ch nasce proprio per questo: per persone a cui la preghiera, la messa o il culto domenicale e i valori cristiani stanno a cuore anche nella relazione.</p>"
+      },
+      {
+        "heading": "Come funziona christlich-verliebt.ch",
+        "icon": "phone",
+        "html": "<p>christlich-verliebt.ch è una piattaforma per tutta la Svizzera. I profili provengono quindi da tutto il Paese e non solo dal Ticino. Con la ricerca per codice postale puoi concentrarti sui single cristiani vicino a te, per esempio intorno a Lugano o Bellinzona.</p><p>La registrazione e il profilo di base sono gratuiti. Le condizioni delle funzioni a pagamento sono indicate sulla piattaforma prima di qualsiasi acquisto.</p>"
+      },
+      {
+        "heading": "Il primo incontro: semplice e rispettoso",
+        "icon": "heart",
+        "html": "<p>Un caffè in piazza o una passeggiata sul lungolago sono spesso il modo più sereno per conoscersi. Parlate presto di ciò che conta per voi: come vivete la fede, se andate in chiesa, quale ruolo hanno famiglia e comunità.</p><p>Per il primo appuntamento scegli un luogo pubblico e racconta a una persona di fiducia dove ti trovi. Rispetto, sincerità e tempo sono la base di ogni relazione che vuole durare.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "question": "christlich-verliebt.ch è solo per cattolici?",
+        "answer": "No. La piattaforma è aperta a tutte le persone cristiane, cattoliche, evangeliche o di altre chiese, che cercano un partner con cui condividere fede e valori."
+      },
+      {
+        "question": "Incontrerò solo persone del Ticino?",
+        "answer": "christlich-verliebt.ch è una piattaforma per tutta la Svizzera. Con la ricerca per codice postale puoi concentrarti sui profili vicino a te."
+      },
+      {
+        "question": "L'iscrizione costa qualcosa?",
+        "answer": "Registrarsi e creare un profilo è gratuito. Le condizioni delle funzioni a pagamento sono indicate direttamente sulla piattaforma prima di qualsiasi acquisto."
+      }
+    ]
+  },
+  "cities": [
+    {
+      "slug": "lugano",
+      "name": "Lugano",
+      "postcode": "6900",
+      "region": "Luganese",
+      "geo": { "lat": 46.0037, "lon": 8.9511 },
+      "metaTitle": "Single cristiani a Lugano: conoscersi con la fede",
+      "title": "Single cristiani a Lugano",
+      "description": "Single cristiani a Lugano: luoghi di fede, idee per un primo incontro sul lungolago e consigli per conoscersi con valori comuni nel Luganese.",
+      "lead": "Lugano è la città più grande della Svizzera italiana e sede della Diocesi: qui fede, lago e vita cittadina si incontrano.",
+      "sections": [
+        {
+          "heading": "Fede e vita cittadina a Lugano",
+          "icon": "church",
+          "html": "<p>Lugano è la sede della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>, che comprende tutto il Ticino. La Cattedrale di San Lorenzo, sopra il centro storico, è il cuore della vita diocesana. In città ci sono numerose parrocchie e anche la Chiesa evangelica riformata nel Sottoceneri ha qui una sua comunità.</p><p>Per i single cristiani questo significa molte occasioni di incontro: messe e culti, cori, gruppi biblici e attività di volontariato.</p>"
+        },
+        {
+          "heading": "Comunità e gruppi giovani",
+          "icon": "people",
+          "html": "<p>La Pastorale giovanile della Diocesi ha sede a Lugano e organizza durante l'anno incontri e giornate per giovani adulti. Le proposte aggiornate si trovano sul sito della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>. Chi partecipa con regolarità alla vita di una comunità conosce persone con valori simili in modo naturale, senza pressione.</p>"
+        },
+        {
+          "heading": "Il primo incontro sul lungolago",
+          "icon": "tree",
+          "html": "<p>Una passeggiata sul lungolago o un caffè in Piazza della Riforma sono luoghi semplici e pubblici per un primo appuntamento. Camminare insieme rende la conversazione più leggera e lascia spazio per parlare di ciò che conta: fede, famiglia, progetti.</p>"
+        },
+        {
+          "heading": "Consigli per conoscersi",
+          "icon": "heart",
+          "html": "<p>Racconta con sincerità come vivi la tua fede e ascolta come la vive l'altra persona. Non serve essere d'accordo su tutto fin dall'inizio, ma è importante sapere se condividete le basi. Con christlich-verliebt.ch puoi conoscere single cristiani nel Luganese e in tutta la Svizzera.</p>"
+        }
+      ]
+    },
+    {
+      "slug": "bellinzona",
+      "name": "Bellinzona",
+      "postcode": "6500",
+      "region": "Bellinzonese",
+      "geo": { "lat": 46.1946, "lon": 9.0244 },
+      "metaTitle": "Single cristiani a Bellinzona: conoscersi con la fede",
+      "title": "Single cristiani a Bellinzona",
+      "description": "Single cristiani a Bellinzona: la Collegiata, comunità cattoliche ed evangeliche e idee per un primo incontro tra fede e valori comuni.",
+      "lead": "La capitale del Ticino unisce storia, castelli e una vita di comunità che offre tante occasioni per conoscersi.",
+      "sections": [
+        {
+          "heading": "Fede e storia a Bellinzona",
+          "icon": "church",
+          "html": "<p>Nel centro di Bellinzona sorge la Collegiata dei Santi Pietro e Stefano, chiesa rinascimentale e sede della parrocchia del centro città. La parrocchia è guidata da un capitolo di canonici, come descrive <a href=\"https://www.bellinzonaevalli.ch/en/commons/details/Collegiate-of-SS-Pietro-e-Stefano/2841.html\">Bellinzona e Valli Turismo</a>.</p><p>In città è presente anche la Comunità evangelica riformata di Bellinzona e dintorni, una delle tre comunità della Chiesa evangelica riformata nel Ticino.</p>"
+        },
+        {
+          "heading": "Comunità e volontariato",
+          "icon": "people",
+          "html": "<p>Cori parrocchiali, gruppi biblici, attività per famiglie e volontariato sono occasioni preziose per conoscere persone con valori simili. Chiedi in parrocchia o nella tua comunità quali gruppi sono attivi e partecipa senza aspettative: spesso le amicizie e gli incontri più belli nascono così.</p>"
+        },
+        {
+          "heading": "Il primo incontro in città",
+          "icon": "cup",
+          "html": "<p>Le piazze del centro storico e il mercato del sabato offrono un'atmosfera rilassata per un primo caffè. Chi ama camminare può scegliere una passeggiata lungo il fiume Ticino. L'importante è un luogo pubblico e tempo sufficiente per parlare con calma.</p>"
+        },
+        {
+          "heading": "Consigli per conoscersi",
+          "icon": "heart",
+          "html": "<p>Parlate presto di come vivete la fede, della messa o del culto e del ruolo della famiglia. Sincerità e rispetto contano più delle parole perfette. Con christlich-verliebt.ch puoi conoscere single cristiani nel Bellinzonese e in tutta la Svizzera.</p>"
+        }
+      ]
+    },
+    {
+      "slug": "locarno",
+      "name": "Locarno",
+      "postcode": "6600",
+      "region": "Locarnese",
+      "geo": { "lat": 46.1709, "lon": 8.7995 },
+      "metaTitle": "Single cristiani a Locarno: conoscersi con la fede",
+      "title": "Single cristiani a Locarno",
+      "description": "Single cristiani a Locarno: il santuario della Madonna del Sasso, comunità cristiane e idee per un primo incontro sul Lago Maggiore.",
+      "lead": "Sul Lago Maggiore, tra Piazza Grande e il santuario sopra la città, fede e paesaggio si incontrano.",
+      "sections": [
+        {
+          "heading": "Fede e spiritualità a Locarno",
+          "icon": "church",
+          "html": "<p>Sopra Locarno, a Orselina, si trova il santuario della Madonna del Sasso, uno dei luoghi di pellegrinaggio più conosciuti del Ticino e meta di molti visitatori. Le parrocchie del Locarnese fanno parte della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>.</p><p>Già nel Cinquecento a Locarno esisteva una comunità riformata; oggi la Comunità evangelica riformata di Locarno e dintorni fa parte della Chiesa evangelica riformata nel Ticino.</p>"
+        },
+        {
+          "heading": "Comunità e incontri",
+          "icon": "people",
+          "html": "<p>Gruppi di preghiera, cori e attività parrocchiali sono un buon punto di partenza per conoscere persone con valori simili. Molte comunità organizzano anche momenti di incontro dopo la messa o il culto: un'occasione semplice per scambiare qualche parola.</p>"
+        },
+        {
+          "heading": "Il primo incontro sul lago",
+          "icon": "tree",
+          "html": "<p>Una passeggiata sul lungolago o un caffè vicino a Piazza Grande sono ideali per un primo appuntamento. Se vi trovate bene, la salita al santuario può diventare una bella gita insieme, con calma e senza fretta.</p>"
+        },
+        {
+          "heading": "Consigli per conoscersi",
+          "icon": "heart",
+          "html": "<p>Racconta cosa significa per te la fede nella vita di ogni giorno e chiedi all'altra persona come la vive. Con christlich-verliebt.ch puoi conoscere single cristiani nel Locarnese e in tutta la Svizzera.</p>"
+        }
+      ]
+    },
+    {
+      "slug": "mendrisio",
+      "name": "Mendrisio",
+      "postcode": "6850",
+      "region": "Mendrisiotto",
+      "geo": { "lat": 45.8706, "lon": 8.9817 },
+      "metaTitle": "Single cristiani a Mendrisio: conoscersi con la fede",
+      "title": "Single cristiani a Mendrisio",
+      "description": "Single cristiani a Mendrisio: le Processioni storiche della Settimana Santa, comunità di fede e idee per un primo incontro nel Mendrisiotto.",
+      "lead": "Mendrisio è conosciuta per le Processioni storiche della Settimana Santa, una tradizione di fede che unisce l'intera comunità.",
+      "sections": [
+        {
+          "heading": "Le Processioni storiche della Settimana Santa",
+          "icon": "calendar",
+          "html": "<p>Ogni anno, il Giovedì e il Venerdì Santo, le Processioni storiche attraversano il borgo di Mendrisio. La tradizione ha radici che risalgono a prima del Seicento ed è tra i riti più antichi della Svizzera italiana. Nel 2019 l'UNESCO l'ha iscritta nella lista del patrimonio culturale immateriale, come riporta la <a href=\"https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html\">RSI</a>.</p><p>Le Processioni coinvolgono molte persone del Mendrisiotto, come figuranti o volontari: un'occasione speciale per vivere la fede insieme.</p>"
+        },
+        {
+          "heading": "Comunità e parrocchie",
+          "icon": "church",
+          "html": "<p>Le parrocchie del Mendrisiotto fanno parte della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>; la Chiesa evangelica riformata nel Sottoceneri accoglie i fedeli evangelici della regione. Cori, gruppi e attività di volontariato aiutano a conoscere persone con valori simili.</p>"
+        },
+        {
+          "heading": "Il primo incontro nel borgo",
+          "icon": "cup",
+          "html": "<p>Il nucleo storico di Mendrisio offre piazze e locali tranquilli per un primo caffè. Chi ama la natura può proporre più avanti una gita sul Monte San Giorgio, patrimonio mondiale UNESCO, o sul Monte Generoso.</p>"
+        },
+        {
+          "heading": "Consigli per conoscersi",
+          "icon": "heart",
+          "html": "<p>Parlate di ciò che vi sta a cuore: fede, famiglia, tradizioni. Con christlich-verliebt.ch puoi conoscere single cristiani nel Mendrisiotto e in tutta la Svizzera.</p>"
+        }
+      ]
+    },
+    {
+      "slug": "chiasso",
+      "name": "Chiasso",
+      "postcode": "6830",
+      "region": "Mendrisiotto",
+      "geo": { "lat": 45.8323, "lon": 9.0313 },
+      "metaTitle": "Single cristiani a Chiasso: conoscersi con la fede",
+      "title": "Single cristiani a Chiasso",
+      "description": "Single cristiani a Chiasso: comunità di fede nel Mendrisiotto, il Duomo di Como a pochi chilometri e idee per un primo incontro con valori comuni.",
+      "lead": "Chiasso è il Comune più a sud della Svizzera, a pochi passi da Como: una città di confine con una lunga tradizione cristiana.",
+      "sections": [
+        {
+          "heading": "Fede in una città di confine",
+          "icon": "church",
+          "html": "<p>Chiasso è il Comune più a sud della Svizzera. Le sue parrocchie fanno parte della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>, mentre la Chiesa evangelica riformata nel Sottoceneri accoglie i fedeli evangelici della zona.</p><p>A pochi chilometri, oltre il confine, si trova il Duomo di Como: per molti un luogo da visitare insieme.</p>"
+        },
+        {
+          "heading": "Comunità e incontri",
+          "icon": "people",
+          "html": "<p>Gruppi parrocchiali, cori e volontariato sono occasioni per conoscere persone con valori simili. Nel vicino borgo di Mendrisio le Processioni storiche della Settimana Santa riuniscono ogni anno molte persone della regione.</p>"
+        },
+        {
+          "heading": "Il primo incontro",
+          "icon": "cup",
+          "html": "<p>Un caffè in centro o una passeggiata tranquilla sono il modo più semplice per conoscersi. Scegli un luogo pubblico e lasciate spazio alla conversazione: la fede, la famiglia e i progetti per il futuro.</p>"
+        },
+        {
+          "heading": "Consigli per conoscersi",
+          "icon": "heart",
+          "html": "<p>Sincerità, rispetto e pazienza sono la base di una relazione cristiana. Con christlich-verliebt.ch puoi conoscere single cristiani a Chiasso, nel Mendrisiotto e in tutta la Svizzera.</p>"
+        }
+      ]
+    }
+  ]
+}
