@@ -1,0 +1,29 @@
+.cityThumb {
+  object-position: 70% center;
+}
+
+.hero > img {
+  object-position: center top;
+  transform: none;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-bottom: 284px;
+  }
+
+  .hero > img {
+    top: auto;
+    height: 250px;
+    object-position: 70% center;
+    transform: none;
+  }
+
+  .hero .heroShade {
+    background: linear-gradient(180deg, #12261a 0%, #12261a calc(100% - 250px), rgba(18, 38, 26, 0.05) calc(100% - 170px), rgba(18, 38, 26, 0.3) 100%);
+  }
+
+  .hero .heroCredit {
+    bottom: 70px;
+  }
+}

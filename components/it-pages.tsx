@@ -7,6 +7,7 @@ import { getMarket, publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import shell from "./site-shell.module.css";
 import styles from "./city-page.module.css";
+import itStyles from "./it-pages.module.css";
 
 /** Kopf und Fuß der italienischen Variante. lang="it-CH" am Wrapper, weil das Root-Layout statisch lang="de" setzt. */
 export function ItShell({ children }: { children: React.ReactNode }) {
@@ -78,7 +79,7 @@ function CityList({ cities, heading, intro }: { cities: { city: ItCity; km?: num
     <ol className={styles.distances}>
       {cities.map(({ city, km }) => <li key={city.slug}>
         <a href={itPublicUrl(city.slug)}>
-          <span className={styles.distanceThumb} />
+          <Image src={staticAsset(city.heroImage)} alt="" width={96} height={96} sizes="48px" className={itStyles.cityThumb} />
           <span className={styles.distanceName}>Single cristiani a {city.name}<small>{city.region}</small></span>
           {km !== undefined ? <>
             <span className={styles.distanceBar} style={{ ["--w" as string]: `${Math.max(8, (km / maxKm) * 100)}%` }}><span /></span>
@@ -90,9 +91,10 @@ function CityList({ cities, heading, intro }: { cities: { city: ItCity; km?: num
   </section>;
 }
 
-function Hero({ crumbs, badge, title, lead, primary }: { crumbs: { label: string; href: string | null }[]; badge: string; title: string; lead: string; primary: string }) {
-  return <section className={styles.hero}>
-    <div className={styles.heroShade} aria-hidden="true" />
+function Hero({ crumbs, badge, title, lead, primary, image, imageAlt }: { crumbs: { label: string; href: string | null }[]; badge: string; title: string; lead: string; primary: string; image: string; imageAlt: string }) {
+  return <section className={`${styles.hero} ${itStyles.hero}`}>
+    <Image className={styles.heroImage} src={staticAsset(image)} alt={imageAlt} width={1600} height={900} sizes="100vw" priority />
+    <div className={`${styles.heroShade} ${itStyles.heroShade}`} aria-hidden="true" />
     <div className={styles.heroGrid}>
       <div className={styles.heroCopy}>
         <nav className={styles.breadcrumbs} aria-label="Percorso di navigazione">
@@ -107,12 +109,13 @@ function Hero({ crumbs, badge, title, lead, primary }: { crumbs: { label: string
         </div>
       </div>
     </div>
+    <p className={`${styles.heroCredit} ${itStyles.heroCredit}`}>Immagine illustrativa generata con IA</p>
   </section>;
 }
 
 export function ItHomePage() {
   return <main className={styles.page}>
-    <Hero crumbs={[{ label: "Svizzera italiana", href: null }]} badge="Ticino · Svizzera" title={IT_HOME.title} lead={IT_HOME.lead} primary="Conosci single cristiani" />
+    <Hero crumbs={[{ label: "Svizzera italiana", href: null }]} badge="Ticino · Svizzera" title={IT_HOME.title} lead={IT_HOME.lead} primary="Conosci single cristiani" image={IT_HOME.heroImage} imageAlt={IT_HOME.heroImageAlt} />
     <CityList cities={IT_CITIES.map((city) => ({ city }))} heading="Scegli la tua città" intro="Guide per incontri cristiani a Lugano, Bellinzona, Locarno, Mendrisio e Chiasso, con profili reali dalla tua zona." />
     <Sections sections={IT_HOME.sections} kicker="La guida" title="Fede e amore in Ticino" />
     <section className={styles.related} aria-labelledby="domande">
@@ -125,7 +128,7 @@ export function ItHomePage() {
 export function ItCityPage({ city }: { city: ItCity }) {
   const nearest = nearestItCities(city.slug);
   return <main className={styles.page}>
-    <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} />
+    <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} />
 
     <div className={styles.facts} role="list">
       <div role="listitem"><CityIcon name="pin" /><span>Ricerca intorno a<span className={styles.strongText}>{city.name}</span></span></div>

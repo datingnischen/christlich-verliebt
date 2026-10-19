@@ -4,6 +4,7 @@ import { ItCityPage, ItHomePage, ItShell } from "@/components/it-pages";
 import { IT_CITIES, IT_HOME, IT_PILOT_INDEXABLE, getItCity, itPublicUrl } from "@/lib/it-pilot";
 import { publicUrl } from "@/lib/markets";
 import { safeJsonLd } from "@/lib/site-entities";
+import { staticAsset } from "@/lib/static-asset";
 
 type Props = { params: Promise<{ market: string; slug?: string[] }> };
 
@@ -24,13 +25,14 @@ async function resolve(params: Props["params"]) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = await resolve(params);
+  const image = page.kind === "home" ? IT_HOME : page.city;
   return {
     title: { absolute: page.metaTitle },
     description: page.description,
     alternates: { canonical: page.url, languages: page.kind === "home" ? { "it-CH": page.url, "de-CH": publicUrl("ch") } : undefined },
     // Pilot: erst indexieren, wenn ICONY die italienische Registrierung ausliefert (lib/it-pilot.ts).
     robots: { index: IT_PILOT_INDEXABLE, follow: true },
-    openGraph: { title: page.title, description: page.description, url: page.url, locale: "it_CH", type: "website", siteName: "christlich-verliebt.ch" },
+    openGraph: { title: page.title, description: page.description, url: page.url, locale: "it_CH", type: "website", siteName: "christlich-verliebt.ch", images: [{ url: staticAsset(image.heroImage), width: 1600, height: 900, alt: image.heroImageAlt }] },
   };
 }
 

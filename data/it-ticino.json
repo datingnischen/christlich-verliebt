@@ -1,5 +1,7 @@
 {
   "home": {
+    "heroImage": "/images/it/ticino.webp",
+    "heroImageAlt": "Illustrazione IA: una coppia passeggia sul lungolago in Ticino",
     "metaTitle": "Single cristiani in Ticino: incontri con valori comuni",
     "title": "Single cristiani nella Svizzera italiana",
     "description": "Conosci single cristiani in Ticino: guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso con idee per incontri basati su fede e valori comuni.",
@@ -39,6 +41,8 @@
   "cities": [
     {
       "slug": "lugano",
+      "heroImage": "/images/it/lugano.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Lugano: lungolago e montagne ticinesi",
       "name": "Lugano",
       "postcode": "6900",
       "region": "Luganese",
@@ -72,6 +76,8 @@
     },
     {
       "slug": "bellinzona",
+      "heroImage": "/images/it/bellinzona.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Bellinzona: mura medievali e colline verdi",
       "name": "Bellinzona",
       "postcode": "6500",
       "region": "Bellinzonese",
@@ -105,6 +111,8 @@
     },
     {
       "slug": "locarno",
+      "heroImage": "/images/it/locarno.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Locarno: santuario sulla collina e Lago Maggiore",
       "name": "Locarno",
       "postcode": "6600",
       "region": "Locarnese",
@@ -138,6 +146,8 @@
     },
     {
       "slug": "mendrisio",
+      "heroImage": "/images/it/mendrisio.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Mendrisio: vicolo del centro storico e chiesa",
       "name": "Mendrisio",
       "postcode": "6850",
       "region": "Mendrisiotto",
@@ -171,6 +181,8 @@
     },
     {
       "slug": "chiasso",
+      "heroImage": "/images/it/chiasso.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Chiasso: piazza pedonale e chiesa",
       "name": "Chiasso",
       "postcode": "6830",
       "region": "Mendrisiotto",

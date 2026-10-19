@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-19",
+  "tool": "built-in image_gen",
+  "purpose": "Illustrative AI imagery inspired by Ticino; not documentary location photography.",
+  "export": {
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "quality": 82,
+    "crop": "north"
+  },
+  "images": [
+    {
+      "path": "public/images/it/ticino.webp",
+      "prompt": "Use case: photorealistic-natural. Create one premium natural editorial photograph, wide landscape 16:9 website hero for a Christian dating site in Ticino, Switzerland. Warm late afternoon light, authentic real textures, inviting restrained romantic mood, no text, watermark, logos or graphic overlays. Broad composition suitable for responsive cropping, main visual interest in the right half because white headline overlays the left. A naturally dressed adult couple in their thirties walking together on a lakeside promenade in the Swiss Italian lake region, viewed candidly from a slight distance, relaxed affectionate smiles, water and green mountains in the background. Keep both people together toward the right, show generous surrounding landscape. No wedding clothes or exaggerated religious props."
+    },
+    {
+      "path": "public/images/it/lugano.webp",
+      "prompt": "Use case: photorealistic-natural. Create one premium natural editorial photograph, wide landscape 16:9 website hero for a Christian dating site in Ticino, Switzerland. Warm late afternoon light, authentic real textures, inviting restrained romantic mood, no text, watermark, logos or graphic overlays. Broad composition suitable for responsive cropping, main visual interest in the right half because white headline overlays the left. An evocative lakeside scene inspired by Lugano in Ticino: lake promenade, graceful railing, Mediterranean planting, Lake Lugano and green mountain slopes beyond. A discreet adult couple walking in the distance at the right edge. Photographic geographic atmosphere rather than fabricated exact landmarks."
+    },
+    {
+      "path": "public/images/it/bellinzona.webp",
+      "prompt": "Use case: photorealistic-natural. Create one premium natural editorial photograph, wide landscape 16:9 website hero for a Christian dating site in Ticino, Switzerland. Warm late afternoon light, authentic real textures, inviting restrained romantic mood, no text, watermark, logos or graphic overlays. Broad composition suitable for responsive cropping, main visual interest in the right half because white headline overlays the left. Bellinzona in Ticino: medieval stone fortress walls above a small town, green Alpine foothills and warm terracotta rooftops. Generous landscape composition, castle walls toward right. Believable Swiss Italian architecture, no fantasy towers, no people necessary."
+    },
+    {
+      "path": "public/images/it/locarno.webp",
+      "prompt": "Use case: photorealistic-natural. Create one premium natural editorial photograph, wide landscape 16:9 website hero for a Christian dating site in Ticino, Switzerland. Warm late afternoon light, authentic real textures, inviting restrained romantic mood, no text, watermark, logos or graphic overlays. Broad composition suitable for responsive cropping, main visual interest in the right half because white headline overlays the left. Locarno area in Ticino: warm ochre pilgrimage church on a wooded hillside evocative of Madonna del Sasso, with Lake Maggiore and distant mountains. Church in right half, tranquil late afternoon atmosphere. A coherent natural photographic scene, no invented elaborate religious decoration."
+    },
+    {
+      "path": "public/images/it/mendrisio.webp",
+      "prompt": "Use case: photorealistic-natural. Create one premium natural editorial photograph, wide landscape 16:9 website hero for a Christian dating site in Ticino, Switzerland. Warm late afternoon light, authentic real textures, inviting restrained romantic mood, no text, watermark, logos or graphic overlays. Broad composition suitable for responsive cropping, main visual interest in the right half because white headline overlays the left. Mendrisio in Ticino: quiet old town lane with warm ochre and cream stucco buildings, stone paving, simple church facade and leafy green hills beyond. Church and architectural interest toward right. Authentic intimate Swiss Italian atmosphere, no crowds."
+    },
+    {
+      "path": "public/images/it/chiasso.webp",
+      "prompt": "Use case: photorealistic-natural. Create one premium natural editorial photograph, wide landscape 16:9 website hero for a Christian dating site in Ticino, Switzerland. Warm late afternoon light, authentic real textures, inviting restrained romantic mood, no text, watermark, logos or graphic overlays. Broad composition suitable for responsive cropping, main visual interest in the right half because white headline overlays the left. Chiasso in southern Ticino: welcoming pedestrian town square, restrained cream and terracotta building facades, a simple light-colored parish church facade toward right, plane trees and cafe seating in warm afternoon light. Small Swiss Italian border-town character, no lake, no grandiose Italian cathedral."
+    }
+  ]
+}
