@@ -3,16 +3,20 @@ import { CityIcon } from "@/components/city-icons";
 import { RegionShape } from "@/components/city-map";
 import { marketMap, project, regionBox } from "@/lib/city-map";
 import { PreviewLinks } from "@/components/preview-links";
-import { IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
+import { IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
 import { publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import shell from "./site-shell.module.css";
 import styles from "./city-page.module.css";
 import itStyles from "./it-pages.module.css";
 
-/** Kopf und Fuß der italienischen Variante. lang="it-CH" am Wrapper, weil das Root-Layout statisch lang="de" setzt. */
+/**
+ * Kopf und Fuß der italienischen Variante. Das Root-Layout setzt statisch lang="de" (deutsche Seiten); der Wrapper trägt
+ * lang="it-CH", und das Inline-Skript stellt <html lang> noch vor dem ersten Rendern um (Screenreader, Übersetzungsangebote).
+ */
 export function ItShell({ children }: { children: React.ReactNode }) {
   return <div className={shell.shell} lang="it-CH">
+    <script dangerouslySetInnerHTML={{ __html: 'document.documentElement.lang="it-CH";' }} />
     <PreviewLinks />
     <header className={shell.header}>
       <div className={shell.topbar}>Incontri cristiani con rispetto, sicurezza e valori comuni</div>
@@ -24,6 +28,7 @@ export function ItShell({ children }: { children: React.ReactNode }) {
           <a href={itPublicUrl()}>Pagina iniziale</a>
           {IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>{city.name}</a>)}
           <a href={itMagazineUrl()}>Magazine</a>
+          <a href={itPublicUrl(IT_ABOUT_SLUG)}>Chi siamo</a>
         </nav>
         <div className={shell.actions}>
           <a className={shell.login} href={IT_PLATFORM.loginUrl}>Accedi</a>
@@ -45,7 +50,7 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Incontri in Ticino</a><a href={itMagazineUrl()}>Magazine</a></section>
         <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Registrazione gratuita" : "Registrazione gratuita (in tedesco)"}</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
         <section><h3>Lingua</h3><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch</a><a href={itPublicUrl()} hrefLang="it-CH">Italiano</a></section>
-        <section><h3>Servizio</h3><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
+        <section><h3>Servizio</h3><a href={itPublicUrl(IT_ABOUT_SLUG)}>Chi siamo</a><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
       </div>
       <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch{IT_PLATFORM_ITALIAN ? "" : ", per ora in lingua tedesca"}.</p>
     </footer>
@@ -175,7 +180,7 @@ function CityList({ cities, heading, intro }: { cities: { city: ItCity; km?: num
     <ol className={styles.distances}>
       {cities.map(({ city, km }) => <li key={city.slug}>
         <a href={itCityUrl(city.slug)}>
-          <Image src={staticAsset(city.heroImage)} alt="" width={96} height={96} sizes="48px" className={itStyles.cityThumb} />
+          <Image src={staticAsset(city.heroImage)} alt={city.heroImageAlt} width={96} height={96} sizes="48px" className={itStyles.cityThumb} />
           <span className={styles.distanceName}>Single cristiani a {city.name}<small>{city.region}</small></span>
           {km !== undefined ? <>
             <span className={styles.distanceBar} style={{ ["--w" as string]: `${Math.max(8, (km / maxKm) * 100)}%` }}><span /></span>
@@ -197,7 +202,7 @@ function TicinoMap({ active }: { active?: string }) {
   return <figure className={`${styles.mapCard} ${itStyles.mapCard}`}>
     <svg className={styles.map} viewBox={`${box.x - pad - 30 * unit} ${box.y - pad} ${box.width + 2 * pad + 90 * unit} ${box.height + 2 * pad}`} role="img" aria-label={current ? `Posizione di ${current.name} in Ticino` : "Le città delle guide in Ticino"}>
       <g>
-        {Object.entries(map.regions).map(([code, region]) => <path key={code} d={region.d} className={code === "CH-TI" ? itStyles.mapTicino : styles.mapRegion}><title>{region.name}</title></path>)}
+        {Object.entries(map.regions).map(([code, region]) => <path key={code} d={region.d} className={code === "CH-TI" ? itStyles.mapTicino : styles.mapRegion}><title>{IT_CANTON_NAMES[code] ?? region.name}</title></path>)}
       </g>
       {IT_CITIES.map((city) => {
         const { x, y } = project("ch", city.geo.lat, city.geo.lon);
@@ -254,6 +259,19 @@ export function ItHomePage() {
     <Faq guide={IT_HOME.guide} heading="Domande frequenti" />
     <Sources guide={IT_HOME.guide} />
   </main>;
+}
+
+/** Autorenkasten unter Magazinartikeln: wer schreibt, mit Link auf Chi siamo (dort Vita, Arbeitsweise, Kontakt). */
+export function ItAuthorBox() {
+  return <aside className={itStyles.authorBox} aria-labelledby="autore">
+    <Image src={staticAsset(IT_AUTHOR.image)} alt={`Ritratto di ${IT_AUTHOR.name}`} width={80} height={96} />
+    <div>
+      <p className={styles.eyebrow}>Chi scrive</p>
+      <h2 id="autore">{IT_AUTHOR.name}</h2>
+      <p>Si occupa di online dating dal 2008 e dal 2016 collabora con la ICONY GmbH come esperto di dating di christlich-verliebt. Cura le guide per le città del Ticino e il magazine di single-cristiani.ch.</p>
+      <a href={itAuthorUrl()}>Chi siamo e come lavoriamo</a>
+    </div>
+  </aside>;
 }
 
 export function ItCityPage({ city }: { city: ItCity }) {

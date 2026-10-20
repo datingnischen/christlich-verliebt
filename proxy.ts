@@ -1,8 +1,9 @@
 import type { NextRequest } from "next/server.js";
 import { NextResponse } from "next/server.js";
 import { publicUrl, withTrailingSlash, type MarketCode } from "./lib/markets.ts";
-import { IT_CITIES, IT_CITY_BASE, IT_HOST, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
-import { IT_ARTICLES } from "./lib/it-magazine.ts";
+import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_HOME, IT_HOST, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
+import { IT_ARTICLES, IT_MAGAZINE } from "./lib/it-magazine.ts";
+import { staticAsset } from "./lib/static-asset.ts";
 
 const HOST_MARKETS = new Map<string, MarketCode>([
   ["christlich-verliebt.de", "de"],
@@ -58,16 +59,48 @@ function itCurrentPath(path: string) {
   return legacy ? `/${IT_CITY_BASE}/${legacy[1]}/` : path;
 }
 
+// llms.txt der eigenen Domain (Projektregel: jede eigene Wurzel hat eine), aus denselben Daten wie die Sitemap.
+function italianLlmsText() {
+  const line = (title: string, url: string, text: string) => `- [${title}](${url}): ${text}`;
+  return [
+    `# ${IT_HOST}`,
+    "",
+    `> ${IT_HOME.description} Guida informativa in italiano; registrazione e profili si trovano sulla piattaforma svizzera christlich-verliebt.ch.`,
+    "",
+    "## Guide per città (Ticino)",
+    line("Incontri in Ticino per single cristiani", itCityUrl(), "Panoramica delle cinque guide."),
+    ...IT_CITIES.map((city) => line(city.title, itCityUrl(city.slug), city.description)),
+    "",
+    "## Magazine",
+    line(IT_MAGAZINE.title, itMagazineUrl(), IT_MAGAZINE.description),
+    ...IT_ARTICLES.map((article) => line(article.title, itMagazineUrl(article.slug), article.description)),
+    "",
+    "## Chi siamo e informazioni legali",
+    line(IT_ABOUT.title, itPublicUrl(IT_ABOUT_SLUG), IT_ABOUT.description),
+    line("Note legali", itPublicUrl("note-legali"), "Responsabile dei contenuti e contatti."),
+    line("Protezione dei dati", itPublicUrl("privacy"), "Quali dati tratta il sito."),
+    "",
+    "## Optional",
+    line("christlich-verliebt.ch", "https://christlich-verliebt.ch/", "Piattaforma di incontri per single cristiani in Svizzera (in tedesco), gestita da ICONY GmbH."),
+    "",
+  ].join("\n");
+}
+
 // single-cristiani.ch: eigene Domain der italienischen Variante. Die Seiten liegen intern unter /ch/it/
-// (app/[market]/it), robots und Sitemap beantwortet der Proxy selbst.
+// (app/[market]/it), robots, Sitemap, llms.txt und favicon beantwortet der Proxy selbst.
 function italianSite(request: NextRequest, path: string) {
+  if (path === "/favicon.ico") return NextResponse.redirect(staticAsset("/brand/icon.png"), 308);
+  if (path === "/llms.txt") {
+    if (!IT_PILOT_INDEXABLE) return new NextResponse("Not found", { status: 404 });
+    return new NextResponse(italianLlmsText(), { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });
+  }
   if (path === "/robots.txt") {
     const sitemap = IT_PILOT_INDEXABLE ? `\nSitemap: ${IT_ORIGIN}/sitemap.xml\n` : "";
     return new NextResponse(`User-agent: *\nAllow: /\n${sitemap}`, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });
   }
   if (path === "/sitemap.xml") {
     if (!IT_PILOT_INDEXABLE) return new NextResponse("Not found", { status: 404 });
-    const urls = [itPublicUrl(), itCityUrl(), ...IT_CITIES.map(city => itCityUrl(city.slug)), itMagazineUrl(), ...IT_ARTICLES.map(article => itMagazineUrl(article.slug))];
+    const urls = [itPublicUrl(), itCityUrl(), ...IT_CITIES.map(city => itCityUrl(city.slug)), itMagazineUrl(), ...IT_ARTICLES.map(article => itMagazineUrl(article.slug)), itPublicUrl(IT_ABOUT_SLUG)];
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${url}</loc></url>`).join("\n")}\n</urlset>\n`;
     return new NextResponse(xml, { headers: { "content-type": "application/xml; charset=utf-8" } });
   }
@@ -86,7 +119,9 @@ function italianSite(request: NextRequest, path: string) {
 export function proxy(request: NextRequest) {
   if (request.headers.get("x-cv-rewrite-token") === TOKEN) return NextResponse.next();
   const path = request.nextUrl.pathname;
-  if (PASS_PREFIXES.some(prefix => path.startsWith(prefix)) || path === "/favicon.ico") {
+  const host = hostname(request);
+  // single-cristiani.ch hat keine eigene favicon.ico-Datei: der Proxy leitet auf das Marken-Icon (italianSite).
+  if (PASS_PREFIXES.some(prefix => path.startsWith(prefix)) || (path === "/favicon.ico" && host !== IT_HOST)) {
     return NextResponse.next();
   }
 
@@ -98,7 +133,6 @@ export function proxy(request: NextRequest) {
     return NextResponse.rewrite(file);
   }
 
-  const host = hostname(request);
   if (host === IT_HOST) return italianSite(request, path);
   const hostMarket = HOST_MARKETS.get(host);
   // christlich-verliebt.ch/it/… liegt seit 2026-10-20 auf der eigenen Domain single-cristiani.ch.

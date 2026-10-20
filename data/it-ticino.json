@@ -60,12 +60,12 @@
         {
           "name": "Pastorale familiare (CDPF) – percorsi per fidanzati",
           "text": "Commissione diocesana per la pastorale della famiglia: corsi di preparazione al matrimonio in ogni vicariato (Luganese, Locarnese, Tre Valli, Malcantone-Vedeggio, Mendrisiotto), formazione e ritiri per coppie e famiglie, percorso per coppie in difficoltà. Iscrizione ai corsi tramite il proprio parroco, circa sei mesi prima delle nozze.",
-          "url": "https://www.pastoralefamiliare.ch/"
+          "url": "https://www.diocesilugano.ch/curia-vescovile/pastorale-familiare/"
         },
         {
           "name": "Opera Diocesana Pellegrinaggi (ODP)",
           "text": "Organizza ogni anno una ventina di viaggi e pellegrinaggi con accompagnamento spirituale; attiva dal 1927, oltre 50.000 partecipanti dal 1975.",
-          "url": "https://www.odplugano.ch/"
+          "url": "https://www.diocesilugano.ch/curia-vescovile/opera-diocesana-pellegrinaggi-odp/"
         },
         {
           "name": "Chiesa evangelica riformata nel Ticino (CERT)",
@@ -80,7 +80,7 @@
         {
           "name": "Comunità di lavoro delle Chiese cristiane nel Canton Ticino (CLCCT)",
           "text": "Organismo ecumenico delle Chiese cristiane in Ticino; ha promosso tra l'altro la prima «Notte delle Chiese» a Lugano (2023).",
-          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/comunita-di-lavoro-delle-chiese-cristiane-nel-canton-ticino-clcct/"
+          "url": "https://www.diocesilugano.ch/curia-vescovile/comunita-di-lavoro-delle-chiese-cristiane-nel-canton-ticino-clcct/"
         }
       ],
       "events": [
@@ -193,7 +193,7 @@
         },
         {
           "title": "Diocesi di Lugano – Pastorale familiare",
-          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/pastorale-familiare/"
+          "url": "https://www.diocesilugano.ch/curia-vescovile/pastorale-familiare/"
         },
         {
           "title": "Diocesi di Lugano – Incontri di preparazione al matrimonio 2027",
@@ -201,11 +201,11 @@
         },
         {
           "title": "Diocesi di Lugano – Opera Diocesana Pellegrinaggi",
-          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/opera-diocesana-pellegrinaggi-odp/"
+          "url": "https://www.diocesilugano.ch/curia-vescovile/opera-diocesana-pellegrinaggi-odp/"
         },
         {
           "title": "Diocesi di Lugano – Pastorale giovanile",
-          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/commissione-per-la-pastorale-giovanile/"
+          "url": "https://www.diocesilugano.ch/curia-vescovile/commissione-per-la-pastorale-giovanile/"
         },
         {
           "title": "Pastorale giovanile diocesana",
@@ -394,7 +394,7 @@
           {
             "name": "Opera Diocesana Pellegrinaggi",
             "text": "Organizza i pellegrinaggi diocesani, tra cui quello annuale a Lourdes in estate.",
-            "url": "http://www.odplugano.ch/"
+            "url": "https://www.diocesilugano.ch/curia-vescovile/opera-diocesana-pellegrinaggi-odp/"
           }
         ],
         "events": [
@@ -826,8 +826,8 @@
             "url": "https://www.tio.ch/ticino/attualita/1502264/parrocchie-bellinzona-convenzione-cerimonia-sindaco"
           },
           {
-            "title": "UFC – Factsheet Castelli di Bellinzona (UNESCO)",
-            "url": "https://www.bak.admin.ch/dam/bak/it/dokumente/baukultur/archaelogie-denkmalpflege/factsheet-burgen-von-bellinzona.pdf.download.pdf/40_50_00_04-Trois%20ch%C3%A2teaux,%20muraille%20et%20remparts%20du%20bourg%20de%20Bellinzone%20FR.pdf"
+            "title": "Fortezza Bellinzona – castelli e cinta muraria (patrimonio UNESCO)",
+            "url": "https://fortezzabellinzona.ch/"
           },
           {
             "title": "ticino.ch – Collegiata dei SS. Pietro e Stefano",
@@ -1345,7 +1345,7 @@
           {
             "name": "Fondazione Processioni Storiche Mendrisio",
             "text": "Organizza le Processioni della Settimana Santa. Ci si candida online come figurante: circa 230 ruoli a piedi il Giovedì Santo, oltre 800 partecipanti il Venerdì Santo; le descrizioni dei personaggi sono consultabili tutto l'anno. Anche volontari per costumi, Trasparenti e logistica.",
-            "url": "https://www.processionimendrisio.ch/"
+            "url": "https://www.mendrisiottoturismo.ch/processionimendrisio/"
           },
           {
             "name": "Corso di preparazione al matrimonio – Vicariato del Mendrisiotto",
@@ -1354,8 +1354,8 @@
           },
           {
             "name": "Parrocchia di Mendrisio",
-            "text": "Sito della parrocchia indicato da Ticino Turismo per le chiese del Borgo (Santi Cosma e Damiano, Cappuccini).",
-            "url": "https://www.parrocchiamendrisio.ch/"
+            "text": "Parrocchia dei Santi Cosma e Damiano con le chiese del Borgo (compresi i Cappuccini); riferimenti e contatti nell'elenco delle parrocchie della Diocesi di Lugano.",
+            "url": "https://www.diocesilugano.ch/parrocchie-sul-territorio/"
           },
           {
             "name": "Chiesa Evangelica Riformata nel Sottoceneri (CERS)",
@@ -1644,7 +1644,7 @@
           {
             "name": "Opera Diocesana Pellegrinaggi",
             "text": "Organizza i pellegrinaggi della Diocesi di Lugano, tra cui quello annuale a Lourdes in estate.",
-            "url": "http://www.odplugano.ch/"
+            "url": "https://www.diocesilugano.ch/curia-vescovile/opera-diocesana-pellegrinaggi-odp/"
           }
         ],
         "events": [
@@ -1825,8 +1825,8 @@
             "url": "https://www.ticino.ch/it/commons/details/Parco-delle-Gole-della-Breggia/52602.html"
           },
           {
-            "title": "Mendrisiotto Turismo – Sentiero del Monte Bisbino",
-            "url": "https://mendrisiottoturismo.ch/en/itineraries/details/Sentiero-del-Monte-Bisbino/148635.html"
+            "title": "Wikipedia – Monte Bisbino (santuario, 1.325 m)",
+            "url": "https://it.wikipedia.org/wiki/Monte_Bisbino"
           }
         ]
       }

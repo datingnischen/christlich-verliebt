@@ -50,10 +50,162 @@
         }
       ],
       "sources": [
-        { "title": "RSI: le processioni storiche di Mendrisio nel patrimonio UNESCO", "url": "https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html" },
-        { "title": "tio.ch: la mappa religiosa e spirituale del Ticino", "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone" },
-        { "title": "Bellinzona e Valli Turismo: Collegiata dei Santi Pietro e Stefano", "url": "https://www.bellinzonaevalli.ch/en/commons/details/Collegiate-of-SS-Pietro-e-Stefano/2841.html" },
-        { "title": "Diocesi di Lugano", "url": "https://www.diocesilugano.ch" }
+        {
+          "title": "RSI: le processioni storiche di Mendrisio nel patrimonio UNESCO",
+          "url": "https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html"
+        },
+        {
+          "title": "tio.ch: la mappa religiosa e spirituale del Ticino",
+          "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone"
+        },
+        {
+          "title": "Bellinzona e Valli Turismo: Collegiata dei Santi Pietro e Stefano",
+          "url": "https://www.bellinzonaevalli.ch/en/commons/details/Collegiate-of-SS-Pietro-e-Stefano/2841.html"
+        },
+        {
+          "title": "Diocesi di Lugano",
+          "url": "https://www.diocesilugano.ch"
+        }
+      ]
+    },
+    {
+      "slug": "conoscere-single-cristiani-in-ticino",
+      "metaTitle": "Conoscere single cristiani in Ticino: 6 strade",
+      "title": "Dove conoscere single cristiani in Ticino: parrocchia, gruppi e online",
+      "description": "Sei strade per conoscere single cristiani in Ticino: parrocchia, gruppi per giovani adulti, pellegrinaggi, feste di fede e ricerca per codice postale.",
+      "lead": "In Ticino oltre quattro economie domestiche su dieci sono composte da una sola persona, eppure incontrare qualcuno che condivida la fede sembra difficile. Sei strade concrete, dalla parrocchia alla ricerca per codice postale.",
+      "category": "Conoscersi",
+      "heroImage": "/images/it/ticino.webp",
+      "heroImageAlt": "Illustrazione IA: una coppia passeggia sul lungolago in Ticino",
+      "author": "Christian M. Haas",
+      "published": "2026-10-20",
+      "modified": "2026-10-20",
+      "readingMinutes": 5,
+      "sections": [
+        {
+          "heading": "Tanti single, poche occasioni per incontrarsi",
+          "html": "<p>I numeri dicono che le persone ci sono. Nel 2024 il 42,1 % delle economie domestiche ticinesi era formato da una sola persona, più della media svizzera (37,4 %), e il 56,2 % della popolazione dai 15 anni in su si dichiarava cattolica romana. Quello che manca non sono i single credenti, ma le occasioni per incontrarli al di fuori della propria cerchia di amici e colleghi. Chi va a messa nella stessa chiesa da anni conosce i volti, raramente le storie.</p><p>Le sei strade che seguono funzionano meglio insieme: la comunità dà profondità, la ricerca online dà ampiezza. Nessuna richiede di «mettersi in vetrina»: in tutti i casi si tratta di fare qualcosa che ha senso di per sé, e di farlo con altre persone.</p>"
+        },
+        {
+          "heading": "1. La parrocchia, oltre la messa domenicale",
+          "html": "<p>La Diocesi di Lugano conta 240 parrocchie, e quasi ognuna ha attività in cui ci si conosce facendo qualcosa insieme: il coro, la catechesi, il gruppo missionario, il volontariato della Caritas parrocchiale, la preparazione delle feste patronali. A Lugano, per esempio, la Scuola corale della Cattedrale e la Messa settimanale per studenti alla Basilica del Sacro Cuore riuniscono persone che la domenica sedute nei banchi non si parlerebbero mai.</p><p>Il consiglio è semplice: scegli un impegno che ti piacerebbe anche se non conoscessi nessuno. Chi canta, cucina o organizza insieme ad altri conosce persone con valori simili in modo naturale, senza la pressione di un appuntamento. Indirizzi e proposte per le singole città sono nelle guide di <a href=\"https://single-cristiani.ch/incontri/lugano/\">Lugano</a>, <a href=\"https://single-cristiani.ch/incontri/bellinzona/\">Bellinzona</a>, <a href=\"https://single-cristiani.ch/incontri/locarno/\">Locarno</a>, <a href=\"https://single-cristiani.ch/incontri/mendrisio/\">Mendrisio</a> e <a href=\"https://single-cristiani.ch/incontri/chiasso/\">Chiasso</a>.</p>"
+        },
+        {
+          "heading": "2. Gruppi per giovani adulti e incontri tra credenti",
+          "html": "<p>Per chi ha tra i 18 e i 35 anni la Pastorale giovanile diocesana propone #spazioGiovani, ritiri, formazione e i cammini verso la Giornata mondiale della gioventù. Sul versante riformato, la Chiesa evangelica riformata nel Sottoceneri organizza culti, studi biblici e gli incontri «Trovarsi», mentre la Chiesa evangelica riformata nel Ticino riunisce le tre comunità di Bellinzona, Locarno e Sottoceneri.</p><p>Questi gruppi non sono «per single», e proprio per questo funzionano: ci si incontra attorno alla fede, non attorno alla ricerca di un partner. Se nasce qualcosa, nasce su una base già condivisa.</p>"
+        },
+        {
+          "heading": "3. Pellegrinaggi, campi e ritiri",
+          "html": "<p>Viaggiare insieme accorcia i tempi: in pochi giorni si scopre come una persona reagisce alla fatica, all'attesa e alla preghiera comune. L'Opera Diocesana Pellegrinaggi organizza ogni anno circa venti viaggi con accompagnamento spirituale, da Roma e Assisi fino alla Terra Santa; i campi estivi e i GREST della Pastorale giovanile cercano animatori e animatrici; molte parrocchie propongono ritiri di Avvento e di Quaresima.</p><p>Chi partecipa come volontario, non solo come ospite, conosce il gruppo dall'interno. È anche il modo migliore per capire se la fede dell'altro è vissuta o solo dichiarata.</p>"
+        },
+        {
+          "heading": "4. Feste e tradizioni di fede del Ticino",
+          "html": "<p>Il calendario ticinese è pieno di appuntamenti in cui fede e comunità si incontrano all'aperto: le Processioni storiche di Mendrisio del Giovedì e Venerdì Santo, patrimonio culturale immateriale UNESCO, a cui ci si può candidare come figuranti; la festa di Santa Maria dei Miracoli a Morbio Inferiore il 29 luglio; la celebrazione ecumenica della Festa federale di ringraziamento la terza domenica di settembre; la Notte delle Chiese a Lugano, promossa dalla Comunità di lavoro delle Chiese cristiane.</p><p>Partecipare, e magari dare una mano nell'organizzazione, è un'occasione per conoscere persone della propria regione che vivono la fede con naturalezza. Le date dell'anno sono raccolte nelle guide di <a href=\"https://single-cristiani.ch/incontri/mendrisio/\">Mendrisio</a> e <a href=\"https://single-cristiani.ch/incontri/chiasso/\">Chiasso</a>.</p>"
+        },
+        {
+          "heading": "5. Online, con un filtro sui valori",
+          "html": "<p>Le comunità hanno un limite: il raggio. Chi vive in una valle o lavora a turni incontra sempre le stesse venti persone. Una piattaforma pensata per single cristiani allarga il cerchio senza rinunciare al filtro sui valori. Su christlich-verliebt.ch, piattaforma per tutta la Svizzera, la ricerca per codice postale permette di concentrarsi sul Ticino: 6900 per Lugano, 6500 per Bellinzona, 6600 per Locarno, 6850 per Mendrisio, 6830 per Chiasso. Registrarsi e creare un profilo è gratuito; le funzioni a pagamento sono indicate prima dell'acquisto.</p><p>Un profilo che funziona dice con calma che posto ha la fede nella tua vita: «canto nel coro della parrocchia», «la domenica per me è messa e pranzo in famiglia» valgono più di un elenco di aggettivi. Una foto recente, in cui si vede il viso, e un messaggio iniziale che fa riferimento al profilo dell'altro fanno il resto. Per ora la piattaforma è in tedesco: la versione italiana è in costruzione, ma i profili del Ticino ci sono già.</p>"
+        },
+        {
+          "heading": "6. Dal messaggio al primo caffè",
+          "html": "<p>Online o in parrocchia, il passaggio decisivo è lo stesso: incontrarsi di persona, presto e senza aspettative esagerate. Un caffè in piazza dopo la messa, una passeggiata sul lungolago, una salita al santuario sono occasioni semplici per capire se c'è una base comune. Come parlare di fede senza trasformare l'incontro in un esame lo spieghiamo nell'articolo <a href=\"https://single-cristiani.ch/magazine/parlare-di-fede-al-primo-appuntamento/\">Parlare di fede al primo appuntamento</a>.</p><p>Vale sempre la regola d'oro: luogo pubblico, orario chiaro, una persona di fiducia informata. E la libertà di salutarsi dopo un caffè, se non scatta nulla: anche questo fa parte del rispetto reciproco.</p>"
+        },
+        {
+          "heading": "In conclusione",
+          "html": "<p>Non esiste una strada sola. Chi unisce la vita di comunità, dove si conoscono persone facendo qualcosa insieme, alla ricerca online, che allarga il cerchio oltre la propria valle, moltiplica le occasioni senza snaturarsi. Le <a href=\"https://single-cristiani.ch/incontri/\">guide per le città del Ticino</a> raccolgono chiese, gruppi, appuntamenti e luoghi per un primo incontro, città per città.</p>"
+        }
+      ],
+      "sources": [
+        {
+          "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche)",
+          "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+        },
+        {
+          "title": "Diocesi di Lugano – Parrocchie sul territorio",
+          "url": "https://www.diocesilugano.ch/parrocchie-sul-territorio/"
+        },
+        {
+          "title": "Pastorale giovanile diocesana",
+          "url": "https://www.pastoralegiovanile.ch/"
+        },
+        {
+          "title": "Diocesi di Lugano – Opera Diocesana Pellegrinaggi",
+          "url": "https://www.diocesilugano.ch/curia-vescovile/opera-diocesana-pellegrinaggi-odp/"
+        },
+        {
+          "title": "Chiesa evangelica riformata nel Ticino (CERT)",
+          "url": "https://www.cert-ticino.ch/"
+        },
+        {
+          "title": "Chiesa Evangelica Riformata nel Sottoceneri (CERS)",
+          "url": "https://www.cers.ch/"
+        },
+        {
+          "title": "RSI – Le Processioni di Mendrisio nel patrimonio UNESCO",
+          "url": "https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html"
+        },
+        {
+          "title": "Ticino Turismo – Festa di Santa Maria dei Miracoli",
+          "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+        },
+        {
+          "title": "laRegione – Notte delle Chiese a Lugano",
+          "url": "https://www.laregione.ch/cantone/luganese/1667222/servizi"
+        }
+      ]
+    },
+    {
+      "slug": "incontri-online-sicuri-single-cristiani",
+      "metaTitle": "Incontri online sicuri: 8 regole per single cristiani",
+      "title": "Incontri online sicuri: 8 regole per single cristiani",
+      "description": "Otto regole per incontri online sicuri: profilo riservato, videochiamata, mai denaro, primo incontro in luogo pubblico e i segnali della truffa dell'amore.",
+      "lead": "Fiducia e apertura sono virtù, ma online vanno accompagnate da un po' di prudenza. Otto regole semplici per conoscere persone nuove in sicurezza, dal primo messaggio al primo caffè, e i segnali per riconoscere chi finge.",
+      "category": "Sicurezza",
+      "heroImage": "/images/it/bellinzona.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Bellinzona: mura medievali e colline verdi",
+      "author": "Christian M. Haas",
+      "published": "2026-10-20",
+      "modified": "2026-10-20",
+      "readingMinutes": 5,
+      "sections": [
+        {
+          "heading": "Fiducia sì, ingenuità no",
+          "html": "<p>Chi cerca una relazione seria, fondata su valori comuni, tende a dare fiducia. È una qualità, e i truffatori lo sanno. La Prevenzione Svizzera della Criminalità descrive la «truffa dell'amore» (romance scam) come uno schema ricorrente: un'identità inventata, settimane di messaggi affettuosi per costruire un legame, poi un'emergenza improvvisa e la richiesta di denaro. Le vittime non sono persone ingenue, ma persone che volevano credere.</p><p>La buona notizia è che la prudenza non guasta l'incontro. Chi ha intenzioni sincere capisce e rispetta le regole che seguono; chi protesta sta dando un'informazione preziosa.</p>"
+        },
+        {
+          "heading": "Le otto regole",
+          "html": "<ol><li><strong>Profilo sincero, ma riservato.</strong> Racconta chi sei e che posto ha la fede nella tua vita, ma non indicare cognome, indirizzo, datore di lavoro o la parrocchia esatta. Queste informazioni arrivano con la fiducia, non prima.</li><li><strong>All'inizio resta sulla piattaforma.</strong> Chi insiste per passare subito a WhatsApp, Telegram o e-mail vuole uscire da un ambiente in cui può essere segnalato. Non c'è fretta.</li><li><strong>Videochiamata prima dell'incontro.</strong> Dieci minuti di video con la telecamera accesa tolgono ogni dubbio su chi c'è dall'altra parte. Chi rinvia sempre, con scuse tecniche o di lavoro, non è chi dice di essere.</li><li><strong>Mai denaro, mai dati bancari.</strong> Qualunque sia la storia: un biglietto aereo, una dogana da sbloccare, un'operazione urgente, un «investimento sicuro» in criptovalute. Chi non hai mai incontrato non deve ricevere né soldi né carte né codici.</li><li><strong>Primo incontro in un luogo pubblico, di giorno.</strong> Un caffè in piazza, il lungolago, il centro storico: luoghi frequentati, facili da raggiungere e da lasciare. Niente casa propria, niente passaggi in auto.</li><li><strong>Avvisa una persona di fiducia.</strong> Dille con chi ti incontri, dove e quando, e manda un messaggio quando sei di nuovo a casa. Non è sfiducia verso l'altro: è buon senso.</li><li><strong>Arriva e torna con mezzi tuoi.</strong> Così decidi tu quando l'incontro finisce. Un biglietto del treno costa meno di una situazione spiacevole.</li><li><strong>Ascolta il tuo istinto e segnala.</strong> Se qualcosa non torna, non devi giustificarti: interrompi il contatto, blocca e segnala il profilo alla piattaforma. Aiuti anche chi verrà dopo di te.</li></ol>"
+        },
+        {
+          "heading": "I segnali della truffa dell'amore",
+          "html": "<p>Gli schemi descritti dalla polizia si somigliano. Attenzione se la persona:</p><ul><li>ha un profilo perfetto, con foto da catalogo e una storia toccante, ma pochi dettagli verificabili;</li><li>dichiara sentimenti profondi dopo pochi giorni e parla subito di futuro, matrimonio, destino;</li><li>vive o lavora all'estero, spesso come militare, ingegnere su una piattaforma, medico in missione, e non può mai incontrarsi;</li><li>evita le videochiamate o le interrompe sempre per «problemi di connessione»;</li><li>racconta un'emergenza improvvisa che si risolve solo con un bonifico, una ricarica o un investimento;</li><li>chiede di tenere la relazione segreta a familiari e amici.</li></ul><p>Un singolo segnale può avere una spiegazione innocente. Tre insieme no.</p>"
+        },
+        {
+          "heading": "Quando la fede viene usata come esca",
+          "html": "<p>Chi truffa si adatta al pubblico. Sulle piattaforme per credenti compaiono profili che citano la Bibbia a ogni messaggio, scrivono «Dio ci ha fatti incontrare» dopo due giorni e chiedono di pregare insieme per la loro emergenza finanziaria. La fede condivisa è un ottimo punto di partenza per una relazione, ma non è una garanzia sull'identità di chi scrive.</p><p>Il Vangelo stesso invita a essere «prudenti come i serpenti e semplici come le colombe» (Mt 10,16). Semplicità di cuore e prudenza di testa non si escludono: chi condivide davvero i tuoi valori non ti chiederà mai di dimostrarlo con un bonifico.</p>"
+        },
+        {
+          "heading": "Se è già successo",
+          "html": "<p>Nessuna vergogna: la truffa dell'amore colpisce persone di ogni età e istruzione. Interrompi il contatto senza annunciarlo, conserva chat, e-mail e ricevute (screenshot compresi), blocca la persona e segnala il profilo alla piattaforma. Se hai già inviato denaro, contatta subito la tua banca: un bonifico recente a volte si può ancora fermare.</p><p>Sporgi denuncia alla Polizia cantonale. Il portale cybercrimepolice.ch della Polizia cantonale di Zurigo raccoglie in italiano i casi correnti di truffa online e permette di segnalare quelli nuovi; la Prevenzione Svizzera della Criminalità pubblica consigli aggiornati su skppsc.ch. Parlarne con una persona di fiducia o con il proprio parroco aiuta a non restare soli con l'accaduto.</p>"
+        },
+        {
+          "heading": "Dal primo caffè in avanti",
+          "html": "<p>Superato il primo incontro, la prudenza si allenta da sola: si conoscono gli amici, la famiglia, la comunità dell'altro, e la storia raccontata online trova conferme nella vita reale. Fino ad allora valgono le otto regole. Idee concrete per un primo appuntamento in un luogo pubblico, dal lungolago di Lugano al santuario di Locarno, si trovano nelle <a href=\"https://single-cristiani.ch/incontri/\">guide per le città del Ticino</a>; come parlare di fede senza pressioni lo spieghiamo in <a href=\"https://single-cristiani.ch/magazine/parlare-di-fede-al-primo-appuntamento/\">Parlare di fede al primo appuntamento</a>.</p>"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Prevenzione Svizzera della Criminalità – Truffa dell'amore (romance scam)",
+          "url": "https://www.skppsc.ch/it/temi/internet/romance-scam-italiano/"
+        },
+        {
+          "title": "Prevenzione Svizzera della Criminalità – Truffa",
+          "url": "https://www.skppsc.ch/it/temi/truffa/"
+        },
+        {
+          "title": "cybercrimepolice.ch – Polizia cantonale di Zurigo, casi correnti di criminalità informatica",
+          "url": "https://cybercrimepolice.ch/it"
+        }
       ]
     }
   ]

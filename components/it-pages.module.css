@@ -347,3 +347,129 @@
     text-align: left;
   }
 }
+
+/* Autorenkasten unter Magazinartikeln */
+.authorBox {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 40px 0 0;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+}
+
+.authorBox > img {
+  flex: none;
+  width: 80px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.authorBox h2 {
+  margin: 2px 0 8px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.authorBox p {
+  margin: 0 0 10px;
+  font: 16px/1.55 Georgia, serif;
+}
+
+.authorBox a {
+  color: var(--partner);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+/* Chi siamo: Autorenprofil, Linkliste, FAQ */
+.aboutAuthor {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin: 1.6em 0 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--green-soft);
+}
+
+.aboutAuthor img {
+  display: block;
+  width: 160px;
+  height: 192px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.aboutAuthor h2 {
+  margin: 0 0 4px;
+}
+
+.aboutRole {
+  margin: 0 0 14px;
+  color: var(--partner-dark);
+  font: 800 13px Arial, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.aboutLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aboutLinks a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--sage);
+  border-radius: 999px;
+  color: var(--sage-dark);
+  font: 700 14px Arial, sans-serif;
+  text-decoration: none;
+}
+
+.aboutLinks a:hover {
+  background: var(--sage);
+  color: #fff;
+}
+
+.aboutFaq details {
+  margin: 10px 0 0;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.aboutFaq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.aboutFaq details p {
+  margin: 10px 0 0;
+}
+
+@media (max-width: 640px) {
+  .authorBox {
+    flex-direction: column;
+  }
+
+  .aboutAuthor {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutAuthor img {
+    width: 120px;
+    height: 144px;
+  }
+}

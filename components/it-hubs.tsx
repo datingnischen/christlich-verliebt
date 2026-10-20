@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Hero } from "@/components/it-pages";
-import { IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
+import { Hero, ItAuthorBox } from "@/components/it-pages";
+import { IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
 import { IT_ARTICLES, IT_MAGAZINE, formatItDate, type ItArticle } from "@/lib/it-magazine";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./city-page.module.css";
@@ -35,7 +35,7 @@ function ArticleTile({ article }: { article: ItArticle }) {
   </article>;
 }
 
-function Crumbs({ items }: { items: { label: string; href: string | null }[] }) {
+export function Crumbs({ items }: { items: { label: string; href: string | null }[] }) {
   return <nav className={hub.crumbs} aria-label="Percorso di navigazione">
     <ol>{items.map((item) => <li key={item.label}>{item.href ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}</li>)}</ol>
   </nav>;
@@ -66,7 +66,7 @@ export function ItArticlePage({ article }: { article: ItArticle }) {
         <p className={styles.eyebrow}>{article.category}</p>
         <h1>{article.title}</h1>
         <p className={hub.lead}>{article.lead}</p>
-        <p className={hub.meta}>di {article.author} · Aggiornato il <time dateTime={article.modified}>{formatItDate(article.modified)}</time> · {article.readingMinutes} min di lettura</p>
+        <p className={hub.meta}>di <a href={itAuthorUrl()}>{article.author}</a> · Aggiornato il <time dateTime={article.modified}>{formatItDate(article.modified)}</time> · {article.readingMinutes} min di lettura</p>
       </header>
       <figure className={hub.figure}>
         <Image src={staticAsset(article.heroImage)} alt={article.heroImageAlt} width={1600} height={900} sizes="(max-width: 860px) 100vw, 820px" priority />
@@ -78,6 +78,7 @@ export function ItArticlePage({ article }: { article: ItArticle }) {
           <div dangerouslySetInnerHTML={{ __html: section.html }} />
         </section>)}
       </div>
+      <ItAuthorBox />
       <aside className={hub.cta}>
         <h2>Single cristiani nella tua zona</h2>
         <p>Registrazione, profili e messaggi si trovano sulla piattaforma svizzera christlich-verliebt.ch{IT_PLATFORM_ITALIAN ? "" : ", per ora in lingua tedesca: la versione italiana è in costruzione"}.</p>

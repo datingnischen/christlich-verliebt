@@ -65,9 +65,56 @@ export const IT_ORIGIN = `https://${IT_HOST}`;
 /** Rechtstexte der eigenen Domain (Betreiber Christian Mogge, nicht ICONY). */
 export const IT_LEGAL_PAGES = ["note-legali", "privacy"] as const;
 
+/** Chi siamo: Redaktions- und Autorenseite (indexierbar, in Sitemap und llms.txt); Inhalt in components/it-about.tsx. */
+export const IT_ABOUT_SLUG = "chi-siamo";
+export const IT_ABOUT = {
+  metaTitle: "Chi siamo: la redazione di single-cristiani.ch",
+  title: "Chi siamo",
+  description: "Chi c'è dietro single-cristiani.ch: chi cura le guide per il Ticino, come verifichiamo fonti e dati, il rapporto con christlich-verliebt.ch e i contatti.",
+  lead: "single-cristiani.ch è una guida in italiano per chi, nella Svizzera italiana, cerca una relazione fondata sulla fede. Qui spieghiamo chi la cura, come lavoriamo e che rapporto abbiamo con la piattaforma christlich-verliebt.ch.",
+} as const;
+
+/** Herausgeber im JSON-LD: der Betreiber laut Note legali, nicht ICONY (die betreibt nur die Plattform). */
+export const IT_PUBLISHER = {
+  name: "single-cristiani.ch",
+  legalName: "Christian Mogge Internetdienstleistungen",
+  logo: "/brand/single-cristiani-ch.svg",
+} as const;
+
+/** Autor der Inhalte; dieselbe Person wie auf christlich-verliebt.de/magazin/christian-m-haas/ (erster sameAs-Eintrag). */
+export const IT_AUTHOR = {
+  name: "Christian M. Haas",
+  jobTitle: "Responsabile dei contenuti",
+  image: "/brand/christian-m-haas.jpg",
+  sameAs: [
+    "https://christlich-verliebt.de/magazin/christian-m-haas/",
+    "https://www.linkedin.com/in/christian-m-haas-457323379",
+    "https://www.amazon.com/author/christian-m-haas",
+    "https://datingnischen.de/christian",
+  ],
+} as const;
+
+/** Italienische Kantonsnamen für die Karten-Tooltips (data/city-map.json ist deutsch beschriftet). */
+export const IT_CANTON_NAMES: Record<string, string> = {
+  "CH-AG": "Canton Argovia", "CH-AI": "Canton Appenzello Interno", "CH-AR": "Canton Appenzello Esterno", "CH-BE": "Canton Berna",
+  "CH-BL": "Canton Basilea Campagna", "CH-BS": "Canton Basilea Città", "CH-FR": "Canton Friburgo", "CH-GE": "Canton Ginevra",
+  "CH-GL": "Canton Glarona", "CH-GR": "Canton Grigioni", "CH-JU": "Canton Giura", "CH-LU": "Canton Lucerna", "CH-NE": "Canton Neuchâtel",
+  "CH-NW": "Canton Nidvaldo", "CH-OW": "Canton Obvaldo", "CH-SG": "Canton San Gallo", "CH-SH": "Canton Sciaffusa", "CH-SO": "Canton Soletta",
+  "CH-SZ": "Canton Svitto", "CH-TG": "Canton Turgovia", "CH-TI": "Canton Ticino", "CH-UR": "Canton Uri", "CH-VD": "Canton Vaud",
+  "CH-VS": "Canton Vallese", "CH-ZG": "Canton Zugo", "CH-ZH": "Canton Zurigo",
+};
+
 /** Live-URL auf single-cristiani.ch, Seitenpfade mit Schrägstrich. */
 export function itPublicUrl(slug = ""): string {
   return `${IT_ORIGIN}/${slug ? `${slug}/` : ""}`;
+}
+
+/** Autorenseite (= Chi siamo) und Person-@id für Article/AboutPage im JSON-LD. */
+export function itAuthorUrl(): string {
+  return itPublicUrl(IT_ABOUT_SLUG);
+}
+export function itAuthorId(): string {
+  return `${itAuthorUrl()}#person`;
 }
 
 /** ICONY-Profilfenster der Schweizer Plattform für eine Tessiner Postleitzahl (Format wie data/city-widgets.json). */
