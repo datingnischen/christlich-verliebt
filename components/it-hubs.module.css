@@ -100,9 +100,25 @@
   margin: 10px 0 18px;
 }
 
+/* Quellen des Artikels: zugeklappte kleine Box wie auf den Stadtseiten */
 .sources {
+  margin: 24px 0 0;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
   color: var(--muted);
   font-size: 13px;
+}
+
+.sources summary {
+  font-weight: 700;
+}
+
+.sources[open] summary {
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
 }
 
 .sources summary {
