@@ -348,6 +348,13 @@
   }
 }
 
+/* Footer: Flaggen DE/AT/CH unter „Lingua e Paesi“ */
+.flagsLabel {
+  margin-top: 6px;
+  color: #d2d2d2;
+  font-size: 12px;
+}
+
 /* Hinweis: italienische Plattform im Aufbau, Registrierung auf Deutsch */
 .notice {
   margin: 0;

@@ -32,6 +32,15 @@ test("Chi siamo: eigene indexierbare Seite, in Sitemap, Navigation und Fußzeile
   assert.ok(IT_AUTHOR.sameAs.includes("https://christlich-verliebt.de/magazin/christian-m-haas/"));
 });
 
+test("Footer: Flaggen für Deutschland, Österreich und Schweiz verlinken die deutschen Plattformen", async () => {
+  const pages = await read("components/it-pages.tsx");
+  assert.match(pages, /MARKET_CODES\.map\(\(code\) => <a key=\{code\} href=\{publicUrl\(code\)\} hrefLang=\{getMarket\(code\)\.locale\}/);
+  assert.match(pages, /<Flag market=\{code\} \/>/);
+  assert.match(pages, /de: "Germania", at: "Austria", ch: "Svizzera"/);
+  const shell = await read("components/site-shell.tsx");
+  assert.match(shell, /export function Flag\(/);
+});
+
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {
   const page = await read("app/[market]/it/[[...slug]]/page.tsx");
   assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, url: itPublicUrl\(\)/);

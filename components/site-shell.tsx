@@ -7,7 +7,8 @@ import { PreviewLinks } from "./preview-links";
 import styles from "./site-shell.module.css";
 
 // Alle Flaggen im selben 3:2-Rahmen, damit sie im Footer gleich breit sind (auch die eigentlich quadratische Schweizer Flagge).
-function Flag({ market }: { market: MarketCode }) {
+// Auch im Footer von single-cristiani.ch (components/it-pages.tsx).
+export function Flag({ market }: { market: MarketCode }) {
   if (market === "ch") return <svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#d52b1e" /><path d="M13 4h4v4h4v4h-4v4h-4v-4H9V8h4z" fill="#fff" /></svg>;
   const stripes = market === "at" ? ["#c8102e", "#fff", "#c8102e"] : ["#000", "#dd0000", "#ffce00"];
   return <svg viewBox="0 0 30 20" preserveAspectRatio="none" aria-hidden="true">{stripes.map((fill, i) => <rect key={i} y={i * 20 / 3} width="30" height={20 / 3 + 0.1} fill={fill} />)}</svg>;

@@ -4,7 +4,8 @@ import { RegionShape } from "@/components/city-map";
 import { marketMap, project, regionBox } from "@/lib/city-map";
 import { PreviewLinks } from "@/components/preview-links";
 import { IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
-import { publicUrl } from "@/lib/markets";
+import { getMarket, MARKET_CODES, publicUrl } from "@/lib/markets";
+import { Flag } from "@/components/site-shell";
 import { staticAsset } from "@/lib/static-asset";
 import shell from "./site-shell.module.css";
 import styles from "./city-page.module.css";
@@ -49,13 +50,19 @@ export function ItShell({ children }: { children: React.ReactNode }) {
       <div className={shell.footerGrid}>
         <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Incontri in Ticino</a><a href={itMagazineUrl()}>Magazine</a></section>
         <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Registrazione gratuita" : "Registrazione gratuita (in tedesco)"}</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
-        <section><h3>Lingua</h3><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch</a><a href={itPublicUrl()} hrefLang="it-CH">Italiano</a></section>
+        <section><h3>Lingua e Paesi</h3><a href={itPublicUrl()} hrefLang="it-CH">Italiano · Ticino</a><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch · Svizzera</a>
+          <span className={itStyles.flagsLabel}>christlich-verliebt in tedesco</span>
+          <div className={shell.flags}>{MARKET_CODES.map((code) => <a key={code} href={publicUrl(code)} hrefLang={getMarket(code).locale} aria-label={`${IT_COUNTRY_NAMES[code]}: ${getMarket(code).domain}`} title={`${IT_COUNTRY_NAMES[code]} · ${getMarket(code).domain}`}><Flag market={code} /></a>)}</div>
+        </section>
         <section><h3>Servizio</h3><a href={itPublicUrl(IT_ABOUT_SLUG)}>Chi siamo</a><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
       </div>
       <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch{IT_PLATFORM_ITALIAN ? "" : ", per ora in lingua tedesca"}.</p>
     </footer>
   </div>;
 }
+
+/** Ländernamen für die Flaggen im Footer (Links auf christlich-verliebt.de/.at/.ch). */
+const IT_COUNTRY_NAMES: Record<string, string> = { de: "Germania", at: "Austria", ch: "Svizzera" };
 
 const FACT_ICONS = ["people", "church", "spark", "route"] as const;
 
