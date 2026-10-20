@@ -3,7 +3,7 @@ import { CityIcon } from "@/components/city-icons";
 import { RegionShape } from "@/components/city-map";
 import { PreviewLinks } from "@/components/preview-links";
 import { IT_CITIES, IT_HOME, IT_PLATFORM, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItSection } from "@/lib/it-pilot";
-import { getMarket, publicUrl } from "@/lib/markets";
+import { publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import shell from "./site-shell.module.css";
 import styles from "./city-page.module.css";
@@ -11,14 +11,13 @@ import itStyles from "./it-pages.module.css";
 
 /** Kopf und Fuß der italienischen Variante. lang="it-CH" am Wrapper, weil das Root-Layout statisch lang="de" setzt. */
 export function ItShell({ children }: { children: React.ReactNode }) {
-  const config = getMarket("ch");
   return <div className={shell.shell} lang="it-CH">
     <PreviewLinks />
     <header className={shell.header}>
       <div className={shell.topbar}>Incontri cristiani con rispetto, sicurezza e valori comuni</div>
       <div className={shell.headerInner}>
         <a className={shell.brand} href={itPublicUrl()}>
-          <Image src={staticAsset(config.logoPath)} alt={`${config.domain} Logo`} width={300} height={48} priority />
+          <Image src={staticAsset("/brand/single-cristiani-ch.svg")} alt="single-cristiani.ch – Incontri per single cristiani" width={300} height={75} priority />
         </a>
         <nav aria-label="Navigazione principale" className={shell.nav}>
           <a href={itPublicUrl()}>Pagina iniziale</a>
