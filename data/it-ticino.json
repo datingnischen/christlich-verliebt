@@ -10,7 +10,7 @@
       {
         "heading": "Fede e amore in Ticino",
         "icon": "church",
-        "html": "<p>Il Ticino è una regione di tradizione cattolica: nel 2022 circa il 59 per cento della popolazione si dichiarava cattolica romana, secondo i dati federali ripresi da <a href=\"https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone\">tio.ch</a>. Accanto alla Diocesi di Lugano vivono comunità evangeliche riformate e altre chiese cristiane.</p><p>Appartenere a una chiesa però non significa ancora trovare qualcuno con cui condividere la fede nella vita di tutti i giorni. christlich-verliebt.ch nasce proprio per questo: per persone a cui la preghiera, la messa o il culto domenicale e i valori cristiani stanno a cuore anche nella relazione.</p>"
+        "html": "<p>Il Ticino è una regione di tradizione cattolica: nel 2024 il 56,2 % della popolazione dai 15 anni si dichiarava cattolica romana, il 30,6 % senza appartenenza religiosa (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>). La <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a> conta 240 parrocchie; la <a href=\"https://www.cert-ticino.ch/\">Chiesa evangelica riformata nel Ticino</a> riunisce tre comunità: Bellinzona, Locarno e Sottoceneri.</p><p>Appartenere a una chiesa però non significa ancora trovare qualcuno con cui condividere la fede nella vita di tutti i giorni. Nel 2024 il 42,1 % delle economie domestiche ticinesi era formato da una sola persona, più della media svizzera (37,4 %). christlich-verliebt.ch nasce proprio per questo: per persone a cui la preghiera, la messa o il culto e i valori cristiani stanno a cuore anche nella relazione.</p>"
       },
       {
         "heading": "Come funziona christlich-verliebt.ch",
@@ -23,20 +23,226 @@
         "html": "<p>Un caffè in piazza o una passeggiata sul lungolago sono spesso il modo più sereno per conoscersi. Parlate presto di ciò che conta per voi: come vivete la fede, se andate in chiesa, quale ruolo hanno famiglia e comunità.</p><p>Per il primo appuntamento scegli un luogo pubblico e racconta a una persona di fiducia dove ti trovi. Rispetto, sincerità e tempo sono la base di ogni relazione che vuole durare.</p>"
       }
     ],
-    "faq": [
-      {
-        "question": "christlich-verliebt.ch è solo per cattolici?",
-        "answer": "No. La piattaforma è aperta a tutte le persone cristiane, cattoliche, evangeliche o di altre chiese, che cercano un partner con cui condividere fede e valori."
-      },
-      {
-        "question": "Incontrerò solo persone del Ticino?",
-        "answer": "christlich-verliebt.ch è una piattaforma per tutta la Svizzera. Con la ricerca per codice postale puoi concentrarti sui profili vicino a te."
-      },
-      {
-        "question": "L'iscrizione costa qualcosa?",
-        "answer": "Registrarsi e creare un profilo è gratuito. Le condizioni delle funzioni a pagamento sono indicate direttamente sulla piattaforma prima di qualsiasi acquisto."
-      }
-    ]
+    "guide": {
+      "facts": [
+        {
+          "label": "Abitanti del Ticino",
+          "value": "358.903",
+          "note": "residenti permanenti, fine 2024",
+          "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+        },
+        {
+          "label": "Cattolici romani",
+          "value": "56,2 %",
+          "note": "15 anni e più, 2024 (2022: 59,3 %)",
+          "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+        },
+        {
+          "label": "Economie domestiche di una persona",
+          "value": "42,1 %",
+          "note": "2024; media svizzera 37,4 %",
+          "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+        },
+        {
+          "label": "Parrocchie della Diocesi",
+          "value": "240",
+          "note": "Diocesi di Lugano, tutto il Cantone",
+          "source": "https://www.diocesilugano.ch/parrocchie-sul-territorio/"
+        }
+      ],
+      "places": [],
+      "communities": [
+        {
+          "name": "Pastorale giovanile diocesana",
+          "text": "Commissione della Diocesi di Lugano per bambini, ragazzi, adolescenti e giovani (#spazioGiovani dai 17/18 anni, con materiale sulla Giornata mondiale della gioventù); campi estivi, GREST, ritiri e formazione animatori. Sede: Centro pastorale S. Giuseppe, Via Cantonale 2a, Lugano.",
+          "url": "https://www.pastoralegiovanile.ch/"
+        },
+        {
+          "name": "Pastorale familiare (CDPF) – percorsi per fidanzati",
+          "text": "Commissione diocesana per la pastorale della famiglia: corsi di preparazione al matrimonio in ogni vicariato (Luganese, Locarnese, Tre Valli, Malcantone-Vedeggio, Mendrisiotto), formazione e ritiri per coppie e famiglie, percorso per coppie in difficoltà. Iscrizione ai corsi tramite il proprio parroco, circa sei mesi prima delle nozze.",
+          "url": "https://www.pastoralefamiliare.ch/"
+        },
+        {
+          "name": "Opera Diocesana Pellegrinaggi (ODP)",
+          "text": "Organizza ogni anno una ventina di viaggi e pellegrinaggi con accompagnamento spirituale; attiva dal 1927, oltre 50.000 partecipanti dal 1975.",
+          "url": "https://www.odplugano.ch/"
+        },
+        {
+          "name": "Chiesa evangelica riformata nel Ticino (CERT)",
+          "text": "Chiesa cantonale riformata con tre comunità regionali; notizie, sinodi e celebrazioni ecumeniche.",
+          "url": "https://www.cert-ticino.ch/"
+        },
+        {
+          "name": "Chiesa Evangelica Riformata nel Sottoceneri (CERS)",
+          "text": "Culti, studi biblici, incontri «Trovarsi», attività giovanili; con «Cristiani insieme» una celebrazione ecumenica mensile in italiano a Tesserete.",
+          "url": "https://www.cers.ch/"
+        },
+        {
+          "name": "Comunità di lavoro delle Chiese cristiane nel Canton Ticino (CLCCT)",
+          "text": "Organismo ecumenico delle Chiese cristiane in Ticino; ha promosso tra l'altro la prima «Notte delle Chiese» a Lugano (2023).",
+          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/comunita-di-lavoro-delle-chiese-cristiane-nel-canton-ticino-clcct/"
+        }
+      ],
+      "events": [
+        {
+          "name": "Processioni storiche di Mendrisio",
+          "when": "Giovedì Santo e Venerdì Santo, sera",
+          "text": "Patrimonio culturale immateriale UNESCO dal 2019; ci si può candidare online come figurante."
+        },
+        {
+          "name": "Festa di Santa Maria dei Miracoli, Morbio Inferiore",
+          "when": "29 luglio (novena dal 20 luglio)",
+          "text": "Festa mariana con processione serale e quadri viventi."
+        },
+        {
+          "name": "Festa federale di ringraziamento – celebrazione ecumenica",
+          "when": "Terza domenica di settembre (2026: 20 settembre, Bellinzona)",
+          "text": "Celebrazione ecumenica cantonale; nel 2026 nella chiesa di San Giovanni a Bellinzona con predica del presidente della CLCCT."
+        },
+        {
+          "name": "Corsi di preparazione al matrimonio",
+          "when": "Più cicli all'anno per vicariato (inverno, primavera, estate, autunno)",
+          "text": "Percorsi per fidanzati della pastorale familiare diocesana; anche weekend residenziali nel Locarnese."
+        },
+        {
+          "name": "Pellegrinaggi diocesani",
+          "when": "Durante tutto l'anno (circa 20 viaggi)",
+          "text": "Proposte dell'Opera Diocesana Pellegrinaggi, alcune su richiesta delle parrocchie."
+        },
+        {
+          "name": "Campi estivi e GREST",
+          "when": "Estate",
+          "text": "Proposte estive della Pastorale giovanile diocesana per ragazzi e giovani, con animatori formati."
+        }
+      ],
+      "dateSpots": [],
+      "transport": [],
+      "faq": [
+        {
+          "question": "christlich-verliebt.ch è solo per cattolici?",
+          "answer": "No. La piattaforma è aperta a tutte le persone cristiane, cattoliche, evangeliche o di altre chiese, che cercano un partner con cui condividere fede e valori."
+        },
+        {
+          "question": "Incontrerò solo persone del Ticino?",
+          "answer": "christlich-verliebt.ch è una piattaforma per tutta la Svizzera. Con la ricerca per codice postale puoi concentrarti sui profili vicino a te."
+        },
+        {
+          "question": "L'iscrizione costa qualcosa?",
+          "answer": "Registrarsi e creare un profilo è gratuito. Le condizioni delle funzioni a pagamento sono indicate direttamente sulla piattaforma prima di qualsiasi acquisto."
+        },
+        {
+          "question": "Quanti cattolici ci sono in Ticino?",
+          "answer": "Secondo la Rilevazione strutturale 2024 il 56,2 % della popolazione residente di 15 anni e più si dichiara cattolica romana; il Ticino resta così molto sopra la media svizzera (30,0 %). Il 30,6 % non ha appartenenza religiosa."
+        },
+        {
+          "question": "Ci sono comunità evangeliche riformate in Ticino?",
+          "answer": "Sì. La Chiesa evangelica riformata nel Ticino riunisce tre comunità: Bellinzona e dintorni, Locarno e dintorni e il Sottoceneri, con chiese tra l'altro a Lugano, Novaggio, Vacallo e Ascona. Nel 2023 i riformati erano circa il 3,2 % della popolazione di 15 anni e più."
+        },
+        {
+          "question": "Chi guida la Diocesi di Lugano?",
+          "answer": "Dal 10 ottobre 2022 la diocesi, che conta 240 parrocchie e coincide con il Cantone Ticino, è affidata a mons. Alain de Raemy come Amministratore apostolico."
+        },
+        {
+          "question": "Esistono percorsi per fidanzati in Ticino?",
+          "answer": "Sì. La Commissione diocesana per la pastorale familiare propone corsi di preparazione al matrimonio in tutti i vicariati, dal Luganese al Mendrisiotto. Ci si iscrive tramite il proprio parroco, idealmente sei mesi prima delle nozze."
+        },
+        {
+          "question": "Dove incontrare altri giovani credenti?",
+          "answer": "La Pastorale giovanile diocesana propone ritiri, campi estivi, formazione e cammini verso la Giornata mondiale della gioventù; anche la Chiesa riformata del Sottoceneri ha attività giovanili. Molte occasioni nascono nelle parrocchie e negli eventi ecumenici."
+        },
+        {
+          "question": "Vivere da single in Ticino è comune?",
+          "answer": "Sì: nel 2024 il 42,1 % delle economie domestiche ticinesi era composto da una sola persona, più della media svizzera (37,4 %)."
+        }
+      ],
+      "sources": [
+        {
+          "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+          "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+        },
+        {
+          "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+          "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+        },
+        {
+          "title": "USTAT – Notiziario statistico 2025-31 (popolazione 2024)",
+          "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/news/254778ns_2025-31.pdf"
+        },
+        {
+          "title": "Corriere del Ticino – Avanzano i «senza appartenenza» (dati USTAT 2023)",
+          "url": "https://www.cdt.ch/news/si-acuisce-la-crisi-delle-religioni-avanzano-i-senza-appartenenza-383383"
+        },
+        {
+          "title": "tio.ch – Mappa religiosa del cantone (dati 2022)",
+          "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone"
+        },
+        {
+          "title": "Diocesi di Lugano – Parrocchie sul territorio",
+          "url": "https://www.diocesilugano.ch/parrocchie-sul-territorio/"
+        },
+        {
+          "title": "Diocesi di Lugano – Amministratore apostolico",
+          "url": "https://www.diocesilugano.ch/il-vescovo-alain/"
+        },
+        {
+          "title": "Diocesi di Lugano – Storia",
+          "url": "https://www.diocesilugano.ch/storia/"
+        },
+        {
+          "title": "Diocesi di Lugano – Commissioni e uffici",
+          "url": "https://www.diocesilugano.ch/curia-vescovile/"
+        },
+        {
+          "title": "Diocesi di Lugano – Pastorale familiare",
+          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/pastorale-familiare/"
+        },
+        {
+          "title": "Diocesi di Lugano – Incontri di preparazione al matrimonio 2027",
+          "url": "https://www.diocesilugano.ch/incontri-di-preparazione-al-sacramento-del-matrimonio-anno-2026/"
+        },
+        {
+          "title": "Diocesi di Lugano – Opera Diocesana Pellegrinaggi",
+          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/opera-diocesana-pellegrinaggi-odp/"
+        },
+        {
+          "title": "Diocesi di Lugano – Pastorale giovanile",
+          "url": "https://www.diocesilugano.ch/commissioni-e-uffici/commissione-per-la-pastorale-giovanile/"
+        },
+        {
+          "title": "Pastorale giovanile diocesana",
+          "url": "https://www.pastoralegiovanile.ch/"
+        },
+        {
+          "title": "Chiesa evangelica riformata nel Ticino (CERT)",
+          "url": "https://www.cert-ticino.ch/"
+        },
+        {
+          "title": "Chiesa Evangelica Riformata nel Sottoceneri (CERS)",
+          "url": "https://www.cers.ch/"
+        },
+        {
+          "title": "Statuto CERT (lexfind)",
+          "url": "https://www.lexfind.ch/tolv/111851/it"
+        },
+        {
+          "title": "laRegione – Chiesa evangelica riformata (tema)",
+          "url": "https://www.laregione.ch/temi/chiesa-evangelica-riformata"
+        },
+        {
+          "title": "laRegione – Notte delle Chiese Lugano 2023",
+          "url": "https://www.laregione.ch/cantone/luganese/1667222/servizi"
+        },
+        {
+          "title": "Ticino Turismo – Festa di Santa Maria dei Miracoli",
+          "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+        },
+        {
+          "title": "Processioni di Mendrisio – Comunicato 2026",
+          "url": "https://www.mendrisiottoturismo.ch/it/dam/jcr:1728ec16-5a38-4017-8e10-cb7d8acf2735/25.03.2026%20-%20Processioni%20edizione%202026.pdf"
+        }
+      ],
+      "checked": "20 ottobre 2026"
+    }
   },
   "cities": [
     {
@@ -46,33 +252,389 @@
       "name": "Lugano",
       "postcode": "6900",
       "region": "Luganese",
-      "geo": { "lat": 46.0037, "lon": 8.9511 },
+      "geo": {
+        "lat": 46.0037,
+        "lon": 8.9511
+      },
       "metaTitle": "Single cristiani a Lugano: conoscersi con la fede",
       "title": "Single cristiani a Lugano",
       "description": "Single cristiani a Lugano: luoghi di fede, idee per un primo incontro sul lungolago e consigli per conoscersi con valori comuni nel Luganese.",
       "lead": "Lugano è la città più grande della Svizzera italiana e sede della Diocesi: qui fede, lago e vita cittadina si incontrano.",
       "sections": [
         {
-          "heading": "Fede e vita cittadina a Lugano",
+          "heading": "Lugano in cifre: fede e comunità",
           "icon": "church",
-          "html": "<p>Lugano è la sede della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>, che comprende tutto il Ticino. La Cattedrale di San Lorenzo, sopra il centro storico, è il cuore della vita diocesana. In città ci sono numerose parrocchie e anche la Chiesa evangelica riformata nel Sottoceneri ha qui una sua comunità.</p><p>Per i single cristiani questo significa molte occasioni di incontro: messe e culti, cori, gruppi biblici e attività di volontariato.</p>"
+          "html": "<p>Con 63.629 residenti permanenti (fine 2024) Lugano è la città più grande della Svizzera italiana; nell'intero distretto vivono 154.938 persone. Secondo la Rilevazione strutturale 2024 il 54,0 % degli abitanti del distretto dai 15 anni in su è cattolico romano e il 32,6 % non ha un'appartenenza religiosa (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>).</p><p>A Lugano ha sede la <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>, che con 240 parrocchie comprende tutto il Ticino; la Cattedrale di San Lorenzo è cattedrale dal 1888. Anche la Chiesa evangelica riformata nel Sottoceneri ha qui la sua chiesa principale, in Viale Carlo Cattaneo 2.</p>"
         },
         {
-          "heading": "Comunità e gruppi giovani",
+          "heading": "Essere single a Lugano",
           "icon": "people",
-          "html": "<p>La Pastorale giovanile della Diocesi ha sede a Lugano e organizza durante l'anno incontri e giornate per giovani adulti. Le proposte aggiornate si trovano sul sito della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>. Chi partecipa con regolarità alla vita di una comunità conosce persone con valori simili in modo naturale, senza pressione.</p>"
+          "html": "<p>Nel distretto di Lugano il 41,6 % delle economie domestiche è formato da una sola persona e il 45,0 % della popolazione è celibe o nubile (2024, dato riferito a tutte le età, minorenni compresi). Le persone che cercano un partner non mancano: la vera difficoltà è incontrare chi condivide la fede.</p><p>Per questo funziona bene la combinazione tra la ricerca per codice postale 6900 su christlich-verliebt.ch e la partecipazione a una comunità: chi canta in un coro o fa volontariato conosce persone con valori simili in modo naturale, senza pressione.</p>"
         },
         {
-          "heading": "Il primo incontro sul lungolago",
-          "icon": "tree",
-          "html": "<p>Una passeggiata sul lungolago o un caffè in Piazza della Riforma sono luoghi semplici e pubblici per un primo appuntamento. Camminare insieme rende la conversazione più leggera e lascia spazio per parlare di ciò che conta: fede, famiglia, progetti.</p>"
-        },
-        {
-          "heading": "Consigli per conoscersi",
+          "heading": "Dove la fede diventa incontro",
           "icon": "heart",
-          "html": "<p>Racconta con sincerità come vivi la tua fede e ascolta come la vive l'altra persona. Non serve essere d'accordo su tutto fin dall'inizio, ma è importante sapere se condividete le basi. Con christlich-verliebt.ch puoi conoscere single cristiani nel Luganese e in tutta la Svizzera.</p>"
+          "html": "<p>A Lugano ci sono proposte concrete anche per giovani adulti: la Messa settimanale per studenti alla Basilica del Sacro Cuore, seguita da un pranzo offerto, la Scuola corale della Cattedrale, il Coro Laudate e il Glory Gospel Choir della comunità riformata e le conferenze pubbliche della Facoltà di Teologia di Lugano. Gli orari aggiornati sono sul sito della <a href=\"https://www.parrocchialugano.ch/\">Parrocchia di Lugano</a>; indirizzi e link trovi qui sotto.</p>"
         }
-      ]
+      ],
+      "guide": {
+        "facts": [
+          {
+            "label": "Abitanti",
+            "value": "63.629",
+            "note": "residenti permanenti, fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Cattolici nel distretto",
+            "value": "54,0 %",
+            "note": "15 anni e più, 2024 (Ticino 56,2 %)",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Economie domestiche di una persona",
+            "value": "41,6 %",
+            "note": "distretto di Lugano, 2024",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Parrocchia del centro",
+            "value": "5 comunità",
+            "note": "Cattedrale, Angioli, Sacro Cuore, Besso, Molino Nuovo",
+            "source": "https://www.parrocchialugano.ch/"
+          }
+        ],
+        "places": [
+          {
+            "name": "Cattedrale di San Lorenzo",
+            "denomination": "cattolica romana",
+            "address": "Via Cattedrale, 6900 Lugano (amministrazione parrocchiale: Borghetto 1, 6900 Lugano)",
+            "text": "Chiesa madre della Diocesi: citata come pieve nell'818, collegiata dal 1078, cattedrale dal 1888. La facciata, costruita tra il 1500 e il 1517, è considerata uno dei capolavori del Rinascimento lombardo; all'interno affreschi del Duecento, la cappella della Madonna delle Grazie e un fonte battesimale datato 1430.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/cattedrale-di-san-lorenzo/"
+          },
+          {
+            "name": "Chiesa di Santa Maria degli Angioli",
+            "denomination": "cattolica romana",
+            "address": "Piazza Bernardino Luini 3, 6900 Lugano",
+            "text": "Chiesa dell'ex convento francescano fondato nel 1490. Sul tramezzo si trova la grande Passione e Crocifissione di Bernardino Luini (1529), allievo di Leonardo, considerata uno dei massimi affreschi rinascimentali della Svizzera; dello stesso autore anche un'Ultima Cena ispirata a Leonardo. All'interno è disponibile una guida storico-artistica del FAI Swiss in sei lingue.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/santa-maria-degli-angioli/"
+          },
+          {
+            "name": "Basilica del Sacro Cuore",
+            "denomination": "cattolica romana",
+            "address": "Via Maderno 20, 6900 Lugano",
+            "text": "Santuario diocesano nel quartiere di Molino Nuovo, aperto al culto nel 1927 (architetti Enea Tallone e Silvio Soldati) e insignito del titolo di Basilica minore nel 1952. Il grande ciclo di affreschi è di Vittorio Trainini (1937–1954); nella cripta riposa il vescovo Aurelio Bacciarini. Accanto sorge il Centro Cittadella con eventi culturali e corsi; vicino si trova il Santuario della Madonnetta.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/basilica-del-sacro-cuore/"
+          },
+          {
+            "name": "Chiesa di San Nicolao della Flüe",
+            "denomination": "cattolica romana",
+            "address": "Via Mons. Angelo Jelmini 4, 6900 Lugano (Besso)",
+            "text": "Santuario votivo voluto nel 1940 dal vescovo Angelo Jelmini come ringraziamento per la Svizzera risparmiata dalla guerra, consacrato nel 1950 e dedicato al patrono della Confederazione. Da vedere la porta in bronzo di Venanzio Crocetti e la grande vetrata di Willy Kaufmann con 76 pannelli di scene bibliche.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/chiesa-s-nicolao-della-flue/"
+          },
+          {
+            "name": "Chiesa di Cristo Risorto",
+            "denomination": "cattolica romana",
+            "address": "Via Giacomo Brentani 1, 6900 Lugano",
+            "text": "Nella parte nord di Molino Nuovo, è la comunità parrocchiale più giovane della città, nata con lo sviluppo urbano del quartiere nel Novecento.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/chiesa-cristo-risorto/"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Lugano",
+            "denomination": "evangelica riformata",
+            "address": "Viale Carlo Cattaneo 2, 6900 Lugano (centro comunitario e segretariato: Via Landriani 10, 6900 Lugano)",
+            "text": "Chiesa principale della Chiesa evangelica riformata nel Sottoceneri (CERS), che celebra in italiano e offre anche attività in tedesco. Ospita la scuola domenicale, gruppi per genitori e bambini e le prove del Glory Gospel Choir; vi si tengono anche il Sinodo cantonale e incontri ecumenici.",
+            "url": "https://cers.ch"
+          },
+          {
+            "name": "St Edward the Confessor (Chiesa anglicana)",
+            "denomination": "anglicana",
+            "address": "Via Clemente Maraini 6, 6900 Lugano",
+            "text": "Comunità anglicana di lingua inglese del Ticino, con Eucaristia domenicale cantata e un breve servizio infrasettimanale nella cappella laterale. Punto di riferimento per chi vive la fede in inglese.",
+            "url": "https://achurchnearyou.com/church/8572"
+          },
+          {
+            "name": "Chiesa di Santa Maria degli Angeli, Monte Tamaro",
+            "denomination": "cattolica romana",
+            "address": "Alpe Foppa (1.530 m), Monte Tamaro – telecabina da 6802 Rivera",
+            "text": "Chiesa in porfido progettata da Mario Botta e completata nel 1996, con interventi artistici di Enzo Cucchi e 22 litanie di padre Giovanni Pozzi. Sporge sul pendio con una vista ampia sul Luganese; a circa 15 minuti di treno da Lugano (Rivera-Bironico).",
+            "url": "https://www.montetamaro.ch/en/item/chiesa-santa-maria-degli-angeli"
+          }
+        ],
+        "communities": [
+          {
+            "name": "Pastorale Giovanile Diocesana – #spazioGiovani",
+            "text": "Servizio diocesano con sede a Lugano (Via Cantonale 2A) che propone percorsi e incontri per giovani; la sezione #spazioGiovani è rivolta a chi ha dai 17/18 anni in su. Organizza anche la partecipazione alle Giornate Mondiali della Gioventù (la prossima è prevista a Seoul nell'agosto 2027) e proposte Taizé Ticino.",
+            "url": "https://pastoralegiovanile.ch/category/x_eta/sg/"
+          },
+          {
+            "name": "Pastorale universitaria al Sacro Cuore",
+            "text": "La Basilica del Sacro Cuore propone una Messa settimanale per studenti con pranzo offerto, curata dalla Comunità Shalom; la parrocchia ha inoltre un coro e i Centri di ascolto della Parola di Dio settimanali.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/basilica-del-sacro-cuore/comunita-del-sacro-cuore/"
+          },
+          {
+            "name": "Comunità della Cattedrale: Scuola corale, Conferenze di San Vincenzo, confraternite",
+            "text": "Attorno alla Cattedrale operano la Scuola corale della Cattedrale, le Conferenze di San Vincenzo (aiuto a persone in povertà), diverse confraternite storiche e l'Oratorio di Lugano accanto alla chiesa di San Rocco.",
+            "url": "https://www.parrocchialugano.ch/parrocchie/cattedrale-di-san-lorenzo/comunita-della-cattedrale/"
+          },
+          {
+            "name": "Caritas Ticino – volontariato",
+            "text": "Sede centrale a Lugano-Pregassona (Via Merlecco 8). Il volontariato comprende l'accompagnamento come tutor di persone con difficoltà finanziarie, la collaborazione nei negozi dell'usato (Catishop Pregassona, Via Ceresio 48) e il lavoro informativo e televisivo.",
+            "url": "https://www.caritas-ticino.ch/activities/CATI_volontariato.html"
+          },
+          {
+            "name": "Chiesa evangelica riformata nel Sottoceneri (CERS)",
+            "text": "Culti domenicali, corso di fede per adulti, studi biblici (anche in tedesco), il Coro Laudate e il Glory Gospel Choir, oltre a un gruppo mensile ecumenico di lettura in inglese ('Open Fellowship'). Il calendario aggiornato esce ogni mese su Voce Evangelica.",
+            "url": "https://www.voceevangelica.ch/sottoceneri"
+          },
+          {
+            "name": "Facoltà di Teologia di Lugano (FTL)",
+            "text": "Facoltà affiliata all'USI nel Campus Ovest (Via Giuseppe Buffi 13). Propone conferenze ed eventi pubblici spesso a ingresso libero e alcuni corsi aperti anche a uditori esterni.",
+            "url": "https://www.usi.ch/it/feeds/28667"
+          },
+          {
+            "name": "Opera Diocesana Pellegrinaggi",
+            "text": "Organizza i pellegrinaggi diocesani, tra cui quello annuale a Lourdes (nel 2026 dal 16 al 22 agosto).",
+            "url": "http://www.odplugano.ch/"
+          }
+        ],
+        "events": [
+          {
+            "name": "Vesperali",
+            "when": "Domeniche di Quaresima, ore 17:00",
+            "text": "Concerti di musica sacra con momento di riflessione nella Cattedrale di San Lorenzo o in altre chiese della città, organizzati dall'Associazione Amici della Musica in Cattedrale; entrata libera."
+          },
+          {
+            "name": "Giornata diocesana di inizio anno pastorale al Monte Tamaro",
+            "when": "Settembre (nel 2026: sabato 12 settembre)",
+            "text": "Giornata aperta a famiglie, giovani, singoli e gruppi con Angelus, attività d'incontro e Messa presieduta dal vescovo presso la chiesa di Mario Botta all'Alpe Foppa; promossa dalla Pastorale Giovanile e dalla Pastorale Familiare."
+          },
+          {
+            "name": "San Lorenzo, patrono della città e della cattedrale",
+            "when": "10 agosto (memoria liturgica)",
+            "text": "Giorno del santo patrono della Cattedrale; per le celebrazioni dell'anno consultare il sito della Parrocchia di Lugano."
+          },
+          {
+            "name": "Natale in Piazza",
+            "when": "Da fine novembre al 6 gennaio",
+            "text": "Mercatino natalizio con oltre 60 bancarelle, accensione dell'albero in Piazza della Riforma e pista di pattinaggio al Parco Ciani (edizione 2025/26: 27 novembre – 6 gennaio)."
+          }
+        ],
+        "dateSpots": [
+          {
+            "name": "Parco Ciani",
+            "where": "Lungolago di Lugano, tra il centro e la foce del Cassarate",
+            "text": "Parco di 63'000 m² in riva al lago, ad accesso libero, con giardino all'italiana e all'inglese attorno a Villa Ciani e una parte più boscosa verso il Cassarate. Ideale per una passeggiata tranquilla dopo la Messa in Cattedrale o un caffè in centro."
+          },
+          {
+            "name": "Piazza Luini e Santa Maria degli Angioli",
+            "where": "Piazza Bernardino Luini, all'ingresso sud del centro",
+            "text": "Un primo incontro all'insegna dell'arte: visitare insieme l'affresco della Passione di Luini e poi proseguire sul lungolago. La chiesa è aperta tutto l'anno."
+          },
+          {
+            "name": "Monte San Salvatore",
+            "where": "Funicolare da Lugano-Paradiso (5 minuti a piedi dalla stazione FFS di Paradiso)",
+            "text": "In 12 minuti di funicolare si sale alla vetta, dove sorgono la chiesa del San Salvatore (ricostruita dal 1703 dalla Confraternita di Santa Marta e della Buona Morte) e un piccolo museo incluso nel biglietto (fonte storica: prospetto della Funicolare Monte San Salvatore, https://www.montesansalvatore.ch/wp-content/uploads/2025/03/2025-FSS-prospetto-A5-Storia-ITA.pdf). Stagione da marzo a novembre."
+          },
+          {
+            "name": "Monte Brè",
+            "where": "Funicolare da Cassarate (Via Pico), ca. 15 minuti",
+            "text": "Belvedere sul golfo di Lugano: la funicolare supera 629 m di dislivello. La funicolare circola dal primo sabato di marzo al 6 gennaio."
+          },
+          {
+            "name": "Sentiero dell'olivo Castagnola–Gandria",
+            "where": "Da Castagnola al villaggio di Gandria, lungo il lago",
+            "text": "Passeggiata facile di circa 3,5 km (circa 1 ora e 10) con 18 pannelli sull'olivicoltura; il ritorno si può fare in battello o in bus. Un percorso che lascia spazio alla conversazione."
+          },
+          {
+            "name": "Monte Tamaro e la chiesa di Mario Botta",
+            "where": "Telecabina da Rivera fino all'Alpe Foppa (1'530 m)",
+            "text": "Gita di mezza giornata: architettura sacra contemporanea, vista panoramica e ristorante all'Alpe Foppa. Verificare la stagione della telecabina sul sito ufficiale."
+          }
+        ],
+        "transport": [
+          {
+            "to": "Bellinzona",
+            "minutes": "14–18",
+            "text": "Ca. 15 minuti con IC/EC senza cambio attraverso la galleria di base del Ceneri; ca. 18 minuti con TILO S10."
+          },
+          {
+            "to": "Locarno",
+            "minutes": "33",
+            "text": "Ca. 33 minuti con il TILO RE80 diretto."
+          },
+          {
+            "to": "Mendrisio",
+            "minutes": "16–21",
+            "text": "Ca. 16 minuti con RE80, ca. 21 minuti con S10."
+          },
+          {
+            "to": "Chiasso",
+            "minutes": "24–34",
+            "text": "Ca. 24 minuti con RE80 o EC, fino a ca. 34 minuti con S10."
+          },
+          {
+            "to": "Milano Centrale",
+            "minutes": "75",
+            "text": "Ca. 1 ora e 15 minuti con il TILO RE80 diretto."
+          },
+          {
+            "to": "Zurigo HB",
+            "minutes": "113–117",
+            "text": "Poco meno di 2 ore con IC/EC diretto attraverso il San Gottardo."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Quali chiese di Lugano meritano una visita anche per chi non conosce la città?",
+            "answer": "La Cattedrale di San Lorenzo con la sua facciata rinascimentale, Santa Maria degli Angioli con la Passione di Bernardino Luini (1529) e la Basilica del Sacro Cuore con il ciclo di affreschi di Vittorio Trainini. Per un'esperienza diversa vale la gita alla chiesa di Mario Botta sul Monte Tamaro."
+          },
+          {
+            "question": "Esiste a Lugano una comunità evangelica?",
+            "answer": "Sì. La Chiesa evangelica riformata nel Sottoceneri ha la sua chiesa in Viale Carlo Cattaneo 2 e il centro comunitario in Via Landriani 10. Propone culti, studi biblici, cori e attività anche in lingua tedesca; il calendario è pubblicato su Voce Evangelica."
+          },
+          {
+            "question": "Ci sono proposte per giovani adulti credenti a Lugano?",
+            "answer": "La Pastorale Giovanile Diocesana, con sede a Lugano, offre lo spazio #spazioGiovani dai 17/18 anni e accompagna la partecipazione alle Giornate Mondiali della Gioventù. Gli studenti trovano inoltre una Messa settimanale con pranzo alla Basilica del Sacro Cuore."
+          },
+          {
+            "question": "Dove trovo gli orari delle Messe a Lugano?",
+            "answer": "Gli orari cambiano nel corso dell'anno: è meglio consultare la pagina 'Orari S. Messe' della Parrocchia di Lugano (parrocchialugano.ch) o la sezione Sante Messe del sito della Diocesi di Lugano."
+          }
+        ],
+        "sources": [
+          {
+            "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+            "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+            "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "title": "Città di Lugano – Statistiche 2024 (comunicato 16.01.2025)",
+            "url": "https://lugano.ch/dam/jcr:92bb451b-46e8-4dbd-8d7a-ab642ee3ce37/20250116-cs-statistiche-lugano-2024.pdf"
+          },
+          {
+            "title": "tio.ch – Mappa religiosa del Cantone (dati UST 2022)",
+            "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone"
+          },
+          {
+            "title": "Diocesi di Lugano – Parrocchie sul territorio",
+            "url": "https://www.diocesilugano.ch/parrocchie-sul-territorio/"
+          },
+          {
+            "title": "Diocesi di Lugano – Annuario Vicariato del Luganese",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-luganese-16155/"
+          },
+          {
+            "title": "Parrocchia di Lugano",
+            "url": "https://www.parrocchialugano.ch/"
+          },
+          {
+            "title": "Parrocchia di Lugano – Storia della Basilica del Sacro Cuore",
+            "url": "https://www.parrocchialugano.ch/parrocchie/basilica-del-sacro-cuore/la-storia-della-basilica/"
+          },
+          {
+            "title": "Parrocchia di Lugano – Storia di San Nicolao della Flüe",
+            "url": "https://www.parrocchialugano.ch/parrocchie/chiesa-s-nicolao-della-flue/la-storia-della-chiesa-di-san-nicolao/"
+          },
+          {
+            "title": "Parrocchia di Lugano – Comunità della Cattedrale",
+            "url": "https://www.parrocchialugano.ch/parrocchie/cattedrale-di-san-lorenzo/comunita-della-cattedrale/"
+          },
+          {
+            "title": "Parrocchia di Lugano – Comunità del Sacro Cuore",
+            "url": "https://www.parrocchialugano.ch/parrocchie/basilica-del-sacro-cuore/comunita-del-sacro-cuore/"
+          },
+          {
+            "title": "Lugano Region – Cattedrale di San Lorenzo",
+            "url": "https://www.luganoregion.com/it/commons/details/Cattedrale-di-S-Lorenzo/2681.html"
+          },
+          {
+            "title": "Ticino Turismo – Santa Maria degli Angioli",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Maria-degli-Angeli-Lugano/2682.html"
+          },
+          {
+            "title": "CERS – Chiesa evangelica riformata nel Sottoceneri",
+            "url": "https://cers.ch"
+          },
+          {
+            "title": "Voce Evangelica – Sottoceneri",
+            "url": "https://www.voceevangelica.ch/sottoceneri"
+          },
+          {
+            "title": "A Church Near You – St Edward the Confessor, Lugano",
+            "url": "https://achurchnearyou.com/church/8572"
+          },
+          {
+            "title": "Monte Tamaro – Chiesa Santa Maria degli Angeli",
+            "url": "https://www.montetamaro.ch/en/item/chiesa-santa-maria-degli-angeli"
+          },
+          {
+            "title": "Monte Tamaro – Storia",
+            "url": "https://www.montetamaro.ch/en/history"
+          },
+          {
+            "title": "Pastorale Giovanile Diocesana",
+            "url": "https://www.pastoralegiovanile.ch"
+          },
+          {
+            "title": "Diocesi di Lugano – Comunicato Monte Tamaro 2026",
+            "url": "https://www.diocesilugano.ch/wp-content/uploads/sites/2/2026/09/07/CS_Monte_Tamaro_260902.pdf"
+          },
+          {
+            "title": "Caritas Ticino – Volontariato",
+            "url": "https://www.caritas-ticino.ch/activities/CATI_volontariato.html"
+          },
+          {
+            "title": "Caritas Ticino – Negozi",
+            "url": "https://www.caritas-ticino.ch/shop/CATI_negozi_2019_ok.html"
+          },
+          {
+            "title": "Vesperali – Amici della Musica in Cattedrale",
+            "url": "https://www.vesperali.ch"
+          },
+          {
+            "title": "Diocesi di Lugano – Festa della Madonna di Lourdes a Lugano",
+            "url": "https://www.diocesilugano.ch/festa-della-madonna-di-lourdes-a-lugano/"
+          },
+          {
+            "title": "Ticino Turismo – Natale in Piazza",
+            "url": "https://www.ticino.ch/it/events/details/natale-in-piazza/10978.html"
+          },
+          {
+            "title": "Ticino Turismo – Parco Ciani",
+            "url": "https://www.ticino.ch/it/commons/details/Parco-Ciani/85874.html"
+          },
+          {
+            "title": "Città di Lugano – Funicolari",
+            "url": "https://www.lugano.ch/en/vivere-lugano/muoversi-lugano/trasporti-pubblici/funicolari/"
+          },
+          {
+            "title": "Lugano Region – Sentiero dell'olivo",
+            "url": "https://www.luganoregion.com/en/theme-trail/details/The-Olive-Grove-Trail/58645146.html"
+          },
+          {
+            "title": "USI – Facoltà di Teologia di Lugano",
+            "url": "https://www.usi.ch/it/feeds/28667"
+          },
+          {
+            "title": "Diocesi di Lugano – Home (Opera Diocesana Pellegrinaggi, Lourdes 2026)",
+            "url": "https://www.diocesilugano.ch/"
+          },
+          {
+            "title": "Orari FFS via transport.opendata.ch (consultati il 20.10.2026 per mercoledì 21.10.2026, partenza ca. 09:00)",
+            "url": "https://transport.opendata.ch/"
+          },
+          {
+            "title": "Wikipedia – Lugano",
+            "url": "https://it.wikipedia.org/wiki/Lugano"
+          }
+        ],
+        "checked": "20 ottobre 2026"
+      }
     },
     {
       "slug": "bellinzona",
@@ -81,33 +643,336 @@
       "name": "Bellinzona",
       "postcode": "6500",
       "region": "Bellinzonese",
-      "geo": { "lat": 46.1946, "lon": 9.0244 },
+      "geo": {
+        "lat": 46.1946,
+        "lon": 9.0244
+      },
       "metaTitle": "Single cristiani a Bellinzona: conoscersi con la fede",
       "title": "Single cristiani a Bellinzona",
       "description": "Single cristiani a Bellinzona: la Collegiata, comunità cattoliche ed evangeliche e idee per un primo incontro tra fede e valori comuni.",
       "lead": "La capitale del Ticino unisce storia, castelli e una vita di comunità che offre tante occasioni per conoscersi.",
       "sections": [
         {
-          "heading": "Fede e storia a Bellinzona",
+          "heading": "Bellinzona in cifre: fede e comunità",
           "icon": "church",
-          "html": "<p>Nel centro di Bellinzona sorge la Collegiata dei Santi Pietro e Stefano, chiesa rinascimentale e sede della parrocchia del centro città. La parrocchia è guidata da un capitolo di canonici, come descrive <a href=\"https://www.bellinzonaevalli.ch/en/commons/details/Collegiate-of-SS-Pietro-e-Stefano/2841.html\">Bellinzona e Valli Turismo</a>.</p><p>In città è presente anche la Comunità evangelica riformata di Bellinzona e dintorni, una delle tre comunità della Chiesa evangelica riformata nel Ticino.</p>"
+          "html": "<p>Dopo l'aggregazione del 2017 Bellinzona conta 45.305 residenti permanenti (fine 2024), il distretto 58.356. Sul territorio comunale ci sono 16 parrocchie cattoliche del vicariato del Bellinzonese; nel distretto il 55,8 % degli abitanti dai 15 anni è cattolico romano e il 29,9 % non ha un'appartenenza religiosa (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>).</p><p>La <a href=\"https://cerbell.ch/\">Comunità evangelica riformata di Bellinzona e dintorni</a> ha la sua chiesa in Viale Stefano Franscini 1 e propone un Gruppo Giovani, studi biblici e pranzi comunitari.</p>"
         },
         {
-          "heading": "Comunità e volontariato",
+          "heading": "Essere single a Bellinzona",
           "icon": "people",
-          "html": "<p>Cori parrocchiali, gruppi biblici, attività per famiglie e volontariato sono occasioni preziose per conoscere persone con valori simili. Chiedi in parrocchia o nella tua comunità quali gruppi sono attivi e partecipa senza aspettative: spesso le amicizie e gli incontri più belli nascono così.</p>"
+          "html": "<p>Nel distretto di Bellinzona il 39,0 % delle economie domestiche è formato da una sola persona, meno della media cantonale (42,1 %), mentre il 45,6 % della popolazione è celibe o nubile (2024, tutte le età). Molti giovani adulti vivono quindi ancora in famiglia o in coppia: conviene allargare la ricerca.</p><p>Bellinzona è il nodo ferroviario del Ticino: Lugano è a 14 minuti grazie alla galleria di base del Ceneri, Locarno a circa 23. Con la ricerca per codice postale 6500 su christlich-verliebt.ch trovi profili anche nei dintorni.</p>"
         },
         {
-          "heading": "Il primo incontro in città",
-          "icon": "cup",
-          "html": "<p>Le piazze del centro storico e il mercato del sabato offrono un'atmosfera rilassata per un primo caffè. Chi ama camminare può scegliere una passeggiata lungo il fiume Ticino. L'importante è un luogo pubblico e tempo sufficiente per parlare con calma.</p>"
-        },
-        {
-          "heading": "Consigli per conoscersi",
+          "heading": "Fede, musica e storia",
           "icon": "heart",
-          "html": "<p>Parlate presto di come vivete la fede, della messa o del culto e del ruolo della famiglia. Sincerità e rispetto contano più delle parole perfette. Con christlich-verliebt.ch puoi conoscere single cristiani nel Bellinzonese e in tutta la Svizzera.</p>"
+          "html": "<p>Nella Collegiata dei Santi Pietro e Stefano suona l'organo Antegnati del 1588, il secondo più antico della Svizzera, al centro del <a href=\"https://www.laregione.ch/temi/antegnati\">Festival organistico Antegnati</a>. I tre castelli e la Murata, patrimonio mondiale UNESCO dal 2000, sono la cornice ideale per una passeggiata insieme dopo un concerto o una funzione.</p>"
         }
-      ]
+      ],
+      "guide": {
+        "facts": [
+          {
+            "label": "Abitanti",
+            "value": "45.305",
+            "note": "residenti permanenti, fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Cattolici nel distretto",
+            "value": "55,8 %",
+            "note": "15 anni e più, 2024 (Ticino 56,2 %)",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Economie domestiche di una persona",
+            "value": "39,0 %",
+            "note": "distretto di Bellinzona, 2024",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Parrocchie cattoliche",
+            "value": "16",
+            "note": "sul territorio comunale (convenzione 2021)",
+            "source": "https://www.tio.ch/ticino/attualita/1502264/parrocchie-bellinzona-convenzione-cerimonia-sindaco"
+          }
+        ],
+        "places": [
+          {
+            "name": "Collegiata dei Santi Pietro e Stefano",
+            "denomination": "cattolica",
+            "address": "Piazza Collegiata, 6500 Bellinzona",
+            "text": "Chiesa principale della città, capolavoro rinascimentale progettato da Tomaso Rodari, con facciata in pietra bianca di Castione e un rosone di circa 5 metri. All'interno tele del Morazzone e di Camillo Procaccini, la Crocifissione attribuita a Simone Peterzano e l'organo Antegnati del 1588.",
+            "url": "https://www.ticino.ch/it/commons/details/Collegiata-dei-SS-Pietro-e-Stefano/2841.html"
+          },
+          {
+            "name": "Oratorio di Santa Marta",
+            "denomination": "cattolica",
+            "address": "Piazza Collegiata, 6500 Bellinzona (lato nord della Collegiata)",
+            "text": "Piccola sala seicentesca accanto alla Collegiata, con affreschi del 1762 e il Trionfo di santa Marta sulla volta. Un luogo raccolto, a due passi dalla piazza.",
+            "url": "https://www.ticino.ch/it/commons/details/Collegiata-dei-SS-Pietro-e-Stefano/2841.html"
+          },
+          {
+            "name": "Chiesa di Santa Maria delle Grazie",
+            "denomination": "cattolica",
+            "address": "Via Convento 5, 6500 Bellinzona",
+            "text": "Chiesa dell'ex convento francescano (consacrata nel 1505), oggi di proprietà della Città. Il grande tramezzo mostra una Crocifissione rinascimentale circondata da quindici scene della vita e della Passione di Cristo; dopo l'incendio di San Silvestro 1996 è stata restaurata.",
+            "url": "https://www.ticino.ch/en/commons/details/Church-of-Santa-Maria-delle-Grazie/80199.html"
+          },
+          {
+            "name": "Chiesa di San Biagio (Ravecchia)",
+            "denomination": "cattolica",
+            "address": "Piazza San Biagio, 6500 Bellinzona (Ravecchia)",
+            "text": "Una delle chiese più antiche del Ticino, di impianto romanico (XII secolo), con il grande San Cristoforo affrescato in facciata e un ciclo di affreschi del Trecento e Quattrocento. Ogni autunno ospita la rassegna «I concerti di San Biagio».",
+            "url": "https://www.chiesasanbiagio.ch"
+          },
+          {
+            "name": "Chiesa Sacro Cuore",
+            "denomination": "cattolica",
+            "address": "6500 Bellinzona",
+            "text": "Chiesa sussidiaria della parrocchia della Collegiata nel vicariato del Bellinzonese.",
+            "url": "https://gcatholic.org/churches/europe-west/135174"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Bellinzona",
+            "denomination": "evangelica riformata",
+            "address": "Viale Stefano Franscini 1, 6500 Bellinzona",
+            "text": "Sede della Comunità evangelica riformata di Bellinzona e dintorni (CERB), che comprende Bellinzonese, Gambarogno e Tre Valli; altre chiese a Biasca e San Nazzaro. Sito bilingue italiano-tedesco.",
+            "url": "https://cerbell.ch/"
+          }
+        ],
+        "communities": [
+          {
+            "name": "Comunità evangelica riformata di Bellinzona e dintorni – Gruppo Giovani e studi biblici",
+            "text": "La comunità propone un Gruppo Giovani, studi biblici, scuola domenicale, corso confermandi e i «pranzi poveri» organizzati con altre chiese locali, oltre a concerti nella chiesa di San Nazzaro.",
+            "url": "https://cerbell.ch/"
+          },
+          {
+            "name": "Pastorale Giovanile della Diocesi di Lugano",
+            "text": "Servizio diocesano per ragazzi e giovani: apre l'anno pastorale con una giornata diocesana (2026 al Monte Tamaro) e accompagna verso la GMG di Seoul 2027.",
+            "url": "https://www.pastoralegiovanile.ch"
+          },
+          {
+            "name": "Parrocchia di Bellinzona – Oratorio della Collegiata",
+            "text": "L'oratorio in via Magoria 12, dietro la Collegiata, mette a disposizione spazi per gruppi e associazioni.",
+            "url": "https://www.laregione.ch/cantone/bellinzonese/1664827/servizi"
+          },
+          {
+            "name": "Festival organistico Antegnati",
+            "text": "Rassegna di concerti che valorizza l'organo Antegnati della Collegiata e altri organi della regione; ascoltare insieme è un bel modo per conoscersi senza pressione.",
+            "url": "https://www.laregione.ch/temi/antegnati"
+          },
+          {
+            "name": "Caritas Ticino",
+            "text": "Opera caritativa della Chiesa cattolica in Ticino, nata da un'esperienza di volontariato; informazioni su servizi e possibilità di impegno sul sito.",
+            "url": "https://www.caritas-ticino.ch"
+          }
+        ],
+        "events": [
+          {
+            "name": "Rabadan – Carnevale di Bellinzona",
+            "when": "febbraio, nei giorni prima delle Ceneri (2027: 4–9 febbraio secondo Svizzera Turismo)",
+            "text": "Il grande carnevale cittadino, sei giorni e notti nel centro storico."
+          },
+          {
+            "name": "Festival organistico Antegnati",
+            "when": "di regola maggio, con alcuni concerti in autunno",
+            "text": "Concerti sull'organo storico del 1588 nella Collegiata; nelle edizioni recenti quattro concerti a maggio alle 17.00 più date a settembre e ottobre."
+          },
+          {
+            "name": "I concerti di San Biagio",
+            "when": "autunno (ottobre–novembre)",
+            "text": "Rassegna musicale nella chiesa romanica di Ravecchia, con repertorio sacro e medievale, ad esempio laudi francescane."
+          },
+          {
+            "name": "Natale in Città",
+            "when": "fine novembre – 6 gennaio",
+            "text": "Accensione dell'albero in Piazza Collegiata, Villaggio di Natale in Piazza del Sole, concerti natalizi, arrivo di San Nicolao e mercatini a tema."
+          },
+          {
+            "name": "Mercato del sabato",
+            "when": "ogni sabato mattina (circa 7.30–13.00); mercato ridotto il mercoledì in stagione",
+            "text": "Mercato nel centro storico con prodotti ticinesi, formaggi delle valli, salumi e artigianato; molti ristoranti propongono il «Menu del mercato»."
+          }
+        ],
+        "dateSpots": [
+          {
+            "name": "Piazza Collegiata e centro storico",
+            "where": "Piazza Collegiata, 6500 Bellinzona",
+            "text": "Il cuore della città vecchia ai piedi della Collegiata: un caffè sotto i portici e una breve visita alla chiesa sono un primo incontro semplice e senza pressione."
+          },
+          {
+            "name": "Mercato del sabato",
+            "where": "Centro storico di Bellinzona",
+            "text": "Passeggiare tra le bancarelle offre spunti di conversazione naturali; poi si può pranzare con il «Menu del mercato»."
+          },
+          {
+            "name": "Castelgrande",
+            "where": "Sopra Piazza del Sole, accessibile con l'ascensore scavato nella roccia",
+            "text": "Il castello più antico del sito UNESCO, con prati e vista sulla valle; il museo nell'ala sud racconta 6'500 anni di presenza umana sulla collina."
+          },
+          {
+            "name": "Murata e passeggiata dei castelli",
+            "where": "Tra Castelgrande e Montebello",
+            "text": "La cinta muraria fa parte del patrimonio UNESCO; il percorso tra i castelli è adatto a una passeggiata di un paio d'ore."
+          },
+          {
+            "name": "Chiesa di San Biagio a Ravecchia",
+            "where": "Piazza San Biagio, 6500 Bellinzona",
+            "text": "Aperta tutti i giorni dalle 9 alle 17 (fuori dalle celebrazioni): visita tranquilla agli affreschi o un concerto d'autunno."
+          },
+          {
+            "name": "Parco della Golena",
+            "where": "Area Golena, lungo il fiume Ticino, 6500 Bellinzona",
+            "text": "Area naturale a pochi passi dal centro con sentieri, aree picnic e spiaggia fluviale; il Ponte della Torretta collega a Carasso."
+          }
+        ],
+        "transport": [
+          {
+            "to": "Lugano",
+            "minutes": "14",
+            "text": "Diretto con EC/IC in 14 minuti attraverso la galleria di base del Ceneri; con il TILO S10 circa 19 minuti."
+          },
+          {
+            "to": "Locarno",
+            "minutes": "23",
+            "text": "Diretto con IR in 23 minuti oppure TILO S20 in 26 minuti."
+          },
+          {
+            "to": "Mendrisio",
+            "minutes": "41",
+            "text": "Diretto con TILO S10 in 41 minuti; con cambio a Lugano (IC + RE80) circa 34 minuti."
+          },
+          {
+            "to": "Chiasso",
+            "minutes": "41",
+            "text": "Diretto con EC in 41 minuti; con TILO S10 circa 50 minuti."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Quante parrocchie cattoliche ci sono a Bellinzona?",
+            "answer": "Sul territorio della Città di Bellinzona sono attive 16 parrocchie cattoliche, che nel 2021 hanno firmato una convenzione con il Comune. La chiesa principale è la Collegiata dei Santi Pietro e Stefano in Piazza Collegiata."
+          },
+          {
+            "question": "C'è una comunità evangelica riformata a Bellinzona?",
+            "answer": "Sì. La Comunità evangelica riformata di Bellinzona e dintorni ha la chiesa e il segretariato in Viale Stefano Franscini 1 e propone, tra l'altro, un Gruppo Giovani e studi biblici. Orari e attività aggiornati su cerbell.ch."
+          },
+          {
+            "question": "Dove trovo gli orari delle Messe a Bellinzona?",
+            "answer": "Gli orari cambiano secondo stagione e chiesa: consulta la pagina «Sante Messe» della Diocesi di Lugano o il sito della singola parrocchia, ad esempio chiesasanbiagio.ch per Ravecchia."
+          },
+          {
+            "question": "Qual è un buon posto per un primo incontro a Bellinzona?",
+            "answer": "Il sabato mattina il mercato nel centro storico e un caffè in Piazza Collegiata sono un'ottima scelta. Per chi ama la natura c'è il Parco della Golena lungo il Ticino; per la cultura, Castelgrande, patrimonio UNESCO."
+          }
+        ],
+        "sources": [
+          {
+            "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+            "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+            "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "title": "RSI – Bellinzona continua a crescere",
+            "url": "https://www.rsi.ch/info/ticino-grigioni-e-insubria/Bellinzona-continua-a-crescere--2544676.html"
+          },
+          {
+            "title": "tio.ch – Mappa religiosa del Cantone (dati UST 2022)",
+            "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone"
+          },
+          {
+            "title": "tio.ch – Convenzione Città–Parrocchie Bellinzona (2021)",
+            "url": "https://www.tio.ch/ticino/attualita/1502264/parrocchie-bellinzona-convenzione-cerimonia-sindaco"
+          },
+          {
+            "title": "UFC – Factsheet Castelli di Bellinzona (UNESCO)",
+            "url": "https://www.bak.admin.ch/dam/bak/it/dokumente/baukultur/archaelogie-denkmalpflege/factsheet-burgen-von-bellinzona.pdf.download.pdf/40_50_00_04-Trois%20ch%C3%A2teaux,%20muraille%20et%20remparts%20du%20bourg%20de%20Bellinzone%20FR.pdf"
+          },
+          {
+            "title": "ticino.ch – Collegiata dei SS. Pietro e Stefano",
+            "url": "https://www.ticino.ch/it/commons/details/Collegiata-dei-SS-Pietro-e-Stefano/2841.html"
+          },
+          {
+            "title": "ticino.ch – Santa Maria delle Grazie",
+            "url": "https://www.ticino.ch/en/commons/details/Church-of-Santa-Maria-delle-Grazie/80199.html"
+          },
+          {
+            "title": "laRegione – Santa Maria delle Grazie, manutenzione 2022",
+            "url": "https://www.laregione.ch/cantone/bellinzonese/1595574/servizi"
+          },
+          {
+            "title": "ticino.ch – Chiesa di San Biagio",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Biagio/2838.html"
+          },
+          {
+            "title": "Parrocchia di San Biagio – Ravecchia",
+            "url": "https://www.chiesasanbiagio.ch"
+          },
+          {
+            "title": "GCatholic – Chiesa Sacro Cuore Bellinzona",
+            "url": "https://gcatholic.org/churches/europe-west/135174"
+          },
+          {
+            "title": "CERB – Contatti",
+            "url": "https://cerbell.ch/contatti/"
+          },
+          {
+            "title": "Chiesa evangelica riformata nel Ticino – Comunità regionali",
+            "url": "https://www.cert-ticino.ch/comunit%C3%A0-regionali/"
+          },
+          {
+            "title": "Pastorale Giovanile Diocesi di Lugano – Comunicato Monte Tamaro 2026",
+            "url": "https://www.diocesilugano.ch/wp-content/uploads/sites/2/2026/09/07/CS_Monte_Tamaro_260902.pdf"
+          },
+          {
+            "title": "laRegione – Oratorio della Collegiata, via Magoria 12",
+            "url": "https://www.laregione.ch/cantone/bellinzonese/1664827/servizi"
+          },
+          {
+            "title": "tio.ch – Organo Antegnati di Bellinzona",
+            "url": "https://www.tio.ch/ticino/attualita/1788399/organo-bellinzona-tesoro-pochi-svizzera"
+          },
+          {
+            "title": "laRegione – Tema Antegnati",
+            "url": "https://www.laregione.ch/temi/antegnati"
+          },
+          {
+            "title": "Svizzera Turismo – Carnevale Rabadan",
+            "url": "https://www.myswitzerland.com/it-ch/scoprire-la-svizzera/manifestazioni/carnevale-rabadan/"
+          },
+          {
+            "title": "ticino.ch – Natale in Città",
+            "url": "https://www.ticino.ch/it/events/details/natale-in-citta/11739.html"
+          },
+          {
+            "title": "ticino.ch – Il mercato di Bellinzona",
+            "url": "https://www.ticino.ch/it/commons/details/Il-mercato-di-Bellinzona/2895.html"
+          },
+          {
+            "title": "ticino.ch – Parco della Golena",
+            "url": "https://www.ticino.ch/it/commons/details/Parco-della-Golena/154536.html"
+          },
+          {
+            "title": "Svizzera Turismo – Castelli di Bellinzona",
+            "url": "https://www.myswitzerland.com/en-ch/experiences/castles-of-bellinzona"
+          },
+          {
+            "title": "MySwissAlps – Passeggiata dei castelli",
+            "url": "https://www.myswissalps.com/activity/walk-bellinzona-castles/"
+          },
+          {
+            "title": "Diocesi di Lugano – Sante Messe",
+            "url": "https://www.diocesilugano.ch/sante-messe/"
+          },
+          {
+            "title": "transport.opendata.ch (dati orario FFS/TILO), consultato il 20.10.2026 per il 21.10.2026 ore 9–10",
+            "url": "https://transport.opendata.ch/"
+          }
+        ],
+        "checked": "20 ottobre 2026"
+      }
     },
     {
       "slug": "locarno",
@@ -116,33 +981,348 @@
       "name": "Locarno",
       "postcode": "6600",
       "region": "Locarnese",
-      "geo": { "lat": 46.1709, "lon": 8.7995 },
+      "geo": {
+        "lat": 46.1709,
+        "lon": 8.7995
+      },
       "metaTitle": "Single cristiani a Locarno: conoscersi con la fede",
       "title": "Single cristiani a Locarno",
       "description": "Single cristiani a Locarno: il santuario della Madonna del Sasso, comunità cristiane e idee per un primo incontro sul Lago Maggiore.",
       "lead": "Sul Lago Maggiore, tra Piazza Grande e il santuario sopra la città, fede e paesaggio si incontrano.",
       "sections": [
         {
-          "heading": "Fede e spiritualità a Locarno",
+          "heading": "Locarno in cifre: fede e comunità",
           "icon": "church",
-          "html": "<p>Sopra Locarno, a Orselina, si trova il santuario della Madonna del Sasso, uno dei luoghi di pellegrinaggio più conosciuti del Ticino e meta di molti visitatori. Le parrocchie del Locarnese fanno parte della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>.</p><p>Già nel Cinquecento a Locarno esisteva una comunità riformata; oggi la Comunità evangelica riformata di Locarno e dintorni fa parte della Chiesa evangelica riformata nel Ticino.</p>"
+          "html": "<p>Locarno conta 16.374 residenti permanenti (fine 2024), il distretto 64.334. Il 54,4 % degli abitanti del distretto dai 15 anni è cattolico romano, il 29,1 % non ha un'appartenenza religiosa (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>).</p><p>La <a href=\"https://www.parrocchialocarno.ch\">Parrocchia di Locarno</a> celebra in sette chiese e monasteri, tra cui la Collegiata di Sant'Antonio abate e San Francesco per la comunità di lingua tedesca. La <a href=\"https://www.cerl.ch/\">Chiesa evangelica riformata di Locarno e dintorni</a> ha sedi a Locarno Monti, Muralto e Ascona, con pastori di lingua italiana e tedesca.</p>"
         },
         {
-          "heading": "Comunità e incontri",
+          "heading": "Essere single a Locarno",
           "icon": "people",
-          "html": "<p>Gruppi di preghiera, cori e attività parrocchiali sono un buon punto di partenza per conoscere persone con valori simili. Molte comunità organizzano anche momenti di incontro dopo la messa o il culto: un'occasione semplice per scambiare qualche parola.</p>"
+          "html": "<p>Nel distretto di Locarno il 45,2 % delle economie domestiche è formato da una sola persona: è la quota più alta tra i distretti più popolosi del Ticino (media cantonale 42,1 %). L'11,2 % della popolazione è divorziato e il 6,5 % vedovo, valori sopra la media cantonale (9,5 % e 5,9 %; dati 2024).</p><p>Chi a Locarno cerca un nuovo inizio non è quindi solo, anche in età matura. Con la ricerca per codice postale 6600 su christlich-verliebt.ch trovi single cristiani nel Locarnese e in tutta la Svizzera.</p>"
         },
         {
-          "heading": "Il primo incontro sul lago",
-          "icon": "tree",
-          "html": "<p>Una passeggiata sul lungolago o un caffè vicino a Piazza Grande sono ideali per un primo appuntamento. Se vi trovate bene, la salita al santuario può diventare una bella gita insieme, con calma e senza fretta.</p>"
-        },
-        {
-          "heading": "Consigli per conoscersi",
+          "heading": "Madonna del Sasso, cuore spirituale della regione",
           "icon": "heart",
-          "html": "<p>Racconta cosa significa per te la fede nella vita di ogni giorno e chiedi all'altra persona come la vive. Con christlich-verliebt.ch puoi conoscere single cristiani nel Locarnese e in tutta la Svizzera.</p>"
+          "html": "<p>Il santuario sopra la città nasce dall'apparizione del 1480 a fra Bartolomeo da Ivrea; le prime cappelle furono consacrate nel 1487. Oggi è custodito dai Frati Cappuccini e si raggiunge a piedi lungo la Via Crucis o con la funicolare. La solennità è il 1° settembre, preceduta dalla novena; programma e visite sul sito del <a href=\"https://www.madonnadelsasso.org\">Sacro Monte Madonna del Sasso</a>.</p>"
         }
-      ]
+      ],
+      "guide": {
+        "facts": [
+          {
+            "label": "Abitanti",
+            "value": "16.374",
+            "note": "residenti permanenti, fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Cattolici nel distretto",
+            "value": "54,4 %",
+            "note": "15 anni e più, 2024 (Ticino 56,2 %)",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Economie domestiche di una persona",
+            "value": "45,2 %",
+            "note": "distretto di Locarno, 2024 (Ticino 42,1 %)",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Madonna del Sasso",
+            "value": "dal 1480",
+            "note": "santuario sopra la città, a Orselina",
+            "source": "https://www.madonnadelsasso.org/madonnadelsasso/sacromonte.html"
+          }
+        ],
+        "places": [
+          {
+            "name": "Santuario e Sacro Monte Madonna del Sasso",
+            "denomination": "cattolica",
+            "address": "Via Santuario 2, 6644 Orselina",
+            "text": "Il santuario mariano simbolo del Locarnese, affidato ai Frati Cappuccini, su uno sperone di roccia sopra il lago. Si raggiunge con la funicolare dal centro di Locarno oppure a piedi lungo la Via Crucis, con cappelle e stazioni in ghisa del 1903.",
+            "url": "https://www.madonnadelsasso.org"
+          },
+          {
+            "name": "Collegiata di Sant'Antonio abate",
+            "denomination": "cattolica",
+            "address": "Vicolo Collegiata 5, 6600 Locarno",
+            "text": "Chiesa plebana della città nella Città Vecchia, consacrata nel 1692 e ricostruita nel 1870–1873 dopo il crollo del tetto del 1863, ricordato da una lapide. Custodisce un crocifisso ligneo lombardo del primo Cinquecento.",
+            "url": "https://www.parrocchialocarno.ch"
+          },
+          {
+            "name": "Chiesa Nuova (Santa Maria Assunta)",
+            "denomination": "cattolica",
+            "address": "Via Cittadella, 6600 Locarno",
+            "text": "Costruita da Cristoforo Orelli prima del 1630, riconoscibile per il grande San Cristoforo in stucco sulla facciata. All'interno ricche decorazioni a stucco e una statua lignea seicentesca dell'Assunta.",
+            "url": "https://www.ticino.ch/de/commons/details/Kirche-Santa-Maria-Assunta-oder-Chiesa-Nuova/3480.html"
+          },
+          {
+            "name": "Chiesa di San Francesco",
+            "denomination": "cattolica",
+            "address": "Piazza San Francesco, 6600 Locarno",
+            "text": "Chiesa francescana ricostruita nel 1583 con le pietre del castello visconteo; in facciata i bassorilievi dell'aquila, del bue e dell'agnello. Ospita la comunità cattolica di lingua tedesca e, in autunno, concerti di classicAscona.",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Francesco-Locarno/2869.html"
+          },
+          {
+            "name": "Chiesa di San Vittore",
+            "denomination": "cattolica",
+            "address": "6600 Muralto",
+            "text": "Una delle chiese romaniche più importanti del Ticino (fine XI – XII secolo), antica collegiata fino al 1816. La cripta a tre navate ha 22 capitelli tutti diversi; sul campanile il bassorilievo di San Vittore a cavallo (1460).",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Vittore/13148.html"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Locarno Monti",
+            "denomination": "evangelica riformata",
+            "address": "Via del Tiglio 3, 6605 Locarno Monti",
+            "text": "Chiesa e «Säli» della Chiesa evangelica riformata di Locarno e dintorni (CERL), che serve Locarnese, Valle Maggia e Verzasca; celebrazioni in italiano, tedesco e francese su richiesta.",
+            "url": "https://www.cerl.ch/"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Muralto",
+            "denomination": "evangelica riformata",
+            "address": "Via Sciaroni, 6600 Muralto",
+            "text": "Chiesa costruita nel 1901 dalla colonia svizzero-tedesca; dal 1925 sede di una comunità riformata autonoma. Il culto di Pentecoste è stato trasmesso in Eurovisione da qui.",
+            "url": "https://www.cerl.ch/"
+          }
+        ],
+        "communities": [
+          {
+            "name": "Parrocchia di Locarno – Gruppo Giovani e oratorio",
+            "text": "Oratorio dei giovani il venerdì sera al Centro Sacra Famiglia (dalla IV elementare in su), oratorio dei bambini il mercoledì, adorazione eucaristica settimanale e pellegrinaggi parrocchiali (2026: Assisi).",
+            "url": "https://www.parrocchialocarno.ch"
+          },
+          {
+            "name": "Frati Cappuccini della Madonna del Sasso",
+            "text": "Custodiscono il santuario e animano novena, festa e celebrazioni durante l'anno.",
+            "url": "https://www.ticino.ch/it/commons/details/Sacro-Monte-Madonna-del-Sasso/2693.html"
+          },
+          {
+            "name": "Associazione Pro Restauro Sacro Monte Madonna del Sasso",
+            "text": "Cura il Sacro Monte, il museo e le visite guidate; pubblica gli appuntamenti come Via Crucis, novena e concerti.",
+            "url": "https://www.madonnadelsasso.org/madonnadelsasso/associazione.html"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Locarno e dintorni (CERL)",
+            "text": "Comunità riformata con sedi a Locarno Monti, Muralto e Ascona (Casa Olanda); pastori di lingua italiana e tedesca.",
+            "url": "https://www.cerl.ch/"
+          },
+          {
+            "name": "Pastorale Giovanile della Diocesi di Lugano",
+            "text": "Proposte diocesane per ragazzi e giovani durante tutto l'anno pastorale, verso la GMG di Seoul 2027.",
+            "url": "https://www.pastoralegiovanile.ch"
+          }
+        ],
+        "events": [
+          {
+            "name": "Festa di Sant'Antonio abate, patrono della Collegiata",
+            "when": "gennaio (memoria liturgica il 17 gennaio)",
+            "text": "La parrocchia celebra il patrono della sua chiesa principale; data esatta degli eventi sull'agenda parrocchiale."
+          },
+          {
+            "name": "Via Crucis alla Madonna del Sasso",
+            "when": "ogni venerdì di Quaresima",
+            "text": "Cammino di preghiera dalla chiesa dell'Annunciata, ai piedi del Sacro Monte, salendo lungo le 14 stazioni fino al santuario."
+          },
+          {
+            "name": "Novena e solennità della Madonna del Sasso",
+            "when": "fine agosto – inizio settembre; solennità il 1° settembre",
+            "text": "Nel 2026 la novena va dal 28 agosto al 5 settembre, con fiaccolata dei giovani dalla chiesa dell'Annunciata al santuario."
+          },
+          {
+            "name": "Locarno Film Festival",
+            "when": "agosto (2026: 5–15 agosto)",
+            "text": "Proiezioni serali all'aperto in Piazza Grande su uno degli schermi più grandi del mondo."
+          },
+          {
+            "name": "classicAscona (ex Settimane Musicali di Ascona)",
+            "when": "settembre–ottobre (2026: 18 settembre – 10 ottobre)",
+            "text": "Festival di musica classica con concerti nella chiesa di San Francesco a Locarno e nella chiesa del Collegio Papio ad Ascona."
+          },
+          {
+            "name": "Mese del Rosario",
+            "when": "ottobre",
+            "text": "Recita comunitaria del Rosario nei giorni feriali nella Collegiata di Sant'Antonio abate (dettagli sul sito parrocchiale)."
+          }
+        ],
+        "dateSpots": [
+          {
+            "name": "Piazza Grande",
+            "where": "Centro di Locarno",
+            "text": "La grande piazza con portici è il punto d'incontro naturale della città: un caffè all'aperto e, in agosto, il cinema sotto le stelle."
+          },
+          {
+            "name": "Giardini del lungolago e Giardini Jean Arp",
+            "where": "Lungolago tra Locarno e Muralto",
+            "text": "Una passeggiata di circa 1,5 km tra palme, camelie e piante subtropicali, fino ai giardini con nove opere donate da Jean Arp: ideale per parlare camminando."
+          },
+          {
+            "name": "Salita alla Madonna del Sasso lungo la Via Crucis",
+            "where": "Dalla chiesa dell'Annunciata (Locarno) al santuario di Orselina",
+            "text": "Una salita breve e raccolta con vista sul lago; per il ritorno c'è la funicolare Locarno–Madonna del Sasso."
+          },
+          {
+            "name": "Cardada e Cimetta",
+            "where": "Funivia da Orselina a Cardada (1340 m), seggiovia fino a Cimetta (1670 m)",
+            "text": "Passerella panoramica a Cardada raggiungibile anche con carrozzina e osservatorio geologico a Cimetta, con vista dal Lago Maggiore al Monte Rosa."
+          },
+          {
+            "name": "Città Vecchia e Piazza Sant'Antonio",
+            "where": "Vicolo Collegiata / Via Cittadella, 6600 Locarno",
+            "text": "Vicoli tranquilli tra la Collegiata di Sant'Antonio e la Chiesa Nuova: perfetti per una passeggiata culturale dopo la Messa domenicale."
+          },
+          {
+            "name": "Concerto a San Francesco",
+            "where": "Piazza San Francesco, 6600 Locarno",
+            "text": "Durante classicAscona la chiesa ospita concerti serali: un'uscita elegante e senza pressione per un secondo incontro."
+          }
+        ],
+        "transport": [
+          {
+            "to": "Bellinzona",
+            "minutes": "22",
+            "text": "Diretto con IR in 22 minuti oppure TILO S20 in 26 minuti."
+          },
+          {
+            "to": "Lugano",
+            "minutes": "32",
+            "text": "Diretto con TILO RE80 in 32 minuti, ogni mezz'ora."
+          },
+          {
+            "to": "Mendrisio",
+            "minutes": "49",
+            "text": "Diretto con TILO RE80 in 49–56 minuti."
+          },
+          {
+            "to": "Chiasso",
+            "minutes": "57",
+            "text": "Diretto con TILO RE80 in 57–64 minuti."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Come si raggiunge la Madonna del Sasso da Locarno?",
+            "answer": "Con la funicolare Locarno–Madonna del Sasso dal centro, oppure a piedi lungo la Via Crucis che parte dalla chiesa dell'Annunciata. Il santuario si trova in Via Santuario 2 a Orselina ed è custodito dai Frati Cappuccini."
+          },
+          {
+            "question": "Quando si festeggia la Madonna del Sasso?",
+            "answer": "La solennità è il 1° settembre, preceduta da una novena tra fine agosto e inizio settembre. Durante la Quaresima ogni venerdì c'è la Via Crucis al santuario. Programma aggiornato su madonnadelsasso.org."
+          },
+          {
+            "question": "Ci sono chiese evangeliche riformate a Locarno?",
+            "answer": "Sì. La Chiesa evangelica riformata di Locarno e dintorni ha una chiesa a Locarno Monti (Via del Tiglio 3) e una a Muralto, con segretariato ad Ascona. Informazioni su cerl.ch."
+          },
+          {
+            "question": "Dove trovo gli orari delle Messe a Locarno?",
+            "answer": "La Parrocchia di Locarno pubblica sul suo sito gli orari della Collegiata di Sant'Antonio abate, della Sacra Famiglia, della Chiesa Nuova e delle altre chiese; in alternativa c'è la pagina «Sante Messe» della Diocesi di Lugano."
+          }
+        ],
+        "sources": [
+          {
+            "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+            "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+            "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "title": "Città di Locarno – Comunicato popolazione 2025",
+            "url": "https://www.locarno.ch/files/documenti/CS_popolazione_di_Locarno_2025.pdf"
+          },
+          {
+            "title": "tio.ch – Mappa religiosa del Cantone (dati UST 2022)",
+            "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone"
+          },
+          {
+            "title": "Parrocchia S. Antonio abate – Locarno",
+            "url": "https://www.parrocchialocarno.ch"
+          },
+          {
+            "title": "Città di Locarno – MM 106 Collegiata Sant'Antonio abate (storia)",
+            "url": "https://www.locarno.ch/files/documenti/MM_106_Manutenzione_straordinaria_Collegiata_Sant-__Antonio.pdf"
+          },
+          {
+            "title": "Sacro Monte Madonna del Sasso – Il Sacro Monte",
+            "url": "https://www.madonnadelsasso.org/madonnadelsasso/sacromonte.html"
+          },
+          {
+            "title": "Madonna del Sasso – Novena e festa 2026",
+            "url": "https://www.madonnadelsasso.org/madonnadelsasso/articoli/Novena-e-festa-della--Madonna-del-Sasso-2027.html"
+          },
+          {
+            "title": "Madonna del Sasso – Via Crucis",
+            "url": "https://www.madonnadelsasso.org/madonnadelsasso/articoli/Via-Crucis-alla-Madonna-del-Sasso.html"
+          },
+          {
+            "title": "ticino.ch – Sacro Monte Madonna del Sasso",
+            "url": "https://www.ticino.ch/it/commons/details/Sacro-Monte-Madonna-del-Sasso/2693.html"
+          },
+          {
+            "title": "ticino.ch – Chiesa Nuova / Santa Maria Assunta",
+            "url": "https://www.ticino.ch/de/commons/details/Kirche-Santa-Maria-Assunta-oder-Chiesa-Nuova/3480.html"
+          },
+          {
+            "title": "ticino.ch – Chiesa di San Francesco",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Francesco-Locarno/2869.html"
+          },
+          {
+            "title": "ticino.ch – Chiesa di San Vittore",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Vittore/13148.html"
+          },
+          {
+            "title": "Dizionario storico della Svizzera – Muralto",
+            "url": "https://hls-dhs-dss.ch/it/articles/002115/"
+          },
+          {
+            "title": "CERL – Servizi",
+            "url": "https://www.cerl.ch/b-servizi.html"
+          },
+          {
+            "title": "Chiesa evangelica riformata nel Ticino – Comunità regionali",
+            "url": "https://www.cert-ticino.ch/comunit%C3%A0-regionali/"
+          },
+          {
+            "title": "laRegione – Via Sciaroni, Muralto (chiesa evangelica)",
+            "url": "https://www.laregione.ch/cantone/locarnese/1663815/servizi"
+          },
+          {
+            "title": "Pastorale Giovanile Diocesi di Lugano",
+            "url": "https://www.pastoralegiovanile.ch"
+          },
+          {
+            "title": "Caritas Ticino – Catishop Locarno (rivista 2021)",
+            "url": "https://www.caritas-ticino.ch/media/rivista/archivio/riv_2103/Fantoni%20Marco%20Catishop%20Locarno.pdf"
+          },
+          {
+            "title": "Svizzera Turismo – Locarno Film Festival",
+            "url": "https://www.myswitzerland.com/en-ch/experiences/events/locarno-film-festival/"
+          },
+          {
+            "title": "Svizzera Turismo – classicAscona",
+            "url": "https://www.myswitzerland.com/en/experiences/events/classicascona/"
+          },
+          {
+            "title": "Locarno Film Festival – Piazza Grande",
+            "url": "https://www.locarnofestival.ch/festival/film-sections/piazza-grande.html"
+          },
+          {
+            "title": "ticino.ch – Giardini sul lungolago Locarno-Muralto",
+            "url": "https://www.ticino.ch/it/commons/details/I-giardini-sul-lungolago-Locarno-Muralto/137971.html"
+          },
+          {
+            "title": "ticino.ch – Funivia e seggiovia Orselina–Cardada–Cimetta",
+            "url": "https://www.ticino.ch/it/commons/details/Funivia-e-Seggiovia-Orselina-Cardada-Cimetta/993.html"
+          },
+          {
+            "title": "Diocesi di Lugano – Sante Messe",
+            "url": "https://www.diocesilugano.ch/sante-messe/"
+          },
+          {
+            "title": "transport.opendata.ch (dati orario FFS/TILO), consultato il 20.10.2026 per il 21.10.2026 ore 9–12",
+            "url": "https://transport.opendata.ch/"
+          }
+        ],
+        "checked": "20 ottobre 2026"
+      }
     },
     {
       "slug": "mendrisio",
@@ -151,33 +1331,318 @@
       "name": "Mendrisio",
       "postcode": "6850",
       "region": "Mendrisiotto",
-      "geo": { "lat": 45.8706, "lon": 8.9817 },
+      "geo": {
+        "lat": 45.8706,
+        "lon": 8.9817
+      },
       "metaTitle": "Single cristiani a Mendrisio: conoscersi con la fede",
       "title": "Single cristiani a Mendrisio",
       "description": "Single cristiani a Mendrisio: le Processioni storiche della Settimana Santa, comunità di fede e idee per un primo incontro nel Mendrisiotto.",
       "lead": "Mendrisio è conosciuta per le Processioni storiche della Settimana Santa, una tradizione di fede che unisce l'intera comunità.",
       "sections": [
         {
-          "heading": "Le Processioni storiche della Settimana Santa",
-          "icon": "calendar",
-          "html": "<p>Ogni anno, il Giovedì e il Venerdì Santo, le Processioni storiche attraversano il borgo di Mendrisio. La tradizione ha radici che risalgono a prima del Seicento ed è tra i riti più antichi della Svizzera italiana. Nel 2019 l'UNESCO l'ha iscritta nella lista del patrimonio culturale immateriale, come riporta la <a href=\"https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html\">RSI</a>.</p><p>Le Processioni coinvolgono molte persone del Mendrisiotto, come figuranti o volontari: un'occasione speciale per vivere la fede insieme.</p>"
-        },
-        {
-          "heading": "Comunità e parrocchie",
+          "heading": "Mendrisio in cifre: una fede radicata",
           "icon": "church",
-          "html": "<p>Le parrocchie del Mendrisiotto fanno parte della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>; la Chiesa evangelica riformata nel Sottoceneri accoglie i fedeli evangelici della regione. Cori, gruppi e attività di volontariato aiutano a conoscere persone con valori simili.</p>"
+          "html": "<p>Mendrisio conta 15.085 residenti permanenti (fine 2024) in dieci quartieri; il distretto ne conta 50.450. Qui la tradizione cristiana è più forte che altrove: il 62,6 % degli abitanti del distretto dai 15 anni è cattolico romano, contro il 56,2 % del Ticino (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>).</p><p>Le parrocchie del Borgo fanno parte del vicariato del Mendrisiotto della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>; i fedeli riformati fanno riferimento alla <a href=\"https://www.cers.ch/\">Chiesa evangelica riformata nel Sottoceneri</a>, con chiesa a Vacallo.</p>"
         },
         {
-          "heading": "Il primo incontro nel borgo",
-          "icon": "cup",
-          "html": "<p>Il nucleo storico di Mendrisio offre piazze e locali tranquilli per un primo caffè. Chi ama la natura può proporre più avanti una gita sul Monte San Giorgio, patrimonio mondiale UNESCO, o sul Monte Generoso.</p>"
+          "heading": "Le Processioni: vivere la fede insieme",
+          "icon": "calendar",
+          "html": "<p>Le Processioni storiche del Giovedì e del Venerdì Santo, documentate da oltre quattro secoli e nella lista UNESCO del patrimonio immateriale dal 2019, coinvolgono circa 230 figuranti il Giovedì e oltre 800 partecipanti il Venerdì. Chi vuole partecipare si candida presso la <a href=\"https://www.processionimendrisio.ch/\">Fondazione Processioni Storiche Mendrisio</a>, che cerca anche volontari per costumi, Trasparenti e logistica.</p><p>Preparare insieme un evento così è uno dei modi più autentici per conoscere persone del Borgo che condividono fede e tradizione.</p>"
         },
         {
-          "heading": "Consigli per conoscersi",
-          "icon": "heart",
-          "html": "<p>Parlate di ciò che vi sta a cuore: fede, famiglia, tradizioni. Con christlich-verliebt.ch puoi conoscere single cristiani nel Mendrisiotto e in tutta la Svizzera.</p>"
+          "heading": "Essere single nel Mendrisiotto",
+          "icon": "people",
+          "html": "<p>Nel distretto di Mendrisio il 43,1 % delle economie domestiche è formato da una sola persona e il 43,4 % della popolazione è celibe o nubile (2024, tutte le età). Con Lugano a 16 minuti e Chiasso a 8 minuti di treno, il Mendrisiotto si vive come un'unica area: la ricerca per codice postale 6850 su christlich-verliebt.ch comprende anche i dintorni.</p>"
         }
-      ]
+      ],
+      "guide": {
+        "facts": [
+          {
+            "label": "Abitanti",
+            "value": "15.085",
+            "note": "residenti permanenti, fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Cattolici nel distretto",
+            "value": "62,6 %",
+            "note": "15 anni e più, 2024: il valore più alto tra i grandi distretti",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Economie domestiche di una persona",
+            "value": "43,1 %",
+            "note": "distretto di Mendrisio, 2024",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Processioni storiche",
+            "value": "UNESCO 2019",
+            "note": "patrimonio culturale immateriale",
+            "source": "https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html"
+          }
+        ],
+        "places": [
+          {
+            "name": "Chiesa prepositurale dei Santi Cosma e Damiano",
+            "denomination": "cattolica",
+            "address": "Piazza del Ponte, 6850 Mendrisio",
+            "text": "Chiesa parrocchiale neoclassica costruita nel 1863–1875 su progetto di Luigi Fontana, considerata l'edificio ecclesiastico più imponente del Ticino. Portico a tre arcate ispirato all'arco trionfale romano, pianta a croce greca; all'interno il fonte battesimale della chiesa romanica (documentata dal 1323) e l'altare maggiore del 1669–70.",
+            "url": "https://www.mendrisiottoturismo.ch/en/processionimendrisio/esplora/chiese/chiesa-dei-Santi-Cosma-e-Damiano.html"
+          },
+          {
+            "name": "Chiesa di San Giovanni Battista",
+            "denomination": "cattolica",
+            "address": "Piazzetta dei Serviti, nucleo storico, 6850 Mendrisio",
+            "text": "Costruita nel 1722–1729 per iniziativa dei Serviti, interamente da artisti locali; stucchi del 1724–27, medaglioni di Giovan Battista Bagutti (1774). Da qui partono le Processioni storiche; vi si conserva la statua dell'Addolorata portata il Venerdì Santo.",
+            "url": "https://www.mendrisiottoturismo.ch/en/processionimendrisio/esplora/chiese/chiesa-di-San-Giovanni-Battista.html"
+          },
+          {
+            "name": "Museo d'arte Mendrisio (ex convento dei Serviti)",
+            "denomination": "luogo culturale (ex convento)",
+            "address": "Piazzetta dei Serviti 1, 6850 Mendrisio",
+            "text": "Il museo occupa l'ex convento dei Serviti fondato nel XIII secolo, con chiostro a portici del XVI–XVII secolo. Custodisce oltre 650 Trasparenti, i dipinti translucidi delle processioni pasquali, e un ampio fondo di Pietro Chiesa.",
+            "url": "https://www.ticino.ch/it/commons/details/Museo-d-arte-Mendrisio/2759.html"
+          },
+          {
+            "name": "Oratorio della Madonna delle Grazie",
+            "denomination": "cattolica",
+            "address": "Complesso dei Serviti, nucleo storico, 6850 Mendrisio",
+            "text": "Oratorio del complesso conventuale con una lunetta trecentesca attribuita a Giovanni da Milano; fa parte delle chiese legate alle Processioni storiche.",
+            "url": "https://www.mendrisiottoturismo.ch/en/processionimendrisio/esplora/chiese/oratorio-della-Madonna-delle-Grazie.html"
+          },
+          {
+            "name": "Chiesa dei Cappuccini (San Francesco)",
+            "denomination": "cattolica",
+            "address": "Piazzale dei Cappuccini, 6850 Mendrisio",
+            "text": "Chiesa del 1635 accanto al convento dei Cappuccini; facciata rossa con mosaico di San Francesco di Gino Macconi (1967), volta dipinta in stile neogotico da Angelo Sala (1870). È il punto di svolta del percorso delle Processioni.",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-dei-Cappuccini/5071.html"
+          },
+          {
+            "name": "Santuario-Basilica di Santa Maria dei Miracoli",
+            "denomination": "cattolica",
+            "address": "6834 Morbio Inferiore (comune vicino, vicariato del Mendrisiotto)",
+            "text": "Santuario mariano sul colle dell'antico castello, legato alla guarigione di due ragazze milanesi nel 1594 davanti a un affresco quattrocentesco; basilica minore dal 1990. Festa principale il 29 luglio.",
+            "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Vacallo",
+            "denomination": "evangelica riformata",
+            "address": "Via al Colle, 6833 Vacallo",
+            "text": "Una delle tre chiese della Chiesa Evangelica Riformata nel Sottoceneri (CERS), insieme a Lugano e Novaggio; è il riferimento riformato più vicino per il Mendrisiotto. Una pastora eletta nel 2024 segue in particolare il Mendrisiotto.",
+            "url": "https://www.cers.ch/"
+          }
+        ],
+        "communities": [
+          {
+            "name": "Fondazione Processioni Storiche Mendrisio",
+            "text": "Organizza le Processioni della Settimana Santa. Ci si candida online come figurante: circa 230 ruoli a piedi il Giovedì Santo, oltre 800 partecipanti il Venerdì Santo; le descrizioni dei personaggi sono consultabili tutto l'anno. Anche volontari per costumi, Trasparenti e logistica.",
+            "url": "https://www.processionimendrisio.ch/"
+          },
+          {
+            "name": "Corso di preparazione al matrimonio – Vicariato del Mendrisiotto",
+            "text": "Percorso per coppie della Commissione diocesana per la pastorale familiare, due cicli all'anno (inverno/primavera e autunno) in una sede del Mendrisiotto; invitate anche le coppie senza data delle nozze. Iscrizione tramite il proprio parroco.",
+            "url": "https://www.diocesilugano.ch/incontri-di-preparazione-al-sacramento-del-matrimonio-anno-2026/"
+          },
+          {
+            "name": "Parrocchia di Mendrisio",
+            "text": "Sito della parrocchia indicato da Ticino Turismo per le chiese del Borgo (Santi Cosma e Damiano, Cappuccini).",
+            "url": "https://www.parrocchiamendrisio.ch/"
+          },
+          {
+            "name": "Chiesa Evangelica Riformata nel Sottoceneri (CERS)",
+            "text": "Comunità riformata del Sottoceneri con culti, studi biblici, incontri «Trovarsi» e attività giovanili; programma nel mensile Voce Evangelica.",
+            "url": "https://www.cers.ch/"
+          }
+        ],
+        "events": [
+          {
+            "name": "Processioni storiche della Settimana Santa",
+            "when": "Sera del Giovedì Santo e del Venerdì Santo",
+            "text": "Il Giovedì la «Funzione dei Giudei», rappresentazione del cammino di Cristo verso il Calvario; il Venerdì una processione raccolta con confraternite, lanterne, il catafalco del Cristo morto e l'Addolorata. Percorso tra San Giovanni e i Cappuccini. Documentate da oltre quattro secoli, nella Lista rappresentativa del patrimonio culturale immateriale dell'UNESCO dal 2019. In caso di maltempo possono essere annullate."
+          },
+          {
+            "name": "Trasparenti nel nucleo storico",
+            "when": "Settimane prima di Pasqua",
+            "text": "Grandi dipinti translucidi su strutture lignee, illuminati dall'interno, raffigurano la Passione lungo le contrade del Borgo."
+          },
+          {
+            "name": "Festa di Santa Maria dei Miracoli (Morbio Inferiore)",
+            "when": "29 luglio, preceduta da una novena dal 20 luglio",
+            "text": "Festa mariana al santuario con processione serale nel nucleo e quadri viventi sulla vita di Maria."
+          },
+          {
+            "name": "Sagra del Borgo (Sagra dell'uva)",
+            "when": "Ultimo fine settimana di settembre (2026: 25–27 settembre)",
+            "text": "Festa della vendemmia nel nucleo storico di Mendrisio."
+          },
+          {
+            "name": "Fiera di San Martino",
+            "when": "Attorno all'11 novembre (più giorni, fine settimana vicino)",
+            "text": "Fiera documentata dal 1684 sui prati di San Martino: bancarelle, animali, prodotti locali, giostre."
+          }
+        ],
+        "dateSpots": [
+          {
+            "name": "Nucleo storico del Borgo",
+            "where": "Centro di Mendrisio, tra Piazza del Ponte, San Giovanni e i Cappuccini",
+            "text": "Passeggiata tra le chiese delle Processioni e il chiostro del Museo d'arte, a pochi minuti dalla stazione."
+          },
+          {
+            "name": "Museo d'arte Mendrisio",
+            "where": "Piazzetta dei Serviti 1",
+            "text": "Mostre e chiostro dell'ex convento: un primo incontro tranquillo con tema di conversazione già pronto."
+          },
+          {
+            "name": "Monte San Giorgio e Museo dei fossili",
+            "where": "Meride (quartiere di Mendrisio)",
+            "text": "Patrimonio mondiale UNESCO dal 2003 (estensione italiana 2010) per i fossili marini del Triassico; museo ampliato da Mario Botta e riaperto nel 2012, sentieri con vista sugli scavi."
+          },
+          {
+            "name": "Monte Generoso e Fiore di pietra",
+            "where": "Ferrovia a cremagliera da Capolago (quartiere di Mendrisio), vetta 1.704 m",
+            "text": "Ristorante in vetta progettato da Mario Botta, inaugurato nel 2017; il treno circola stagionalmente."
+          },
+          {
+            "name": "Parco delle Gole della Breggia",
+            "where": "Tra Castel San Pietro, Balerna, Morbio Inferiore e Morbio Superiore",
+            "text": "Geoparco di circa 65 ettari con un percorso storico (mulini, ex cementificio, Chiesa Rossa del 1343) e uno geologico; vietato raccogliere fossili."
+          },
+          {
+            "name": "Sentieri tematici tra i vigneti",
+            "where": "Mendrisiotto",
+            "text": "Tre percorsi ad anello di circa 4 ore con 30 pannelli sul Merlot, creati per il centenario del vitigno; la regione ha la maggiore densità di vigneti del cantone."
+          }
+        ],
+        "transport": [
+          {
+            "to": "Lugano",
+            "minutes": "16–20",
+            "text": "Treno diretto RE80 (circa 16–17 min) o TILO S10 (circa 20 min)."
+          },
+          {
+            "to": "Chiasso",
+            "minutes": "8–10",
+            "text": "Treno diretto RE80, S10 o S40."
+          },
+          {
+            "to": "Bellinzona",
+            "minutes": "35–39",
+            "text": "TILO S10 diretta (circa 39 min) oppure RE80 con cambio (circa 35 min)."
+          },
+          {
+            "to": "Locarno",
+            "minutes": "50–57",
+            "text": "RE80 diretto."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Quali sono le chiese principali di Mendrisio?",
+            "answer": "Nel Borgo spiccano la chiesa prepositurale dei Santi Cosma e Damiano in Piazza del Ponte, la chiesa di San Giovanni con l'ex convento dei Serviti (oggi Museo d'arte), l'oratorio della Madonna delle Grazie e la chiesa dei Cappuccini. Poco fuori città si trova il santuario di Santa Maria dei Miracoli a Morbio Inferiore."
+          },
+          {
+            "question": "Si può partecipare alle Processioni storiche?",
+            "answer": "Sì. La Fondazione Processioni Storiche Mendrisio raccoglie le candidature online sul sito processionimendrisio.ch, dove sono descritti i ruoli del Giovedì Santo. Il Venerdì Santo partecipano oltre 800 figuranti; servono anche volontari per la preparazione."
+          },
+          {
+            "question": "C'è una comunità evangelica riformata vicino a Mendrisio?",
+            "answer": "La Chiesa Evangelica Riformata nel Sottoceneri ha una chiesa a Vacallo (Via al Colle), oltre a Lugano e Novaggio. Il programma dei culti e degli incontri è pubblicato su cers.ch e nel mensile Voce Evangelica."
+          },
+          {
+            "question": "Dove fare un primo incontro a Mendrisio?",
+            "answer": "Per una passeggiata il nucleo storico e il chiostro del Museo d'arte; per una gita il Monte San Giorgio, il Monte Generoso con il treno da Capolago, le Gole della Breggia o i sentieri tra i vigneti del Mendrisiotto."
+          }
+        ],
+        "sources": [
+          {
+            "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+            "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+            "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "title": "Città di Mendrisio – Dati statistici 2025 (comunicato 30.01.2026)",
+            "url": "https://mendrisio.ch/dam/jcr:7cd4a50d-faa2-4bd3-a2a5-8dcb05744345/CS%2030.01.2026_Dati%20statistici%202025.pdf"
+          },
+          {
+            "title": "Mendrisiotto Turismo – Chiese delle Processioni",
+            "url": "https://www.mendrisiottoturismo.ch/en/processionimendrisio/esplora/chiese.html"
+          },
+          {
+            "title": "Fondazione Processioni Storiche Mendrisio – Comunicato edizione 2026",
+            "url": "https://www.mendrisiottoturismo.ch/it/dam/jcr:1728ec16-5a38-4017-8e10-cb7d8acf2735/25.03.2026%20-%20Processioni%20edizione%202026.pdf"
+          },
+          {
+            "title": "RSI – Processioni nell'UNESCO",
+            "url": "https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html"
+          },
+          {
+            "title": "Ticino Turismo – Chiesa dei SS. Cosma e Damiano",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-dei-SS-Cosma-e-Damiano-e-Torre-medioevale/2934.html"
+          },
+          {
+            "title": "Ticino Turismo – Chiesa dei Cappuccini",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-dei-Cappuccini/5071.html"
+          },
+          {
+            "title": "Ticino Turismo – Museo d'arte Mendrisio",
+            "url": "https://www.ticino.ch/it/commons/details/Museo-d-arte-Mendrisio/2759.html"
+          },
+          {
+            "title": "Ticino Turismo – Festa di Santa Maria dei Miracoli",
+            "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+          },
+          {
+            "title": "GCatholic – Santuario-Basilica di Santa Maria dei Miracoli",
+            "url": "https://gcatholic.org/churches/europe/1244"
+          },
+          {
+            "title": "Chiesa Evangelica Riformata nel Sottoceneri",
+            "url": "https://www.cers.ch/"
+          },
+          {
+            "title": "Diocesi di Lugano – Incontri di preparazione al matrimonio 2027",
+            "url": "https://www.diocesilugano.ch/incontri-di-preparazione-al-sacramento-del-matrimonio-anno-2026/"
+          },
+          {
+            "title": "Ticino Turismo – Sagra del Borgo",
+            "url": "https://www.ticino.ch/en/events/details/Sagra-del-Borgo/10132"
+          },
+          {
+            "title": "RSI – La Fiera di San Martino",
+            "url": "https://www.rsi.ch/info/ticino-grigioni-e-insubria/La-Fiera-di-San-Martino-una-tradizione-che-non-stanca-mai--2347146.html"
+          },
+          {
+            "title": "UNESCO – Estensione Monte San Giorgio 2010",
+            "url": "https://whc.unesco.org/en/news/646"
+          },
+          {
+            "title": "Monte Generoso",
+            "url": "https://www.montegeneroso.ch/it/"
+          },
+          {
+            "title": "Migros – Inaugurazione Fiore di pietra",
+            "url": "https://corporate.migros.ch/en/about-us/our-story/timeline/fiore-di-pietra-official-opening"
+          },
+          {
+            "title": "Ticino Turismo – Parco delle Gole della Breggia",
+            "url": "https://www.ticino.ch/it/commons/details/Parco-delle-Gole-della-Breggia/52602.html"
+          },
+          {
+            "title": "Ticino Turismo – Itinerari tra i vigneti",
+            "url": "https://www.ticino.ch/it/commons/details/Itinerari-tra-i-vigneti/95883.html"
+          },
+          {
+            "title": "Orari FFS via transport.opendata.ch (giorno feriale 21.10.2026, ore 9)",
+            "url": "https://transport.opendata.ch/"
+          }
+        ],
+        "checked": "20 ottobre 2026"
+      }
     },
     {
       "slug": "chiasso",
@@ -186,33 +1651,346 @@
       "name": "Chiasso",
       "postcode": "6830",
       "region": "Mendrisiotto",
-      "geo": { "lat": 45.8323, "lon": 9.0313 },
+      "geo": {
+        "lat": 45.8323,
+        "lon": 9.0313
+      },
       "metaTitle": "Single cristiani a Chiasso: conoscersi con la fede",
       "title": "Single cristiani a Chiasso",
       "description": "Single cristiani a Chiasso: comunità di fede nel Mendrisiotto, il Duomo di Como a pochi chilometri e idee per un primo incontro con valori comuni.",
       "lead": "Chiasso è il Comune più a sud della Svizzera, a pochi passi da Como: una città di confine con una lunga tradizione cristiana.",
       "sections": [
         {
-          "heading": "Fede in una città di confine",
+          "heading": "Chiasso in cifre: fede e comunità",
           "icon": "church",
-          "html": "<p>Chiasso è il Comune più a sud della Svizzera. Le sue parrocchie fanno parte della <a href=\"https://www.diocesilugano.ch\">Diocesi di Lugano</a>, mentre la Chiesa evangelica riformata nel Sottoceneri accoglie i fedeli evangelici della zona.</p><p>A pochi chilometri, oltre il confine, si trova il Duomo di Como: per molti un luogo da visitare insieme.</p>"
+          "html": "<p>Chiasso conta 7.564 residenti permanenti (fine 2024) ed è il secondo comune del distretto di Mendrisio, dove il 62,6 % degli abitanti dai 15 anni è cattolico romano (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>). Nel comune ci sono due parrocchie: Chiasso, con la chiesa arcipretale di San Vitale e Santa Teresa a Seseglio, e Pedrinate con Santa Croce.</p><p>I fedeli riformati fanno riferimento alla <a href=\"https://www.cers.ch/\">Chiesa evangelica riformata nel Sottoceneri</a>, che ha la sua chiesa più vicina a Vacallo, in Via al Colle 10.</p>"
         },
         {
-          "heading": "Comunità e incontri",
+          "heading": "Una città di confine",
           "icon": "people",
-          "html": "<p>Gruppi parrocchiali, cori e volontariato sono occasioni per conoscere persone con valori simili. Nel vicino borgo di Mendrisio le Processioni storiche della Settimana Santa riuniscono ogni anno molte persone della regione.</p>"
+          "html": "<p>Pedrinate e Seseglio sono l'abitato più a sud della Svizzera. Da Chiasso Como San Giovanni è a circa 20 minuti di treno, Lugano a 24: molte persone qui lavorano, studiano o frequentano la chiesa oltre i confini comunali. Nel distretto il 43,1 % delle economie domestiche è formato da una sola persona (2024).</p><p>christlich-verliebt.ch resta una piattaforma svizzera: con la ricerca per codice postale 6830 trovi single cristiani a Chiasso, nel Mendrisiotto e nel resto del Paese.</p>"
         },
         {
-          "heading": "Il primo incontro",
-          "icon": "cup",
-          "html": "<p>Un caffè in centro o una passeggiata tranquilla sono il modo più semplice per conoscersi. Scegli un luogo pubblico e lasciate spazio alla conversazione: la fede, la famiglia e i progetti per il futuro.</p>"
-        },
-        {
-          "heading": "Consigli per conoscersi",
-          "icon": "heart",
-          "html": "<p>Sincerità, rispetto e pazienza sono la base di una relazione cristiana. Con christlich-verliebt.ch puoi conoscere single cristiani a Chiasso, nel Mendrisiotto e in tutta la Svizzera.</p>"
+          "heading": "Natura per conoscersi",
+          "icon": "tree",
+          "html": "<p>Il Parco del Penz, circa 245 ettari di bosco tra Chiasso, Seseglio e Pedrinate con oltre 30 km di sentieri, porta fino all'oratorio di Santo Stefano sul colle di Pedrinate. A pochi minuti si trovano le Gole della Breggia, con la Chiesa Rossa del 1343: mete tranquille per un secondo incontro.</p>"
         }
-      ]
+      ],
+      "guide": {
+        "facts": [
+          {
+            "label": "Abitanti",
+            "value": "7.564",
+            "note": "residenti permanenti, fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Cattolici nel distretto",
+            "value": "62,6 %",
+            "note": "distretto di Mendrisio, 15 anni e più, 2024",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Parrocchie nel comune",
+            "value": "2",
+            "note": "Chiasso (San Vitale) e Pedrinate (Santa Croce)",
+            "source": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/chiasso-16259/"
+          },
+          {
+            "label": "Parco del Penz",
+            "value": "245 ettari",
+            "note": "oltre 30 km di sentieri tra Chiasso e Pedrinate",
+            "source": "https://www.ticino.ch/it/commons/details/Parco-del-Penz/148977.html"
+          }
+        ],
+        "places": [
+          {
+            "name": "Chiesa arcipretale di San Vitale",
+            "denomination": "cattolica romana",
+            "address": "Corso San Gottardo 48, 6830 Chiasso",
+            "text": "La chiesa principale di Chiasso, documentata dal XIII secolo e sede arcipretale dal 1928. L'attuale basilica a tre navate, progettata da Aristide Conti e completata nel 1935, è considerata uno degli ultimi esempi di architettura eclettica in Svizzera; all'interno affreschi, vetrate e un portale scolpito. Davanti all'ingresso si apre un'ampia piazza.",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/chiasso-16259/"
+          },
+          {
+            "name": "Chiesa di Santa Teresa del Bambino Gesù",
+            "denomination": "cattolica romana",
+            "address": "Via Campagna 66, 6832 Seseglio (Chiasso)",
+            "text": "Chiesa neoclassica della frazione di Seseglio, costruita nel 1844 e consacrata nel 1845, restaurata nel 1957 e nel 1995. Fa parte della parrocchia di Chiasso.",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/chiasso-16259/"
+          },
+          {
+            "name": "Chiesa parrocchiale di Santa Croce",
+            "denomination": "cattolica romana",
+            "address": "Strada Regina 37, 6832 Pedrinate",
+            "text": "Chiesa tardobarocca documentata dal 1599 e parrocchiale dal 1792, sulla collina di Pedrinate, il villaggio più meridionale della Svizzera.",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/pedrinate-16271/"
+          },
+          {
+            "name": "Oratorio di Santo Stefano",
+            "denomination": "cattolica romana",
+            "address": "Colle di Santo Stefano, 6832 Pedrinate",
+            "text": "Forse uno dei luoghi di culto cristiani più antichi della regione, dedicato ai santi martiri Stefano e Lorenzo: l'abside romanica risale a circa l'anno Mille. All'interno affreschi del Quattrocento con la Madonna col Bambino e Santa Marta con la Confraternita della Buona Morte; monumento di importanza cantonale dal 1955. Dal colle si vede tutta Chiasso.",
+            "url": "https://www.mendrisiottoturismo.ch/it/commons/details/Oratorio-di-S-Stefano/5114.html"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Vacallo",
+            "denomination": "evangelica riformata",
+            "address": "Via al Colle 10, 6833 Vacallo",
+            "text": "Luogo di culto della Chiesa evangelica riformata nel Sottoceneri per il Mendrisiotto, nel comune confinante con Chiasso. Vi si tiene uno studio biblico mensile seguito da un momento conviviale; la pastora di riferimento offre visite e colloqui nel Mendrisiotto.",
+            "url": "https://cers.ch"
+          }
+        ],
+        "communities": [
+          {
+            "name": "Parrocchia di Chiasso e Pedrinate",
+            "text": "Le due parrocchie hanno la casa parrocchiale comune in Corso San Gottardo 48. Per celebrazioni, catechesi e attività aggiornate fare riferimento all'annuario diocesano e ai comunicati della parrocchia.",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/chiasso-16259/"
+          },
+          {
+            "name": "Chiesa evangelica riformata nel Sottoceneri (CERS)",
+            "text": "Comunità evangelica per Lugano e il Mendrisiotto: studio biblico mensile a Vacallo, culti a Lugano, corso di fede per adulti, cori (Coro Laudate, Glory Gospel Choir) e attività in tedesco. Calendario mensile su Voce Evangelica.",
+            "url": "https://www.voceevangelica.ch/sottoceneri"
+          },
+          {
+            "name": "Caritas Ticino – volontariato",
+            "text": "Caritas Ticino gestisce un negozio dell'usato a Chiasso (Via Volta 1) e cerca volontari per i negozi, per l'accompagnamento come tutor di persone con difficoltà finanziarie e per il lavoro informativo.",
+            "url": "https://www.caritas-ticino.ch/activities/CATI_volontariato.html"
+          },
+          {
+            "name": "Pastorale Giovanile Diocesana – #spazioGiovani",
+            "text": "Servizio della Diocesi di Lugano con proposte per giovani dai 17/18 anni, preparazione alle Giornate Mondiali della Gioventù (Seoul, agosto 2027) e incontri Taizé Ticino. Sede a Lugano, a circa 25 minuti di treno da Chiasso.",
+            "url": "https://pastoralegiovanile.ch/category/x_eta/sg/"
+          },
+          {
+            "name": "Opera Diocesana Pellegrinaggi",
+            "text": "Organizza i pellegrinaggi della Diocesi di Lugano, tra cui quello annuale a Lourdes (nel 2026 dal 16 al 22 agosto).",
+            "url": "http://www.odplugano.ch/"
+          }
+        ],
+        "events": [
+          {
+            "name": "Carnevale della Libera Repubblica di Nebiopoli",
+            "when": "Settimana di Carnevale, tra fine gennaio e febbraio (2025: 12–16 febbraio)",
+            "text": "Durante il Carnevale Chiasso diventa la 'Libera Repubblica di Nebiopoli', con un Primo Ministro che riceve le chiavi dal sindaco: è l'unico carnevale ticinese senza re. Il corteo attira decine di migliaia di persone."
+          },
+          {
+            "name": "Processioni della Settimana Santa a Mendrisio",
+            "when": "Giovedì e Venerdì Santo, la sera",
+            "text": "A 7 minuti di treno da Chiasso: processioni attestate dalla seconda metà del Seicento, con il solenne 'Entierro' del Venerdì Santo e oltre settecento partecipanti in costume. Dal 2019 sono iscritte nel patrimonio culturale immateriale dell'UNESCO."
+          },
+          {
+            "name": "Festival di cultura e musica jazz",
+            "when": "Febbraio/marzo (2026: 27ª edizione, 12–14 marzo)",
+            "text": "Il Cinema Teatro di Chiasso si trasforma in jazz club per tre o quattro serate, in collaborazione con RSI Rete Due."
+          },
+          {
+            "name": "Festate – Festival di culture e musiche dal mondo",
+            "when": "Metà giugno, due serate (2026: 12–13 giugno)",
+            "text": "Festival all'aperto con palco principale in Piazza Bernasconi, davanti al Palazzo municipale; giunto nel 2026 alla 34ª edizione."
+          }
+        ],
+        "dateSpots": [
+          {
+            "name": "Centro Culturale Chiasso: m.a.x. museo e Cinema Teatro",
+            "where": "Via Dante Alighieri 6 (m.a.x. museo) e Via Dante Alighieri 3b (Cinema Teatro), 6830 Chiasso",
+            "text": "Il m.a.x. museo, dedicato al grafico Max Huber, presenta mostre di grafica, design e fotografia; accanto lo Spazio Officina e il Cinema Teatro. Una mostra o uno spettacolo offrono subito un tema di conversazione."
+          },
+          {
+            "name": "Piazza davanti a San Vitale e Corso San Gottardo",
+            "where": "Corso San Gottardo 48, centro di Chiasso, vicino alla stazione e al Municipio",
+            "text": "Punto d'incontro centrale e facile da trovare, a pochi passi dalla stazione FFS: si può visitare la chiesa e proseguire in centro."
+          },
+          {
+            "name": "Sentiero didattico del Parco del Penz e Oratorio di Santo Stefano",
+            "where": "Accesso da Via Sotto Penz (Chiasso) o Via Camponovo (Pedrinate)",
+            "text": "Percorso naturalistico di 2,3 km con circa 139 m di dislivello nel bosco del Penz; si può unire alla visita dell'antico oratorio di Santo Stefano sul colle."
+          },
+          {
+            "name": "Il punto più a sud della Svizzera",
+            "where": "Collina di Pedrinate, cippo di confine 75B; partenza del Sentiero delle Guardie presso il ponte sul Faloppia",
+            "text": "Una meta curiosa per una passeggiata a due: cippo con le coordinate, pavimentazione con la sagoma della Svizzera e punto foto. Il Sentiero delle Guardie racconta il lavoro delle guardie di confine."
+          },
+          {
+            "name": "Parco delle Gole della Breggia",
+            "where": "Via Ghitello, 6834 Morbio Inferiore (comune confinante)",
+            "text": "Parco geologico di circa 65 ettari con circa 12 km di sentieri all'imbocco della Valle di Muggio, il Percorso del Cemento nell'ex cementificio Saceba e il mulino del Ghitello del 1606."
+          },
+          {
+            "name": "Sentiero del Monte Bisbino da Sagno",
+            "where": "Partenza da Sagno (693 m), fermata AutoPostale 'Sagno Paese'",
+            "text": "Escursione ad anello lungo il crinale di confine verso il santuario del Bisbino (ca. 1'325 m, già in territorio italiano), con vista sul Lago di Como. Adatta a chi ama camminare."
+          }
+        ],
+        "transport": [
+          {
+            "to": "Mendrisio",
+            "minutes": "7–10",
+            "text": "Ca. 7 minuti con TILO RE80, 8–10 minuti con S10/S40."
+          },
+          {
+            "to": "Lugano",
+            "minutes": "24–34",
+            "text": "Ca. 24 minuti con RE80 o EC, fino a ca. 34 minuti con S10."
+          },
+          {
+            "to": "Bellinzona",
+            "minutes": "41–53",
+            "text": "Ca. 41 minuti con EC diretto, ca. 50 minuti con S10."
+          },
+          {
+            "to": "Locarno",
+            "minutes": "57–64",
+            "text": "Circa un'ora con il TILO RE80 diretto."
+          },
+          {
+            "to": "Como San Giovanni",
+            "minutes": "20",
+            "text": "Ca. 20 minuti con RE80 oltre il confine."
+          },
+          {
+            "to": "Milano Centrale",
+            "minutes": "46",
+            "text": "Meno di un'ora con il TILO RE80 diretto."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Quali sono le chiese cattoliche di Chiasso?",
+            "answer": "La chiesa arcipretale di San Vitale in Corso San Gottardo 48 (basilica eclettica del 1935), la chiesa di Santa Teresa a Seseglio e la parrocchiale di Santa Croce a Pedrinate. Sul colle di Pedrinate si trova inoltre l'antico Oratorio di Santo Stefano, con abside romanica."
+          },
+          {
+            "question": "Dove trovano una comunità i cristiani evangelici a Chiasso?",
+            "answer": "La Chiesa evangelica riformata nel Sottoceneri ha un luogo di culto nella vicina Vacallo (Via al Colle 10), dove si tiene uno studio biblico mensile. Culti e cori più grandi si trovano a Lugano, a circa 25 minuti di treno."
+          },
+          {
+            "question": "Che cosa si può fare a Chiasso per un primo incontro tranquillo?",
+            "answer": "Una mostra al m.a.x. museo, uno spettacolo al Cinema Teatro, il sentiero didattico del Parco del Penz o la passeggiata fino al punto più a sud della Svizzera a Pedrinate. Chi ama la natura può raggiungere le Gole della Breggia a Morbio Inferiore."
+          },
+          {
+            "question": "Chiasso è ben collegata con il resto del Ticino?",
+            "answer": "Sì: Mendrisio dista circa 7 minuti di treno, Lugano circa 25 minuti, Bellinzona circa 40 minuti e Locarno circa un'ora. Como si raggiunge in circa 20 minuti e Milano in meno di un'ora."
+          }
+        ],
+        "sources": [
+          {
+            "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+            "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+            "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "title": "tio.ch – La popolazione di Chiasso cresce ancora, ma di poco (fine 2024)",
+            "url": "https://www.tio.ch/ticino/attualita/1807840/la-popolazione-di-chiasso-cresce-ancora-ma-di-poco"
+          },
+          {
+            "title": "laRegione – Popolazione di Chiasso al 31.12.2025",
+            "url": "https://www.laregione.ch/cantone/mendrisiotto/1896943/servizi"
+          },
+          {
+            "title": "espansionetv – Chiasso, popolazione 2024",
+            "url": "https://www.espansionetv.it/2025/01/08/chiasso-aumenta-la-popolazione-nel-2024-la-crescita-dovuta-agli-stranieri-trasferiti-per-lavoro"
+          },
+          {
+            "title": "tio.ch – Mappa religiosa del Cantone (dati UST 2022)",
+            "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone"
+          },
+          {
+            "title": "Diocesi di Lugano – Vicariato del Mendrisiotto",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/"
+          },
+          {
+            "title": "Diocesi di Lugano – Parrocchia di Chiasso",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/chiasso-16259/"
+          },
+          {
+            "title": "Diocesi di Lugano – Parrocchia di Pedrinate",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/pedrinate-16271/"
+          },
+          {
+            "title": "Ticino Film Commission – Chiesa di San Vitale",
+            "url": "https://ticinofilmcommission.ch/en/location/224/church-of-san-vitale"
+          },
+          {
+            "title": "Mendrisiotto Turismo – Oratorio di S. Stefano",
+            "url": "https://www.mendrisiottoturismo.ch/it/commons/details/Oratorio-di-S-Stefano/5114.html"
+          },
+          {
+            "title": "Wikivoyage – Chiasso",
+            "url": "https://it.wikivoyage.org/wiki/Chiasso"
+          },
+          {
+            "title": "Wikipedia – Chiasso",
+            "url": "https://it.wikipedia.org/wiki/Chiasso"
+          },
+          {
+            "title": "CERS – Chiesa evangelica riformata nel Sottoceneri",
+            "url": "https://cers.ch"
+          },
+          {
+            "title": "Voce Evangelica – Sottoceneri",
+            "url": "https://www.voceevangelica.ch/sottoceneri"
+          },
+          {
+            "title": "Caritas Ticino – Negozi",
+            "url": "https://www.caritas-ticino.ch/shop/CATI_negozi_2019_ok.html"
+          },
+          {
+            "title": "Caritas Ticino – Volontariato",
+            "url": "https://www.caritas-ticino.ch/activities/CATI_volontariato.html"
+          },
+          {
+            "title": "Pastorale Giovanile Diocesana",
+            "url": "https://www.pastoralegiovanile.ch"
+          },
+          {
+            "title": "MySwitzerland – Processioni della Settimana Santa di Mendrisio",
+            "url": "https://www.myswitzerland.com/it-ch/scoprire-la-svizzera/manifestazioni/processioni-della-settimana-santa-di-mendrisio/"
+          },
+          {
+            "title": "laRegione – Festival jazz Chiasso 2026",
+            "url": "https://www.laregione.ch/culture/musica/1905382/servizi"
+          },
+          {
+            "title": "laRegione – Festate 2026",
+            "url": "https://www.laregione.ch/culture/culture/1926601/piazza-festate-chiasso-mondo-festival-culture-giugno-rete-facciamo"
+          },
+          {
+            "title": "laRegione – Sagra di Santo Stefano (Pedrinate)",
+            "url": "https://www.laregione.ch/temi/sagra-santo-stefano"
+          },
+          {
+            "title": "MySwitzerland – m.a.x. museo",
+            "url": "https://www.myswitzerland.com/en/experiences/max-museo/"
+          },
+          {
+            "title": "Ticino Turismo – Parco del Penz",
+            "url": "https://www.ticino.ch/it/commons/details/Parco-del-Penz/148977.html"
+          },
+          {
+            "title": "Ticino Turismo – Percorso didattico Parco del Penz",
+            "url": "https://www.ticino.ch/it/commons/details/Percorso-didattico-Parco-del-Penz/149238.html"
+          },
+          {
+            "title": "Ticino Turismo – Il punto più a sud della Svizzera",
+            "url": "https://www.ticino.ch/it/commons/details/Il-punto-più-a-sud-della-Svizzera/138470.html"
+          },
+          {
+            "title": "Ticino Turismo – Parco delle Gole della Breggia",
+            "url": "https://www.ticino.ch/it/commons/details/Parco-delle-Gole-della-Breggia/52602.html"
+          },
+          {
+            "title": "Mendrisiotto Turismo – Sentiero del Monte Bisbino",
+            "url": "https://mendrisiottoturismo.ch/en/itineraries/details/Sentiero-del-Monte-Bisbino/148635.html"
+          },
+          {
+            "title": "Orari FFS via transport.opendata.ch (consultati il 20.10.2026 per mercoledì 21.10.2026, partenza ca. 09:00)",
+            "url": "https://transport.opendata.ch/"
+          }
+        ],
+        "checked": "20 ottobre 2026"
+      }
     }
   ]
 }

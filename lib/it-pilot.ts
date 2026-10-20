@@ -5,7 +5,28 @@ import data from "../data/it-ticino.json" with { type: "json" };
  * Gleiche Schweizer ICONY-Plattform und Mitglieder; ICONY bleibt bewusst bei der Schweiz.
  */
 export type ItSection = { heading: string; icon: "church" | "people" | "tree" | "cup" | "heart" | "calendar" | "phone"; html: string };
-export type ItCity = (typeof data.cities)[number] & { sections: ItSection[] };
+/** Belegte Kennzahl; `source` verweist auf einen Eintrag in `sources`. */
+export type ItFact = { label: string; value: string; note: string; source: string };
+export type ItPlace = { name: string; denomination: string; address: string; text: string; url: string };
+export type ItCommunity = { name: string; text: string; url: string };
+export type ItEvent = { name: string; when: string; text: string };
+export type ItSpot = { name: string; where: string; text: string };
+export type ItTrain = { to: string; minutes: string; text: string };
+export type ItFaq = { question: string; answer: string };
+export type ItSource = { title: string; url: string };
+/** Stadtführer mit belegten Angaben (Kirchen, Termine, Treffpunkte, Bahn); Quellen erscheinen eingeklappt am Seitenende. */
+export type ItGuide = {
+  facts: ItFact[];
+  places: ItPlace[];
+  communities: ItCommunity[];
+  events: ItEvent[];
+  dateSpots: ItSpot[];
+  transport: ItTrain[];
+  faq: ItFaq[];
+  sources: ItSource[];
+  checked: string;
+};
+export type ItCity = Omit<(typeof data.cities)[number], "sections" | "guide"> & { sections: ItSection[]; guide: ItGuide };
 
 /** Erst indexieren, wenn ICONY die italienische Registrierung ausliefert. Bis dahin noindex und nicht in der Sitemap. */
 export const IT_PILOT_INDEXABLE = false;
@@ -20,8 +41,8 @@ export const IT_PLATFORM = {
   searchUrl: "https://christlich-verliebt.ch/suche/?AID=location",
 } as const;
 
-export const IT_HOME = data.home as typeof data.home & { sections: ItSection[] };
-export const IT_CITIES = data.cities as ItCity[];
+export const IT_HOME = data.home as unknown as Omit<typeof data.home, "sections" | "guide" | "faq"> & { sections: ItSection[]; guide: ItGuide };
+export const IT_CITIES = data.cities as unknown as ItCity[];
 
 export function getItCity(slug: string): ItCity | null {
   return IT_CITIES.find((city) => city.slug === slug) ?? null;

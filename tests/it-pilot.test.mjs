@@ -71,3 +71,35 @@ test("Eigene Rechtstexte: Betreiber, Vercel Web Analytics und ICONY-Profilfenste
   assert.match(shell, /itPublicUrl\("note-legali"\)/);
   assert.match(shell, /itPublicUrl\("privacy"\)/);
 });
+
+test("Stadtführer mit belegten Angaben: Kennzahlen, Kirchen mit Adresse, Termine, Treffpunkte, Bahn, FAQ und Quellen", async () => {
+  for (const city of IT_CITIES) {
+    const { guide } = city;
+    assert.ok(guide.facts.length >= 4, `${city.slug}: Kennzahlen`);
+    for (const fact of guide.facts) assert.ok(fact.value && fact.note, `${city.slug}: ${fact.label} ohne Wert/Stand`);
+    assert.ok(guide.places.length >= 5, `${city.slug}: Glaubensorte`);
+    for (const place of guide.places) {
+      assert.match(place.address, /\d{4}\s+\S/, `${city.slug}: ${place.name} ohne PLZ/Ort`);
+      assert.ok(place.text.length >= 60, `${city.slug}: ${place.name} zu knapp`);
+      if (place.url) assert.match(place.url, /^https:\/\//);
+    }
+    assert.ok(guide.events.length >= 3, `${city.slug}: Termine`);
+    assert.ok(guide.dateSpots.length >= 4, `${city.slug}: Treffpunkte`);
+    assert.ok(guide.transport.length >= 3, `${city.slug}: Bahnverbindungen`);
+    for (const train of guide.transport) assert.match(train.minutes, /^\d+(?:–\d+)?$/);
+    assert.ok(guide.faq.length >= 3, `${city.slug}: FAQ`);
+    assert.ok(guide.sources.length >= 5, `${city.slug}: Quellen`);
+    for (const source of guide.sources) assert.match(source.url, /^https?:\/\//);
+    assert.match(guide.checked, /^\d{1,2} \S+ 20\d\d$/);
+    // Keine Floskel-Abschnitte mehr: jeder Abschnitt nennt etwas Konkretes (Link oder Zahl).
+    for (const section of city.sections) assert.match(section.html, /<a href="https:|\d/, `${city.slug}: ${section.heading} ohne Beleg`);
+  }
+  assert.ok(IT_HOME.guide.facts.length >= 4);
+  assert.ok(IT_HOME.guide.faq.length >= 5);
+  const pages = await readFile(new URL("../components/it-pages.tsx", import.meta.url), "utf8");
+  // Quellen eingeklappt (details ohne open), 13 px, am Seitenende.
+  assert.match(pages, /<details className=\{itStyles\.sources\}>/);
+  assert.doesNotMatch(pages, /<details[^>]*\bopen\b/);
+  const css = await readFile(new URL("../components/it-pages.module.css", import.meta.url), "utf8");
+  assert.match(css, /\.sources \{[^}]*font-size: 13px/);
+});

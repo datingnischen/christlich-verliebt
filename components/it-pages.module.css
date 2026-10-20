@@ -27,3 +27,355 @@
     bottom: 70px;
   }
 }
+
+/* Tessin-Karte im Hero */
+.mapCard svg {
+  max-height: 340px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.mapCard {
+  max-width: 380px;
+  justify-self: end;
+}
+
+.mapTicino {
+  fill: #f6c3c2;
+  stroke: #fff;
+  stroke-width: 1.6;
+}
+
+.mapLabel,
+.mapLabelActive {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-linejoin: round;
+}
+
+.mapLabelActive {
+  fill: var(--partner-dark);
+  font-family: Georgia, serif;
+  font-weight: 800;
+}
+
+.mapActiveDot {
+  fill: var(--partner);
+  stroke: #fff;
+}
+
+/* Kennzahlen: Stand/Ebene als kleine Zeile */
+.factNote {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* Inhaltsblöcke */
+.block {
+  max-width: 1192px;
+  margin: 56px auto 0;
+}
+
+.block > h2 {
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+}
+
+.blockIntro {
+  max-width: 760px;
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.block h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.block p {
+  margin: 0;
+  font: 16px/1.6 Georgia, serif;
+}
+
+.block a {
+  color: var(--partner);
+  text-underline-offset: 3px;
+}
+
+.placeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.place > a {
+  margin-top: auto;
+  padding-top: 6px;
+  font: 700 14px Arial, sans-serif;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--sage-dark);
+  font: 700 12px Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.block p.address {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  color: var(--muted);
+  font: 14px/1.45 Arial, sans-serif;
+}
+
+.address svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 1px;
+  color: var(--partner);
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list > li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+}
+
+.list > li > svg {
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border-radius: 12px;
+  background: var(--rose);
+  color: var(--partner);
+}
+
+.list .address {
+  margin-bottom: 4px;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 0;
+  padding: 0 0 0 26px;
+  list-style: none;
+  border-left: 3px solid var(--leaf);
+}
+
+.timeline > li {
+  position: relative;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 22px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--partner);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--leaf);
+}
+
+.when {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+  color: var(--partner-dark);
+  font: 800 13px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.when svg {
+  width: 16px;
+  height: 16px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.trains {
+  position: sticky;
+  top: 100px;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--forest-deep);
+  color: #fff;
+}
+
+.trains h3 {
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.trains ol {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.trains li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.trains b {
+  color: #ff9c9b;
+  font: 800 18px Georgia, serif;
+}
+
+.trains small {
+  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.trains p {
+  color: rgba(255, 255, 255, 0.8);
+  font: 13px/1.5 Arial, sans-serif;
+}
+
+.trains a {
+  color: #fff;
+}
+
+/* Quellen: zugeklappt, 13 px, am Seitenende */
+.sources {
+  max-width: 1192px;
+  margin: 40px auto 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sources summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.sources p {
+  margin: 8px 0;
+}
+
+.sources ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.sources a {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 1240px) {
+  .block,
+  .sources {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .trains {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .block,
+  .sources {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .block {
+    margin-top: 36px;
+  }
+
+  .list > li {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .list > li > svg {
+    display: none;
+  }
+
+  .mapCard {
+    display: none;
+  }
+}

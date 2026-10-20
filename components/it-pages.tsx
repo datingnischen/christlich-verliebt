@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { CityIcon } from "@/components/city-icons";
 import { RegionShape } from "@/components/city-map";
+import { marketMap, project, regionBox } from "@/lib/city-map";
 import { PreviewLinks } from "@/components/preview-links";
-import { IT_CITIES, IT_HOME, IT_PLATFORM, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItSection } from "@/lib/it-pilot";
+import { IT_CITIES, IT_HOME, IT_PLATFORM, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
 import { publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import shell from "./site-shell.module.css";
@@ -21,7 +22,8 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         </a>
         <nav aria-label="Navigazione principale" className={shell.nav}>
           <a href={itPublicUrl()}>Pagina iniziale</a>
-          {IT_CITIES.map((city) => <a key={city.slug} href={itPublicUrl(city.slug)}>{city.name}</a>)}
+          {IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>{city.name}</a>)}
+          <a href={itMagazineUrl()}>Magazine</a>
         </nav>
         <div className={shell.actions}>
           <a className={shell.login} href={IT_PLATFORM.loginUrl}>Accedi</a>
@@ -36,7 +38,7 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         <a href={IT_PLATFORM.registrationUrl}>Iscriviti gratis ora</a>
       </div>
       <div className={shell.footerGrid}>
-        <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itPublicUrl(city.slug)}>Single cristiani a {city.name}</a>)}</section>
+        <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Tutte le città</a><a href={itMagazineUrl()}>Magazine</a></section>
         <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl}>Registrazione gratuita</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
         <section><h3>Lingua</h3><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch</a><a href={itPublicUrl()} hrefLang="it-CH">Italiano</a></section>
         <section><h3>Servizio</h3><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
@@ -44,6 +46,110 @@ export function ItShell({ children }: { children: React.ReactNode }) {
       <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch.</p>
     </footer>
   </div>;
+}
+
+const FACT_ICONS = ["people", "church", "spark", "route"] as const;
+
+/** Belegte Kennzahlen mit Stand statt allgemeiner Hinweise. */
+function Facts({ guide }: { guide: ItGuide }) {
+  return <div className={styles.facts} role="list">
+    {guide.facts.slice(0, 4).map((fact, index) => <div role="listitem" key={fact.label}>
+      <CityIcon name={FACT_ICONS[index]} />
+      <span>{fact.label}<span className={styles.strongText}>{fact.value}</span><small className={itStyles.factNote}>{fact.note}</small></span>
+    </div>)}
+  </div>;
+}
+
+function Places({ guide, city }: { guide: ItGuide; city: string }) {
+  if (!guide.places.length) return null;
+  return <section className={itStyles.block} aria-labelledby="luoghi-di-fede">
+    <p className={styles.eyebrow}>Chiese e comunità</p>
+    <h2 id="luoghi-di-fede">Luoghi di fede a {city}</h2>
+    <p className={itStyles.blockIntro}>Gli orari di messe e culti cambiano durante l&apos;anno: li trovi aggiornati sui siti delle parrocchie e delle comunità.</p>
+    <ul className={itStyles.placeGrid}>
+      {guide.places.map((place) => <li key={place.name} className={itStyles.place}>
+        <span className={itStyles.tag}>{place.denomination}</span>
+        <h3>{place.name}</h3>
+        <p className={itStyles.address}><CityIcon name="pin" />{place.address}</p>
+        <p>{place.text}</p>
+        {place.url ? <a href={place.url} rel="noopener" target="_blank">Sito ufficiale<span className={itStyles.srOnly}>: {place.name}</span></a> : null}
+      </li>)}
+    </ul>
+  </section>;
+}
+
+function Communities({ guide, heading }: { guide: ItGuide; heading: string }) {
+  if (!guide.communities.length) return null;
+  return <section className={itStyles.block} aria-labelledby="comunita">
+    <p className={styles.eyebrow}>Conoscere persone con valori simili</p>
+    <h2 id="comunita">{heading}</h2>
+    <ul className={itStyles.list}>
+      {guide.communities.map((entry) => <li key={entry.name}>
+        <CityIcon name="people" />
+        <div><h3>{entry.url ? <a href={entry.url} rel="noopener" target="_blank">{entry.name}</a> : entry.name}</h3><p>{entry.text}</p></div>
+      </li>)}
+    </ul>
+  </section>;
+}
+
+function Events({ guide, heading }: { guide: ItGuide; heading: string }) {
+  if (!guide.events.length) return null;
+  return <section className={itStyles.block} aria-labelledby="calendario">
+    <p className={styles.eyebrow}>Calendario dell&apos;anno</p>
+    <h2 id="calendario">{heading}</h2>
+    <ol className={itStyles.timeline}>
+      {guide.events.map((event) => <li key={event.name}>
+        <span className={itStyles.when}><CityIcon name="calendar" />{event.when}</span>
+        <h3>{event.name}</h3>
+        <p>{event.text}</p>
+      </li>)}
+    </ol>
+  </section>;
+}
+
+function DateSpots({ guide, city }: { guide: ItGuide; city: string }) {
+  if (!guide.dateSpots.length && !guide.transport.length) return null;
+  return <section className={`${itStyles.block} ${itStyles.split}`} aria-labelledby="primo-incontro">
+    <div>
+      <p className={styles.eyebrow}>Idee concrete</p>
+      <h2 id="primo-incontro">Dove incontrarsi a {city}</h2>
+      <ul className={itStyles.list}>
+        {guide.dateSpots.map((spot) => <li key={spot.name}>
+          <CityIcon name="cup" />
+          <div><h3>{spot.name}</h3><p className={itStyles.address}>{spot.where}</p><p>{spot.text}</p></div>
+        </li>)}
+      </ul>
+    </div>
+    {guide.transport.length ? <aside className={itStyles.trains} aria-labelledby="in-treno">
+      <h3 id="in-treno">In treno da {city}</h3>
+      <ol>
+        {guide.transport.map((train) => <li key={train.to}>
+          <span className={styles.strongText}>{train.to}</span>
+          <b>{train.minutes} min</b>
+          <small>{train.text}</small>
+        </li>)}
+      </ol>
+      <p>Tempi indicativi del collegamento più rapido; orari attuali su <a href="https://www.sbb.ch/it" rel="noopener" target="_blank">sbb.ch</a>.</p>
+    </aside> : null}
+  </section>;
+}
+
+function Faq({ guide, heading }: { guide: ItGuide; heading: string }) {
+  if (!guide.faq.length) return null;
+  return <section className={styles.related} aria-labelledby="domande">
+    <h2 id="domande">{heading}</h2>
+    {guide.faq.map((entry) => <details key={entry.question} className={styles.card}><summary><strong>{entry.question}</strong></summary><p>{entry.answer}</p></details>)}
+  </section>;
+}
+
+/** Quellen standardmässig zugeklappt, klein und am Seitenende (Projektregel Städteseiten). */
+function Sources({ guide }: { guide: ItGuide }) {
+  if (!guide.sources.length) return null;
+  return <details className={itStyles.sources}>
+    <summary>Fonti e verifica dei dati ({guide.sources.length})</summary>
+    <p>Dati verificati il {guide.checked}. Le immagini in alto sono illustrazioni generate con IA.</p>
+    <ol>{guide.sources.map((source) => <li key={source.url}><a href={source.url} rel="noopener" target="_blank">{source.title}</a></li>)}</ol>
+  </details>;
 }
 
 function Sections({ sections, kicker, title }: { sections: ItSection[]; kicker: string; title: string }) {
@@ -77,7 +183,7 @@ function CityList({ cities, heading, intro }: { cities: { city: ItCity; km?: num
     </div>
     <ol className={styles.distances}>
       {cities.map(({ city, km }) => <li key={city.slug}>
-        <a href={itPublicUrl(city.slug)}>
+        <a href={itCityUrl(city.slug)}>
           <Image src={staticAsset(city.heroImage)} alt="" width={96} height={96} sizes="48px" className={itStyles.cityThumb} />
           <span className={styles.distanceName}>Single cristiani a {city.name}<small>{city.region}</small></span>
           {km !== undefined ? <>
@@ -90,7 +196,40 @@ function CityList({ cities, heading, intro }: { cities: { city: ItCity; km?: num
   </section>;
 }
 
-function Hero({ crumbs, badge, title, lead, primary, image, imageAlt }: { crumbs: { label: string; href: string | null }[]; badge: string; title: string; lead: string; primary: string; image: string; imageAlt: string }) {
+/** Ausschnitt der Schweizer Karte auf das Tessin, mit allen fünf Stadtführern; die aktuelle Stadt hervorgehoben. */
+function TicinoMap({ active }: { active?: string }) {
+  const map = marketMap("ch");
+  const box = regionBox("ch", "CH-TI");
+  const pad = 14;
+  const unit = box.height / 300;
+  const current = IT_CITIES.find((city) => city.slug === active);
+  return <figure className={`${styles.mapCard} ${itStyles.mapCard}`}>
+    <svg className={styles.map} viewBox={`${box.x - pad - 30 * unit} ${box.y - pad} ${box.width + 2 * pad + 90 * unit} ${box.height + 2 * pad}`} role="img" aria-label={current ? `Posizione di ${current.name} in Ticino` : "Le città delle guide in Ticino"}>
+      <g>
+        {Object.entries(map.regions).map(([code, region]) => <path key={code} d={region.d} className={code === "CH-TI" ? itStyles.mapTicino : styles.mapRegion}><title>{region.name}</title></path>)}
+      </g>
+      {IT_CITIES.map((city) => {
+        const { x, y } = project("ch", city.geo.lat, city.geo.lon);
+        const left = city.slug === "locarno" || city.slug === "mendrisio";
+        const isActive = city.slug === active;
+        const label = <text x={left ? x - 12 * unit : x + 12 * unit} y={y + 6 * unit} textAnchor={left ? "end" : "start"} className={isActive ? itStyles.mapLabelActive : itStyles.mapLabel} style={{ fontSize: `${(isActive ? 24 : 17) * unit}px`, strokeWidth: `${5 * unit}px` }}>{city.name}</text>;
+        return isActive
+          ? <g key={city.slug}>
+            <circle cx={x} cy={y} r={22 * unit} fill="#ce302f" opacity="0.2" className={styles.mapPulse} />
+            <circle cx={x} cy={y} r={7 * unit} className={itStyles.mapActiveDot} style={{ strokeWidth: unit }} />
+            {label}
+          </g>
+          : <a key={city.slug} href={itCityUrl(city.slug)} className={styles.mapPin} aria-label={`Single cristiani a ${city.name}`}>
+            <circle cx={x} cy={y} r={5 * unit} className={styles.mapDot} style={{ strokeWidth: unit }} />
+            {label}
+          </a>;
+      })}
+    </svg>
+    <figcaption>{current ? <><span className={styles.strongText}>{current.name}</span> · Canton Ticino</> : <>Cinque guide · <span className={styles.strongText}>Canton Ticino</span></>}</figcaption>
+  </figure>;
+}
+
+export function Hero({ crumbs, badge, title, lead, primary, image, imageAlt, active }: { crumbs: { label: string; href: string | null }[]; badge: string; title: string; lead: string; primary: string; image: string; imageAlt: string; active?: string }) {
   return <section className={`${styles.hero} ${itStyles.hero}`}>
     <Image className={styles.heroImage} src={staticAsset(image)} alt={imageAlt} width={1600} height={900} sizes="100vw" priority />
     <div className={`${styles.heroShade} ${itStyles.heroShade}`} aria-hidden="true" />
@@ -107,6 +246,7 @@ function Hero({ crumbs, badge, title, lead, primary, image, imageAlt }: { crumbs
           <a className={styles.buttonGhost} href="#guida">Leggi la guida</a>
         </div>
       </div>
+      <TicinoMap active={active} />
     </div>
     <p className={`${styles.heroCredit} ${itStyles.heroCredit}`}>Immagine illustrativa generata con IA</p>
   </section>;
@@ -115,25 +255,22 @@ function Hero({ crumbs, badge, title, lead, primary, image, imageAlt }: { crumbs
 export function ItHomePage() {
   return <main className={styles.page}>
     <Hero crumbs={[{ label: "Svizzera italiana", href: null }]} badge="Ticino · Svizzera" title={IT_HOME.title} lead={IT_HOME.lead} primary="Conosci single cristiani" image={IT_HOME.heroImage} imageAlt={IT_HOME.heroImageAlt} />
-    <CityList cities={IT_CITIES.map((city) => ({ city }))} heading="Scegli la tua città" intro="Guide per incontri cristiani a Lugano, Bellinzona, Locarno, Mendrisio e Chiasso, con profili reali dalla tua zona." />
+    <Facts guide={IT_HOME.guide} />
+    <CityList cities={IT_CITIES.map((city) => ({ city }))} heading="Scegli la tua città" intro="Guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso: chiese con indirizzo, appuntamenti dell'anno, luoghi per il primo incontro e collegamenti in treno." />
     <Sections sections={IT_HOME.sections} kicker="La guida" title="Fede e amore in Ticino" />
-    <section className={styles.related} aria-labelledby="domande">
-      <h2 id="domande">Domande frequenti</h2>
-      {IT_HOME.faq.map((entry) => <details key={entry.question} className={styles.card}><summary><strong>{entry.question}</strong></summary><p>{entry.answer}</p></details>)}
-    </section>
+    <Communities guide={IT_HOME.guide} heading="Gruppi e proposte in tutto il Ticino" />
+    <Events guide={IT_HOME.guide} heading="Appuntamenti di fede in Ticino" />
+    <Faq guide={IT_HOME.guide} heading="Domande frequenti" />
+    <Sources guide={IT_HOME.guide} />
   </main>;
 }
 
 export function ItCityPage({ city }: { city: ItCity }) {
   const nearest = nearestItCities(city.slug);
   return <main className={styles.page}>
-    <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} />
+    <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: "Incontri", href: itCityUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} active={city.slug} />
 
-    <div className={styles.facts} role="list">
-      <div role="listitem"><CityIcon name="pin" /><span>Ricerca intorno a<span className={styles.strongText}>{city.name}</span></span></div>
-      {nearest[0] ? <div role="listitem"><CityIcon name="route" /><span>Città più vicina<span className={styles.strongText}>{nearest[0].city.name} · {nearest[0].km} km</span></span></div> : null}
-      <div role="listitem"><CityIcon name="check" /><span>Iscrizione<span className={styles.strongText}>gratuita</span></span></div>
-    </div>
+    <Facts guide={city.guide} />
 
     <section className={styles.widget} data-icony-city-widget>
       <div className={styles.widgetCopy}>
@@ -156,6 +293,12 @@ export function ItCityPage({ city }: { city: ItCity }) {
     </section>
 
     <Sections sections={city.sections} kicker="La tua guida" title={`${city.name} per single cristiani`} />
+    <Places guide={city.guide} city={city.name} />
+    <Communities guide={city.guide} heading={`Comunità e gruppi a ${city.name}`} />
+    <Events guide={city.guide} heading={`Appuntamenti dell'anno a ${city.name}`} />
+    <DateSpots guide={city.guide} city={city.name} />
     <CityList cities={nearest} heading="L'amore non conosce confini comunali" intro={`Le altre guide in Ticino, in linea d'aria da ${city.name}:`} />
+    <Faq guide={city.guide} heading={`Domande su ${city.name}`} />
+    <Sources guide={city.guide} />
   </main>;
 }
