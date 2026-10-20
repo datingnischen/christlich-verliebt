@@ -7,6 +7,7 @@ import { getMarket, isMarketCode, type MarketCode } from "./markets.ts";
 import { staticAsset } from "./static-asset.ts";
 
 import { teaserImageUrl } from "./teaser-image.ts";
+import { isMarketTeaserCode, marketTeaserEntries } from "./wp-market-teasers.ts";
 /**
  * WordPress-kompatibler REST-Endpunkt für die Magazin-Beiträge, erzeugt aus den Dateien im Repo.
  *
@@ -14,7 +15,7 @@ import { teaserImageUrl } from "./teaser-image.ts";
  * https://christlich-verliebt.de/magazin/wp-json/wp/v2/posts. Das Magazin ist von WordPress auf Next.js umgezogen,
  * der Endpunkt bleibt: gleiche URL, gleiche Felder, aus data/public-pages.json und data/editorial-pages.json erzeugt.
  * Je Markt (de, at, ch) ein eigener Endpunkt mit den Beiträgen des jeweiligen market-Feldes. Ein Magazin gibt es
- * bisher nur in Deutschland; AT und CH antworten mit einer leeren Liste (200, X-WP-Total 0).
+ * bisher nur in Deutschland; AT und CH liefern stattdessen ihre drei größten Städteseiten (lib/wp-market-teasers.ts).
  *
  * Bewusst NICHT vorhanden: /wp/v2/users (Autoren-Enumeration) und /wp/v2/pages. `author` ist nur die ID,
  * `_embedded.author` gibt es nicht. Alles außer Beiträgen, Kategorien, Schlagwörtern und Beitragsbildern antwortet 404.
@@ -66,7 +67,7 @@ type WpPost = { id: number; slug: string; date: string; modified: string; author
 
 type SourceCategory = { id: number; slug: string; name: string; description: string; count: number };
 
-type SourceMedia = {
+export type SourceMedia = {
   id: number;
   slug: string;
   title: string;
@@ -82,7 +83,7 @@ type SourceMedia = {
   post: number;
 };
 
-type SourceEntry = {
+export type SourceEntry = {
   id: number;
   slug: string;
   link: string;
@@ -181,7 +182,7 @@ export function buildMagazineSource(market: MarketCode): MagazineSource {
     return page.market === market && page.family === "magazine" && slug !== null && (snapshot.has(slug) || Boolean(page.updated));
   });
 
-  const posts: SourceEntry[] = pages.map((page) => {
+  const magazinePosts: SourceEntry[] = pages.map((page) => {
     const slug = articleSlug(page.path) as string;
     const wp = snapshot.get(slug);
     const id = wp?.id ?? postIdForSlug(slug);
@@ -227,6 +228,8 @@ export function buildMagazineSource(market: MarketCode): MagazineSource {
       media,
     };
   });
+  // AT/CH ohne eigenes Magazin: die drei größten Städteseiten des Landes als Teaser für die ICONY-Startseiten.
+  const posts = !magazinePosts.length && isMarketTeaserCode(market) ? marketTeaserEntries(market, origin, berlinToGmt) : magazinePosts;
 
   const categories: SourceCategory[] = categoryRows
     .map((row) => ({ id: row.id, slug: row.slug, name: row.name, description: row.description ?? "", count: posts.filter((post) => post.categories.includes(row.id)).length }))

@@ -5,6 +5,7 @@ import { NextRequest } from "next/server.js";
 
 import { berlinToGmt, handleWpRest, mediaIdForPostId, postIdForSlug, wpRestPreflight, wpRestResponse } from "../lib/wp-rest-compat.ts";
 import { proxy } from "../proxy.ts";
+import { TEASER_CITIES } from "../lib/wp-market-teasers.ts";
 
 const root = new URL("../", import.meta.url);
 const source = (path) => readFileSync(new URL(path, root), "utf8");
@@ -24,14 +25,14 @@ test("Artikelauswahl: nur echte Beiträge (WordPress-Abzug plus eigene Artikel),
   assert.ok(slugs.includes("dating-unter-christen-gemeinsame-werte"));
 });
 
-test("Märkte: de liefert die Beiträge, at und ch (kein Magazin) eine leere Liste, unbekannte Märkte 404", () => {
+test("Märkte: de liefert die Beiträge, at und ch (kein Magazin) ihre drei größten Städteseiten, unbekannte Märkte 404", () => {
   assert.equal(get("/wp/v2/posts", "", "de").headers["X-WP-Total"], "60");
   for (const market of ["at", "ch"]) {
     const result = get("/wp/v2/posts", "per_page=3", market);
     assert.equal(result.status, 200, market);
-    assert.deepEqual(result.body, []);
-    assert.equal(result.headers["X-WP-Total"], "0");
-    assert.equal(result.headers["X-WP-TotalPages"], "0");
+    assert.equal(result.body.length, 3);
+    assert.equal(result.headers["X-WP-Total"], "3");
+    assert.equal(result.headers["X-WP-TotalPages"], "1");
   }
   assert.equal(get("/wp/v2/posts", "", "fr").status, 404);
   assert.match(JSON.stringify(get("/", "", "at").body), /christlich-verliebt\.at/);
@@ -253,4 +254,57 @@ test("Routen: wp-json und ?rest_route= sind je Markt verdrahtet, Sitemap, Suche 
   assert.doesNotMatch(source("lib/wp-rest-compat.ts"), /"\/wp\/v2\/users"|resource === "users"|resource === "pages"/);
   assert.doesNotMatch(source("app/[market]/sitemap-data.xml/route.ts"), /wp-json/);
   assert.doesNotMatch(source("lib/search.ts"), /wp-json/);
+});
+
+// JPEG-Maße aus dem SOF-Segment (ohne Bildbibliothek).
+function jpegSize(buffer) {
+  let offset = 2;
+  while (offset < buffer.length) {
+    const marker = buffer[offset + 1];
+    const length = buffer.readUInt16BE(offset + 2);
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+      return { height: buffer.readUInt16BE(offset + 5), width: buffer.readUInt16BE(offset + 7) };
+    }
+    offset += 2 + length;
+  }
+  throw new Error("kein SOF-Segment");
+}
+
+test("AT/CH-Knoten: drei größte Städteseiten mit Link, Bild und Text auf der Landesdomain (ICONY-Teaser)", () => {
+  const expected = {
+    at: ["wien", "graz", "linz"],
+    ch: ["zuerich", "basel", "bern"],
+  };
+  for (const [market, slugs] of Object.entries(expected)) {
+    const domain = `christlich-verliebt.${market}`;
+    for (const query of ["per_page=3&_embed", "per_page=3&_embed=1"]) {
+      const result = get("/wp/v2/posts/", query, market);
+      assert.equal(result.status, 200);
+      assert.deepEqual(result.body.map((post) => post.slug), slugs, `${market} ${query}`);
+      for (const post of result.body) {
+        const page = pages.find((item) => item.market === market && item.path === `/partnersuche/${post.slug}/`);
+        assert.ok(page?.heroImage, `${market} ${post.slug} hat Stadtseite mit Bild`);
+        assert.equal(post.link, `https://${domain}/partnersuche/${post.slug}/`);
+        assert.equal(post.title.rendered, page.title);
+        assert.ok(post.excerpt.rendered.includes(page.description.slice(0, 40)));
+        assert.match(post.date, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/);
+        const media = post._embedded["wp:featuredmedia"][0];
+        assert.equal(media.id, post.featured_media);
+        const imageUrl = `https://${domain}/magazin/wp-json/datingnischen/v1/bild${page.heroImage.replace(/\.jpg$/, "~jpg")}`;
+        assert.equal(media.source_url, imageUrl);
+        assert.doesNotMatch(media.source_url, /vercel\.app|\.jpg$/);
+        const size = media.media_details.sizes.medium_large;
+        assert.equal(size.source_url, imageUrl);
+        const file = readFileSync(new URL(`public${page.heroImage}`, root));
+        assert.deepEqual({ width: size.width, height: size.height }, jpegSize(file), `${market} ${post.slug} Bildmaße`);
+        assert.equal(media.media_details.filesize, file.length);
+        assert.ok(media.alt_text.trim());
+        assert.equal(get(`/wp/v2/posts/${post.id}`, "", market).body.slug, post.slug);
+        assert.equal(get(`/wp/v2/media/${media.id}`, "", market).body.source_url, imageUrl);
+      }
+    }
+    assert.equal(TEASER_CITIES[market].length, 3);
+    assert.doesNotMatch(JSON.stringify(get("/wp/v2/posts", "per_page=3&_embed=1", market).body), /christlich-verliebt\.de|vercel\.app/);
+  }
+  assert.equal(get("/wp/v2/posts", "per_page=3", "de").body.every((post) => post.link.startsWith("https://christlich-verliebt.de/magazin/")), true, ".de bleibt beim Magazin");
 });
