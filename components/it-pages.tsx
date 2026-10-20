@@ -40,9 +40,9 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itPublicUrl(city.slug)}>Single cristiani a {city.name}</a>)}</section>
         <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl}>Registrazione gratuita</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
         <section><h3>Lingua</h3><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch</a><a href={itPublicUrl()} hrefLang="it-CH">Italiano</a></section>
-        <section><h3>Servizio</h3><a href={publicUrl("ch", "/datenschutz.html")}>Protezione dei dati</a><a href={publicUrl("ch", "/impressum.html")}>Impressum</a></section>
+        <section><h3>Servizio</h3><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
       </div>
-      <p className={shell.legal}>Su christlich-verliebt.ch contano valori comuni, uno scambio rispettoso e la sincerità nel conoscersi.</p>
+      <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch.</p>
     </footer>
   </div>;
 }

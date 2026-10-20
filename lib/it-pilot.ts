@@ -27,9 +27,19 @@ export function getItCity(slug: string): ItCity | null {
   return IT_CITIES.find((city) => city.slug === slug) ?? null;
 }
 
-/** Live-URL auf christlich-verliebt.ch/it/…, Seitenpfade mit Schrägstrich. */
+/**
+ * Eigene Domain der italienischen Variante (registriert 2026-10-20, DNS auf Vercel). Sie liefert die Seiten
+ * direkt aus (proxy.ts), christlich-verliebt.ch/it/ leitet dorthin um. Vorschau bleibt /ch/it/ auf Vercel.
+ */
+export const IT_HOST = "single-cristiani.ch";
+export const IT_ORIGIN = `https://${IT_HOST}`;
+
+/** Rechtstexte der eigenen Domain (Betreiber Christian Mogge, nicht ICONY). */
+export const IT_LEGAL_PAGES = ["note-legali", "privacy"] as const;
+
+/** Live-URL auf single-cristiani.ch, Seitenpfade mit Schrägstrich. */
 export function itPublicUrl(slug = ""): string {
-  return `https://christlich-verliebt.ch/it/${slug ? `${slug}/` : ""}`;
+  return `${IT_ORIGIN}/${slug ? `${slug}/` : ""}`;
 }
 
 /** ICONY-Profilfenster der Schweizer Plattform für eine Tessiner Postleitzahl (Format wie data/city-widgets.json). */

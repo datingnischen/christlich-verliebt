@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { isPlatformPath, isPreviewHost, MARKET_CODES, previewHref, type MarketCode } from "@/lib/markets";
 
 const MARKET_URL = new RegExp(`^https://(?:www\\.)?christlich-verliebt\\.(${MARKET_CODES.join("|")})(/[^?#]*)?([?#].*)?$`);
+// Italienische Variante: single-cristiani.ch liegt auf der Vorschau unter /ch/it/ (lib/it-pilot.ts).
+const ITALIAN_URL = /^https:\/\/(?:www\.)?single-cristiani\.ch(\/[^?#]*)?([?#].*)?$/;
 
 /**
  * Im HTML stehen interne Links absolut auf der Live-Domain (christlich-verliebt.de/at/ch ohne Länderpräfix),
@@ -17,6 +19,11 @@ export function PreviewLinks() {
     if (!isPreviewHost(window.location.hostname)) return;
     const rewrite = (element: Element, attribute: "href" | "action") => {
       const value = element.getAttribute(attribute);
+      const italian = value?.match(ITALIAN_URL);
+      if (italian) {
+        element.setAttribute(attribute, `/ch/it${italian[1] || "/"}${italian[2] ?? ""}`);
+        return;
+      }
       const match = value?.match(MARKET_URL);
       if (!match) return;
       const market = match[1] as MarketCode;

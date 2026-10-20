@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server.js";
 import { NextResponse } from "next/server.js";
 import { publicUrl, withTrailingSlash, type MarketCode } from "./lib/markets.ts";
+import { IT_CITIES, IT_HOST, IT_ORIGIN, IT_PILOT_INDEXABLE, itPublicUrl } from "./lib/it-pilot.ts";
 
 const HOST_MARKETS = new Map<string, MarketCode>([
   ["christlich-verliebt.de", "de"],
@@ -49,6 +50,30 @@ function trailingSlashRedirect(request: NextRequest, hostMarket: MarketCode | un
   return NextResponse.redirect(destination, 308);
 }
 
+// single-cristiani.ch: eigene Domain der italienischen Variante. Die Seiten liegen intern unter /ch/it/
+// (app/[market]/it), robots und Sitemap beantwortet der Proxy selbst.
+function italianSite(request: NextRequest, path: string) {
+  if (path === "/robots.txt") {
+    const sitemap = IT_PILOT_INDEXABLE ? `\nSitemap: ${IT_ORIGIN}/sitemap.xml\n` : "";
+    return new NextResponse(`User-agent: *\nAllow: /\n${sitemap}`, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });
+  }
+  if (path === "/sitemap.xml") {
+    if (!IT_PILOT_INDEXABLE) return new NextResponse("Not found", { status: 404 });
+    const urls = [itPublicUrl(), ...IT_CITIES.map(city => itPublicUrl(city.slug))];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${url}</loc></url>`).join("\n")}\n</urlset>\n`;
+    return new NextResponse(xml, { headers: { "content-type": "application/xml; charset=utf-8" } });
+  }
+  const internal = path.match(/^\/ch\/it(\/.*)?$/);
+  if (internal || (!path.endsWith("/") && withTrailingSlash(path) !== path)) {
+    return NextResponse.redirect(`${IT_ORIGIN}${withTrailingSlash(internal ? internal[1] || "/" : path)}${request.nextUrl.search}`, 308);
+  }
+  const destination = request.nextUrl.clone();
+  destination.pathname = `/ch/it${path === "/" ? "" : path}`;
+  const headers = new Headers(request.headers);
+  headers.set("x-cv-rewrite-token", TOKEN);
+  return NextResponse.rewrite(destination, { request: { headers } });
+}
+
 export function proxy(request: NextRequest) {
   if (request.headers.get("x-cv-rewrite-token") === TOKEN) return NextResponse.next();
   const path = request.nextUrl.pathname;
@@ -64,7 +89,13 @@ export function proxy(request: NextRequest) {
     return NextResponse.rewrite(file);
   }
 
-  const hostMarket = HOST_MARKETS.get(hostname(request));
+  const host = hostname(request);
+  if (host === IT_HOST) return italianSite(request, path);
+  const hostMarket = HOST_MARKETS.get(host);
+  // christlich-verliebt.ch/it/… liegt seit 2026-10-20 auf der eigenen Domain single-cristiani.ch.
+  if (hostMarket === "ch" && /^\/it(?:\/|$)/.test(path)) {
+    return NextResponse.redirect(`${IT_ORIGIN}${withTrailingSlash(path.replace(/^\/it/, "") || "/")}${request.nextUrl.search}`, 308);
+  }
   const slashRedirect = trailingSlashRedirect(request, hostMarket);
   if (slashRedirect) return slashRedirect;
 
