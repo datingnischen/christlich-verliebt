@@ -41,6 +41,16 @@ test("Footer: Flaggen für Deutschland, Österreich und Schweiz verlinken die de
   assert.match(shell, /export function Flag\(/);
 });
 
+test("Flirtradar: italienische Radar-Grafik im CTA-Band auf Start- und Stadtseiten", async () => {
+  const svg = await read("public/brand/radar-single-cristiani.svg");
+  assert.match(svg, /Single cristiani/);
+  assert.match(svg, /Iscriviti gratis/);
+  assert.doesNotMatch(svg, /Deiner|anmelden|Umkreissuche/);
+  const pages = await read("components/it-pages.tsx");
+  assert.match(pages, /radar-single-cristiani\.svg/);
+  assert.equal((pages.match(/<ItCtaBand heading=/g) ?? []).length, 2, "Startseite und Stadtseite");
+});
+
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {
   const page = await read("app/[market]/it/[[...slug]]/page.tsx");
   assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, url: itPublicUrl\(\)/);

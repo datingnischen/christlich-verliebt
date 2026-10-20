@@ -263,9 +263,30 @@ export function ItHomePage() {
     <Sections sections={IT_HOME.sections} kicker="La guida" title="Fede e amore in Ticino" />
     <Communities guide={IT_HOME.guide} heading="Gruppi e proposte in tutto il Ticino" />
     <Events guide={IT_HOME.guide} heading="Appuntamenti di fede in Ticino" />
+    <ItCtaBand heading="Pronto per il primo incontro in Ticino?" />
     <Faq guide={IT_HOME.guide} heading="Domande frequenti" />
     <Sources guide={IT_HOME.guide} />
   </main>;
+}
+
+/** Flirtradar wie auf den deutschen Stadtseiten (CtaBand in city-page.tsx), Grafik auf Italienisch, Ziel die deutsche Registrierung. */
+function ItCtaBand({ heading }: { heading: string }) {
+  return <section className={styles.ctaBand}>
+    <div className={styles.ctaCopy}>
+      <p className={styles.eyebrow}>La fede unisce</p>
+      <h2>{heading}</h2>
+      <ul className={styles.trust}>
+        <li><CityIcon name="shield" />Profili controllati dalla redazione</li>
+        <li><CityIcon name="check" />Registrazione e profilo di base gratuiti</li>
+        <li><CityIcon name="pin" />Ricerca per codice postale in tutto il Ticino</li>
+      </ul>
+      <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Iscriviti gratis" : "Iscriviti gratis (sito in tedesco)"}</a>
+    </div>
+    <a className={styles.radar} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={staticAsset("/brand/radar-single-cristiani.svg")} alt="Ricerca vicino a te: single cristiani nella tua zona, iscrizione gratuita" width={320} height={480} loading="lazy" decoding="async" />
+    </a>
+  </section>;
 }
 
 /** Autorenkasten unter Magazinartikeln: wer schreibt, mit Link auf Chi siamo (dort Vita, Arbeitsweise, Kontakt). */
@@ -313,6 +334,7 @@ export function ItCityPage({ city }: { city: ItCity }) {
     <Communities guide={city.guide} heading={`Comunità e gruppi a ${city.name}`} />
     <Events guide={city.guide} heading={`Appuntamenti dell'anno a ${city.name}`} />
     <DateSpots guide={city.guide} city={city.name} />
+    <ItCtaBand heading={`Pronto per il primo incontro a ${city.name}?`} />
     <CityList cities={nearest} heading="L'amore non conosce confini comunali" intro={`Le altre guide in Ticino, in linea d'aria da ${city.name}:`} />
     <Faq guide={city.guide} heading={`Domande su ${city.name}`} />
     <Sources guide={city.guide} />
