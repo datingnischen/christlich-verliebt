@@ -68,12 +68,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ItPilot({ params }: Props) {
   const page = await resolve(params);
-  // Herausgeber (Betreiber laut Note legali), Website und Autor als eigene Knoten; Artikel und Chi siamo verweisen per @id darauf.
+  // Herausgeber (Marke single-cristiani.ch), Website und Autor als eigene Knoten; Artikel und Chi siamo verweisen per @id darauf.
   const organizationId = `${itPublicUrl()}#organization`;
   const websiteId = `${itPublicUrl()}#website`;
   const author = { "@type": "Person", "@id": itAuthorId(), name: IT_AUTHOR.name, url: itAuthorUrl(), image: staticAsset(IT_AUTHOR.image), jobTitle: IT_AUTHOR.jobTitle, worksFor: { "@id": organizationId }, sameAs: IT_AUTHOR.sameAs };
   const graph = { "@context": "https://schema.org", "@graph": [
-    { "@type": "Organization", "@id": organizationId, name: IT_PUBLISHER.name, legalName: IT_PUBLISHER.legalName, url: itPublicUrl(), logo: { "@type": "ImageObject", url: staticAsset(IT_PUBLISHER.logo) } },
+    { "@type": "Organization", "@id": organizationId, name: IT_PUBLISHER.name, url: itPublicUrl(), logo: { "@type": "ImageObject", url: staticAsset(IT_PUBLISHER.logo) } },
     { "@type": "WebSite", "@id": websiteId, url: itPublicUrl(), name: IT_PUBLISHER.name, inLanguage: "it-CH", publisher: { "@id": organizationId } },
     { "@type": page.kind === "about" ? "AboutPage" : "WebPage", "@id": `${page.url}#webpage`, url: page.url, name: page.title, description: page.description, inLanguage: "it-CH", isPartOf: { "@id": websiteId }, ...(page.kind === "about" ? { about: { "@id": organizationId }, mentions: { "@id": itAuthorId() } } : {}) },
     { "@type": "BreadcrumbList", itemListElement: [

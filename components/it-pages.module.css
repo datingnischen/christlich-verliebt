@@ -132,10 +132,30 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* „Sito ufficiale“ als Button (Christians Wunsch 2026-10-20) statt Textlink */
 .place > a {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
   margin-top: auto;
-  padding-top: 6px;
+  padding: 9px 16px;
+  border: 1px solid var(--sage);
+  border-radius: 999px;
+  color: var(--sage-dark);
   font: 700 14px Arial, sans-serif;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.place > a:hover,
+.place > a:focus-visible {
+  background: var(--sage);
+  color: #fff;
+}
+
+.place > a:focus-visible {
+  outline: 3px solid rgba(206, 48, 47, 0.34);
+  outline-offset: 2px;
 }
 
 .tag {

@@ -8,7 +8,7 @@ import itStyles from "./it-pages.module.css";
 
 /**
  * Chi siamo (/chi-siamo/): Redaktion, Arbeitsweise, Autor und Kontakt der italienischen Variante (E-E-A-T).
- * Betreiber laut Note legali; die Plattform christlich-verliebt.ch betreibt ICONY. Texte hier, Meta in lib/it-pilot.ts.
+ * Kein Betreibername auf dieser Seite (Christians Vorgabe 2026-10-20), der steht nur in den Note legali. Texte hier, Meta in lib/it-pilot.ts.
  */
 const AUTHOR_LINKS = [
   { label: "Profilo su christlich-verliebt.de (in tedesco)", href: IT_AUTHOR.sameAs[0], hrefLang: "de-DE" },
@@ -38,7 +38,7 @@ export function ItAboutPage() {
         <section>
           <h2>Una guida, non una piattaforma di incontri</h2>
           <p>single-cristiani.ch non gestisce profili, messaggi o abbonamenti. Pubblichiamo <a href={itCityUrl()}>guide per le città del Ticino</a> ({IT_CITIES.map((city) => city.name).join(", ")}) con chiese e indirizzi, comunità, appuntamenti dell&apos;anno e idee per un primo incontro, e un <a href={itMagazineUrl()}>magazine</a> con consigli pratici per single cristiani.</p>
-          <p>La piattaforma di incontri è <a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">christlich-verliebt.ch</a>, gestita dalla ICONY GmbH per tutta la Svizzera: i pulsanti «Iscriviti» di queste pagine portano lì. single-cristiani.ch è un progetto editoriale di Christian Mogge Internetdienstleistungen; i dati completi del responsabile si trovano nelle <a href={itPublicUrl("note-legali")}>note legali</a>.</p>
+          <p>La piattaforma di incontri è <a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">christlich-verliebt.ch</a>, gestita dalla ICONY GmbH per tutta la Svizzera: i pulsanti «Iscriviti» di queste pagine portano lì. single-cristiani.ch è un progetto editoriale indipendente dalla piattaforma; i dati del responsabile si trovano nelle <a href={itPublicUrl("note-legali")}>note legali</a>.</p>
         </section>
 
         <section>

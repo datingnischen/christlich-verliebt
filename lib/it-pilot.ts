@@ -74,10 +74,9 @@ export const IT_ABOUT = {
   lead: "single-cristiani.ch è una guida in italiano per chi, nella Svizzera italiana, cerca una relazione fondata sulla fede. Qui spieghiamo chi la cura, come lavoriamo e che rapporto abbiamo con la piattaforma christlich-verliebt.ch.",
 } as const;
 
-/** Herausgeber im JSON-LD: der Betreiber laut Note legali, nicht ICONY (die betreibt nur die Plattform). */
+/** Herausgeber im JSON-LD: die Marke single-cristiani.ch, ohne Betreibernamen (Christians Vorgabe 2026-10-20); nicht ICONY. */
 export const IT_PUBLISHER = {
   name: "single-cristiani.ch",
-  legalName: "Christian Mogge Internetdienstleistungen",
   logo: "/brand/single-cristiani-ch.svg",
 } as const;
 

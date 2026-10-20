@@ -22,8 +22,8 @@ test("Chi siamo: eigene indexierbare Seite, in Sitemap, Navigation und Fußzeile
   const shell = await read("components/it-pages.tsx");
   assert.equal((shell.match(/itPublicUrl\(IT_ABOUT_SLUG\)/g) ?? []).length, 2, "Chi siamo in Navigation und Fußzeile");
   const about = await read("components/it-about.tsx");
-  // Betreiber, Autor mit Vita und Profil-Links, Kontakt, Hinweis auf KI-Bilder und -Werkzeuge, Registrierung als deutsch gekennzeichnet.
-  assert.match(about, /Christian Mogge Internetdienstleistungen/);
+  // Kein Betreibername auf Chi siamo (nur in den Note legali); Autor mit Vita und Profil-Links, Kontakt, Hinweis auf KI-Bilder und -Werkzeuge, Registrierung als deutsch gekennzeichnet.
+  assert.doesNotMatch(about, /Mogge/);
   assert.match(about, /kontakt\[a\]m-perfect\.de/);
   assert.match(about, /generate con intelligenza artificiale/);
   assert.match(about, /strumenti di intelligenza artificiale/);
@@ -34,7 +34,8 @@ test("Chi siamo: eigene indexierbare Seite, in Sitemap, Navigation und Fußzeile
 
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {
   const page = await read("app/[market]/it/[[...slug]]/page.tsx");
-  assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, legalName: IT_PUBLISHER\.legalName/);
+  assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, url: itPublicUrl\(\)/);
+  assert.doesNotMatch(page, /legalName|Mogge/);
   assert.match(page, /"@type": "WebSite", "@id": websiteId/);
   assert.match(page, /author: \{ "@id": itAuthorId\(\) \}, publisher: \{ "@id": organizationId \}/);
   assert.match(page, /page\.kind === "about" \? "AboutPage" : "WebPage"/);
