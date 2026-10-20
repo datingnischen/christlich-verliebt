@@ -96,8 +96,8 @@
         },
         {
           "name": "Festa federale di ringraziamento – celebrazione ecumenica",
-          "when": "Terza domenica di settembre (2026: 20 settembre, Bellinzona)",
-          "text": "Celebrazione ecumenica cantonale; nel 2026 nella chiesa di San Giovanni a Bellinzona con predica del presidente della CLCCT."
+          "when": "Terza domenica di settembre",
+          "text": "Celebrazione ecumenica cantonale promossa dalla Comunità di lavoro delle Chiese cristiane nel Canton Ticino (CLCCT), ogni anno in una località diversa."
         },
         {
           "name": "Corsi di preparazione al matrimonio",
@@ -116,7 +116,6 @@
         }
       ],
       "dateSpots": [],
-      "transport": [],
       "faq": [
         {
           "question": "christlich-verliebt.ch è solo per cattolici?",
@@ -240,8 +239,7 @@
           "title": "Processioni di Mendrisio – Comunicato 2026",
           "url": "https://www.mendrisiottoturismo.ch/it/dam/jcr:1728ec16-5a38-4017-8e10-cb7d8acf2735/25.03.2026%20-%20Processioni%20edizione%202026.pdf"
         }
-      ],
-      "checked": "20 ottobre 2026"
+      ]
     }
   },
   "cities": [
@@ -358,14 +356,14 @@
             "name": "Chiesa di Santa Maria degli Angeli, Monte Tamaro",
             "denomination": "cattolica romana",
             "address": "Alpe Foppa (1.530 m), Monte Tamaro – telecabina da 6802 Rivera",
-            "text": "Chiesa in porfido progettata da Mario Botta e completata nel 1996, con interventi artistici di Enzo Cucchi e 22 litanie di padre Giovanni Pozzi. Sporge sul pendio con una vista ampia sul Luganese; a circa 15 minuti di treno da Lugano (Rivera-Bironico).",
+            "text": "Chiesa in porfido progettata da Mario Botta e completata nel 1996, con interventi artistici di Enzo Cucchi e 22 litanie di padre Giovanni Pozzi. Sporge sul pendio con una vista ampia sul Luganese; raggiungibile in treno da Lugano (stazione Rivera-Bironico).",
             "url": "https://www.montetamaro.ch/en/item/chiesa-santa-maria-degli-angeli"
           }
         ],
         "communities": [
           {
             "name": "Pastorale Giovanile Diocesana – #spazioGiovani",
-            "text": "Servizio diocesano con sede a Lugano (Via Cantonale 2A) che propone percorsi e incontri per giovani; la sezione #spazioGiovani è rivolta a chi ha dai 17/18 anni in su. Organizza anche la partecipazione alle Giornate Mondiali della Gioventù (la prossima è prevista a Seoul nell'agosto 2027) e proposte Taizé Ticino.",
+            "text": "Servizio diocesano con sede a Lugano (Via Cantonale 2A) che propone percorsi e incontri per giovani; la sezione #spazioGiovani è rivolta a chi ha dai 17/18 anni in su. Organizza anche la partecipazione alle Giornate Mondiali della Gioventù e proposte Taizé Ticino.",
             "url": "https://pastoralegiovanile.ch/category/x_eta/sg/"
           },
           {
@@ -395,7 +393,7 @@
           },
           {
             "name": "Opera Diocesana Pellegrinaggi",
-            "text": "Organizza i pellegrinaggi diocesani, tra cui quello annuale a Lourdes (nel 2026 dal 16 al 22 agosto).",
+            "text": "Organizza i pellegrinaggi diocesani, tra cui quello annuale a Lourdes in estate.",
             "url": "http://www.odplugano.ch/"
           }
         ],
@@ -407,7 +405,7 @@
           },
           {
             "name": "Giornata diocesana di inizio anno pastorale al Monte Tamaro",
-            "when": "Settembre (nel 2026: sabato 12 settembre)",
+            "when": "Settembre, all'inizio dell'anno pastorale",
             "text": "Giornata aperta a famiglie, giovani, singoli e gruppi con Angelus, attività d'incontro e Messa presieduta dal vescovo presso la chiesa di Mario Botta all'Alpe Foppa; promossa dalla Pastorale Giovanile e dalla Pastorale Familiare."
           },
           {
@@ -418,7 +416,7 @@
           {
             "name": "Natale in Piazza",
             "when": "Da fine novembre al 6 gennaio",
-            "text": "Mercatino natalizio con oltre 60 bancarelle, accensione dell'albero in Piazza della Riforma e pista di pattinaggio al Parco Ciani (edizione 2025/26: 27 novembre – 6 gennaio)."
+            "text": "Mercatino natalizio con oltre 60 bancarelle, accensione dell'albero in Piazza della Riforma e pista di pattinaggio al Parco Ciani."
           }
         ],
         "dateSpots": [
@@ -451,38 +449,6 @@
             "name": "Monte Tamaro e la chiesa di Mario Botta",
             "where": "Telecabina da Rivera fino all'Alpe Foppa (1'530 m)",
             "text": "Gita di mezza giornata: architettura sacra contemporanea, vista panoramica e ristorante all'Alpe Foppa. Verificare la stagione della telecabina sul sito ufficiale."
-          }
-        ],
-        "transport": [
-          {
-            "to": "Bellinzona",
-            "minutes": "14–18",
-            "text": "Ca. 15 minuti con IC/EC senza cambio attraverso la galleria di base del Ceneri; ca. 18 minuti con TILO S10."
-          },
-          {
-            "to": "Locarno",
-            "minutes": "33",
-            "text": "Ca. 33 minuti con il TILO RE80 diretto."
-          },
-          {
-            "to": "Mendrisio",
-            "minutes": "16–21",
-            "text": "Ca. 16 minuti con RE80, ca. 21 minuti con S10."
-          },
-          {
-            "to": "Chiasso",
-            "minutes": "24–34",
-            "text": "Ca. 24 minuti con RE80 o EC, fino a ca. 34 minuti con S10."
-          },
-          {
-            "to": "Milano Centrale",
-            "minutes": "75",
-            "text": "Ca. 1 ora e 15 minuti con il TILO RE80 diretto."
-          },
-          {
-            "to": "Zurigo HB",
-            "minutes": "113–117",
-            "text": "Poco meno di 2 ore con IC/EC diretto attraverso il San Gottardo."
           }
         ],
         "faq": [
@@ -625,15 +591,10 @@
             "url": "https://www.diocesilugano.ch/"
           },
           {
-            "title": "Orari FFS via transport.opendata.ch (consultati il 20.10.2026 per mercoledì 21.10.2026, partenza ca. 09:00)",
-            "url": "https://transport.opendata.ch/"
-          },
-          {
             "title": "Wikipedia – Lugano",
             "url": "https://it.wikipedia.org/wiki/Lugano"
           }
-        ],
-        "checked": "20 ottobre 2026"
+        ]
       }
     },
     {
@@ -660,7 +621,7 @@
         {
           "heading": "Essere single a Bellinzona",
           "icon": "people",
-          "html": "<p>Nel distretto di Bellinzona il 39,0 % delle economie domestiche è formato da una sola persona, meno della media cantonale (42,1 %), mentre il 45,6 % della popolazione è celibe o nubile (2024, tutte le età). Molti giovani adulti vivono quindi ancora in famiglia o in coppia: conviene allargare la ricerca.</p><p>Bellinzona è il nodo ferroviario del Ticino: Lugano è a 14 minuti grazie alla galleria di base del Ceneri, Locarno a circa 23. Con la ricerca per codice postale 6500 su christlich-verliebt.ch trovi profili anche nei dintorni.</p>"
+          "html": "<p>Nel distretto di Bellinzona il 39,0 % delle economie domestiche è formato da una sola persona, meno della media cantonale (42,1 %), mentre il 45,6 % della popolazione è celibe o nubile (2024, tutte le età). Molti giovani adulti vivono quindi ancora in famiglia o in coppia: conviene allargare la ricerca.</p><p>Bellinzona è il nodo ferroviario del Ticino: grazie alla galleria di base del Ceneri Lugano e Locarno sono vicine. Con la ricerca per codice postale 6500 su christlich-verliebt.ch trovi profili anche nei dintorni.</p>"
         },
         {
           "heading": "Fede, musica e storia",
@@ -747,7 +708,7 @@
           },
           {
             "name": "Pastorale Giovanile della Diocesi di Lugano",
-            "text": "Servizio diocesano per ragazzi e giovani: apre l'anno pastorale con una giornata diocesana (2026 al Monte Tamaro) e accompagna verso la GMG di Seoul 2027.",
+            "text": "Servizio diocesano per ragazzi e giovani: apre l'anno pastorale con una giornata diocesana e accompagna i giovani alle Giornate Mondiali della Gioventù.",
             "url": "https://www.pastoralegiovanile.ch"
           },
           {
@@ -769,7 +730,7 @@
         "events": [
           {
             "name": "Rabadan – Carnevale di Bellinzona",
-            "when": "febbraio, nei giorni prima delle Ceneri (2027: 4–9 febbraio secondo Svizzera Turismo)",
+            "when": "febbraio, nei giorni prima del Mercoledì delle Ceneri",
             "text": "Il grande carnevale cittadino, sei giorni e notti nel centro storico."
           },
           {
@@ -823,28 +784,6 @@
             "name": "Parco della Golena",
             "where": "Area Golena, lungo il fiume Ticino, 6500 Bellinzona",
             "text": "Area naturale a pochi passi dal centro con sentieri, aree picnic e spiaggia fluviale; il Ponte della Torretta collega a Carasso."
-          }
-        ],
-        "transport": [
-          {
-            "to": "Lugano",
-            "minutes": "14",
-            "text": "Diretto con EC/IC in 14 minuti attraverso la galleria di base del Ceneri; con il TILO S10 circa 19 minuti."
-          },
-          {
-            "to": "Locarno",
-            "minutes": "23",
-            "text": "Diretto con IR in 23 minuti oppure TILO S20 in 26 minuti."
-          },
-          {
-            "to": "Mendrisio",
-            "minutes": "41",
-            "text": "Diretto con TILO S10 in 41 minuti; con cambio a Lugano (IC + RE80) circa 34 minuti."
-          },
-          {
-            "to": "Chiasso",
-            "minutes": "41",
-            "text": "Diretto con EC in 41 minuti; con TILO S10 circa 50 minuti."
           }
         ],
         "faq": [
@@ -965,13 +904,8 @@
           {
             "title": "Diocesi di Lugano – Sante Messe",
             "url": "https://www.diocesilugano.ch/sante-messe/"
-          },
-          {
-            "title": "transport.opendata.ch (dati orario FFS/TILO), consultato il 20.10.2026 per il 21.10.2026 ore 9–10",
-            "url": "https://transport.opendata.ch/"
           }
-        ],
-        "checked": "20 ottobre 2026"
+        ]
       }
     },
     {
@@ -1087,7 +1021,7 @@
         "communities": [
           {
             "name": "Parrocchia di Locarno – Gruppo Giovani e oratorio",
-            "text": "Oratorio dei giovani il venerdì sera al Centro Sacra Famiglia (dalla IV elementare in su), oratorio dei bambini il mercoledì, adorazione eucaristica settimanale e pellegrinaggi parrocchiali (2026: Assisi).",
+            "text": "Oratorio dei giovani il venerdì sera al Centro Sacra Famiglia (dalla IV elementare in su), oratorio dei bambini il mercoledì, adorazione eucaristica settimanale e pellegrinaggi parrocchiali.",
             "url": "https://www.parrocchialocarno.ch"
           },
           {
@@ -1107,7 +1041,7 @@
           },
           {
             "name": "Pastorale Giovanile della Diocesi di Lugano",
-            "text": "Proposte diocesane per ragazzi e giovani durante tutto l'anno pastorale, verso la GMG di Seoul 2027.",
+            "text": "Proposte diocesane per ragazzi e giovani durante tutto l'anno pastorale, compresa la partecipazione alle Giornate Mondiali della Gioventù.",
             "url": "https://www.pastoralegiovanile.ch"
           }
         ],
@@ -1125,16 +1059,16 @@
           {
             "name": "Novena e solennità della Madonna del Sasso",
             "when": "fine agosto – inizio settembre; solennità il 1° settembre",
-            "text": "Nel 2026 la novena va dal 28 agosto al 5 settembre, con fiaccolata dei giovani dalla chiesa dell'Annunciata al santuario."
+            "text": "La novena precede la solennità; il programma con le celebrazioni è pubblicato ogni anno dal santuario."
           },
           {
             "name": "Locarno Film Festival",
-            "when": "agosto (2026: 5–15 agosto)",
+            "when": "agosto",
             "text": "Proiezioni serali all'aperto in Piazza Grande su uno degli schermi più grandi del mondo."
           },
           {
             "name": "classicAscona (ex Settimane Musicali di Ascona)",
-            "when": "settembre–ottobre (2026: 18 settembre – 10 ottobre)",
+            "when": "settembre–ottobre",
             "text": "Festival di musica classica con concerti nella chiesa di San Francesco a Locarno e nella chiesa del Collegio Papio ad Ascona."
           },
           {
@@ -1173,28 +1107,6 @@
             "name": "Concerto a San Francesco",
             "where": "Piazza San Francesco, 6600 Locarno",
             "text": "Durante classicAscona la chiesa ospita concerti serali: un'uscita elegante e senza pressione per un secondo incontro."
-          }
-        ],
-        "transport": [
-          {
-            "to": "Bellinzona",
-            "minutes": "22",
-            "text": "Diretto con IR in 22 minuti oppure TILO S20 in 26 minuti."
-          },
-          {
-            "to": "Lugano",
-            "minutes": "32",
-            "text": "Diretto con TILO RE80 in 32 minuti, ogni mezz'ora."
-          },
-          {
-            "to": "Mendrisio",
-            "minutes": "49",
-            "text": "Diretto con TILO RE80 in 49–56 minuti."
-          },
-          {
-            "to": "Chiasso",
-            "minutes": "57",
-            "text": "Diretto con TILO RE80 in 57–64 minuti."
           }
         ],
         "faq": [
@@ -1315,13 +1227,8 @@
           {
             "title": "Diocesi di Lugano – Sante Messe",
             "url": "https://www.diocesilugano.ch/sante-messe/"
-          },
-          {
-            "title": "transport.opendata.ch (dati orario FFS/TILO), consultato il 20.10.2026 per il 21.10.2026 ore 9–12",
-            "url": "https://transport.opendata.ch/"
           }
-        ],
-        "checked": "20 ottobre 2026"
+        ]
       }
     },
     {
@@ -1353,7 +1260,7 @@
         {
           "heading": "Essere single nel Mendrisiotto",
           "icon": "people",
-          "html": "<p>Nel distretto di Mendrisio il 43,1 % delle economie domestiche è formato da una sola persona e il 43,4 % della popolazione è celibe o nubile (2024, tutte le età). Con Lugano a 16 minuti e Chiasso a 8 minuti di treno, il Mendrisiotto si vive come un'unica area: la ricerca per codice postale 6850 su christlich-verliebt.ch comprende anche i dintorni.</p>"
+          "html": "<p>Nel distretto di Mendrisio il 43,1 % delle economie domestiche è formato da una sola persona e il 43,4 % della popolazione è celibe o nubile (2024, tutte le età). Con Lugano e Chiasso a pochi minuti di treno, il Mendrisiotto si vive come un'unica area: la ricerca per codice postale 6850 su christlich-verliebt.ch comprende anche i dintorni.</p>"
         }
       ],
       "guide": {
@@ -1474,7 +1381,7 @@
           },
           {
             "name": "Sagra del Borgo (Sagra dell'uva)",
-            "when": "Ultimo fine settimana di settembre (2026: 25–27 settembre)",
+            "when": "Ultimo fine settimana di settembre",
             "text": "Festa della vendemmia nel nucleo storico di Mendrisio."
           },
           {
@@ -1513,28 +1420,6 @@
             "name": "Sentieri tematici tra i vigneti",
             "where": "Mendrisiotto",
             "text": "Tre percorsi ad anello di circa 4 ore con 30 pannelli sul Merlot, creati per il centenario del vitigno; la regione ha la maggiore densità di vigneti del cantone."
-          }
-        ],
-        "transport": [
-          {
-            "to": "Lugano",
-            "minutes": "16–20",
-            "text": "Treno diretto RE80 (circa 16–17 min) o TILO S10 (circa 20 min)."
-          },
-          {
-            "to": "Chiasso",
-            "minutes": "8–10",
-            "text": "Treno diretto RE80, S10 o S40."
-          },
-          {
-            "to": "Bellinzona",
-            "minutes": "35–39",
-            "text": "TILO S10 diretta (circa 39 min) oppure RE80 con cambio (circa 35 min)."
-          },
-          {
-            "to": "Locarno",
-            "minutes": "50–57",
-            "text": "RE80 diretto."
           }
         ],
         "faq": [
@@ -1635,13 +1520,8 @@
           {
             "title": "Ticino Turismo – Itinerari tra i vigneti",
             "url": "https://www.ticino.ch/it/commons/details/Itinerari-tra-i-vigneti/95883.html"
-          },
-          {
-            "title": "Orari FFS via transport.opendata.ch (giorno feriale 21.10.2026, ore 9)",
-            "url": "https://transport.opendata.ch/"
           }
-        ],
-        "checked": "20 ottobre 2026"
+        ]
       }
     },
     {
@@ -1668,7 +1548,7 @@
         {
           "heading": "Una città di confine",
           "icon": "people",
-          "html": "<p>Pedrinate e Seseglio sono l'abitato più a sud della Svizzera. Da Chiasso Como San Giovanni è a circa 20 minuti di treno, Lugano a 24: molte persone qui lavorano, studiano o frequentano la chiesa oltre i confini comunali. Nel distretto il 43,1 % delle economie domestiche è formato da una sola persona (2024).</p><p>christlich-verliebt.ch resta una piattaforma svizzera: con la ricerca per codice postale 6830 trovi single cristiani a Chiasso, nel Mendrisiotto e nel resto del Paese.</p>"
+          "html": "<p>Pedrinate e Seseglio sono l'abitato più a sud della Svizzera. Como è appena oltre il confine e Lugano è vicina: molte persone qui lavorano, studiano o frequentano la chiesa oltre i confini comunali. Nel distretto il 43,1 % delle economie domestiche è formato da una sola persona (2024).</p><p>christlich-verliebt.ch resta una piattaforma svizzera: con la ricerca per codice postale 6830 trovi single cristiani a Chiasso, nel Mendrisiotto e nel resto del Paese.</p>"
         },
         {
           "heading": "Natura per conoscersi",
@@ -1758,35 +1638,35 @@
           },
           {
             "name": "Pastorale Giovanile Diocesana – #spazioGiovani",
-            "text": "Servizio della Diocesi di Lugano con proposte per giovani dai 17/18 anni, preparazione alle Giornate Mondiali della Gioventù (Seoul, agosto 2027) e incontri Taizé Ticino. Sede a Lugano, a circa 25 minuti di treno da Chiasso.",
+            "text": "Servizio della Diocesi di Lugano con proposte per giovani dai 17/18 anni, preparazione alle Giornate Mondiali della Gioventù e incontri Taizé Ticino. Sede a Lugano.",
             "url": "https://pastoralegiovanile.ch/category/x_eta/sg/"
           },
           {
             "name": "Opera Diocesana Pellegrinaggi",
-            "text": "Organizza i pellegrinaggi della Diocesi di Lugano, tra cui quello annuale a Lourdes (nel 2026 dal 16 al 22 agosto).",
+            "text": "Organizza i pellegrinaggi della Diocesi di Lugano, tra cui quello annuale a Lourdes in estate.",
             "url": "http://www.odplugano.ch/"
           }
         ],
         "events": [
           {
             "name": "Carnevale della Libera Repubblica di Nebiopoli",
-            "when": "Settimana di Carnevale, tra fine gennaio e febbraio (2025: 12–16 febbraio)",
+            "when": "Settimana di Carnevale, tra fine gennaio e febbraio",
             "text": "Durante il Carnevale Chiasso diventa la 'Libera Repubblica di Nebiopoli', con un Primo Ministro che riceve le chiavi dal sindaco: è l'unico carnevale ticinese senza re. Il corteo attira decine di migliaia di persone."
           },
           {
             "name": "Processioni della Settimana Santa a Mendrisio",
             "when": "Giovedì e Venerdì Santo, la sera",
-            "text": "A 7 minuti di treno da Chiasso: processioni attestate dalla seconda metà del Seicento, con il solenne 'Entierro' del Venerdì Santo e oltre settecento partecipanti in costume. Dal 2019 sono iscritte nel patrimonio culturale immateriale dell'UNESCO."
+            "text": "A pochi minuti da Chiasso: processioni attestate dalla seconda metà del Seicento, con il solenne 'Entierro' del Venerdì Santo e oltre settecento partecipanti in costume. Dal 2019 sono iscritte nel patrimonio culturale immateriale dell'UNESCO."
           },
           {
             "name": "Festival di cultura e musica jazz",
-            "when": "Febbraio/marzo (2026: 27ª edizione, 12–14 marzo)",
+            "when": "Febbraio/marzo",
             "text": "Il Cinema Teatro di Chiasso si trasforma in jazz club per tre o quattro serate, in collaborazione con RSI Rete Due."
           },
           {
             "name": "Festate – Festival di culture e musiche dal mondo",
-            "when": "Metà giugno, due serate (2026: 12–13 giugno)",
-            "text": "Festival all'aperto con palco principale in Piazza Bernasconi, davanti al Palazzo municipale; giunto nel 2026 alla 34ª edizione."
+            "when": "Metà giugno, due serate",
+            "text": "Festival all'aperto con palco principale in Piazza Bernasconi, davanti al Palazzo municipale."
           }
         ],
         "dateSpots": [
@@ -1821,38 +1701,6 @@
             "text": "Escursione ad anello lungo il crinale di confine verso il santuario del Bisbino (ca. 1'325 m, già in territorio italiano), con vista sul Lago di Como. Adatta a chi ama camminare."
           }
         ],
-        "transport": [
-          {
-            "to": "Mendrisio",
-            "minutes": "7–10",
-            "text": "Ca. 7 minuti con TILO RE80, 8–10 minuti con S10/S40."
-          },
-          {
-            "to": "Lugano",
-            "minutes": "24–34",
-            "text": "Ca. 24 minuti con RE80 o EC, fino a ca. 34 minuti con S10."
-          },
-          {
-            "to": "Bellinzona",
-            "minutes": "41–53",
-            "text": "Ca. 41 minuti con EC diretto, ca. 50 minuti con S10."
-          },
-          {
-            "to": "Locarno",
-            "minutes": "57–64",
-            "text": "Circa un'ora con il TILO RE80 diretto."
-          },
-          {
-            "to": "Como San Giovanni",
-            "minutes": "20",
-            "text": "Ca. 20 minuti con RE80 oltre il confine."
-          },
-          {
-            "to": "Milano Centrale",
-            "minutes": "46",
-            "text": "Meno di un'ora con il TILO RE80 diretto."
-          }
-        ],
         "faq": [
           {
             "question": "Quali sono le chiese cattoliche di Chiasso?",
@@ -1860,15 +1708,11 @@
           },
           {
             "question": "Dove trovano una comunità i cristiani evangelici a Chiasso?",
-            "answer": "La Chiesa evangelica riformata nel Sottoceneri ha un luogo di culto nella vicina Vacallo (Via al Colle 10), dove si tiene uno studio biblico mensile. Culti e cori più grandi si trovano a Lugano, a circa 25 minuti di treno."
+            "answer": "La Chiesa evangelica riformata nel Sottoceneri ha un luogo di culto nella vicina Vacallo (Via al Colle 10), dove si tiene uno studio biblico mensile. Culti e cori più grandi si trovano a Lugano."
           },
           {
             "question": "Che cosa si può fare a Chiasso per un primo incontro tranquillo?",
             "answer": "Una mostra al m.a.x. museo, uno spettacolo al Cinema Teatro, il sentiero didattico del Parco del Penz o la passeggiata fino al punto più a sud della Svizzera a Pedrinate. Chi ama la natura può raggiungere le Gole della Breggia a Morbio Inferiore."
-          },
-          {
-            "question": "Chiasso è ben collegata con il resto del Ticino?",
-            "answer": "Sì: Mendrisio dista circa 7 minuti di treno, Lugano circa 25 minuti, Bellinzona circa 40 minuti e Locarno circa un'ora. Como si raggiunge in circa 20 minuti e Milano in meno di un'ora."
           }
         ],
         "sources": [
@@ -1983,13 +1827,8 @@
           {
             "title": "Mendrisiotto Turismo – Sentiero del Monte Bisbino",
             "url": "https://mendrisiottoturismo.ch/en/itineraries/details/Sentiero-del-Monte-Bisbino/148635.html"
-          },
-          {
-            "title": "Orari FFS via transport.opendata.ch (consultati il 20.10.2026 per mercoledì 21.10.2026, partenza ca. 09:00)",
-            "url": "https://transport.opendata.ch/"
           }
-        ],
-        "checked": "20 ottobre 2026"
+        ]
       }
     }
   ]

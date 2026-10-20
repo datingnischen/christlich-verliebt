@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Hero } from "@/components/it-pages";
-import { IT_CITIES, IT_HOME, IT_PLATFORM, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
+import { IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
 import { IT_ARTICLES, IT_MAGAZINE, formatItDate, type ItArticle } from "@/lib/it-magazine";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./city-page.module.css";
@@ -80,8 +80,8 @@ export function ItArticlePage({ article }: { article: ItArticle }) {
       </div>
       <aside className={hub.cta}>
         <h2>Single cristiani nella tua zona</h2>
-        <p>Registrazione, profili e messaggi si trovano sulla piattaforma svizzera christlich-verliebt.ch.</p>
-        <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl}>Iscriviti gratis</a>
+        <p>Registrazione, profili e messaggi si trovano sulla piattaforma svizzera christlich-verliebt.ch{IT_PLATFORM_ITALIAN ? "" : ", per ora in lingua tedesca: la versione italiana è in costruzione"}.</p>
+        <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">Iscriviti gratis</a>
       </aside>
       {article.sources.length ? <details className={hub.sources}>
         <summary>Fonti e trasparenza</summary>

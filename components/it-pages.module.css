@@ -242,64 +242,6 @@
   height: 16px;
 }
 
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.trains {
-  position: sticky;
-  top: 100px;
-  padding: 24px;
-  border-radius: 24px;
-  background: var(--forest-deep);
-  color: #fff;
-}
-
-.trains h3 {
-  margin-bottom: 14px;
-  color: #fff;
-}
-
-.trains ol {
-  display: grid;
-  gap: 10px;
-  margin: 0 0 14px;
-  padding: 0;
-  list-style: none;
-}
-
-.trains li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2px 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.trains b {
-  color: #ff9c9b;
-  font: 800 18px Georgia, serif;
-}
-
-.trains small {
-  grid-column: 1 / -1;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-.trains p {
-  color: rgba(255, 255, 255, 0.8);
-  font: 13px/1.5 Arial, sans-serif;
-}
-
-.trains a {
-  color: #fff;
-}
-
 /* Quellen: zugeklappt, 13 px, am Seitenende */
 .sources {
   max-width: 1192px;
@@ -346,12 +288,8 @@
 }
 
 @media (max-width: 960px) {
-  .split {
+  .listTwo {
     grid-template-columns: 1fr;
-  }
-
-  .trains {
-    position: static;
   }
 }
 
@@ -377,5 +315,35 @@
 
   .mapCard {
     display: none;
+  }
+}
+
+/* Hinweis: italienische Plattform im Aufbau, Registrierung auf Deutsch */
+.notice {
+  margin: 0;
+  padding: 12px 24px;
+  background: var(--partner-soft);
+  border-bottom: 1px solid #f3c9c8;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.notice a {
+  color: var(--partner-dark);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.listTwo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  .notice {
+    padding: 10px 16px;
+    font-size: 14px;
+    text-align: left;
   }
 }

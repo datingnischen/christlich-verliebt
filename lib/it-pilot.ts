@@ -11,7 +11,6 @@ export type ItPlace = { name: string; denomination: string; address: string; tex
 export type ItCommunity = { name: string; text: string; url: string };
 export type ItEvent = { name: string; when: string; text: string };
 export type ItSpot = { name: string; where: string; text: string };
-export type ItTrain = { to: string; minutes: string; text: string };
 export type ItFaq = { question: string; answer: string };
 export type ItSource = { title: string; url: string };
 /** Stadtführer mit belegten Angaben (Kirchen, Termine, Treffpunkte, Bahn); Quellen erscheinen eingeklappt am Seitenende. */
@@ -21,15 +20,23 @@ export type ItGuide = {
   communities: ItCommunity[];
   events: ItEvent[];
   dateSpots: ItSpot[];
-  transport: ItTrain[];
   faq: ItFaq[];
   sources: ItSource[];
-  checked: string;
 };
 export type ItCity = Omit<(typeof data.cities)[number], "sections" | "guide"> & { sections: ItSection[]; guide: ItGuide };
 
-/** Erst indexieren, wenn ICONY die italienische Registrierung ausliefert. Bis dahin noindex und nicht in der Sitemap. */
-export const IT_PILOT_INDEXABLE = false;
+/**
+ * Indexierbar seit 2026-10-20 (Christians Entscheidung): Die Ratgeberseiten stehen für sich, die Registrierung
+ * läuft bis zur italienischen ICONY-Oberfläche auf Deutsch (Hinweis über IT_PLATFORM_ITALIAN). false = noindex + keine Sitemap.
+ */
+export const IT_PILOT_INDEXABLE = true;
+
+/**
+ * Liefert ICONY Registrierung und Profile auf Italienisch? Solange false, zeigt jede Seite den Hinweis, dass die
+ * Plattform auf Italienisch im Aufbau und auf Deutsch auf christlich-verliebt.ch verfügbar ist. Mit der
+ * italienischen Oberfläche auf true setzen und die Adressen in IT_PLATFORM umstellen.
+ */
+export const IT_PLATFORM_ITALIAN = false;
 
 /**
  * Registrierung, Login und Suche bleiben auf der deutschsprachigen Schweizer Plattform, bis ICONY die

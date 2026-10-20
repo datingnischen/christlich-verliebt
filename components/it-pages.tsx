@@ -3,7 +3,7 @@ import { CityIcon } from "@/components/city-icons";
 import { RegionShape } from "@/components/city-map";
 import { marketMap, project, regionBox } from "@/lib/city-map";
 import { PreviewLinks } from "@/components/preview-links";
-import { IT_CITIES, IT_HOME, IT_PLATFORM, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
+import { IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
 import { publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import shell from "./site-shell.module.css";
@@ -27,23 +27,27 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         </nav>
         <div className={shell.actions}>
           <a className={shell.login} href={IT_PLATFORM.loginUrl}>Accedi</a>
-          <a className={shell.primary} href={IT_PLATFORM.registrationUrl}>Iscriviti gratis</a>
+          <a className={shell.primary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">Iscriviti gratis</a>
         </div>
       </div>
     </header>
+    {IT_PLATFORM_ITALIAN ? null : <p className={itStyles.notice} role="note">
+      <strong>La piattaforma in italiano è in costruzione.</strong> Registrazione, profili e messaggi sono già disponibili in tedesco su{" "}
+      <a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">christlich-verliebt.ch</a>.
+    </p>}
     {children}
     <footer className={shell.footer}>
       <div className={shell.footerCta}>
         <div><span>La fede unisce</span><h2>Trova una persona che condivide i tuoi valori.</h2></div>
-        <a href={IT_PLATFORM.registrationUrl}>Iscriviti gratis ora</a>
+        <a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">Iscriviti gratis ora</a>
       </div>
       <div className={shell.footerGrid}>
         <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Incontri in Ticino</a><a href={itMagazineUrl()}>Magazine</a></section>
-        <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl}>Registrazione gratuita</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
+        <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Registrazione gratuita" : "Registrazione gratuita (in tedesco)"}</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
         <section><h3>Lingua</h3><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch</a><a href={itPublicUrl()} hrefLang="it-CH">Italiano</a></section>
         <section><h3>Servizio</h3><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
       </div>
-      <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch.</p>
+      <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch{IT_PLATFORM_ITALIAN ? "" : ", per ora in lingua tedesca"}.</p>
     </footer>
   </div>;
 }
@@ -108,29 +112,16 @@ function Events({ guide, heading }: { guide: ItGuide; heading: string }) {
 }
 
 function DateSpots({ guide, city }: { guide: ItGuide; city: string }) {
-  if (!guide.dateSpots.length && !guide.transport.length) return null;
-  return <section className={`${itStyles.block} ${itStyles.split}`} aria-labelledby="primo-incontro">
-    <div>
-      <p className={styles.eyebrow}>Idee concrete</p>
-      <h2 id="primo-incontro">Dove incontrarsi a {city}</h2>
-      <ul className={itStyles.list}>
-        {guide.dateSpots.map((spot) => <li key={spot.name}>
-          <CityIcon name="cup" />
-          <div><h3>{spot.name}</h3><p className={itStyles.address}>{spot.where}</p><p>{spot.text}</p></div>
-        </li>)}
-      </ul>
-    </div>
-    {guide.transport.length ? <aside className={itStyles.trains} aria-labelledby="in-treno">
-      <h3 id="in-treno">In treno da {city}</h3>
-      <ol>
-        {guide.transport.map((train) => <li key={train.to}>
-          <span className={styles.strongText}>{train.to}</span>
-          <b>{train.minutes} min</b>
-          <small>{train.text}</small>
-        </li>)}
-      </ol>
-      <p>Tempi indicativi del collegamento più rapido; orari attuali su <a href="https://www.sbb.ch/it" rel="noopener" target="_blank">sbb.ch</a>.</p>
-    </aside> : null}
+  if (!guide.dateSpots.length) return null;
+  return <section className={itStyles.block} aria-labelledby="primo-incontro">
+    <p className={styles.eyebrow}>Idee concrete</p>
+    <h2 id="primo-incontro">Dove incontrarsi a {city}</h2>
+    <ul className={`${itStyles.list} ${itStyles.listTwo}`}>
+      {guide.dateSpots.map((spot) => <li key={spot.name}>
+        <CityIcon name="cup" />
+        <div><h3>{spot.name}</h3><p className={itStyles.address}>{spot.where}</p><p>{spot.text}</p></div>
+      </li>)}
+    </ul>
   </section>;
 }
 
@@ -147,7 +138,7 @@ function Sources({ guide }: { guide: ItGuide }) {
   if (!guide.sources.length) return null;
   return <details className={itStyles.sources}>
     <summary>Fonti e verifica dei dati ({guide.sources.length})</summary>
-    <p>Dati verificati il {guide.checked}. Le immagini in alto sono illustrazioni generate con IA.</p>
+    <p>Le immagini in alto sono illustrazioni generate con IA.</p>
     <ol>{guide.sources.map((source) => <li key={source.url}><a href={source.url} rel="noopener" target="_blank">{source.title}</a></li>)}</ol>
   </details>;
 }
@@ -158,7 +149,7 @@ function Sections({ sections, kicker, title }: { sections: ItSection[]; kicker: 
       <p className={styles.eyebrow}>{kicker}</p>
       <h2>{title}</h2>
       <ol>{sections.map((section, index) => <li key={section.heading}><a href={`#capitolo-${index + 1}`}><CityIcon name={section.icon} /><span>{section.heading}</span></a></li>)}</ol>
-      <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl}>Iscriviti gratis</a>
+      <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">Iscriviti gratis</a>
     </aside>
     <div className={styles.sections}>
       {sections.map((section, index) => <article key={section.heading} id={`capitolo-${index + 1}`} className={styles.card}>
@@ -242,7 +233,7 @@ export function Hero({ crumbs, badge, title, lead, primary, image, imageAlt, act
         <h1>{title}</h1>
         <p className={styles.heroLead}>{lead}</p>
         <div className={styles.heroActions}>
-          <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl}>{primary}</a>
+          <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{primary}</a>
           <a className={styles.buttonGhost} href="#guida">Leggi la guida</a>
         </div>
       </div>
@@ -277,7 +268,7 @@ export function ItCityPage({ city }: { city: ItCity }) {
         <p className={styles.live}><i aria-hidden="true" />Attivi vicino a te</p>
         <h2>Chi cerca ora vicino a {city.name}</h2>
         <p>Single cristiani da {city.name} e dintorni per cui fede, valori comuni e una relazione sincera sono importanti.</p>
-        <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl}>Iscriviti e conosci</a>
+        <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Iscriviti e conosci" : "Iscriviti (sito in tedesco)"}</a>
       </div>
       <div className={styles.widgetFrame}>
         <iframe

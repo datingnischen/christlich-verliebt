@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { NextRequest } from "next/server.js";
 import { proxy } from "../proxy.ts";
-import { IT_CITIES, IT_HOME, IT_PILOT_INDEXABLE, IT_PLATFORM, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities } from "../lib/it-pilot.ts";
+import { IT_CITIES, IT_HOME, IT_PILOT_INDEXABLE, IT_PLATFORM, IT_PLATFORM_ITALIAN, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities } from "../lib/it-pilot.ts";
 import { IT_ARTICLES, IT_MAGAZINE } from "../lib/it-magazine.ts";
 
 test("Italienische Variante: Vorschau /ch/it/ und single-cristiani.ch landen auf derselben Route", () => {
@@ -41,8 +41,14 @@ test("SEO-Texte: Titel höchstens 60, Descriptions 110–155 Zeichen, keine leer
   }
 });
 
-test("Pilot bleibt noindex, bis ICONY die italienische Registrierung ausliefert", async () => {
-  assert.equal(IT_PILOT_INDEXABLE, false);
+test("Indexierbar, Registrierung bis zur italienischen ICONY-Oberfläche mit Hinweis auf Deutsch", async () => {
+  assert.equal(IT_PILOT_INDEXABLE, true);
+  assert.equal(IT_PLATFORM_ITALIAN, false);
+  const pages = await readFile(new URL("../components/it-pages.tsx", import.meta.url), "utf8");
+  assert.match(pages, /IT_PLATFORM_ITALIAN \? null : <p className=\{itStyles\.notice\} role="note">/);
+  assert.match(pages, /La piattaforma in italiano è in costruzione/);
+  // Jeder Registrierungslink kündigt die deutschsprachige Zielseite an.
+  assert.doesNotMatch(pages, /href=\{IT_PLATFORM\.registrationUrl\}(?! hrefLang="de-CH")/);
   const page = await readFile(new URL("../app/[market]/it/[[...slug]]/page.tsx", import.meta.url), "utf8");
   assert.match(page, /robots: \{ index: IT_PILOT_INDEXABLE && page\.kind !== "legal", follow: true \}/);
   assert.match(page, /market !== "ch"/);
@@ -62,11 +68,16 @@ test("single-cristiani.ch: Schrägstrich, internes Präfix und alte /it/-Adresse
   assert.match(proxy(host("https://christlich-verliebt.ch/partnersuche/bern/")).headers.get("x-middleware-rewrite") ?? "", /\/ch\/partnersuche\/bern\/$/);
 });
 
-test("single-cristiani.ch: robots erlaubt das Crawlen, Sitemap erst nach Freigabe", async () => {
+test("single-cristiani.ch: robots erlaubt das Crawlen und nennt die Sitemap mit allen Seiten", async () => {
   const robots = proxy(new NextRequest("https://single-cristiani.ch/robots.txt", { headers: { host: "single-cristiani.ch" } }));
-  assert.match(await robots.text(), /User-agent: \*\nAllow: \//);
+  const robotsText = await robots.text();
+  assert.match(robotsText, /User-agent: \*\nAllow: \//);
+  assert.match(robotsText, /Sitemap: https:\/\/single-cristiani\.ch\/sitemap\.xml/);
   const sitemap = proxy(new NextRequest("https://single-cristiani.ch/sitemap.xml", { headers: { host: "single-cristiani.ch" } }));
-  assert.equal(sitemap.status, 404);
+  assert.equal(sitemap.status, 200);
+  const xml = await sitemap.text();
+  for (const city of IT_CITIES) assert.match(xml, new RegExp(`<loc>https://single-cristiani\\.ch/incontri/${city.slug}/</loc>`));
+  assert.doesNotMatch(xml, /note-legali|privacy/);
 });
 
 test("Eigene Rechtstexte: Betreiber, Vercel Web Analytics und ICONY-Profilfenster sind beschrieben", async () => {
@@ -100,7 +111,7 @@ test("Magazin: Artikel mit Datum, Autor, Quellen und Links nur auf bestehende St
   assert.match(hubs, /Aggiornato il/);
 });
 
-test("Stadtführer mit belegten Angaben: Kennzahlen, Kirchen mit Adresse, Termine, Treffpunkte, Bahn, FAQ und Quellen", async () => {
+test("Stadtführer mit belegten Angaben: Kennzahlen, Kirchen mit Adresse, Termine, Treffpunkte, FAQ und Quellen", async () => {
   for (const city of IT_CITIES) {
     const { guide } = city;
     assert.ok(guide.facts.length >= 4, `${city.slug}: Kennzahlen`);
@@ -113,12 +124,13 @@ test("Stadtführer mit belegten Angaben: Kennzahlen, Kirchen mit Adresse, Termin
     }
     assert.ok(guide.events.length >= 3, `${city.slug}: Termine`);
     assert.ok(guide.dateSpots.length >= 4, `${city.slug}: Treffpunkte`);
-    assert.ok(guide.transport.length >= 3, `${city.slug}: Bahnverbindungen`);
-    for (const train of guide.transport) assert.match(train.minutes, /^\d+(?:–\d+)?$/);
     assert.ok(guide.faq.length >= 3, `${city.slug}: FAQ`);
     assert.ok(guide.sources.length >= 5, `${city.slug}: Quellen`);
     for (const source of guide.sources) assert.match(source.url, /^https?:\/\//);
-    assert.match(guide.checked, /^\d{1,2} \S+ 20\d\d$/);
+    // Dauerhaft gültige Inhalte: keine Fahrzeiten und keine Jahresangaben ab 2025 in Texten (Statistik-Stichtage nur in den Kennzahlen).
+    const text = JSON.stringify({ sections: city.sections, places: guide.places, communities: guide.communities, events: guide.events, dateSpots: guide.dateSpots, faq: guide.faq });
+    assert.doesNotMatch(text.replace(/Ticino in cifre 2026|https?:[^"\s]+/g, ""), /\b20(?:2[5-9]|[3-9]\d)\b/, `${city.slug}: Jahresangabe`);
+    assert.doesNotMatch(text, /\d+\s*minuti di treno|a \d+ minuti/,`${city.slug}: Fahrzeit`);
     // Keine Floskel-Abschnitte mehr: jeder Abschnitt nennt etwas Konkretes (Link oder Zahl).
     for (const section of city.sections) assert.match(section.html, /<a href="https:|\d/, `${city.slug}: ${section.heading} ohne Beleg`);
   }
