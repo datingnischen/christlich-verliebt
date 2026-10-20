@@ -61,3 +61,18 @@ export function nearestItCities(slug: string, count = 4) {
     .sort((a, b) => a.km - b.km)
     .slice(0, count);
 }
+
+/** Stadtseiten liegen wie auf christlich-verliebt (/partnersuche/) unter /cerca-partner/<città>/. */
+export const IT_CITY_BASE = "cerca-partner";
+/** Magazin der italienischen Variante unter /magazine/<articolo>/. */
+export const IT_MAGAZINE_BASE = "magazine";
+
+/** Stadtseite (ohne Slug: Übersicht /cerca-partner/). */
+export function itCityUrl(slug = ""): string {
+  return itPublicUrl(slug ? `${IT_CITY_BASE}/${slug}` : IT_CITY_BASE);
+}
+
+/** Magazinartikel (ohne Slug: Übersicht /magazine/). */
+export function itMagazineUrl(slug = ""): string {
+  return itPublicUrl(slug ? `${IT_MAGAZINE_BASE}/${slug}` : IT_MAGAZINE_BASE);
+}
