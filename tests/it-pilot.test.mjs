@@ -3,13 +3,16 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { NextRequest } from "next/server.js";
 import { proxy } from "../proxy.ts";
-import { IT_CITIES, IT_HOME, IT_PILOT_INDEXABLE, IT_PLATFORM, itPublicUrl, itWidgetUrl, nearestItCities } from "../lib/it-pilot.ts";
+import { IT_CITIES, IT_HOME, IT_PILOT_INDEXABLE, IT_PLATFORM, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities } from "../lib/it-pilot.ts";
+import { IT_ARTICLES, IT_MAGAZINE } from "../lib/it-magazine.ts";
 
 test("Italienische Variante: Vorschau /ch/it/ und single-cristiani.ch landen auf derselben Route", () => {
-  const preview = proxy(new NextRequest("https://christlich-verliebt.vercel.app/ch/it/lugano/", { headers: { host: "christlich-verliebt.vercel.app" } }));
-  assert.match(preview.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/lugano\/$/);
-  const live = proxy(new NextRequest("https://single-cristiani.ch/lugano/", { headers: { host: "single-cristiani.ch" } }));
-  assert.match(live.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/lugano\/$/);
+  const preview = proxy(new NextRequest("https://christlich-verliebt.vercel.app/ch/it/incontri/lugano/", { headers: { host: "christlich-verliebt.vercel.app" } }));
+  assert.match(preview.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/incontri\/lugano\/$/);
+  const live = proxy(new NextRequest("https://single-cristiani.ch/incontri/lugano/", { headers: { host: "single-cristiani.ch" } }));
+  assert.match(live.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/incontri\/lugano\/$/);
+  const article = proxy(new NextRequest("https://single-cristiani.ch/magazine/parlare-di-fede-al-primo-appuntamento/", { headers: { host: "single-cristiani.ch" } }));
+  assert.match(article.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/magazine\/parlare-di-fede-al-primo-appuntamento\/$/);
   const home = proxy(new NextRequest("https://www.single-cristiani.ch/", { headers: { host: "www.single-cristiani.ch" } }));
   assert.match(home.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it$/);
   const legal = proxy(new NextRequest("https://single-cristiani.ch/privacy/", { headers: { host: "single-cristiani.ch" } }));
@@ -23,16 +26,18 @@ test("Fünf Tessiner Städte mit PLZ, Schweizer ICONY-Fenster und Live-URLs unte
     assert.equal(itWidgetUrl(city.postcode), `https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=${city.postcode}&ds=&ctr=41&it=1`);
   }
   assert.equal(itPublicUrl(), "https://single-cristiani.ch/");
-  assert.equal(itPublicUrl("chiasso"), "https://single-cristiani.ch/chiasso/");
+  assert.equal(itCityUrl("chiasso"), "https://single-cristiani.ch/incontri/chiasso/");
+  assert.equal(itCityUrl(), "https://single-cristiani.ch/incontri/");
+  assert.equal(itMagazineUrl(), "https://single-cristiani.ch/magazine/");
   assert.equal(nearestItCities("mendrisio")[0].city.slug, "chiasso");
   assert.match(IT_PLATFORM.registrationUrl, /^https:\/\/christlich-verliebt\.ch\/registration\/\?AID=location$/);
 });
 
 test("SEO-Texte: Titel höchstens 60, Descriptions 110–155 Zeichen, keine leeren Alt-Texte", () => {
-  for (const page of [IT_HOME, ...IT_CITIES]) {
+  for (const page of [IT_HOME, ...IT_CITIES, IT_MAGAZINE, ...IT_ARTICLES]) {
     assert.ok(page.metaTitle.length <= 60, `${page.metaTitle}: ${page.metaTitle.length}`);
     assert.ok(page.description.length >= 110 && page.description.length <= 155, `${page.title}: ${page.description.length}`);
-    for (const section of page.sections) assert.doesNotMatch(section.html, /alt=""/);
+    for (const section of page.sections ?? []) assert.doesNotMatch(section.html, /alt=""/);
   }
 });
 
@@ -45,9 +50,13 @@ test("Pilot bleibt noindex, bis ICONY die italienische Registrierung ausliefert"
 
 test("single-cristiani.ch: Schrägstrich, internes Präfix und alte /it/-Adressen leiten auf die eigene Domain", () => {
   const host = (url) => new NextRequest(url, { headers: { host: new URL(url).host } });
-  assert.equal(proxy(host("https://single-cristiani.ch/lugano")).headers.get("location"), "https://single-cristiani.ch/lugano/");
-  assert.equal(proxy(host("https://single-cristiani.ch/ch/it/locarno/")).headers.get("location"), "https://single-cristiani.ch/locarno/");
-  assert.equal(proxy(host("https://christlich-verliebt.ch/it/mendrisio/")).headers.get("location"), "https://single-cristiani.ch/mendrisio/");
+  assert.equal(proxy(host("https://single-cristiani.ch/magazine")).headers.get("location"), "https://single-cristiani.ch/magazine/");
+  assert.equal(proxy(host("https://single-cristiani.ch/ch/it/incontri/locarno/")).headers.get("location"), "https://single-cristiani.ch/incontri/locarno/");
+  // Alte Stadtadressen ohne /incontri/ (bis 2026-10-20) leiten direkt auf die neue Adresse.
+  assert.equal(proxy(host("https://single-cristiani.ch/lugano")).headers.get("location"), "https://single-cristiani.ch/incontri/lugano/");
+  assert.equal(proxy(host("https://single-cristiani.ch/ch/it/locarno/")).headers.get("location"), "https://single-cristiani.ch/incontri/locarno/");
+  assert.equal(proxy(host("https://christlich-verliebt.ch/it/mendrisio/")).headers.get("location"), "https://single-cristiani.ch/incontri/mendrisio/");
+  assert.equal(proxy(host("https://christlich-verliebt.vercel.app/ch/it/locarno/")).headers.get("location"), "https://christlich-verliebt.vercel.app/ch/it/incontri/locarno/");
   assert.equal(proxy(host("https://christlich-verliebt.ch/it")).headers.get("location"), "https://single-cristiani.ch/");
   // Deutsche Schweizer Seiten bleiben unverändert.
   assert.match(proxy(host("https://christlich-verliebt.ch/partnersuche/bern/")).headers.get("x-middleware-rewrite") ?? "", /\/ch\/partnersuche\/bern\/$/);
@@ -70,6 +79,25 @@ test("Eigene Rechtstexte: Betreiber, Vercel Web Analytics und ICONY-Profilfenste
   const shell = await readFile(new URL("../components/it-pages.tsx", import.meta.url), "utf8");
   assert.match(shell, /itPublicUrl\("note-legali"\)/);
   assert.match(shell, /itPublicUrl\("privacy"\)/);
+});
+
+test("Magazin: Artikel mit Datum, Autor, Quellen und Links nur auf bestehende Stadtseiten", async () => {
+  assert.ok(IT_ARTICLES.length >= 1);
+  const slugs = new Set(IT_CITIES.map((city) => city.slug));
+  for (const article of IT_ARTICLES) {
+    assert.match(article.slug, /^[a-z0-9-]+$/);
+    assert.match(article.modified, /^\d{4}-\d{2}-\d{2}$/);
+    assert.equal(article.author, "Christian M. Haas");
+    assert.ok(article.sources.length > 0);
+    for (const section of article.sections) {
+      for (const [, slug] of section.html.matchAll(/single-cristiani\.ch\/incontri\/([a-z-]+)\//g)) assert.ok(slugs.has(slug), slug);
+      assert.doesNotMatch(section.html, /single-cristiani\.ch\/(?!incontri\/|magazine\/)[a-z]/);
+    }
+  }
+  const hubs = await readFile(new URL("../components/it-hubs.tsx", import.meta.url), "utf8");
+  // Quellen eingeklappt (details ohne open), Artikel mit „Aggiornato il …“.
+  assert.match(hubs, /<details className=\{hub\.sources\}>/);
+  assert.match(hubs, /Aggiornato il/);
 });
 
 test("Stadtführer mit belegten Angaben: Kennzahlen, Kirchen mit Adresse, Termine, Treffpunkte, Bahn, FAQ und Quellen", async () => {

@@ -38,7 +38,7 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         <a href={IT_PLATFORM.registrationUrl}>Iscriviti gratis ora</a>
       </div>
       <div className={shell.footerGrid}>
-        <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Tutte le città</a><a href={itMagazineUrl()}>Magazine</a></section>
+        <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Incontri in Ticino</a><a href={itMagazineUrl()}>Magazine</a></section>
         <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl}>Registrazione gratuita</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
         <section><h3>Lingua</h3><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch</a><a href={itPublicUrl()} hrefLang="it-CH">Italiano</a></section>
         <section><h3>Servizio</h3><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
@@ -268,7 +268,7 @@ export function ItHomePage() {
 export function ItCityPage({ city }: { city: ItCity }) {
   const nearest = nearestItCities(city.slug);
   return <main className={styles.page}>
-    <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: "Incontri", href: itCityUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} active={city.slug} />
+    <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: "Incontri in Ticino", href: itCityUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} active={city.slug} />
 
     <Facts guide={city.guide} />
 

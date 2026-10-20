@@ -1,0 +1,60 @@
+{
+  "hub": {
+    "metaTitle": "Magazine per single cristiani in Ticino",
+    "title": "Magazine per single cristiani",
+    "description": "Consigli, idee e riflessioni per single cristiani nella Svizzera italiana: fede e primi appuntamenti, relazioni con valori comuni e vita in Ticino.",
+    "lead": "Articoli per chi cerca l'amore senza mettere da parte la fede: consigli pratici, domande sincere e idee per incontri in Ticino."
+  },
+  "articles": [
+    {
+      "slug": "parlare-di-fede-al-primo-appuntamento",
+      "metaTitle": "Parlare di fede al primo appuntamento: 7 consigli",
+      "title": "Parlare di fede al primo appuntamento: 7 consigli per single cristiani",
+      "description": "Come parlare di fede al primo appuntamento senza pressione: consigli, domande per aprire il dialogo e idee per un incontro tra chiese e laghi del Ticino.",
+      "lead": "La fede è una parte importante della tua vita, ma al primo incontro non vuoi sembrare un esaminatore. Ecco come parlarne con naturalezza, ascoltare davvero e capire se condividete ciò che conta.",
+      "category": "Primi appuntamenti",
+      "heroImage": "/images/it/locarno.webp",
+      "heroImageAlt": "Illustrazione IA ispirata a Locarno: santuario sulla collina e Lago Maggiore",
+      "author": "Christian M. Haas",
+      "published": "2026-10-20",
+      "modified": "2026-10-20",
+      "readingMinutes": 7,
+      "sections": [
+        {
+          "heading": "Perché la fede merita spazio fin dall'inizio",
+          "html": "<p>Per molti single cristiani la fede non è un hobby tra gli altri, ma il modo in cui guardano alla vita: la domenica, le decisioni importanti, il desiderio di una famiglia, il perdono nei momenti difficili. Tacerla per settimane per paura di «spaventare» l'altra persona porta spesso a una delusione più tardi.</p><p>Allo stesso tempo, un primo appuntamento non è un colloquio. Non serve chiarire subito ogni questione teologica: basta far capire che la fede ti accompagna e scoprire con curiosità che posto ha nella vita dell'altro.</p>"
+        },
+        {
+          "heading": "Sette consigli per parlarne con naturalezza",
+          "html": "<ol><li><strong>Racconta, non interrogare.</strong> «La domenica canto nel coro della parrocchia» apre più porte di «Vai a messa ogni settimana?».</li><li><strong>Parti da esperienze concrete.</strong> Un pellegrinaggio, un campo estivo, una persona che ti ha trasmesso la fede: le storie dicono di più delle etichette.</li><li><strong>Ascolta il doppio di quanto parli.</strong> Chiedi che cosa significa la fede per l'altro, oggi, nella sua quotidianità.</li><li><strong>Accetta le differenze di percorso.</strong> C'è chi è cresciuto in una famiglia praticante e chi ha riscoperto la fede da adulto. Entrambe le strade sono preziose.</li><li><strong>Sii sincero sulle cose che per te non sono negoziabili.</strong> Se desideri sposarti in chiesa o educare i figli nella fede, puoi dirlo con calma, senza ultimatum.</li><li><strong>Non trasformare tutto in un tema religioso.</strong> Ridere insieme, parlare di lavoro, montagne e libri fa parte del conoscersi quanto la preghiera.</li><li><strong>Lascia tempo.</strong> Le domande più profonde trovano il loro momento al secondo o al terzo incontro, quando c'è già fiducia.</li></ol>"
+        },
+        {
+          "heading": "Domande che aprono il dialogo",
+          "html": "<p>Queste domande invitano a raccontare senza mettere sotto esame:</p><ul><li>Che cosa ti dà forza nei periodi difficili?</li><li>C'è un luogo in cui ti senti particolarmente vicino a Dio?</li><li>Come vivi la domenica?</li><li>Che ruolo ha avuto la fede nella tua famiglia?</li><li>C'è una comunità o un gruppo in cui ti senti a casa?</li><li>Che cosa ti augureresti per una relazione basata su valori comuni?</li></ul><p>Rispondi anche tu: un dialogo nasce quando entrambi si aprono un po'.</p>"
+        },
+        {
+          "heading": "Quando le pratiche sono diverse",
+          "html": "<p>In Ticino la tradizione è soprattutto cattolica, ma vivono qui anche cristiani riformati, evangelici e ortodossi. Può capitare che uno dei due vada a messa ogni domenica e l'altro preferisca un culto più semplice, o che le abitudini di preghiera siano diverse.</p><p>Non è per forza un ostacolo. Chiedetevi piuttosto: riusciamo a rispettare il cammino dell'altro? Vogliamo pregare insieme? Come immaginiamo le feste, le scelte educative, il coinvolgimento in parrocchia? Parlarne apertamente e presto evita incomprensioni e mostra che prendete sul serio la relazione.</p>"
+        },
+        {
+          "heading": "Idee per un primo incontro in Ticino",
+          "html": "<p>Un luogo con un significato rende più facile parlare anche di ciò che si porta nel cuore. Alcune idee:</p><ul><li><strong>Locarno:</strong> salire al santuario della Madonna del Sasso a Orselina e scendere poi verso il lungolago. Altri spunti nella <a href=\"https://single-cristiani.ch/incontri/locarno/\">guida per single cristiani a Locarno</a>.</li><li><strong>Bellinzona:</strong> una visita alla Collegiata dei Santi Pietro e Stefano e una passeggiata nel centro storico ai piedi dei castelli. Vedi la <a href=\"https://single-cristiani.ch/incontri/bellinzona/\">guida di Bellinzona</a>.</li><li><strong>Lugano:</strong> un caffè in centro e due passi sul lungolago dopo la messa domenicale. Idee e comunità nella <a href=\"https://single-cristiani.ch/incontri/lugano/\">guida di Lugano</a>.</li><li><strong>Mendrisio:</strong> le processioni storiche della Settimana Santa sono patrimonio culturale immateriale dell'UNESCO, un'occasione speciale per vivere la tradizione insieme. Dettagli nella <a href=\"https://single-cristiani.ch/incontri/mendrisio/\">guida di Mendrisio</a>.</li></ul><p>Per il primo incontro vale la regola d'oro: un luogo pubblico, un orario chiaro e la libertà di salutarsi dopo un caffè, se non scatta la scintilla.</p>"
+        },
+        {
+          "heading": "Sicurezza e rispetto",
+          "html": "<p>La fiducia cresce con il tempo. Incontratevi in un luogo frequentato, raccontate a una persona di fiducia dove andate e non condividete mai dati bancari o richieste di denaro con chi conoscete da poco online. Chi condivide davvero i tuoi valori rispetterà anche i tuoi tempi.</p>"
+        },
+        {
+          "heading": "In conclusione",
+          "html": "<p>Parlare di fede al primo appuntamento non significa fare una predica, ma mostrare chi sei. Con curiosità, rispetto e un pizzico di umorismo capirete presto se avete una base comune su cui costruire. Se cerchi persone per cui la fede conta, trovi single cristiani della tua zona nelle <a href=\"https://single-cristiani.ch/incontri/\">guide per le città del Ticino</a>.</p>"
+        }
+      ],
+      "sources": [
+        { "title": "RSI: le processioni storiche di Mendrisio nel patrimonio UNESCO", "url": "https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/Processioni-nellUNESCO-12526068.html" },
+        { "title": "tio.ch: la mappa religiosa e spirituale del Ticino", "url": "https://www.tio.ch/ticino/attualita/1819053/dal-cattolicesimo-ai-raeliani-ecco-la-mappa-religiosa-e-spirituale-del-cantone" },
+        { "title": "Bellinzona e Valli Turismo: Collegiata dei Santi Pietro e Stefano", "url": "https://www.bellinzonaevalli.ch/en/commons/details/Collegiate-of-SS-Pietro-e-Stefano/2841.html" },
+        { "title": "Diocesi di Lugano", "url": "https://www.diocesilugano.ch" }
+      ]
+    }
+  ]
+}
