@@ -11,13 +11,9 @@ import shell from "./site-shell.module.css";
 import styles from "./city-page.module.css";
 import itStyles from "./it-pages.module.css";
 
-/**
- * Kopf und Fuß der italienischen Variante. Das Root-Layout setzt statisch lang="de" (deutsche Seiten); der Wrapper trägt
- * lang="it-CH", und das Inline-Skript stellt <html lang> noch vor dem ersten Rendern um (Screenreader, Übersetzungsangebote).
- */
+/** Kopf und Fuß der italienischen Variante; <html lang="it-CH"> kommt aus app/(italiano)/layout.tsx. */
 export function ItShell({ children }: { children: React.ReactNode }) {
   return <div className={shell.shell} lang="it-CH">
-    <script dangerouslySetInnerHTML={{ __html: 'document.documentElement.lang="it-CH";' }} />
     <PreviewLinks />
     <header className={shell.header}>
       <div className={shell.topbar}>Incontri cristiani con rispetto, sicurezza e valori comuni</div>

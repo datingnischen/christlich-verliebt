@@ -16,7 +16,7 @@ test("Chi siamo: eigene indexierbare Seite, in Sitemap, Navigation und Fußzeile
   assert.ok(IT_ABOUT.description.length >= 110 && IT_ABOUT.description.length <= 155, `${IT_ABOUT.description.length}`);
   assert.match(live(`/${IT_ABOUT_SLUG}/`).headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/chi-siamo\/$/);
   assert.match(await live("/sitemap.xml").text(), /<loc>https:\/\/single-cristiani\.ch\/chi-siamo\/<\/loc>/);
-  const page = await read("app/[market]/it/[[...slug]]/page.tsx");
+  const page = await read("app/(italiano)/[market]/it/[[...slug]]/page.tsx");
   assert.match(page, /slug\[0\] === IT_ABOUT_SLUG/);
   assert.match(page, /\{ market: "ch", slug: \[IT_ABOUT_SLUG\] \}/);
   const shell = await read("components/it-pages.tsx");
@@ -64,7 +64,7 @@ test("Deutsche Footer (DE/AT/CH) verlinken single-cristiani.ch mit der halb Schw
 });
 
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {
-  const page = await read("app/[market]/it/[[...slug]]/page.tsx");
+  const page = await read("app/(italiano)/[market]/it/[[...slug]]/page.tsx");
   assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, url: itPublicUrl\(\)/);
   assert.doesNotMatch(page, /legalName|Mogge/);
   assert.match(page, /"@type": "WebSite", "@id": websiteId/);
@@ -84,7 +84,11 @@ test("Artikel: Autorenkasten mit Link auf Chi siamo, Autorname verlinkt", async 
 
 test("Sprache und Barrierefreiheit: <html lang> wird auf it-CH gestellt, keine leeren Alt-Texte, Kantonsnamen italienisch", async () => {
   const pages = await read("components/it-pages.tsx");
-  assert.match(pages, /document\.documentElement\.lang="it-CH";/);
+  // <html lang> kommt aus dem eigenen Root-Layout der Route-Gruppe, nicht mehr per Skript (Seobility: „Sprachangabe entspricht nicht der erkannten Sprache“).
+  assert.doesNotMatch(pages, /documentElement\.lang/);
+  assert.match(await read("app/(italiano)/layout.tsx"), /<html lang="it-CH">/);
+  assert.match(await read("app/[market]/layout.tsx"), /<html lang=\{lang\}>/);
+  assert.equal(await read("app/layout.tsx").catch(() => null), null, "kein gemeinsames Root-Layout mehr");
   for (const file of ["components/it-pages.tsx", "components/it-hubs.tsx", "components/it-about.tsx", "components/it-legal.tsx"]) {
     assert.doesNotMatch(await read(file), /alt=""/, `${file}: leeres alt`);
   }

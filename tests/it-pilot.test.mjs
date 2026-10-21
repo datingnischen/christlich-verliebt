@@ -49,7 +49,7 @@ test("Indexierbar, Registrierung bis zur italienischen ICONY-Oberfläche mit Hin
   assert.match(pages, /La piattaforma in italiano è in costruzione/);
   // Jeder Registrierungslink kündigt die deutschsprachige Zielseite an.
   assert.doesNotMatch(pages, /href=\{IT_PLATFORM\.registrationUrl\}(?! hrefLang="de-CH")/);
-  const page = await readFile(new URL("../app/[market]/it/[[...slug]]/page.tsx", import.meta.url), "utf8");
+  const page = await readFile(new URL("../app/(italiano)/[market]/it/[[...slug]]/page.tsx", import.meta.url), "utf8");
   assert.match(page, /robots: \{ index: IT_PILOT_INDEXABLE && page\.kind !== "legal", follow: true \}/);
   assert.match(page, /market !== "ch"/);
 });

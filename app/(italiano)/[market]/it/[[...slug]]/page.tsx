@@ -12,7 +12,7 @@ import { staticAsset } from "@/lib/static-asset";
 
 type Props = { params: Promise<{ market: string; slug?: string[] }> };
 
-// Italienische Variante: Vorschau /ch/it/…, live single-cristiani.ch (proxy.ts). Städte unter /incontri/<città>/,
+// Italienische Variante: Vorschau /ch/it/…, live single-cristiani.ch (proxy.ts). Eigene Route-Gruppe (italiano) mit Root-Layout lang="it-CH". Städte unter /incontri/<città>/,
 // Magazin unter /magazine/<articolo>/ – wie /partnersuche/ und /magazin/ auf christlich-verliebt.
 export function generateStaticParams() {
   return [
