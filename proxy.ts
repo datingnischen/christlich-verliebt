@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server.js";
 import { NextResponse } from "next/server.js";
 import { publicUrl, withTrailingSlash, type MarketCode } from "./lib/markets.ts";
-import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_GOOGLE_SITE_VERIFICATION, IT_HOME, IT_HOST, IT_ICONS, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
+import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_GUIDE_COUNT, IT_GOOGLE_SITE_VERIFICATION, IT_HOME, IT_HOST, IT_ICONS, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
 import { IT_ARTICLES, IT_MAGAZINE } from "./lib/it-magazine.ts";
 
 const HOST_MARKETS = new Map<string, MarketCode>([
@@ -67,7 +67,7 @@ function italianLlmsText() {
     `> ${IT_HOME.description} Guida informativa in italiano; registrazione e profili si trovano sulla piattaforma svizzera christlich-verliebt.ch.`,
     "",
     "## Guide per città (Ticino)",
-    line("Incontri in Ticino per single cristiani", itCityUrl(), "Panoramica delle cinque guide."),
+    line("Incontri in Ticino per single cristiani", itCityUrl(), `Panoramica delle ${IT_GUIDE_COUNT} guide.`),
     ...IT_CITIES.map((city) => line(city.title, itCityUrl(city.slug), city.description)),
     "",
     "## Magazine",

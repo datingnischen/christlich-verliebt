@@ -23,7 +23,8 @@ export type ItGuide = {
   faq: ItFaq[];
   sources: ItSource[];
 };
-export type ItCity = Omit<(typeof data.cities)[number], "sections" | "guide"> & { sections: ItSection[]; guide: ItGuide };
+/** `heroImage` null, solange Codex das Titelbild noch nicht geliefert hat: Seiten zeigen dann kein Bild statt eines Platzhalters. */
+export type ItCity = Omit<(typeof data.cities)[number], "sections" | "guide" | "heroImage"> & { heroImage: string | null; sections: ItSection[]; guide: ItGuide };
 
 /**
  * Indexierbar seit 2026-10-20 (Christians Entscheidung): Die Ratgeberseiten stehen für sich, die Registrierung
@@ -50,6 +51,10 @@ export const IT_PLATFORM = {
 
 export const IT_HOME = data.home as unknown as Omit<typeof data.home, "sections" | "guide" | "faq"> & { sections: ItSection[]; guide: ItGuide };
 export const IT_CITIES = data.cities as unknown as ItCity[];
+
+const IT_NUMBERS = ["nessuna", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci"];
+/** Anzahl der Stadtführer als Wort („sei guide“), damit Texte beim Hinzufügen einer Stadt nicht veralten. */
+export const IT_GUIDE_COUNT = IT_NUMBERS[IT_CITIES.length] ?? String(IT_CITIES.length);
 
 export function getItCity(slug: string): ItCity | null {
   return IT_CITIES.find((city) => city.slug === slug) ?? null;

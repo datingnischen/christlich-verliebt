@@ -38,7 +38,7 @@ async function resolve(params: Props["params"]) {
     return { kind: "legal" as const, url: itPublicUrl(legal), metaTitle: IT_LEGAL[legal].metaTitle, title: IT_LEGAL[legal].title, description: IT_LEGAL[legal].description, legal };
   }
   if (slug[0] === IT_CITY_BASE) {
-    if (slug.length === 1) return { kind: "cities" as const, url: itCityUrl(), metaTitle: "Incontri Ticino: single cristiani nella tua città", title: "Incontri in Ticino per single cristiani", description: "Incontri Ticino per single cristiani: guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso con chiese, comunità e idee per un primo appuntamento." };
+    if (slug.length === 1) return { kind: "cities" as const, url: itCityUrl(), metaTitle: "Incontri Ticino: single cristiani nella tua città", title: "Incontri in Ticino per single cristiani", description: "Incontri Ticino per single cristiani: guide per Lugano, Bellinzona, Locarno, Mendrisio, Chiasso e Biasca con chiese, comunità e idee per il primo incontro." };
     const city = getItCity(slug[1]);
     if (!city) notFound();
     return { kind: "city" as const, url: itCityUrl(city.slug), metaTitle: city.metaTitle, title: city.title, description: city.description, city };
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: page.url },
     // Inhaltsseiten indexierbar (lib/it-pilot.ts), Rechtstexte wie auf den deutschen Seiten noindex.
     robots: { index: IT_PILOT_INDEXABLE && page.kind !== "legal", follow: true },
-    openGraph: { title: page.title, description: page.description, url: page.url, locale: "it_CH", type: page.kind === "article" ? "article" : "website", siteName: "single-cristiani.ch", images: [{ url: staticAsset(image.heroImage), width: 1600, height: 900, alt: image.heroImageAlt }] },
+    openGraph: { title: page.title, description: page.description, url: page.url, locale: "it_CH", type: page.kind === "article" ? "article" : "website", siteName: "single-cristiani.ch", images: [image.heroImage ? { url: staticAsset(image.heroImage), width: 1600, height: 900, alt: image.heroImageAlt } : { url: staticAsset(IT_HOME.heroImage), width: 1600, height: 900, alt: IT_HOME.heroImageAlt }] },
   };
 }
 

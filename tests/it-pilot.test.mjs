@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { NextRequest } from "next/server.js";
@@ -19,8 +20,8 @@ test("Italienische Variante: Vorschau /ch/it/ und single-cristiani.ch landen auf
   assert.match(legal.headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/privacy\/$/);
 });
 
-test("Fünf Tessiner Städte mit PLZ, Schweizer ICONY-Fenster und Live-URLs unter /it/", () => {
-  assert.deepEqual(IT_CITIES.map((city) => city.slug), ["lugano", "bellinzona", "locarno", "mendrisio", "chiasso"]);
+test("Sechs Tessiner Städte mit PLZ, Schweizer ICONY-Fenster und Live-URLs unter /it/", () => {
+  assert.deepEqual(IT_CITIES.map((city) => city.slug), ["lugano", "bellinzona", "locarno", "mendrisio", "chiasso", "biasca"]);
   for (const city of IT_CITIES) {
     assert.match(city.postcode, /^6\d{3}$/);
     assert.equal(itWidgetUrl(city.postcode), `https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=${city.postcode}&ds=&ctr=41&it=1`);
@@ -30,6 +31,7 @@ test("Fünf Tessiner Städte mit PLZ, Schweizer ICONY-Fenster und Live-URLs unte
   assert.equal(itCityUrl(), "https://single-cristiani.ch/incontri/");
   assert.equal(itMagazineUrl(), "https://single-cristiani.ch/magazine/");
   assert.equal(nearestItCities("mendrisio")[0].city.slug, "chiasso");
+  assert.equal(nearestItCities("biasca")[0].city.slug, "bellinzona");
   assert.match(IT_PLATFORM.registrationUrl, /^https:\/\/christlich-verliebt\.ch\/registration\/\?AID=location$/);
 });
 
@@ -114,6 +116,9 @@ test("Magazin: Artikel mit Datum, Autor, Quellen und Links nur auf bestehende St
 test("Stadtführer mit belegten Angaben: Kennzahlen, Kirchen mit Adresse, Termine, Treffpunkte, FAQ und Quellen", async () => {
   for (const city of IT_CITIES) {
     const { guide } = city;
+    // Titelbild liefert Codex: bis dahin null (kein Platzhalter), Alt-Text steht trotzdem schon fest.
+    if (city.heroImage) assert.ok(existsSync(new URL(`../public${city.heroImage}`, import.meta.url)), `${city.heroImage} fehlt`);
+    assert.ok(city.heroImageAlt.length > 20, `${city.slug}: Alt-Text`);
     assert.ok(guide.facts.length >= 4, `${city.slug}: Kennzahlen`);
     for (const fact of guide.facts) assert.ok(fact.value && fact.note, `${city.slug}: ${fact.label} ohne Wert/Stand`);
     assert.ok(guide.places.length >= 5, `${city.slug}: Glaubensorte`);

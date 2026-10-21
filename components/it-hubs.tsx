@@ -14,11 +14,11 @@ export function ItCitiesPage() {
       <h2 id="come-usare">Come usare le guide</h2>
       <p>Ogni guida è costruita allo stesso modo. Si apre con i numeri della città e del suo distretto, presi dall&apos;Ufficio di statistica del Cantone Ticino: quanti abitanti, quanti si dichiarano cattolici o riformati, quante economie domestiche sono formate da una sola persona. Seguono le chiese e le comunità con indirizzo e sito ufficiale, perché gli orari di messe e culti cambiano durante l&apos;anno e vanno letti alla fonte. Il calendario raccoglie le feste di fede e gli appuntamenti ricorrenti della zona, dalle processioni della Settimana Santa ai concerti nelle chiese; la sezione «Dove incontrarsi» propone luoghi pubblici e tranquilli per un primo caffè o una passeggiata. Chiudono le domande frequenti e, in fondo, l&apos;elenco delle fonti.</p>
       <p>Il Ticino è una regione di tradizione cattolica, con comunità riformate attive soprattutto a Lugano, Bellinzona e Locarno; allo stesso tempo oltre quattro economie domestiche su dieci sono composte da una persona sola. Le persone che cercano una relazione con la fede come base comune ci sono: la difficoltà è incontrarle fuori dalla propria cerchia. Per questo ogni guida unisce due strade, la vita di comunità e la ricerca per codice postale su christlich-verliebt.ch, la piattaforma svizzera per single cristiani a cui portano i pulsanti «Iscriviti» (per ora in tedesco).</p>
-      <p>Scegli la città più vicina a te o quella in cui ti muovi per lavoro: Lugano e il Luganese, Bellinzona e le valli, Locarno e il Lago Maggiore, Mendrisio e Chiasso nel Mendrisiotto. Le distanze in Ticino sono brevi e ogni guida indica anche le città vicine, con i chilometri in linea d&apos;aria.</p>
+      <p>Scegli la città più vicina a te o quella in cui ti muovi per lavoro: Lugano e il Luganese, Bellinzona e le valli, Locarno e il Lago Maggiore, Mendrisio e Chiasso nel Mendrisiotto, Biasca per le Tre Valli del Ticino settentrionale. Le distanze in Ticino sono brevi e ogni guida indica anche le città vicine, con i chilometri in linea d&apos;aria.</p>
     </section>
     <section id="guida" className={hub.grid} aria-label="Città in Ticino">
       {IT_CITIES.map((city) => <article key={city.slug} className={hub.tile}>
-        <Image src={staticAsset(city.heroImage)} alt={city.heroImageAlt} width={640} height={360} sizes="(max-width: 640px) 100vw, 360px" />
+        {city.heroImage ? <Image src={staticAsset(city.heroImage)} alt={city.heroImageAlt} width={640} height={360} sizes="(max-width: 640px) 100vw, 360px" /> : null}
         <div>
           <p className={styles.eyebrow}>{city.region}</p>
           <h2><a href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a></h2>

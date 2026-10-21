@@ -3,7 +3,7 @@ import { CityIcon } from "@/components/city-icons";
 import { RegionShape } from "@/components/city-map";
 import { marketMap, project, regionBox } from "@/lib/city-map";
 import { PreviewLinks } from "@/components/preview-links";
-import { IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
+import { IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, IT_GUIDE_COUNT, IT_HOME, IT_PLATFORM, IT_PLATFORM_ITALIAN, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl, itWidgetUrl, nearestItCities, type ItCity, type ItGuide, type ItSection } from "@/lib/it-pilot";
 import { getMarket, MARKET_CODES, publicUrl } from "@/lib/markets";
 import { Flag } from "@/components/site-shell";
 import { staticAsset } from "@/lib/static-asset";
@@ -183,7 +183,7 @@ function CityList({ cities, heading, intro }: { cities: { city: ItCity; km?: num
     <ol className={styles.distances}>
       {cities.map(({ city, km }) => <li key={city.slug}>
         <a href={itCityUrl(city.slug)}>
-          <Image src={staticAsset(city.heroImage)} alt={city.heroImageAlt} width={96} height={96} sizes="48px" className={itStyles.cityThumb} />
+          {city.heroImage ? <Image src={staticAsset(city.heroImage)} alt={city.heroImageAlt} width={96} height={96} sizes="48px" className={itStyles.cityThumb} /> : <span className={styles.distanceThumb} />}
           <span className={styles.distanceName}>Single cristiani a {city.name}<small>{city.region}</small></span>
           {km !== undefined ? <>
             <span className={styles.distanceBar} style={{ ["--w" as string]: `${Math.max(8, (km / maxKm) * 100)}%` }}><span /></span>
@@ -224,13 +224,13 @@ function TicinoMap({ active }: { active?: string }) {
           </a>;
       })}
     </svg>
-    <figcaption>{current ? <><span className={styles.strongText}>{current.name}</span> · Canton Ticino</> : <>Cinque guide · <span className={styles.strongText}>Canton Ticino</span></>}</figcaption>
+    <figcaption>{current ? <><span className={styles.strongText}>{current.name}</span> · Canton Ticino</> : <><span className={itStyles.capitalize}>{IT_GUIDE_COUNT}</span> guide · <span className={styles.strongText}>Canton Ticino</span></>}</figcaption>
   </figure>;
 }
 
-export function Hero({ crumbs, badge, title, lead, primary, image, imageAlt, active }: { crumbs: { label: string; href: string | null }[]; badge: string; title: string; lead: string; primary: string; image: string; imageAlt: string; active?: string }) {
-  return <section className={`${styles.hero} ${itStyles.hero}`}>
-    <Image className={styles.heroImage} src={staticAsset(image)} alt={imageAlt} width={1600} height={900} sizes="100vw" priority />
+export function Hero({ crumbs, badge, title, lead, primary, image, imageAlt, active }: { crumbs: { label: string; href: string | null }[]; badge: string; title: string; lead: string; primary: string; image: string | null; imageAlt: string; active?: string }) {
+  return <section className={`${styles.hero} ${itStyles.hero}${image ? "" : ` ${itStyles.heroPlain}`}`}>
+    {image ? <Image className={styles.heroImage} src={staticAsset(image)} alt={imageAlt} width={1600} height={900} sizes="100vw" priority /> : null}
     <div className={`${styles.heroShade} ${itStyles.heroShade}`} aria-hidden="true" />
     <div className={styles.heroGrid}>
       <div className={styles.heroCopy}>
@@ -255,7 +255,7 @@ export function ItHomePage() {
   return <main className={styles.page}>
     <Hero crumbs={[{ label: "Svizzera italiana", href: null }]} badge="Ticino · Svizzera" title={IT_HOME.title} lead={IT_HOME.lead} primary="Conosci single cristiani" image={IT_HOME.heroImage} imageAlt={IT_HOME.heroImageAlt} />
     <Facts guide={IT_HOME.guide} />
-    <CityList cities={IT_CITIES.map((city) => ({ city }))} heading="Scegli la tua città" intro="Guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso: chiese con indirizzo, appuntamenti dell'anno, luoghi per il primo incontro e collegamenti in treno." />
+    <CityList cities={IT_CITIES.map((city) => ({ city }))} heading="Scegli la tua città" intro="Guide per Lugano, Bellinzona, Locarno, Mendrisio, Chiasso e Biasca: chiese con indirizzo, appuntamenti dell'anno, luoghi per il primo incontro e collegamenti in treno." />
     <Sections sections={IT_HOME.sections} kicker="La guida" title="La guida al Ticino" />
     <Communities guide={IT_HOME.guide} heading="Gruppi e proposte in tutto il Ticino" />
     <Events guide={IT_HOME.guide} heading="Appuntamenti di fede in Ticino" />

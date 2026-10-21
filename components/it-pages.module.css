@@ -7,6 +7,10 @@
   transform: none;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 @media (max-width: 640px) {
   .hero {
     padding-bottom: 284px;
@@ -25,6 +29,11 @@
 
   .hero .heroCredit {
     bottom: 70px;
+  }
+
+  /* Stadt ohne Titelbild (Codex liefert es nach): kein leerer Bildstreifen unten. */
+  .hero.heroPlain {
+    padding-bottom: clamp(96px, 10vw, 136px);
   }
 }
 

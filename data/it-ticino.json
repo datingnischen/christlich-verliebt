@@ -4,7 +4,7 @@
     "heroImageAlt": "Illustrazione IA: una coppia passeggia sul lungolago in Ticino",
     "metaTitle": "Single cristiani in Ticino: incontri con valori comuni",
     "title": "Single cristiani nella Svizzera italiana",
-    "description": "Conosci single cristiani in Ticino: guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso con idee per incontri basati su fede e valori comuni.",
+    "description": "Single cristiani in Ticino: guide per Lugano, Bellinzona, Locarno, Mendrisio, Chiasso e Biasca con idee per incontri basati su fede e valori comuni.",
     "lead": "Per chi cerca una relazione in cui la fede non è un dettaglio ma una base comune: profili reali dalla Svizzera e guide per le città del Ticino.",
     "sections": [
       {
@@ -273,6 +273,11 @@
           "heading": "Dove la fede diventa incontro",
           "icon": "heart",
           "html": "<p>A Lugano ci sono proposte concrete anche per giovani adulti: la Messa settimanale per studenti alla Basilica del Sacro Cuore, seguita da un pranzo offerto, la Scuola corale della Cattedrale, il Coro Laudate e il Glory Gospel Choir della comunità riformata e le conferenze pubbliche della Facoltà di Teologia di Lugano. Gli orari aggiornati sono sul sito della <a href=\"https://www.parrocchialugano.ch/\">Parrocchia di Lugano</a>; indirizzi e link trovi qui sotto.</p>"
+        },
+        {
+          "heading": "Se abiti appena fuori Lugano",
+          "icon": "church",
+          "html": "<p>Questa guida vale anche per chi vive a Massagno (6.799 abitanti), Paradiso (4.853), Collina d'Oro (4.903) o Capriasca (6.717). Le parrocchie di Massagno, Paradiso e Gentilino-Montagnola fanno parte del <a href=\"https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-luganese-16155/\">vicariato del Luganese</a>, mentre Agno e Caslano appartengono al vicariato del Malcantone-Vedeggio. A Tesserete e nella Pieve Capriasca si celebra secondo il rito ambrosiano, eredità dell'antico legame con Milano (<a href=\"https://www4.ti.ch/fileadmin/DECS/DS/Rivista_scuola_ticinese/ST_n.102/ST_102_Mondada_questione_diocesana.pdf\">Scuola ticinese</a>). Chi è riformato e vive nel Malcantone ha una chiesa della <a href=\"https://cers.ch/\">CERS</a> vicino a casa, a Novaggio (Via Meguldín 2).</p><p>Un'idea per un primo incontro: il sentiero dedicato a Hermann Hesse parte da Montagnola, dove il museo occupa la Casa Camuzzi in cui lo scrittore visse per 12 anni, e arriva al cimitero di Gentilino, dove riposa dal 1962 (<a href=\"https://www.postauto.ch/it/idee-per-escursioni/collina-d-oro\">AutoPostale</a>). Con il tuo codice postale, per esempio 6950 per Tesserete o 6987 per Caslano, la ricerca su christlich-verliebt.ch include anche i dintorni.</p>"
         }
       ],
       "guide": {
@@ -593,6 +598,26 @@
           {
             "title": "Wikipedia – Lugano",
             "url": "https://it.wikipedia.org/wiki/Lugano"
+          },
+          {
+            "title": "Diocesi di Lugano – Vicariato del Malcantone-Vedeggio",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-malcantone-vedeggio-16237/"
+          },
+          {
+            "title": "GCatholic – Chiesa San Cristoforo, Caslano (vicariato Malcantone-Vedeggio)",
+            "url": "https://gcatholic.org/churches/europe-west/135348"
+          },
+          {
+            "title": "Scuola ticinese n. 102 – La questione diocesana (parrocchie di rito ambrosiano)",
+            "url": "https://www4.ti.ch/fileadmin/DECS/DS/Rivista_scuola_ticinese/ST_n.102/ST_102_Mondada_questione_diocesana.pdf"
+          },
+          {
+            "title": "CERS – Le nostre chiese (Lugano, Novaggio, Vacallo)",
+            "url": "https://cers.ch/"
+          },
+          {
+            "title": "AutoPostale – Collina d'Oro (Museo Hermann Hesse, sentiero fino al cimitero di Gentilino)",
+            "url": "https://www.postauto.ch/it/idee-per-escursioni/collina-d-oro"
           }
         ]
       }
@@ -627,6 +652,11 @@
           "heading": "Fede, musica e storia",
           "icon": "heart",
           "html": "<p>Nella Collegiata dei Santi Pietro e Stefano suona l'organo Antegnati del 1588, il secondo più antico della Svizzera, al centro del <a href=\"https://www.laregione.ch/temi/antegnati\">Festival organistico Antegnati</a>. I tre castelli e la Murata, patrimonio mondiale UNESCO dal 2000, sono la cornice ideale per una passeggiata insieme dopo un concerto o una funzione.</p>"
+        },
+        {
+          "heading": "Dai quartieri fino al Moesano",
+          "icon": "church",
+          "html": "<p>Con l'aggregazione Bellinzona ha riunito tredici comuni, da Claro a Sementina: chi abita a Giubiasco o a Monte Carasso trova la sua parrocchia nel <a href=\"https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-bellinzonese-16158/\">vicariato del Bellinzonese</a>, che comprende anche Arbedo e Castione. A Gnosca, Preonzo e Moleno si segue invece il rito ambrosiano (<a href=\"https://www4.ti.ch/fileadmin/DECS/DS/Rivista_scuola_ticinese/ST_n.102/ST_102_Mondada_questione_diocesana.pdf\">Scuola ticinese</a>). Per chi vive più a nord, tra Riviera, Blenio e Leventina, c'è la <a href=\"https://single-cristiani.ch/incontri/biasca/\">guida di Biasca e delle Tre Valli</a>. Diverso il Moesano: Roveredo, San Vittore e Grono parlano italiano ma sono nei Grigioni, e le loro parrocchie appartengono alla <a href=\"https://www.bistum-chur.ch/graubuenden.html\">Diocesi di Coira</a>, non a quella di Lugano. A Roveredo la chiesa di San Giulio è parrocchiale dal 1481 (<a href=\"https://hls-dhs-dss.ch/it/articles/001562/\">Dizionario storico della Svizzera</a>).</p><p>Per un primo incontro c'è il ponte tibetano Carasc: 270 metri sospesi fino a 130 metri dal suolo tra Monte Carasso e Sementina, con partenza consigliata da Curzútt (<a href=\"https://www.ticino.ch/it/commons/details/Ponte-tibetano-Carasc-/137557.html\">Ticino Turismo</a>). Con il tuo codice postale, per esempio 6512 per Giubiasco o 6535 per Roveredo, la ricerca su christlich-verliebt.ch include anche i dintorni.</p>"
         }
       ],
       "guide": {
@@ -904,6 +934,30 @@
           {
             "title": "Diocesi di Lugano – Sante Messe",
             "url": "https://www.diocesilugano.ch/sante-messe/"
+          },
+          {
+            "title": "Cantone Ticino – Decreto di aggregazione di Bellinzona (BU 22/2016, 13 comuni)",
+            "url": "https://m4.ti.ch/fileadmin/DI/DI_DI/SEL/RIFORMA/aggregazioni/ultimate/bellinzonese/BU_Bellinzona.pdf"
+          },
+          {
+            "title": "Diocesi di Lugano – Vicariato del Bellinzonese (elenco parrocchie)",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-bellinzonese-16158/"
+          },
+          {
+            "title": "Scuola ticinese n. 102 – La questione diocesana (rito ambrosiano a Gnosca, Preonzo, Moleno; diocesi = Cantone)",
+            "url": "https://www4.ti.ch/fileadmin/DECS/DS/Rivista_scuola_ticinese/ST_n.102/ST_102_Mondada_questione_diocesana.pdf"
+          },
+          {
+            "title": "Bistum Chur – Bistumsregion Graubünden",
+            "url": "https://www.bistum-chur.ch/graubuenden.html"
+          },
+          {
+            "title": "Dizionario storico della Svizzera – Roveredo (GR)",
+            "url": "https://hls-dhs-dss.ch/it/articles/001562/"
+          },
+          {
+            "title": "Ticino Turismo – Ponte tibetano Carasc",
+            "url": "https://www.ticino.ch/it/commons/details/Ponte-tibetano-Carasc-/137557.html"
           }
         ]
       }
@@ -938,6 +992,11 @@
           "heading": "Madonna del Sasso, cuore spirituale della regione",
           "icon": "heart",
           "html": "<p>Il santuario sopra la città nasce dall'apparizione del 1480 a fra Bartolomeo da Ivrea; le prime cappelle furono consacrate nel 1487. Oggi è custodito dai Frati Cappuccini e si raggiunge a piedi lungo la Via Crucis o con la funicolare. La solennità è il 1° settembre, preceduta dalla novena; programma e visite sul sito del <a href=\"https://www.madonnadelsasso.org\">Sacro Monte Madonna del Sasso</a>.</p>"
+        },
+        {
+          "heading": "Da Ascona al Gambarogno",
+          "icon": "church",
+          "html": "<p>Questa guida serve anche Minusio (7.321 abitanti), Losone (6.727), Ascona (5.322), il Gambarogno (5.024) e Muralto (2.572). Le loro parrocchie fanno tutte parte del <a href=\"https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-locarnese-16157/\">vicariato del Locarnese</a>, con sede alla Collegiata di Locarno. Per i riformati c'è un dettaglio poco noto: Ascona, Losone e Minusio fanno capo alla CERL, mentre il Gambarogno appartiene alla <a href=\"https://cerbell.ch/contatti/\">Comunità evangelica riformata di Bellinzona e dintorni</a>, che ha una chiesa a San Nazzaro, in Via Ronchitt 20.</p><p>Per un primo incontro sulla sponda sinistra del lago c'è il Parco botanico del Gambarogno, tra Piazzogna e Vairano: oltre 20.000 metri quadrati con circa 950 qualità di camelie e quasi 450 magnolie (<a href=\"https://www.ticino.ch/it/commons/details/Parco-botanico-del-Gambarogno/85680.html\">Ticino Turismo</a>). Con il tuo codice postale, per esempio 6612 per Ascona o 6648 per Minusio, la ricerca su christlich-verliebt.ch include anche i dintorni.</p>"
         }
       ],
       "guide": {
@@ -1223,6 +1282,22 @@
           {
             "title": "Diocesi di Lugano – Sante Messe",
             "url": "https://www.diocesilugano.ch/sante-messe/"
+          },
+          {
+            "title": "Diocesi di Lugano – Vicariato del Locarnese (elenco parrocchie)",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-locarnese-16157/"
+          },
+          {
+            "title": "CERL – Chiesa evangelica riformata di Locarno e dintorni",
+            "url": "https://www.cerl.ch/"
+          },
+          {
+            "title": "CERB – Contatti (chiese di Bellinzona, Biasca, San Nazzaro; Bellinzonese, Gambarogno e Tre Valli)",
+            "url": "https://cerbell.ch/contatti/"
+          },
+          {
+            "title": "Ticino Turismo – Parco botanico del Gambarogno",
+            "url": "https://www.ticino.ch/it/commons/details/Parco-botanico-del-Gambarogno/85680.html"
           }
         ]
       }
@@ -1257,6 +1332,11 @@
           "heading": "Essere single nel Mendrisiotto",
           "icon": "people",
           "html": "<p>Nel distretto di Mendrisio il 43,1 % delle economie domestiche è formato da una sola persona e il 43,4 % della popolazione è celibe o nubile (2024, tutte le età). Con Lugano e Chiasso a pochi minuti di treno, il Mendrisiotto si vive come un'unica area: la ricerca per codice postale 6850 su christlich-verliebt.ch comprende anche i dintorni.</p>"
+        },
+        {
+          "heading": "Oltre il Borgo: i comuni vicini",
+          "icon": "church",
+          "html": "<p>La guida è pensata anche per Stabio (4.522 abitanti), Coldrerio (2.834), Riva San Vitale (2.695) e Novazzano (2.340). Ognuno ha la propria parrocchia nel <a href=\"https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/\">vicariato del Mendrisiotto</a>, e lo stesso vale per molti quartieri di Mendrisio: Rancate, Ligornetto, Genestrerio o Capolago sono ancora parrocchie a sé. Per i riformati il riferimento più vicino resta la chiesa della CERS a Vacallo.</p><p>Il luogo più speciale per un primo incontro è a Riva San Vitale: il Battistero, probabilmente del V secolo, con pianta ottagonale iscritta in un quadrato, è considerato il più antico monumento cristiano conservato in Svizzera; all'interno affreschi romanici del XII secolo (<a href=\"https://www.ticino.ch/it/commons/details/Battistero-di-Riva-San-Vitale/2496.html\">Ticino Turismo</a>). Con il tuo codice postale, per esempio 6855 per Stabio o 6826 per Riva San Vitale, la ricerca su christlich-verliebt.ch include anche i dintorni.</p>"
         }
       ],
       "guide": {
@@ -1516,6 +1596,22 @@
           {
             "title": "Ticino Turismo – Itinerari tra i vigneti",
             "url": "https://www.ticino.ch/it/commons/details/Itinerari-tra-i-vigneti/95883.html"
+          },
+          {
+            "title": "Diocesi di Lugano – Vicariato del Mendrisiotto (elenco parrocchie)",
+            "url": "https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/"
+          },
+          {
+            "title": "CERS – Le nostre chiese (Vacallo, Via al Colle)",
+            "url": "https://cers.ch/"
+          },
+          {
+            "title": "Ticino Turismo – Battistero di Riva San Vitale",
+            "url": "https://www.ticino.ch/it/commons/details/Battistero-di-Riva-San-Vitale/2496.html"
+          },
+          {
+            "title": "USI – Il Battistero di San Giovanni a Riva San Vitale (esposizione)",
+            "url": "https://www.usi.ch/it/feeds/23268"
           }
         ]
       }
@@ -1550,6 +1646,11 @@
           "heading": "Natura per conoscersi",
           "icon": "tree",
           "html": "<p>Il Parco del Penz, circa 245 ettari di bosco tra Chiasso, Seseglio e Pedrinate con oltre 30 km di sentieri, porta fino all'oratorio di Santo Stefano sul colle di Pedrinate. A pochi minuti si trovano le Gole della Breggia, con la Chiesa Rossa del 1343: mete tranquille per un secondo incontro.</p>"
+        },
+        {
+          "heading": "Da Balerna alla Valle di Muggio",
+          "icon": "church",
+          "html": "<p>Questa guida vale anche per Morbio Inferiore (4.412 abitanti), Vacallo (3.491), Balerna (3.356) e Breggia (1.889). Balerna ha un ruolo particolare: almeno dal XII secolo era il centro della pieve che comprendeva quasi tutto l'attuale distretto, Chiasso esclusa, e il capitolo della collegiata di San Vittore è attestato dal 1148 (<a href=\"https://hls-dhs-dss.ch/it/articles/002222/\">Dizionario storico della Svizzera</a>). Ancora oggi vi ha sede il <a href=\"https://www.diocesilugano.ch/wd-annuario-enti/parrocchie-16134/vicariato-del-mendrisiotto-16154/\">vicariato del Mendrisiotto</a>. Nel comune di Breggia ognuno dei villaggi, da Sagno a Muggio, Cabbio e Bruzella, ha ancora la sua parrocchia.</p><p>Per un primo incontro diverso dal solito si può salire in Valle di Muggio: il <a href=\"https://www.ticino.ch/it/commons/details/Museo-etnografico-della-Valle-di-Muggio-MEVM-/2764.html\">Museo etnografico della Valle di Muggio</a> ha il suo centro informativo a Casa Cantoni, a Cabbio, e al mulino di Bruzella si macina ancora regolarmente. Con il tuo codice postale, per esempio 6828 per Balerna o 6834 per Morbio Inferiore, la ricerca su christlich-verliebt.ch include anche i dintorni.</p>"
         }
       ],
       "guide": {
@@ -1823,6 +1924,329 @@
           {
             "title": "Wikipedia – Monte Bisbino (santuario, 1.325 m)",
             "url": "https://it.wikipedia.org/wiki/Monte_Bisbino"
+          },
+          {
+            "title": "Dizionario storico della Svizzera – Balerna",
+            "url": "https://hls-dhs-dss.ch/it/articles/002222/"
+          },
+          {
+            "title": "Ticino Turismo – Museo etnografico della Valle di Muggio (MEVM)",
+            "url": "https://www.ticino.ch/it/commons/details/Museo-etnografico-della-Valle-di-Muggio-MEVM-/2764.html"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "biasca",
+      "heroImage": null,
+      "heroImageAlt": "Illustrazione IA ispirata a Biasca: chiesa romanica dei Santi Pietro e Paolo e cascata di Santa Petronilla",
+      "name": "Biasca",
+      "postcode": "6710",
+      "region": "Tre Valli",
+      "geo": {
+        "lat": 46.3561,
+        "lon": 8.9692
+      },
+      "metaTitle": "Single cristiani a Biasca: conoscersi con la fede",
+      "title": "Single cristiani a Biasca e nelle Tre Valli",
+      "description": "Single cristiani a Biasca e nelle Tre Valli: chiese romaniche, comunità cattoliche ed evangeliche e idee per un primo incontro con valori comuni.",
+      "lead": "Alla confluenza di Leventina, Blenio e Riviera, Biasca è il borgo di riferimento delle Tre Valli, con una tradizione di fede documentata da oltre mille anni.",
+      "sections": [
+        {
+          "heading": "Biasca in cifre: la porta delle Tre Valli",
+          "icon": "church",
+          "html": "<p>Biasca conta 6.201 residenti permanenti (fine 2024); il distretto di Riviera ne conta 10.470 e, con Blenio e Leventina, le Tre Valli arrivano a 24.834. Nel distretto di Riviera il 57,1 % degli abitanti dai 15 anni è cattolico romano e il 27,0 % non ha un'appartenenza religiosa; in Valle di Blenio i cattolici sono il 62,5 %, in Leventina il 63,1 %, contro il 56,2 % del Ticino (<a href=\"https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf\">USTAT, Il Ticino in cifre 2026</a>).</p><p>La chiesa dei Santi Pietro e Paolo è considerata la matrice dell'evangelizzazione delle Tre Valli ambrosiane: già intorno all'830 un documento cita un prevosto e sette canonici di Biasca (<a href=\"https://www.biasca.ch/Cenni-storici-c30c8300\">Comune di Biasca, Cenni storici</a>). Ancora oggi la <a href=\"https://parrocchiabiasca.altervista.org/\">Parrocchia di Biasca</a> celebra secondo il rito ambrosiano e fa parte del vicariato delle Tre Valli della Diocesi di Lugano. I riformati fanno capo alla <a href=\"https://cerbell.ch/contatti/\">Comunità evangelica riformata di Bellinzona e dintorni</a>, che ha una chiesa anche a Biasca, in via Officina.</p>"
+        },
+        {
+          "heading": "Essere single nelle Tre Valli",
+          "icon": "people",
+          "html": "<p>Nel distretto di Riviera il 40,1 % delle economie domestiche è formato da una sola persona, poco meno della media cantonale (42,1 %); in Leventina la quota sale al 48,9 %. Il 42,8 % della popolazione della Riviera è celibe o nubile (2024, tutte le età). Nelle valli i numeri sono piccoli: conviene guardare all'intera regione.</p><p>Biasca è il centro dei servizi per le valli di Blenio, Leventina e Riviera, sull'asse del San Gottardo e del Lucomagno (<a href=\"https://www.biasca.ch/Scopri-Biasca-8056a600\">Comune di Biasca</a>). Con la ricerca per codice postale 6710 su christlich-verliebt.ch trovi profili anche nelle valli e verso il Bellinzonese.</p>"
+        },
+        {
+          "heading": "Romanico, castagni e una cascata",
+          "icon": "heart",
+          "html": "<p>Dalla chiesa romanica dei Santi Pietro e Paolo, ricostruita nella forma odierna nel 1171, parte la Via Crucis con 14 cappelle nel castagneto che sale all'oratorio di Santa Petronilla e al ponte sulla cascata del Froda (<a href=\"https://www.ticino.ch/it/commons/details/Cascata-di-Santa-Petronilla/130542.html\">Ticino Turismo</a>). Proprio lassù, il 1° gennaio 1292, fu firmata la Carta di Biasca che sanciva i diritti della comunità.</p><p>Nelle valli vicine si trovano due gioielli del romanico: la chiesa di Negrentino in Valle di Blenio e <a href=\"https://www.ticino.ch/it/commons/details/Chiesa-di-San-Nicolao/2862.html\">San Nicolao a Giornico</a>, monumento nazionale. Visitarli insieme è un modo tranquillo per conoscersi parlando di fede, arte e storia.</p>"
+        }
+      ],
+      "guide": {
+        "facts": [
+          {
+            "label": "Abitanti",
+            "value": "6.201",
+            "note": "residenti permanenti, fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Abitanti delle Tre Valli",
+            "value": "24.834",
+            "note": "distretti di Riviera (10.470), Blenio (5.613) e Leventina (8.751), fine 2024",
+            "source": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "label": "Cattolici nel distretto",
+            "value": "57,1 %",
+            "note": "Riviera, 15 anni e più, 2024 (Blenio 62,5 %, Leventina 63,1 %, Ticino 56,2 %)",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Economie domestiche di una persona",
+            "value": "40,1 %",
+            "note": "distretto di Riviera, 2024 (Leventina 48,9 %, Ticino 42,1 %)",
+            "source": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "label": "Chiesa dei Santi Pietro e Paolo",
+            "value": "1171",
+            "note": "anno della chiesa odierna; clero di Biasca documentato intorno all'830",
+            "source": "https://www.ticino.ch/it/commons/details/Chiesa-dei-Santi-Pietro-e-Paolo/2844.html"
+          }
+        ],
+        "places": [
+          {
+            "name": "Chiesa dei Santi Pietro e Paolo",
+            "denomination": "cattolica",
+            "address": "In posizione dominante sul borgo, 6710 Biasca",
+            "text": "Chiesa romanica a tre navate (la costruzione odierna risale al 1171), nata forse come chiesa battesimale nel IX secolo e antica sede del capitolo dei canonici. Il pavimento in granito sale seguendo la roccia; affreschi dal XIII secolo, scene della vita di San Carlo Borromeo attribuite ad Alessandro Gorla e la cappella del Rosario voluta dal Cavalier Pellanda. Alberto Camenzind la riportò alle forme romaniche tra il 1955 e il 1967.",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-dei-Santi-Pietro-e-Paolo/2844.html"
+          },
+          {
+            "name": "Chiesa di San Carlo",
+            "denomination": "cattolica",
+            "address": "Centro del borgo, ai piedi dei Santi Pietro e Paolo, 6710 Biasca",
+            "text": "L'attuale chiesa parrocchiale, costruita dal 1890 al 1897 su disegno dell'architetto milanese Carlo Maciachini: unico esempio in Ticino di architettura a impianto centrale cruciforme, mai completato. Conserva una tela settecentesca di Sant'Antonio da Padova, un tabernacolo dorato di Paolo Pisoni (1697) e un crocifisso tardogotico. Da qui si sale ai Santi Pietro e Paolo.",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Carlo/5084.html"
+          },
+          {
+            "name": "Oratorio di Santa Petronilla",
+            "denomination": "cattolica",
+            "address": "Presso il ponte sul torrente Froda, sopra il borgo, 6710 Biasca",
+            "text": "Semplice oratorio del Seicento al termine della Via Crucis, con affreschi delle storie di Santa Petronilla, angeli musicanti e dipinti votivi della famiglia Pellanda; la prima chiesa risale al XIII secolo. Non è sempre aperto: le chiavi si chiedono alla parrocchia.",
+            "url": "https://www.ticino.ch/it/commons/details/Oratorio-di-Santa-Petronilla/2843.html"
+          },
+          {
+            "name": "Chiesa evangelica riformata di Biasca",
+            "denomination": "evangelica riformata",
+            "address": "Via Officina, 6710 Biasca",
+            "text": "Una delle tre chiese della Comunità evangelica riformata di Bellinzona e dintorni (CERB), insieme a Bellinzona e San Nazzaro. La CERB è la comunità riformata di riferimento per Riviera, Valle di Blenio e Valle Leventina; segretariato a Bellinzona, sito bilingue italiano-tedesco.",
+            "url": "https://cerbell.ch/contatti/"
+          },
+          {
+            "name": "Chiesa di Sant'Ambrogio (San Carlo) a Negrentino",
+            "denomination": "cattolica",
+            "address": "Frazione di Negrentino, 6716 Leontica (Valle di Blenio)",
+            "text": "Chiesetta romanica citata già nel 1224, con un affresco dell'Ascensione assegnato alla metà dell'XI secolo; due navate e doppia abside, affreschi dei pittori seregnesi e di Antonio da Tradate (1510). Le chiavi sono disponibili in alcuni punti indicati da Ticino Turismo.",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-San-Carlo-Negrentino/2882.html"
+          },
+          {
+            "name": "Chiesa di San Nicolao",
+            "denomination": "cattolica",
+            "address": "Zona Chiesa 12, 6745 Giornico",
+            "text": "Monumento nazionale e uno dei più importanti esempi di architettura romanica in Ticino: edificata nel XII secolo, faceva parte di un monastero benedettino. Cripta a tre navate con capitelli scolpiti, affreschi quattrocenteschi di Nicolao da Seregno e un fonte battesimale romanico.",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-San-Nicolao/2862.html"
+          }
+        ],
+        "communities": [
+          {
+            "name": "Parrocchia dei Santi Pietro e Paolo di Biasca",
+            "text": "Parrocchia del vicariato delle Tre Valli che celebra secondo il rito ambrosiano. Sul sito si trovano il calendario annuale delle feste, il bollettino parrocchiale e il cammino di preparazione ai sacramenti per bambini e ragazzi.",
+            "url": "https://parrocchiabiasca.altervista.org/"
+          },
+          {
+            "name": "Corso di preparazione al matrimonio – Vicariato delle Tre Valli",
+            "text": "Percorso per fidanzati della Commissione diocesana per la pastorale familiare, con un ciclo in primavera e uno in autunno alla Casa San Giuseppe di Biasca. Si consiglia di partecipare almeno sei mesi prima delle nozze; iscrizione tramite il proprio parroco.",
+            "url": "https://www.diocesilugano.ch/incontri-di-preparazione-al-sacramento-del-matrimonio-anno-2026/"
+          },
+          {
+            "name": "Comunità evangelica riformata di Bellinzona e dintorni (CERB)",
+            "text": "La comunità dei protestanti di Bellinzonese, Gambarogno e Tre Valli propone studi biblici, un Gruppo Giovani, la scuola domenicale e il corso confermandi; le novità arrivano anche con la newsletter.",
+            "url": "https://cerbell.ch/"
+          },
+          {
+            "name": "Pastorale Giovanile della Diocesi di Lugano",
+            "text": "Servizio diocesano per bambini, ragazzi e giovani: giornate diocesane, formazione degli animatori, GREST e colonie estive e accompagnamento alle Giornate Mondiali della Gioventù.",
+            "url": "https://www.pastoralegiovanile.ch"
+          }
+        ],
+        "events": [
+          {
+            "name": "Naregna – Carnevale Biaschese",
+            "when": "febbraio o marzo, nei giorni che precedono la Quaresima ambrosiana, con il culmine il sabato",
+            "text": "Il carnevale della Società Carnevale Biaschese segue la tradizione ambrosiana: Canto del gallo, corteo notturno e consegna delle chiavi, corteo dei bambini, pranzo degli anziani e il sabato la risottata popolare e il Gran corteo mascherato con carri e guggen. Nelle edizioni recenti quasi 10.000 persone nelle strade del borgo."
+          },
+          {
+            "name": "Via Crucis vicariale",
+            "when": "la domenica che precede la Domenica delle Palme",
+            "text": "Momento di preghiera comune delle parrocchie del vicariato delle Tre Valli in Quaresima; dettagli nel bollettino della Parrocchia di Biasca."
+          },
+          {
+            "name": "Festa di San Giovanni a Pontirone",
+            "when": "la domenica dopo il 24 giugno",
+            "text": "Festa nella valle di Pontirone, sopra Biasca, segnata ogni anno nel calendario della parrocchia: un'occasione per salire in montagna insieme."
+          },
+          {
+            "name": "Festa dei Santi Pietro e Paolo",
+            "when": "29 giugno",
+            "text": "Festa dei patroni della chiesa matrice del borgo e della parrocchia di Biasca."
+          },
+          {
+            "name": "Festa di San Carlo Borromeo",
+            "when": "la domenica vicina al 4 novembre",
+            "text": "Festa del titolare della chiesa parrocchiale. Il legame con i Borromeo è antico: i cardinali Borromeo visitarono il borgo e nei Santi Pietro e Paolo un ciclo di affreschi racconta la vita di San Carlo."
+          }
+        ],
+        "dateSpots": [
+          {
+            "name": "Cascata di Santa Petronilla e ponte sul Froda",
+            "where": "Sopra il borgo, partendo dalla piazza centrale, 6710 Biasca",
+            "text": "Dalla piazza si passa accanto a Casa Cavalier Pellanda, si sale ai Santi Pietro e Paolo e lungo la Via Crucis fino al ponte romanico con vista sulla cascata e sulle tre valli."
+          },
+          {
+            "name": "Via Crucis nel castagneto",
+            "where": "Dalla chiesa di San Carlo all'oratorio di Santa Petronilla, 6710 Biasca",
+            "text": "Percorso facile di circa 2 km con 14 cappelle del 1742 tra castagni del Patriziato, registrati e numerati; lungo il cammino le tracce dell'antico acquedotto e di una cava di granito."
+          },
+          {
+            "name": "Casa Cavalier Pellanda",
+            "where": "Piazzetta Cav. Pellanda 7, 6710 Biasca",
+            "text": "Dimora cinquecentesca del Cavalier Giovan Battista Pellanda con sala d'onore restaurata, cantine a volta e giardino; aperta in occasione delle mostre temporanee, un buon pretesto per un primo incontro."
+          },
+          {
+            "name": "Un giro a Giornico",
+            "where": "6745 Giornico, Bassa Leventina",
+            "text": "Passeggiata facile di circa 3 km tra San Nicolao, le altre chiese, i due ponti di pietra dell'unica isola abitata lungo il fiume Ticino (Verbano escluso), il Museo di Leventina e La Congiunta."
+          },
+          {
+            "name": "Sentiero storico di Negrentino",
+            "where": "Partenza dalla vecchia stazione di Acquarossa, Valle di Blenio",
+            "text": "Anello di circa 5 km tra Prugiasco, la chiesa di Negrentino e Leontica, lungo l'antica Via dei Someri: Bellinzona e Valli Turismo consiglia di dedicargli una giornata intera."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Quali sono le chiese principali di Biasca?",
+            "answer": "La chiesa romanica dei Santi Pietro e Paolo, sopra il borgo, e l'attuale parrocchiale di San Carlo, progettata da Carlo Maciachini. Lungo la Via Crucis si raggiunge l'oratorio di Santa Petronilla. Nelle valli vicine meritano una visita Negrentino in Valle di Blenio e San Nicolao a Giornico."
+          },
+          {
+            "question": "C'è una comunità evangelica riformata a Biasca?",
+            "answer": "Sì. La Comunità evangelica riformata di Bellinzona e dintorni ha una chiesa a Biasca in via Officina, oltre a quelle di Bellinzona e San Nazzaro. Calendario, culti e attività sono pubblicati su cerbell.ch."
+          },
+          {
+            "question": "Dove trovo gli orari delle Messe a Biasca e nelle Tre Valli?",
+            "answer": "Gli orari cambiano secondo stagione e chiesa: consulta la pagina «Sante Messe» della Diocesi di Lugano, che ha un elenco per il vicariato delle Tre Valli, oppure il sito e il bollettino della Parrocchia di Biasca."
+          },
+          {
+            "question": "Perché il carnevale di Biasca si festeggia dopo il Mercoledì delle Ceneri?",
+            "answer": "Le Tre Valli seguono il rito ambrosiano, in cui la Quaresima inizia la sesta domenica prima di Pasqua. Per questo Naregna, il Carnevale Biaschese, culmina il sabato che precede l'inizio della Quaresima ambrosiana, una tradizione a cui il borgo non intende rinunciare."
+          },
+          {
+            "question": "Dove fare un primo incontro a Biasca?",
+            "answer": "Una passeggiata lungo la Via Crucis fino alla cascata di Santa Petronilla, una mostra a Casa Cavalier Pellanda o una gita tra le chiese romaniche di Giornico e Negrentino offrono tempo e spunti per conoscersi."
+          }
+        ],
+        "sources": [
+          {
+            "title": "USTAT – Il Ticino in cifre 2026 (popolazione, religione, economie domestiche per distretto)",
+            "url": "https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/tic_2026.pdf"
+          },
+          {
+            "title": "Cantone Ticino – Popolazione residente permanente dei comuni al 31.12.2024",
+            "url": "https://www4.ti.ch/fileadmin/DI/DI_DI/SEL/Comuni/Perequazione/FU_pop2024.pdf"
+          },
+          {
+            "title": "Comune di Biasca – Cenni storici",
+            "url": "https://www.biasca.ch/Cenni-storici-c30c8300"
+          },
+          {
+            "title": "Comune di Biasca – Saluto del Sindaco",
+            "url": "https://www.biasca.ch/Scopri-Biasca-8056a600"
+          },
+          {
+            "title": "Ticino Turismo – Chiesa dei Santi Pietro e Paolo",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-dei-Santi-Pietro-e-Paolo/2844.html"
+          },
+          {
+            "title": "Ticino Turismo – Chiesa di S. Carlo",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-S-Carlo/5084.html"
+          },
+          {
+            "title": "GCatholic – Chiesa San Carlo, Biasca (vicariato Tre Valli)",
+            "url": "https://gcatholic.org/churches/europe-west/135453"
+          },
+          {
+            "title": "Ticino Turismo – Oratorio di Santa Petronilla",
+            "url": "https://www.ticino.ch/it/commons/details/Oratorio-di-Santa-Petronilla/2843.html"
+          },
+          {
+            "title": "Ticino Turismo – Cascata di Santa Petronilla",
+            "url": "https://www.ticino.ch/it/commons/details/Cascata-di-Santa-Petronilla/130542.html"
+          },
+          {
+            "title": "Bellinzona e Valli Turismo – Via Crucis nel castagneto di Biasca",
+            "url": "https://www.bellinzonaevalli.ch/en/hike/details/Via-Crucis-in-the-chestnut-forest-of-Biasca/801528707.html"
+          },
+          {
+            "title": "Ticino Turismo – Casa Cavalier Pellanda",
+            "url": "https://www.ticino.ch/it/commons/details/Casa-Cavalier-Pellanda/2748.html"
+          },
+          {
+            "title": "Ticino Turismo – Chiesa di San Carlo, Negrentino",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-San-Carlo-Negrentino/2882.html"
+          },
+          {
+            "title": "Bellinzona e Valli Turismo – Sentiero storico di Negrentino",
+            "url": "https://www.bellinzonaevalli.ch/en/hike/details/Acquarossa-historical-path-number-2/56926580.html"
+          },
+          {
+            "title": "Ticino Turismo – Chiesa di San Nicolao, Giornico",
+            "url": "https://www.ticino.ch/it/commons/details/Chiesa-di-San-Nicolao/2862.html"
+          },
+          {
+            "title": "Bellinzona e Valli Turismo – Un giro a Giornico",
+            "url": "https://www.bellinzonaevalli.ch/hike/details/59614719.html"
+          },
+          {
+            "title": "Parrocchia di Biasca",
+            "url": "https://parrocchiabiasca.altervista.org/"
+          },
+          {
+            "title": "Parrocchia di Biasca – Calendario annuale",
+            "url": "https://parrocchiabiasca.altervista.org/calendario/calendario-annuale/"
+          },
+          {
+            "title": "CERB – Contatti e chiese",
+            "url": "https://cerbell.ch/contatti/"
+          },
+          {
+            "title": "Chiesa evangelica riformata nel Ticino – Comunità regionali",
+            "url": "https://www.cert-ticino.ch/comunit%C3%A0-regionali/"
+          },
+          {
+            "title": "Diocesi di Lugano – Incontri di preparazione al matrimonio 2027",
+            "url": "https://www.diocesilugano.ch/incontri-di-preparazione-al-sacramento-del-matrimonio-anno-2026/"
+          },
+          {
+            "title": "Diocesi di Lugano – Sante Messe",
+            "url": "https://www.diocesilugano.ch/sante-messe/"
+          },
+          {
+            "title": "Diocesi di Lugano – Orari Sante Messe nel vicariato delle Tre Valli",
+            "url": "https://www.diocesilugano.ch/orari-sante-messe_tre-valli/"
+          },
+          {
+            "title": "Diocesi di Lugano – Parrocchie sul territorio",
+            "url": "https://www.diocesilugano.ch/parrocchie-sul-territorio/"
+          },
+          {
+            "title": "Pastorale Giovanile Diocesana",
+            "url": "https://www.pastoralegiovanile.ch"
+          },
+          {
+            "title": "laRegione – Naregna, il Carnevale Biaschese",
+            "url": "https://www.laregione.ch/cantone/bellinzonese/1896973/carnevale-febbraio-sabato-naregna-biasca-numeri"
+          },
+          {
+            "title": "tio.ch – Bilancio di Naregna",
+            "url": "https://www.tio.ch/ticino/attualita/1906364/naregna-festeggia-e-pensa-gia-al-125esimo"
           }
         ]
       }
