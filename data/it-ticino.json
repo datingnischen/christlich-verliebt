@@ -1938,8 +1938,8 @@
     },
     {
       "slug": "biasca",
-      "heroImage": null,
-      "heroImageAlt": "Illustrazione IA ispirata a Biasca: chiesa romanica dei Santi Pietro e Paolo e cascata di Santa Petronilla",
+      "heroImage": "/images/it/biasca.webp",
+      "heroImageAlt": "Illustrazione generata con IA ispirata alla regione di Biasca: borgo ticinese con chiesa in pietra e montagne delle Tre Valli",
       "name": "Biasca",
       "postcode": "6710",
       "region": "Tre Valli",
