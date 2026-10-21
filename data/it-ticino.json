@@ -232,8 +232,8 @@
           "url": "https://www.laregione.ch/cantone/luganese/1667222/servizi"
         },
         {
-          "title": "Ticino Turismo – Festa di Santa Maria dei Miracoli",
-          "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+          "title": "Ticino Turismo – Santuario di Santa Maria dei Miracoli, Morbio Inferiore",
+          "url": "https://www.ticino.ch/it/commons/details/Santuario-Santa-Maria-dei-Miracoli/1395.html"
         },
         {
           "title": "Processioni di Mendrisio – Comunicato 2026",
@@ -717,7 +717,7 @@
             "url": "https://www.laregione.ch/cantone/bellinzonese/1664827/servizi"
           },
           {
-            "name": "Festival organistico Antegnati",
+            "name": "Rassegna Antegnati: concerti sull'organo della Collegiata",
             "text": "Rassegna di concerti che valorizza l'organo Antegnati della Collegiata e altri organi della regione; ascoltare insieme è un bel modo per conoscersi senza pressione.",
             "url": "https://www.laregione.ch/temi/antegnati"
           },
@@ -761,7 +761,7 @@
             "text": "Il cuore della città vecchia ai piedi della Collegiata: un caffè sotto i portici e una breve visita alla chiesa sono un primo incontro semplice e senza pressione."
           },
           {
-            "name": "Mercato del sabato",
+            "name": "Bancarelle del mercato in centro",
             "where": "Centro storico di Bellinzona",
             "text": "Passeggiare tra le bancarelle offre spunti di conversazione naturali; poi si può pranzare con il «Menu del mercato»."
           },
@@ -1209,10 +1209,6 @@
             "url": "https://www.myswitzerland.com/en-ch/experiences/events/locarno-film-festival/"
           },
           {
-            "title": "Svizzera Turismo – classicAscona",
-            "url": "https://www.myswitzerland.com/en/experiences/events/classicascona/"
-          },
-          {
             "title": "Locarno Film Festival – Piazza Grande",
             "url": "https://www.locarnofestival.ch/festival/film-sections/piazza-grande.html"
           },
@@ -1255,7 +1251,7 @@
         {
           "heading": "Le Processioni: vivere la fede insieme",
           "icon": "calendar",
-          "html": "<p>Le Processioni storiche del Giovedì e del Venerdì Santo, documentate da oltre quattro secoli e nella lista UNESCO del patrimonio immateriale dal 2019, coinvolgono circa 230 figuranti il Giovedì e oltre 800 partecipanti il Venerdì. Chi vuole partecipare si candida presso la <a href=\"https://www.processionimendrisio.ch/\">Fondazione Processioni Storiche Mendrisio</a>, che cerca anche volontari per costumi, Trasparenti e logistica.</p><p>Preparare insieme un evento così è uno dei modi più autentici per conoscere persone del Borgo che condividono fede e tradizione.</p>"
+          "html": "<p>Le Processioni storiche del Giovedì e del Venerdì Santo, documentate da oltre quattro secoli e nella lista UNESCO del patrimonio immateriale dal 2019, coinvolgono circa 230 figuranti il Giovedì e oltre 800 partecipanti il Venerdì. Chi vuole partecipare si candida presso la <a href=\"https://www.mendrisiottoturismo.ch/processionimendrisio/\">Fondazione Processioni Storiche Mendrisio</a>, che cerca anche volontari per costumi, Trasparenti e logistica.</p><p>Preparare insieme un evento così è uno dei modi più autentici per conoscere persone del Borgo che condividono fede e tradizione.</p>"
         },
         {
           "heading": "Essere single nel Mendrisiotto",
@@ -1331,7 +1327,7 @@
             "denomination": "cattolica",
             "address": "6834 Morbio Inferiore (comune vicino, vicariato del Mendrisiotto)",
             "text": "Santuario mariano sul colle dell'antico castello, legato alla guarigione di due ragazze milanesi nel 1594 davanti a un affresco quattrocentesco; basilica minore dal 1990. Festa principale il 29 luglio.",
-            "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+            "url": "https://www.ticino.ch/it/commons/details/Santuario-Santa-Maria-dei-Miracoli/1395.html"
           },
           {
             "name": "Chiesa evangelica riformata di Vacallo",
@@ -1429,7 +1425,7 @@
           },
           {
             "question": "Si può partecipare alle Processioni storiche?",
-            "answer": "Sì. La Fondazione Processioni Storiche Mendrisio raccoglie le candidature online sul sito processionimendrisio.ch, dove sono descritti i ruoli del Giovedì Santo. Il Venerdì Santo partecipano oltre 800 figuranti; servono anche volontari per la preparazione."
+            "answer": "Sì. La Fondazione Processioni Storiche Mendrisio raccoglie le candidature online sul sito delle Processioni (Mendrisiotto Turismo), dove sono descritti i ruoli del Giovedì Santo. Il Venerdì Santo partecipano oltre 800 figuranti; servono anche volontari per la preparazione."
           },
           {
             "question": "C'è una comunità evangelica riformata vicino a Mendrisio?",
@@ -1478,8 +1474,8 @@
             "url": "https://www.ticino.ch/it/commons/details/Museo-d-arte-Mendrisio/2759.html"
           },
           {
-            "title": "Ticino Turismo – Festa di Santa Maria dei Miracoli",
-            "url": "https://www.ticino.ch/en/events/details/celebration-of-st-mary-of-the-miracles/10105.html"
+            "title": "Ticino Turismo – Santuario di Santa Maria dei Miracoli, Morbio Inferiore",
+            "url": "https://www.ticino.ch/it/commons/details/Santuario-Santa-Maria-dei-Miracoli/1395.html"
           },
           {
             "title": "GCatholic – Santuario-Basilica di Santa Maria dei Miracoli",

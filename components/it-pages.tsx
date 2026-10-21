@@ -256,7 +256,7 @@ export function ItHomePage() {
     <Hero crumbs={[{ label: "Svizzera italiana", href: null }]} badge="Ticino · Svizzera" title={IT_HOME.title} lead={IT_HOME.lead} primary="Conosci single cristiani" image={IT_HOME.heroImage} imageAlt={IT_HOME.heroImageAlt} />
     <Facts guide={IT_HOME.guide} />
     <CityList cities={IT_CITIES.map((city) => ({ city }))} heading="Scegli la tua città" intro="Guide per Lugano, Bellinzona, Locarno, Mendrisio e Chiasso: chiese con indirizzo, appuntamenti dell'anno, luoghi per il primo incontro e collegamenti in treno." />
-    <Sections sections={IT_HOME.sections} kicker="La guida" title="Fede e amore in Ticino" />
+    <Sections sections={IT_HOME.sections} kicker="La guida" title="La guida al Ticino" />
     <Communities guide={IT_HOME.guide} heading="Gruppi e proposte in tutto il Ticino" />
     <Events guide={IT_HOME.guide} heading="Appuntamenti di fede in Ticino" />
     <ItCtaBand heading="Pronto per il primo incontro in Ticino?" />
@@ -309,7 +309,7 @@ export function ItCityPage({ city }: { city: ItCity }) {
       <div className={styles.widgetCopy}>
         <p className={styles.live}><i aria-hidden="true" />Attivi vicino a te</p>
         <h2>Chi cerca ora vicino a {city.name}</h2>
-        <p>Single cristiani da {city.name} e dintorni per cui fede, valori comuni e una relazione sincera sono importanti.</p>
+        <p>Single cristiani da {city.name} e dintorni per cui fede, valori comuni e una relazione sincera sono importanti: conoscersi con la fede come base comune, senza fretta.</p>
         <a className={styles.buttonPrimary} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Iscriviti e conosci" : "Iscriviti (sito in tedesco)"}</a>
       </div>
       <div className={styles.widgetFrame}>

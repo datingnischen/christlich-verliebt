@@ -63,6 +63,22 @@ test("Deutsche Footer (DE/AT/CH) verlinken single-cristiani.ch mit der halb Schw
   assert.match(shell, /<rect width="15" height="20" fill="#d52b1e" \/>[\s\S]*fill="#009246"/);
 });
 
+test("Seobility-Befunde: Hub-Einführungen, keine doppelten Überschriften je Stadt, kein hreflang auf die deutsche Startseite", async () => {
+  const hubs = await read("components/it-hubs.tsx");
+  assert.equal((hubs.match(/className=\{`\$\{styles\.prose\} \$\{hub\.intro\}`\}/g) ?? []).length, 2, "Einführung auf /incontri/ und /magazine/");
+  const words = (hubs.match(/<p>[^<]+(?:<a[^>]*>[^<]*<\/a>[^<]*)*<\/p>/g) ?? []).join(" ").replace(/<[^>]+>/g, " ").split(/\s+/).length;
+  assert.ok(words >= 400, `Hub-Texte: ${words} Wörter`);
+  for (const city of IT_CITIES) {
+    const names = [...city.guide.places, ...city.guide.communities, ...city.guide.events, ...city.guide.dateSpots].map((entry) => entry.name);
+    assert.equal(new Set(names).size, names.length, `${city.slug}: doppelte Überschrift ${names.filter((name, index) => names.indexOf(name) !== index).join(", ")}`);
+  }
+  const page = await read("app/(italiano)/[market]/it/[[...slug]]/page.tsx");
+  assert.doesNotMatch(page, /languages:/);
+  const pages = await read("components/it-pages.tsx");
+  assert.match(pages, /title="La guida al Ticino"/);
+  assert.match(pages, /conoscersi con la fede come base comune/);
+});
+
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {
   const page = await read("app/(italiano)/[market]/it/[[...slug]]/page.tsx");
   assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, url: itPublicUrl\(\)/);

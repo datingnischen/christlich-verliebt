@@ -6,7 +6,6 @@ import { ItArticlePage, ItCitiesPage, ItMagazinePage } from "@/components/it-hub
 import { IT_LEGAL, ItLegalPage, type ItLegalSlug } from "@/components/it-legal";
 import { IT_ABOUT, IT_ABOUT_SLUG, IT_AUTHOR, IT_CITIES, IT_CITY_BASE, IT_HOME, IT_LEGAL_PAGES, IT_MAGAZINE_BASE, IT_PILOT_INDEXABLE, IT_PUBLISHER, getItCity, itAuthorId, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
 import { IT_ARTICLES, IT_MAGAZINE, getItArticle } from "@/lib/it-magazine";
-import { publicUrl } from "@/lib/markets";
 import { safeJsonLd } from "@/lib/site-entities";
 import { staticAsset } from "@/lib/static-asset";
 
@@ -59,7 +58,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: page.metaTitle },
     description: page.description,
-    alternates: { canonical: page.url, languages: page.kind === "home" ? { "it-CH": page.url, "de-CH": publicUrl("ch") } : undefined },
+    // Kein hreflang auf christlich-verliebt.ch: die deutsche Startseite verlinkt nicht zurück (Seobility „Alternate Link fehlerhaft“).
+    alternates: { canonical: page.url },
     // Inhaltsseiten indexierbar (lib/it-pilot.ts), Rechtstexte wie auf den deutschen Seiten noindex.
     robots: { index: IT_PILOT_INDEXABLE && page.kind !== "legal", follow: true },
     openGraph: { title: page.title, description: page.description, url: page.url, locale: "it_CH", type: page.kind === "article" ? "article" : "website", siteName: "single-cristiani.ch", images: [{ url: staticAsset(image.heroImage), width: 1600, height: 900, alt: image.heroImageAlt }] },
