@@ -247,7 +247,7 @@ export function Hero({ crumbs, badge, title, lead, primary, image, imageAlt, act
       </div>
       <TicinoMap active={active} />
     </div>
-    <p className={`${styles.heroCredit} ${itStyles.heroCredit}`}>Immagine illustrativa generata con IA</p>
+    {image ? <p className={`${styles.heroCredit} ${itStyles.heroCredit}`}>Immagine illustrativa generata con IA</p> : null}
   </section>;
 }
 
