@@ -55,10 +55,12 @@ test("Flirtradar: italienische Radar-Grafik im CTA-Band auf Start- und Stadtseit
   assert.equal((pages.match(/<ItCtaBand heading=/g) ?? []).length, 2, "Startseite und Stadtseite");
 });
 
-test("Deutsche Footer (DE/AT/CH) verlinken single-cristiani.ch als Textlink, nicht als Flagge", async () => {
+test("Deutsche Footer (DE/AT/CH) verlinken single-cristiani.ch mit der halb Schweizer, halb italienischen Flagge", async () => {
   const shell = await read("components/site-shell.tsx");
-  assert.match(shell, /<a href=\{itPublicUrl\(\)\} hrefLang="it-CH" lang="it">Italiano · Ticino<\/a>/);
-  assert.doesNotMatch(shell, /Flag market="it"/);
+  assert.match(shell, /export function TicinoFlag\(\)/);
+  assert.match(shell, /<a href=\{itPublicUrl\(\)\} hrefLang="it-CH" aria-label="Italiano · Ticino: single-cristiani\.ch" title="Italiano · Ticino · single-cristiani\.ch"><TicinoFlag \/><\/a>/);
+  // Keine reine Italien-Flagge (ICONY bleibt bei der Schweiz): Schweizer Kreuz und Tricolore in einer Grafik.
+  assert.match(shell, /<rect width="15" height="20" fill="#d52b1e" \/>[\s\S]*fill="#009246"/);
 });
 
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {

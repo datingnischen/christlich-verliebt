@@ -15,6 +15,17 @@ export function Flag({ market }: { market: MarketCode }) {
   return <svg viewBox="0 0 30 20" preserveAspectRatio="none" aria-hidden="true">{stripes.map((fill, i) => <rect key={i} y={i * 20 / 3} width="30" height={20 / 3 + 0.1} fill={fill} />)}</svg>;
 }
 
+/** Italienische Schweiz (single-cristiani.ch): links Schweizer Kreuz, rechts Tricolore – bewusst keine reine Italien-Flagge. */
+export function TicinoFlag() {
+  return <svg viewBox="0 0 30 20" aria-hidden="true">
+    <rect width="15" height="20" fill="#d52b1e" />
+    <path d="M6 5h3v3.5h3.5v3H9V15H6v-3.5H2.5v-3H6z" fill="#fff" />
+    <rect x="15" width="5" height="20" fill="#009246" />
+    <rect x="20" width="5" height="20" fill="#fff" />
+    <rect x="25" width="5" height="20" fill="#ce2b37" />
+  </svg>;
+}
+
 export function SiteShell({ children, market, registrationHref }: { children: React.ReactNode; market: MarketCode; registrationHref?: string }) {
   const config = getMarket(market);
   const registration = registrationHref ?? publicUrl(market, "/registration/");
@@ -60,9 +71,8 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
         <section><h3>Mitgliedschaft</h3><a href={registration}>Kostenlos registrieren</a><a href={login}>Login</a><a href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}>Basis-Mitgliedschaft</a><a href={publicUrl(market, "/premium-mitgliedschaft.html")}>Premium-Mitgliedschaft</a></section>
         <section><h3>Über uns</h3><a href={previewPath(market, ABOUT_ROOT_PATH)}>Über christlich-verliebt</a>{hasAboutSubpages(market) ? <><a href={previewPath(market, ABOUT_REVIEWS_PATH)}>Bewertungen & Erfahrungen</a><a href={previewPath(market, ABOUT_SOCIAL_PATH)}>Social Media</a></> : null}<a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionelle Kontrolle</a><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a></section>
         <section><h3>Service</h3><a href={publicUrl(market, "/hilfe/")}>Hilfe & Support</a><a href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a><a href={publicUrl(market, "/datenschutz.html")}>Datenschutz</a><a href={publicUrl(market, "/impressum.html")}>Impressum</a>
-          {/* Italienische Variante für das Tessin (eigene Domain, seit 2026-10-21 verlinkt): Textlink, keine Italien-Flagge. */}
-          <a href={itPublicUrl()} hrefLang="it-CH" lang="it">Italiano · Ticino</a>
-          <div className={styles.flags}>{MARKET_CODES.filter(code => code !== market).map(code => <a key={code} href={publicUrl(code)} aria-label={`${getMarket(code).countryName}: ${getMarket(code).domain}`} title={`${getMarket(code).countryName} · ${getMarket(code).domain}`}><Flag market={code} /></a>)}</div>
+          {/* Italienische Variante für das Tessin (eigene Domain, seit 2026-10-21 verlinkt): halb CH, halb IT in der Flaggenreihe. */}
+          <div className={styles.flags}>{MARKET_CODES.filter(code => code !== market).map(code => <a key={code} href={publicUrl(code)} aria-label={`${getMarket(code).countryName}: ${getMarket(code).domain}`} title={`${getMarket(code).countryName} · ${getMarket(code).domain}`}><Flag market={code} /></a>)}<a href={itPublicUrl()} hrefLang="it-CH" aria-label="Italiano · Ticino: single-cristiani.ch" title="Italiano · Ticino · single-cristiani.ch"><TicinoFlag /></a></div>
         </section>
       </div>
       <p className={styles.legal}>Bei christlich-verliebt stehen gemeinsame Werte, ein respektvoller Austausch und ehrliches Kennenlernen im Mittelpunkt.</p>
