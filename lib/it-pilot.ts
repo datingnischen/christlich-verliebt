@@ -109,6 +109,16 @@ export const IT_CANTON_NAMES: Record<string, string> = {
   "CH-VS": "Canton Vallese", "CH-ZG": "Canton Zugo", "CH-ZH": "Canton Zurigo",
 };
 
+/**
+ * Eigene Icons auf der eigenen Domain (Google übernimmt Favicons nur von derselben Website): proxy.ts liefert
+ * die Pfade aus public/brand aus. /icon.png und /apple-icon.png sind im Proxy-Matcher ausgenommen, darum andere Namen.
+ */
+export const IT_ICONS = {
+  favicon: { path: "/favicon.ico", file: "/brand/single-cristiani-favicon.ico" },
+  png: { path: "/favicon-144.png", file: "/brand/single-cristiani-icon-144.png" },
+  apple: { path: "/apple-touch-icon.png", file: "/brand/single-cristiani-apple-touch-icon.png" },
+} as const;
+
 /** Live-URL auf single-cristiani.ch, Seitenpfade mit Schrägstrich. */
 export function itPublicUrl(slug = ""): string {
   return `${IT_ORIGIN}/${slug ? `${slug}/` : ""}`;

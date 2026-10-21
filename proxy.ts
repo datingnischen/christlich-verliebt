@@ -1,9 +1,8 @@
 import type { NextRequest } from "next/server.js";
 import { NextResponse } from "next/server.js";
 import { publicUrl, withTrailingSlash, type MarketCode } from "./lib/markets.ts";
-import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_GOOGLE_SITE_VERIFICATION, IT_HOME, IT_HOST, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
+import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_GOOGLE_SITE_VERIFICATION, IT_HOME, IT_HOST, IT_ICONS, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
 import { IT_ARTICLES, IT_MAGAZINE } from "./lib/it-magazine.ts";
-import { staticAsset } from "./lib/static-asset.ts";
 
 const HOST_MARKETS = new Map<string, MarketCode>([
   ["christlich-verliebt.de", "de"],
@@ -89,7 +88,13 @@ function italianLlmsText() {
 // single-cristiani.ch: eigene Domain der italienischen Variante. Die Seiten liegen intern unter /ch/it/
 // (app/[market]/it), robots, Sitemap, llms.txt und favicon beantwortet der Proxy selbst.
 function italianSite(request: NextRequest, path: string) {
-  if (path === "/favicon.ico") return NextResponse.redirect(staticAsset("/brand/icon.png"), 308);
+  // Eigene Icons unter der eigenen Domain (public/brand), kein Redirect auf den Vercel-Host.
+  const icon = Object.values(IT_ICONS).find((entry) => entry.path === path);
+  if (icon) {
+    const file = request.nextUrl.clone();
+    file.pathname = icon.file;
+    return NextResponse.rewrite(file);
+  }
   if (path === `/${IT_GOOGLE_SITE_VERIFICATION}.html`) {
     return new NextResponse(`google-site-verification: ${IT_GOOGLE_SITE_VERIFICATION}.html`, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600" } });
   }

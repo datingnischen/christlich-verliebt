@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { NextRequest } from "next/server.js";
 import { proxy } from "../proxy.ts";
-import { IT_ABOUT, IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, itAuthorId, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl } from "../lib/it-pilot.ts";
+import { IT_ABOUT, IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, IT_ICONS, itAuthorId, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl } from "../lib/it-pilot.ts";
 import { IT_ARTICLES } from "../lib/it-magazine.ts";
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8");
@@ -131,9 +132,16 @@ test("llms.txt und favicon der eigenen Domain", async () => {
   for (const article of IT_ARTICLES) assert.ok(text.includes(`](${itMagazineUrl(article.slug)})`), article.slug);
   assert.ok(text.includes(`](${itPublicUrl(IT_ABOUT_SLUG)})`));
   assert.match(text, /\n## Optional\n/);
-  const favicon = live("/favicon.ico");
-  assert.equal(favicon.status, 308);
-  assert.match(favicon.headers.get("location") ?? "", /\/brand\/icon\.png$/);
+  // Icons kommen von der eigenen Domain (Rewrite auf public/brand), nicht per Redirect vom Vercel-Host.
+  for (const [name, entry] of Object.entries(IT_ICONS)) {
+    const response = live(entry.path);
+    assert.equal(response.headers.get("location"), null, name);
+    assert.match(response.headers.get("x-middleware-rewrite") ?? "", new RegExp(`${entry.file.replace(/[.]/g, "\\.")}$`), name);
+    assert.ok(existsSync(new URL(`../public${entry.file}`, import.meta.url)), `${entry.file} fehlt`);
+  }
+  const layout = await read("app/(italiano)/layout.tsx");
+  assert.match(layout, /url: `\$\{IT_ORIGIN\}\$\{IT_ICONS\.favicon\.path\}`/);
+  assert.doesNotMatch(layout, /staticAsset\("\/brand\/icon\.png"\)/);
   // Deutsche Domains behalten ihr Verhalten (favicon.ico wird durchgereicht).
   const german = proxy(new NextRequest("https://christlich-verliebt.de/favicon.ico", { headers: { host: "christlich-verliebt.de" } }));
   assert.equal(german.headers.get("location"), null);
