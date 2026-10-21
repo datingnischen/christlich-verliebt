@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server.js";
 import { NextResponse } from "next/server.js";
 import { publicUrl, withTrailingSlash, type MarketCode } from "./lib/markets.ts";
-import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_HOME, IT_HOST, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
+import { IT_ABOUT, IT_ABOUT_SLUG, IT_CITIES, IT_CITY_BASE, IT_GOOGLE_SITE_VERIFICATION, IT_HOME, IT_HOST, IT_ORIGIN, IT_PILOT_INDEXABLE, itCityUrl, itMagazineUrl, itPublicUrl } from "./lib/it-pilot.ts";
 import { IT_ARTICLES, IT_MAGAZINE } from "./lib/it-magazine.ts";
 import { staticAsset } from "./lib/static-asset.ts";
 
@@ -90,6 +90,9 @@ function italianLlmsText() {
 // (app/[market]/it), robots, Sitemap, llms.txt und favicon beantwortet der Proxy selbst.
 function italianSite(request: NextRequest, path: string) {
   if (path === "/favicon.ico") return NextResponse.redirect(staticAsset("/brand/icon.png"), 308);
+  if (path === `/${IT_GOOGLE_SITE_VERIFICATION}.html`) {
+    return new NextResponse(`google-site-verification: ${IT_GOOGLE_SITE_VERIFICATION}.html`, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600" } });
+  }
   if (path === "/llms.txt") {
     if (!IT_PILOT_INDEXABLE) return new NextResponse("Not found", { status: 404 });
     return new NextResponse(italianLlmsText(), { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });

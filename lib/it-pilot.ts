@@ -65,6 +65,12 @@ export const IT_ORIGIN = `https://${IT_HOST}`;
 /** Rechtstexte der eigenen Domain (Betreiber Christian Mogge, nicht ICONY). */
 export const IT_LEGAL_PAGES = ["note-legali", "privacy"] as const;
 
+/**
+ * Google Search Console: URL-Präfix-Property https://single-cristiani.ch/ (DNS liegt bei Alfahosting, darum keine
+ * Domain-Property). Die Bestätigungsdatei liefert proxy.ts unter /<token>.html aus; nie entfernen, sonst erlischt die Bestätigung.
+ */
+export const IT_GOOGLE_SITE_VERIFICATION = "googlec0f9c0185280e6fe";
+
 /** Chi siamo: Redaktions- und Autorenseite (indexierbar, in Sitemap und llms.txt); Inhalt in components/it-about.tsx. */
 export const IT_ABOUT_SLUG = "chi-siamo";
 export const IT_ABOUT = {

@@ -92,6 +92,13 @@ test("Sprache und Barrierefreiheit: <html lang> wird auf it-CH gestellt, keine l
   assert.equal(IT_CANTON_NAMES["CH-TI"], "Canton Ticino");
 });
 
+test("Google-Site-Verification-Datei der URL-Präfix-Property antwortet mit 200 ohne Schrägstrich-Umleitung", async () => {
+  const file = live("/googlec0f9c0185280e6fe.html");
+  assert.equal(file.status, 200);
+  assert.equal(await file.text(), "google-site-verification: googlec0f9c0185280e6fe.html");
+  assert.equal(file.headers.get("location"), null);
+});
+
 test("llms.txt und favicon der eigenen Domain", async () => {
   const llms = live("/llms.txt");
   assert.equal(llms.status, 200);
