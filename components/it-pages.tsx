@@ -269,7 +269,7 @@ export function ItHomePage() {
   </main>;
 }
 
-/** Flirtradar wie auf den deutschen Stadtseiten (CtaBand in city-page.tsx), Grafik auf Italienisch, Ziel die deutsche Registrierung. */
+/** Flirtradar wie auf den deutschen Stadtseiten (CtaBand in city-page.tsx), Grafik auf Italienisch mit Tessin-Umriss, Ziel die deutsche Registrierung. */
 function ItCtaBand({ heading }: { heading: string }) {
   return <section className={styles.ctaBand}>
     <div className={styles.ctaCopy}>
@@ -284,7 +284,7 @@ function ItCtaBand({ heading }: { heading: string }) {
     </div>
     <a className={styles.radar} href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={staticAsset("/brand/radar-single-cristiani.svg")} alt="Ricerca vicino a te: single cristiani nella tua zona, iscrizione gratuita" width={320} height={480} loading="lazy" decoding="async" />
+      <img src={staticAsset("/brand/radar-single-cristiani.svg")} alt="Ricerca in Canton Ticino: single cristiani vicino a te, iscrizione gratuita" width={320} height={480} loading="lazy" decoding="async" />
     </a>
   </section>;
 }

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 960" width="320" height="480" role="img" aria-labelledby="t d">
-<title id="t">Ricerca vicino a te – single-cristiani.ch</title>
-<desc id="d">Radar con single cristiani vicino a te, iscrizione gratuita</desc>
+<title id="t">Ricerca in Canton Ticino – single-cristiani.ch</title>
+<desc id="d">Radar sul Canton Ticino con single cristiani vicino a te, iscrizione gratuita</desc>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&amp;display=swap');
 text{font-family:'Open Sans','Segoe UI',Helvetica,Arial,sans-serif}
@@ -49,12 +49,14 @@ text{font-family:'Open Sans','Segoe UI',Helvetica,Arial,sans-serif}
 <circle cx="80" cy="120" r="260" fill="url(#glowR)"/>
 <circle cx="600" cy="880" r="280" fill="url(#glowG)"/>
 
-<text x="320" y="78" text-anchor="middle" class="over">VICINO A TE</text>
+<text x="320" y="78" text-anchor="middle" class="over">CANTON TICINO · SVIZZERA</text>
 <text x="320" y="136" text-anchor="middle" class="h1">Single cristiani</text>
-<text x="320" y="190" text-anchor="middle" class="h1">nella tua <tspan fill="#ffc86b">zona</tspan></text>
+<text x="320" y="190" text-anchor="middle" class="h1">vicino a <tspan fill="#ffc86b">te</tspan></text>
 
 <!-- Radar -->
 <circle cx="320" cy="500" r="280" fill="url(#disc)"/>
+<!-- Kanton Tessin (Umriss aus data/city-map.json, CH-TI) -->
+<path d="M366.2 327.8L359.6 330.1L349.9 325.1L338.2 309.2L329.0 304.1L327.1 296.5L330.0 271.1L327.7 264.3L322.4 264.0L323.6 256.4L330.2 253.9L338.2 245.2L340.7 239.2L354.3 241.4L359.6 239.1L363.9 241.1L373.7 242.0L387.8 238.1L389.9 232.3L394.8 230.0L396.3 233.3L401.2 234.0L405.6 237.2L402.7 248.5L403.5 252.1L407.0 258.3L410.6 258.0L413.2 270.4L412.1 280.1L408.0 293.0L410.5 299.2L410.9 305.2L421.7 315.7L412.3 322.2L410.0 325.8L408.3 336.5L401.0 340.6L400.5 342.8L402.7 349.3L398.3 354.6L402.1 361.7L407.4 363.7L408.8 366.8L405.2 376.3L401.1 381.4L393.1 378.8L388.0 380.4L389.5 369.7L384.3 357.9L375.3 352.0L371.1 351.1L379.6 335.6L376.4 331.2L368.5 330.4Z" transform="translate(-785.73 -408.54) scale(2.972)" fill="#ffd28a" fill-opacity=".09" stroke="#ffd28a" stroke-opacity=".6" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
 <g fill="none" stroke="#fff">
   <circle cx="320" cy="500" r="280" stroke-opacity=".28" stroke-width="2"/>
   <circle cx="320" cy="500" r="210" stroke-opacity=".14" stroke-width="1.5"/>

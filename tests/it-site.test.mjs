@@ -45,6 +45,10 @@ test("Flirtradar: italienische Radar-Grafik im CTA-Band auf Start- und Stadtseit
   const svg = await read("public/brand/radar-single-cristiani.svg");
   assert.match(svg, /Single cristiani/);
   assert.match(svg, /Iscriviti gratis/);
+  // Kanton sichtbar: Überschrift und Umriss von CH-TI aus data/city-map.json.
+  assert.match(svg, /CANTON TICINO/);
+  const ticino = JSON.parse(await read("data/city-map.json")).ch.regions["CH-TI"].d;
+  assert.ok(svg.includes(`<path d="${ticino}" transform=`), "Tessin-Umriss fehlt");
   assert.doesNotMatch(svg, /Deiner|anmelden|Umkreissuche/);
   const pages = await read("components/it-pages.tsx");
   assert.match(pages, /radar-single-cristiani\.svg/);
