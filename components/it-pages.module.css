@@ -116,6 +116,13 @@
   font: 16px/1.6 Georgia, serif;
 }
 
+/* Titel von Listeneinträgen (Gruppen, Termine, Treffpunkte) als Absatz statt h3:
+   Seobility meldet ab etwa 26 Überschriften je Seite „zu viele Überschriften“. */
+.block .itemTitle {
+  margin: 0 0 6px;
+  font: 700 19px/1.25 Arial, Helvetica, sans-serif;
+}
+
 .block a {
   color: var(--partner);
   text-underline-offset: 3px;
@@ -518,4 +525,11 @@
     width: 120px;
     height: 144px;
   }
+}
+
+.footerTitle {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 1.17em;
+  font-weight: 700;
 }

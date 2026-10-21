@@ -157,3 +157,12 @@ test("Magazin: mindestens drei Artikel, jeder mit Hero-Alt, Lead, Kategorie und 
     assert.ok(article.readingMinutes >= 2 && article.readingMinutes <= 12, `${article.slug}: Lesezeit`);
   }
 });
+
+test("Stadtseiten: Überschriften nur für Kapitel und Kirchen (Seobility „zu viele Überschriften“ ab etwa 26)", async () => {
+  const source = await read("components/it-pages.tsx");
+  assert.deepEqual(source.match(/<h3[ >][^<]*/g), ["<h3>{place.name}"]);
+  assert.equal((source.match(/itStyles\.footerTitle/g) ?? []).length, 4);
+  const { cities } = (await import("../data/it-ticino.json", { with: { type: "json" } })).default;
+  // h1 + zehn feste h2-Kapitel (inkl. Footer-CTA) + Textabschnitte + je Kirche eine h3
+  for (const city of cities) assert.ok(11 + city.sections.length + city.guide.places.length <= 25, city.slug);
+});

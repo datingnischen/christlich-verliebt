@@ -44,13 +44,13 @@ export function ItShell({ children }: { children: React.ReactNode }) {
         <a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">Iscriviti gratis ora</a>
       </div>
       <div className={shell.footerGrid}>
-        <section><h3>Città in Ticino</h3>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Incontri in Ticino</a><a href={itMagazineUrl()}>Magazine</a></section>
-        <section><h3>Account</h3><a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Registrazione gratuita" : "Registrazione gratuita (in tedesco)"}</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
-        <section><h3>Lingua e Paesi</h3><a href={itPublicUrl()} hrefLang="it-CH">Italiano · Ticino</a><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch · Svizzera</a>
+        <section><p className={itStyles.footerTitle}>Città in Ticino</p>{IT_CITIES.map((city) => <a key={city.slug} href={itCityUrl(city.slug)}>Single cristiani a {city.name}</a>)}<a href={itCityUrl()}>Incontri in Ticino</a><a href={itMagazineUrl()}>Magazine</a></section>
+        <section><p className={itStyles.footerTitle}>Account</p><a href={IT_PLATFORM.registrationUrl} hrefLang="de-CH">{IT_PLATFORM_ITALIAN ? "Registrazione gratuita" : "Registrazione gratuita (in tedesco)"}</a><a href={IT_PLATFORM.loginUrl}>Accedi</a></section>
+        <section><p className={itStyles.footerTitle}>Lingua e Paesi</p><a href={itPublicUrl()} hrefLang="it-CH">Italiano · Ticino</a><a href={publicUrl("ch")} hrefLang="de-CH" lang="de-CH">Deutsch · Svizzera</a>
           <span className={itStyles.flagsLabel}>christlich-verliebt in tedesco</span>
           <div className={shell.flags}>{MARKET_CODES.map((code) => <a key={code} href={publicUrl(code)} hrefLang={getMarket(code).locale} aria-label={`${IT_COUNTRY_NAMES[code]}: ${getMarket(code).domain}`} title={`${IT_COUNTRY_NAMES[code]} · ${getMarket(code).domain}`}><Flag market={code} /></a>)}</div>
         </section>
-        <section><h3>Servizio</h3><a href={itPublicUrl(IT_ABOUT_SLUG)}>Chi siamo</a><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
+        <section><p className={itStyles.footerTitle}>Servizio</p><a href={itPublicUrl(IT_ABOUT_SLUG)}>Chi siamo</a><a href={itPublicUrl("note-legali")}>Note legali</a><a href={itPublicUrl("privacy")}>Protezione dei dati</a><a href={publicUrl("ch", "/datenschutz.html")} hrefLang="de-CH">Protezione dei dati della piattaforma</a></section>
       </div>
       <p className={shell.legal}>single-cristiani.ch è la guida in italiano per la piattaforma svizzera christlich-verliebt.ch: registrazione, profili e messaggi si trovano su christlich-verliebt.ch{IT_PLATFORM_ITALIAN ? "" : ", per ora in lingua tedesca"}.</p>
     </footer>
@@ -98,7 +98,7 @@ function Communities({ guide, heading }: { guide: ItGuide; heading: string }) {
     <ul className={itStyles.list}>
       {guide.communities.map((entry) => <li key={entry.name}>
         <CityIcon name="people" />
-        <div><h3>{entry.url ? <a href={entry.url} rel="noopener" target="_blank">{entry.name}</a> : entry.name}</h3><p>{entry.text}</p></div>
+        <div><p className={itStyles.itemTitle}>{entry.url ? <a href={entry.url} rel="noopener" target="_blank">{entry.name}</a> : entry.name}</p><p>{entry.text}</p></div>
       </li>)}
     </ul>
   </section>;
@@ -112,7 +112,7 @@ function Events({ guide, heading }: { guide: ItGuide; heading: string }) {
     <ol className={itStyles.timeline}>
       {guide.events.map((event) => <li key={event.name}>
         <span className={itStyles.when}><CityIcon name="calendar" />{event.when}</span>
-        <h3>{event.name}</h3>
+        <p className={itStyles.itemTitle}>{event.name}</p>
         <p>{event.text}</p>
       </li>)}
     </ol>
@@ -127,7 +127,7 @@ function DateSpots({ guide, city }: { guide: ItGuide; city: string }) {
     <ul className={`${itStyles.list} ${itStyles.listTwo}`}>
       {guide.dateSpots.map((spot) => <li key={spot.name}>
         <CityIcon name="cup" />
-        <div><h3>{spot.name}</h3><p className={itStyles.address}>{spot.where}</p><p>{spot.text}</p></div>
+        <div><p className={itStyles.itemTitle}>{spot.name}</p><p className={itStyles.address}>{spot.where}</p><p>{spot.text}</p></div>
       </li>)}
     </ul>
   </section>;
