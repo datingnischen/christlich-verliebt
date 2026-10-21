@@ -55,6 +55,12 @@ test("Flirtradar: italienische Radar-Grafik im CTA-Band auf Start- und Stadtseit
   assert.equal((pages.match(/<ItCtaBand heading=/g) ?? []).length, 2, "Startseite und Stadtseite");
 });
 
+test("Deutsche Footer (DE/AT/CH) verlinken single-cristiani.ch als Textlink, nicht als Flagge", async () => {
+  const shell = await read("components/site-shell.tsx");
+  assert.match(shell, /<a href=\{itPublicUrl\(\)\} hrefLang="it-CH" lang="it">Italiano · Ticino<\/a>/);
+  assert.doesNotMatch(shell, /Flag market="it"/);
+});
+
 test("JSON-LD: Herausgeber, Website und Autor als Knoten; Artikel und Chi siamo verweisen per @id", async () => {
   const page = await read("app/[market]/it/[[...slug]]/page.tsx");
   assert.match(page, /"@type": "Organization", "@id": organizationId, name: IT_PUBLISHER\.name, url: itPublicUrl\(\)/);

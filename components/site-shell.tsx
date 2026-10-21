@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getMarket, MARKET_CODES, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { ABOUT_REVIEWS_PATH, ABOUT_ROOT_PATH, ABOUT_SOCIAL_PATH, hasAboutSubpages } from "@/lib/about";
 import { SEARCH_PATH } from "@/lib/search";
+import { itPublicUrl } from "@/lib/it-pilot";
 import { staticAsset } from "@/lib/static-asset";
 import { PreviewLinks } from "./preview-links";
 import styles from "./site-shell.module.css";
@@ -59,6 +60,8 @@ export function SiteShell({ children, market, registrationHref }: { children: Re
         <section><h3>Mitgliedschaft</h3><a href={registration}>Kostenlos registrieren</a><a href={login}>Login</a><a href={publicUrl(market, "/kostenlose-basis-mitgliedschaft.html")}>Basis-Mitgliedschaft</a><a href={publicUrl(market, "/premium-mitgliedschaft.html")}>Premium-Mitgliedschaft</a></section>
         <section><h3>Über uns</h3><a href={previewPath(market, ABOUT_ROOT_PATH)}>Über christlich-verliebt</a>{hasAboutSubpages(market) ? <><a href={previewPath(market, ABOUT_REVIEWS_PATH)}>Bewertungen & Erfahrungen</a><a href={previewPath(market, ABOUT_SOCIAL_PATH)}>Social Media</a></> : null}<a href={publicUrl(market, "/redaktionelle-kontrolle.html")}>Redaktionelle Kontrolle</a><a href={publicUrl(market, "/unsere-erfolgsgeschichten.html")}>Erfolgsgeschichten</a></section>
         <section><h3>Service</h3><a href={publicUrl(market, "/hilfe/")}>Hilfe & Support</a><a href={publicUrl(market, "/sicherheit-und-datenschutz.html")}>Sicherheit & Datenschutz</a><a href={publicUrl(market, "/datenschutz.html")}>Datenschutz</a><a href={publicUrl(market, "/impressum.html")}>Impressum</a>
+          {/* Italienische Variante für das Tessin (eigene Domain, seit 2026-10-21 verlinkt): Textlink, keine Italien-Flagge. */}
+          <a href={itPublicUrl()} hrefLang="it-CH" lang="it">Italiano · Ticino</a>
           <div className={styles.flags}>{MARKET_CODES.filter(code => code !== market).map(code => <a key={code} href={publicUrl(code)} aria-label={`${getMarket(code).countryName}: ${getMarket(code).domain}`} title={`${getMarket(code).countryName} · ${getMarket(code).domain}`}><Flag market={code} /></a>)}</div>
         </section>
       </div>
