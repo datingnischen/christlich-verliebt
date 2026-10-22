@@ -168,6 +168,194 @@
       "market": "de",
       "path": "/magazin/",
       "reason": "Magazin-Übersicht: Titel/Beschreibung wie gerendert (MAGAZINE_TITLE/MAGAZINE_DESCRIPTION), statt Marken-Titel"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Wann ist Allerheiligen und welche Bedeutung hat dieses kirchliche Fest? Was macht man zu Allerheiligen und was ist der Unterschied zu Allerheiligen.",
+          "to": "Wann ist Allerseelen und welche Bedeutung hat dieser kirchliche Gedenktag? Was macht man an Allerseelen und was ist der Unterschied zu Allerheiligen?"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/allerseelen/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Wie ist der christliche Ffeiertag Aschermittwoch entstanden und was bedeutet das Fest? Welche Bräuche und Traditionen gibt es? Hier alles über den Feiertag",
+          "to": "Wie ist der christliche Feiertag Aschermittwoch entstanden und was bedeutet das Fest? Welche Bräuche und Traditionen gibt es? Hier alles über den Feiertag"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/aschermittwoch/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Was feiern Christen an Himmelfahrt? Was ist Ursprung und Geschichte des Feiertags? Wann und wie wird das Fest gefeirt? Hier finden Sie alle Antworten",
+          "to": "Was feiern Christen an Himmelfahrt? Was ist Ursprung und Geschichte des Feiertags? Wann und wie wird das Fest gefeiert? Hier finden Sie alle Antworten"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/christi-himmelfahrt/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Wenn du auf der Suche nach einem guten christlichen Film bist, dann solltest du dir diese Liste ansehen. Hier haben wir 10 tolle christliche Filme vorgestellt.",
+          "to": "Wenn du einen guten christlichen Film suchst, solltest du dir diese Liste ansehen. Hier haben wir 8 tolle christliche Filme vorgestellt."
+        },
+        "heroTitle": {
+          "from": "Christliche Filme – 10 tolle Filme",
+          "to": "Christliche Filme – 8 tolle Filme"
+        },
+        "title": {
+          "from": "Christliche Filme – 10 tolle Filme - Christlich-Verliebt.de",
+          "to": "Christliche Filme – 8 tolle Filme - Christlich-Verliebt.de"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/christliche-filme/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Der Christlichen Gemeinde, die zur Strömung der charismatischen Erneuerung gehört, fühlen sich heute rund 20.000 Menschen in 65 Ländern zugehörig. Mehr hier.",
+          "to": "Der Christlichen Gemeinde mit charismatischen Wurzeln fühlen sich nach eigenen Angaben rund 20.000 Menschen in 65 Ländern zugehörig. Mehr hier."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/christliche-gemeinde/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Wundern Sie sich was ist den besten Geschenk für Christen? Hier können Sie 5 Vorschläge finden, worüber sich Christen freuen - z.B. Bibel im Instagram-Stil.",
+          "to": "Was ist ein gutes Geschenk für Christen? Hier finden Sie 5 Buchtipps, über die sich Christen freuen – zum Beispiel eine Bibel im Instagram-Stil."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/christliche-geschenke/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Die christliche Lehre ist reich an Symbolen. Wir erklären den ursprung und die Bedeutung der wichtigsten christlichen Symbole. Jetz hier informieren!",
+          "to": "Die christliche Lehre ist reich an Symbolen. Wir erklären den Ursprung und die Bedeutung der wichtigsten christlichen Symbole. Jetzt hier informieren!"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/christliche-symbole/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Hier alles Wissenswerte zu Faschingsdienstag:. Was bedeutet der Feiertag und wie ist er entstanden? Wann und wie wird Faschungsdienstag gefeiert?",
+          "to": "Hier alles Wissenswerte zu Faschingsdienstag: Was bedeutet der Tag und wie ist er entstanden? Wann und wie wird Faschingsdienstag gefeiert?"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/faschingsdienstag/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Was ist eigentlich Fasten? Warum fasten Christen? Wie lange dauert und wann beginnt die Fastenzeit 2022? Wie fastet man richtig? Hier alle Antworten",
+          "to": "Was ist eigentlich Fasten? Warum fasten Christen? Wie lange dauert und wann beginnt die Fastenzeit? Wie fastet man richtig? Hier alle Antworten"
+        },
+        "heroTitle": {
+          "from": "Fasten: Ursprung, Bedeutung und Tipps für die Fastenzeit 2022",
+          "to": "Fasten: Ursprung, Bedeutung und Tipps für die Fastenzeit"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/fastenzeit/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Der Apostel Judas als derjenige gilt, der Jesus an die Römer verriet. Aber stimmt das wirklich? Einige Kenner der Bibel sagen nein. Lesen Sie die Geschichte da.",
+          "to": "Judas gilt als der Apostel, der Jesus an die Hohepriester verriet. Aber stimmt das wirklich? Einige Bibelkenner sagen nein. Lesen Sie die Geschichte."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/judas/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Welche Bedeutung hat der christlihe Feiertag Mariä Himmelfahrt? Wann wird es gefeirt? Woher kommt das Hochfest und wie wird es begangen? Hier alles dazu.",
+          "to": "Welche Bedeutung hat der christliche Feiertag Mariä Himmelfahrt? Wann wird er gefeiert? Woher kommt das Hochfest und wie wird es begangen? Hier alles dazu."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/mariae-himmelfahrt/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Wer war St.Nikolaus und wann feirt man den Nikolaustag? Warum gilt der Heilige als Schutzparton der Kinder und Seeleute? Hier alles Wissenswerte dazu",
+          "to": "Wer war St. Nikolaus und wann feiert man den Nikolaustag? Warum gilt der Heilige als Schutzpatron der Kinder und Seeleute? Hier alles Wissenswerte dazu"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/nikolaustag/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Welche Bedeutung hat das christliche Fest Ostern? Was geschah an Ostersonntsg? Wann feirn wir Ostern und wer legt den Termin für den Feiertagfest?",
+          "to": "Welche Bedeutung hat das christliche Fest Ostern? Was geschah am Ostersonntag? Wann feiern wir Ostern und wer legt den Termin für das Fest fest?"
+        }
+      },
+      "market": "de",
+      "path": "/magazin/ostern/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Was wird an Pfingsten gefeirt? Wann feiern die Christen das Pfingstfest? Welche Bedeutung hat Pfingsten? Wir erklären diesen christlichen Feiertag.",
+          "to": "Was wird an Pfingsten gefeiert? Wann feiern die Christen das Pfingstfest? Welche Bedeutung hat Pfingsten? Wir erklären diesen christlichen Feiertag."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/pfingsten/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Jeder freut sich über Weihnachten, aber wann ist Weihnachten und genau bedeutet das groß Fest der Kirche? Ursprung, Geschichte, Brauchtum und mehr",
+          "to": "Jeder freut sich auf Weihnachten – aber was bedeutet das große Fest der Kirche genau? Ursprung, Geschichte, Brauchtum und mehr rund um Weihnachten."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/weihnachten/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
+    },
+    {
+      "fields": {
+        "description": {
+          "from": "Sie bildet das Fundament für zwei Welteligionen und gilt als das meistübersetzte Buch. Aber wer hat die Bibel geschrieben? Wir sind hier auf den Grund gegangen",
+          "to": "Sie ist das Fundament zweier Weltreligionen und gilt als meistübersetztes Buch. Aber wer hat die Bibel geschrieben? Wir sind dem auf den Grund gegangen."
+        }
+      },
+      "market": "de",
+      "path": "/magazin/wer-hat-die-bibel-geschrieben/",
+      "reason": "Sachliche Korrektur (Faktencheck 2026-10-22)"
     }
   ],
   "schemaVersion": 1
