@@ -649,6 +649,20 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2025/11/Samuel-Koch.compr_-1024x683.png"
   },
   {
+    "bytes": 944630,
+    "localPath": "/imported/de/00788454c9d661883fa0.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "00788454c9d661883fa013baa4696a7fe6006b992a920ee8dc9067ea692d16af",
+    "sourceUrl": "generated:elevenlabs:nick-vujicic-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 909940,
+    "localPath": "/imported/de/008fd69bbe5673a365a3.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "008fd69bbe5673a365a3003eb8f146609bc3882111fd94db5a5789904cf37f93",
+    "sourceUrl": "generated:elevenlabs:christliche-symbole-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 105783,
     "localPath": "/imported/de/01d36b55ce53a4089163.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -691,6 +705,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Weihnachten-Krippenfiguren-1024x399.jpg"
   },
   {
+    "bytes": 921225,
+    "localPath": "/imported/de/08bf13714f381c91db03.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "08bf13714f381c91db03afc3fdb4f1d53376bb7b796f71f70f592b62e16ea5e8",
+    "sourceUrl": "generated:elevenlabs:christliche-geburtstagswuensche-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 393,
     "localPath": "/imported/de/0af7ebd228f6d1c0f38a.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -717,6 +738,13 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "0c77c52cac174a0a4cca0b88b8403e13b943bfe96a4dca89fa01a6cf4250a84a",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/04/wie-viele-christen-gibt-es-800x440.jpg"
+  },
+  {
+    "bytes": 1078795,
+    "localPath": "/imported/de/0e75d883f28bc17e27ab.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "0e75d883f28bc17e27abab25abf0e984f7d04ca292d2ad6a06bb770b93ad5313",
+    "sourceUrl": "generated:elevenlabs:christlich-verliebt-de-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 21587,
@@ -747,6 +775,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2022/01/Papst-Benedikt-im-Vatikan-225x300.jpg"
   },
   {
+    "bytes": 1104291,
+    "localPath": "/imported/de/13ed63dc72d7e0c495ca.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "13ed63dc72d7e0c495ca635c1c95032e4987c14046f9d935da87311de81ff6a5",
+    "sourceUrl": "generated:elevenlabs:mormonen-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 20476,
     "localPath": "/imported/de/15f2c1b33307979c582d.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -766,6 +801,13 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "194a2707f8170cf354a17989aedfd42bf36af478b3a426dc03d78d4080fb5048",
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/0C188CF6221FD83F57564B16940172F4BED588AC2F56103140F3803CD142DC74/iStock-1251387803.jpg"
+  },
+  {
+    "bytes": 1035327,
+    "localPath": "/imported/de/19591c3ce0dee226073a.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "19591c3ce0dee226073a5d4d1219bbe2b076356f978bcf59db4dcc8754dd3120",
+    "sourceUrl": "generated:elevenlabs:christen-fit-faktor-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 89550,
@@ -789,6 +831,20 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/C16A34F9882B61A7348F966A259531BFD359F9D3BC76648352EE64958BCD7AF8/empfohlen-siegel-45sterne-330x60.jpg"
   },
   {
+    "bytes": 1076287,
+    "localPath": "/imported/de/1bb6568e36ccaaa8251b.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "1bb6568e36ccaaa8251bae49bee267add1eb997694154f5c70a8dc5bd0ee5abb",
+    "sourceUrl": "generated:elevenlabs:papst-franziskus-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1110978,
+    "localPath": "/imported/de/1be70c60bae37b3b1985.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "1be70c60bae37b3b19856ba16c5215de2068c8b3a5c7ee459580504bcd919cda",
+    "sourceUrl": "generated:elevenlabs:allerheiligen-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 18442,
     "localPath": "/imported/de/2049017cad1cfa0679d2.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -810,11 +866,25 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/08/Ostern-Ostereier.jpg"
   },
   {
+    "bytes": 973887,
+    "localPath": "/imported/de/22c3d5998eb819196653.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "22c3d5998eb819196653d9ffaa1bc62032de395bf44b8cc2918e0f295acdd18c",
+    "sourceUrl": "generated:elevenlabs:christliche-feiertage-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 74914,
     "localPath": "/imported/de/231d03edb58f87b9fcb1.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "231d03edb58f87b9fcb14c41c8dd3d5870d765bfcd04b8101cc145c77a7e7ce7",
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/91459E24174531C151B06E35BF49377D89C79D2DFA824C48D30997C96E322A14/iStock-1384949921.jpg"
+  },
+  {
+    "bytes": 958423,
+    "localPath": "/imported/de/24a9dd70f8d44b0fe8a1.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "24a9dd70f8d44b0fe8a190b203c55f5cc14636a9772816abcac691c0276771ec",
+    "sourceUrl": "generated:elevenlabs:kathtreff-org-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 54031,
@@ -845,6 +915,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2023/07/Judas-800x440.jpg"
   },
   {
+    "bytes": 870234,
+    "localPath": "/imported/de/2b4cb937fac18e5a2961.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "2b4cb937fac18e5a296117268b7c211e6ea14790f104dd1c3afe6135c4a625ba",
+    "sourceUrl": "generated:elevenlabs:sehr-starke-gebete-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 93555,
     "localPath": "/imported/de/2b87e299b234ef9f98cf.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -866,6 +943,20 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/8CDE8D8FE3778A26A855F0CB23C08CF55D43B887529F957B95A8B736AF9CD5B9/iStock-649101422.jpg"
   },
   {
+    "bytes": 995621,
+    "localPath": "/imported/de/2edea2f109b026cd3bc5.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "2edea2f109b026cd3bc55337e9b76c61b5da28e3b1148814f62d487242158fc4",
+    "sourceUrl": "generated:elevenlabs:cxsingle-com-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1006070,
+    "localPath": "/imported/de/2fb4494f501baa88074d.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "2fb4494f501baa88074da0d0016f52e0539c4bc01fced1d3f732f5e08c6608aa",
+    "sourceUrl": "generated:elevenlabs:pfingsten-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 56540,
     "localPath": "/imported/de/304900ac31993d2d5d35.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -878,6 +969,20 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "305b648b543c8dd616a96df714d7a78a3c1877d572cd4fc3be52df902bade17d",
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/97368265A1FA0921065B71CFBB409BC965708F0A2BFE4C39D7CE93FB5AFC4221/1000/christliche-singles-hannover-statistik.jpg"
+  },
+  {
+    "bytes": 975141,
+    "localPath": "/imported/de/30726c15a6b21d4cecf6.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "30726c15a6b21d4cecf63b774a5efd4c1d54b588a045d963ae7f3d4fb714a966",
+    "sourceUrl": "generated:elevenlabs:jesus-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 952154,
+    "localPath": "/imported/de/31232726065c970fae24.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "31232726065c970fae2420188bf7cfae0699ddfe889f08bb8afcde1a9678a01a",
+    "sourceUrl": "generated:elevenlabs:faschingsdienstag-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 31325,
@@ -964,11 +1069,25 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/03F181F24A3C12266F262DDF75168F278EE9D87819B452E5669EE8F5B0632CDA/1000/christlich-verliebt-in-muenchen.jpg"
   },
   {
+    "bytes": 909940,
+    "localPath": "/imported/de/3f9083de16c6f8f61faa.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "3f9083de16c6f8f61faa2d34e58635974e6a65c936f84585870ec46f5bc0ab1b",
+    "sourceUrl": "generated:elevenlabs:gruendonnerstag-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 55758,
     "localPath": "/imported/de/3ff992778bbc1c0af29d.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "3ff992778bbc1c0af29d152834cf7dd813715cc3990bd83221773ea771500123",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2022/09/christliche-Symbole-Alpha-und-Omega.jpg"
+  },
+  {
+    "bytes": 983918,
+    "localPath": "/imported/de/40d913d5135f445cc3d4.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "40d913d5135f445cc3d40f38ea226515ee553071de6ce08f79ee24d49ed16784",
+    "sourceUrl": "generated:elevenlabs:duerfen-christen-schweinefleisch-essen-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 51303,
@@ -1011,6 +1130,20 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "46d78b9edf784a53bf817c476bd972d98c80dd848ef745f44605e13237b7b946",
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/1F9EAB0467CC1DAA464D7353D20EB061D61292C13ED2D261B3474F068AEC2FD5/1000/Kassel-christlich-verliebt.jpg"
+  },
+  {
+    "bytes": 1023625,
+    "localPath": "/imported/de/4958e4f1dea33bba7764.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "4958e4f1dea33bba776459e2665ca3445e2eaa33b5c0ac78c1c53c9e127a7b2e",
+    "sourceUrl": "generated:elevenlabs:mariae-himmelfahrt-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 954661,
+    "localPath": "/imported/de/49bf2988ab01bd891d6d.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "49bf2988ab01bd891d6dc4fa6f3e3fcf30cfc7d8bc8b4d78d74a2930a8f27dab",
+    "sourceUrl": "generated:elevenlabs:nikolaustag-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 43109,
@@ -1062,11 +1195,25 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2024/01/church-window-1016443_1280-800x440.jpg"
   },
   {
+    "bytes": 993114,
+    "localPath": "/imported/de/5273f2cfeecac7e36a2c.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "5273f2cfeecac7e36a2cef978640b6976c0f3a19338eabf38796d753f13ecfc6",
+    "sourceUrl": "generated:elevenlabs:wie-viele-christen-gibt-es-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 96039,
     "localPath": "/imported/de/5532289c8270da98069f.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "5532289c8270da98069ff5a2991acb0e9f0ea4ff3459fdc3203ca75473e80f2b",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Fasching-Fastnacht-Karneval-800x440.jpg"
+  },
+  {
+    "bytes": 912447,
+    "localPath": "/imported/de/55745ea4837c01e3e59e.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "55745ea4837c01e3e59e5204bbfac30d4f82381fb63651b0c6eb16b6bf3a1ec6",
+    "sourceUrl": "generated:elevenlabs:franz-von-assisi-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 37770,
@@ -1102,6 +1249,20 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "5c9feccfffff52a0f18ef1400a2b95b7ff082401b7d1c06353ffe1c81ec38f63",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Umfrage-Nikolaustag.jpeg"
+  },
+  {
+    "bytes": 1026550,
+    "localPath": "/imported/de/5d5853784413cbe65406.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "5d5853784413cbe65406ee3b01b44161fc8486ea62ed2a56c68d3f6a7ca88e3c",
+    "sourceUrl": "generated:elevenlabs:weihnachten-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1026550,
+    "localPath": "/imported/de/5e06049c955327bfe46e.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "5e06049c955327bfe46e21276448c741bf467b5f48b5fe52e83af7423d19250c",
+    "sourceUrl": "generated:elevenlabs:christliche-gemeinde-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 403576,
@@ -1167,6 +1328,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Karfreitag-Kreuzweg-Kreuzigung-215x300.jpg"
   },
   {
+    "bytes": 968872,
+    "localPath": "/imported/de/6667c5a333b19cc33203.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "6667c5a333b19cc3320361a5669b192be17d8580f1cf2380d25ba575c8e52fa1",
+    "sourceUrl": "generated:elevenlabs:chringles-de-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 169749,
     "localPath": "/imported/de/68ffc373d70ab9d7f832.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1200,6 +1368,20 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "6eee216d513fe0ee203b480c29efd37fd9d26ce704151ac2400e2654bac8c88e",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2025/11/Papst-Franziskus.compr_-1024x683.png"
+  },
+  {
+    "bytes": 995621,
+    "localPath": "/imported/de/70705683f7be691ad6e5.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "70705683f7be691ad6e5e6175b44a37a225e704c3852f437aaa5e912f0a9c802",
+    "sourceUrl": "generated:elevenlabs:c-s-lewis-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1091752,
+    "localPath": "/imported/de/7095477f15c0dbc7b68b.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "7095477f15c0dbc7b68b205add763acec5a1d6cf6da1e5ed42f77f6696cadcaf",
+    "sourceUrl": "generated:elevenlabs:himmlisch-plaudern-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 14912,
@@ -1244,6 +1426,20 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2023/06/Das-Vater-unser-Gebet-2-1024x680.jpg"
   },
   {
+    "bytes": 879011,
+    "localPath": "/imported/de/7a0b057b2d11d8a5acc8.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "7a0b057b2d11d8a5acc8a6fa81d1a5704c9a0c5dca094756fea5f16f2c3750ad",
+    "sourceUrl": "generated:elevenlabs:du-bist-ein-gott-der-mich-sieht-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1044105,
+    "localPath": "/imported/de/7a5e272d6a204eac5169.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "7a5e272d6a204eac51693e5ee20e3175dd7b9e208f09039e3a983e285f2352c2",
+    "sourceUrl": "generated:elevenlabs:dietrich-bonhoeffer-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 111760,
     "localPath": "/imported/de/7c236a2a1d08db5d0e65.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1272,6 +1468,34 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/436BD903ED9C854FFA82A20015A8F63C0E612840A169BEB9B936F3014CC19B38/1000/christliche-singles-münster-statistik.jpg"
   },
   {
+    "bytes": 958423,
+    "localPath": "/imported/de/7f6028bca1b84e44d1d5.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "7f6028bca1b84e44d1d50b68b9d929e2bae8551f52e1952ca26e37f00f1fe841",
+    "sourceUrl": "generated:elevenlabs:allerseelen-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 919971,
+    "localPath": "/imported/de/7ff050cd6373cf6cdb57.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "7ff050cd6373cf6cdb5704ad727b19aba9e921fa3dabbf3280a3137356df0174",
+    "sourceUrl": "generated:elevenlabs:epiphanie-dreikoenigsfest-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 940451,
+    "localPath": "/imported/de/80143fe28f60ee91f1d2.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "80143fe28f60ee91f1d2ddb15ab544a51821db4e59b79849792358f2e642dd5f",
+    "sourceUrl": "generated:elevenlabs:vater-unser-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1041597,
+    "localPath": "/imported/de/8114350527923240026f.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "8114350527923240026f1e852ab5901bdbf3fee340820bf6dcf93d387a2fb49d",
+    "sourceUrl": "generated:elevenlabs:christine-caine-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 136584,
     "localPath": "/imported/de/83ce211acaa11b9dc875.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1284,6 +1508,13 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "84a46a4cb04bb2c4ba770f880201ff04289586407685388e0b76b105592eda1c",
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/253DEB50584C490338982CA5C6B8C312F105D41B3AC5FDD50A55F6A747B14809/1000/christliche-singles-kassel-statistik.jpg"
+  },
+  {
+    "bytes": 870234,
+    "localPath": "/imported/de/85f5651208db143a87fd.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "85f5651208db143a87fd7d4dfed2ccc43a8d959c271f5061f47d478f4584d8aa",
+    "sourceUrl": "generated:elevenlabs:christi-himmelfahrt-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 56514,
@@ -1349,6 +1580,13 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/2806FC0A0CEA503CBF3396AAE7CE24110402E32835856A9B9879C226A098D1B3/1000/christliche-singles-bremen-statistik.jpg"
   },
   {
+    "bytes": 994367,
+    "localPath": "/imported/de/8e4af9e9713525da2d6c.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "8e4af9e9713525da2d6c6963c3527f04a9037f567b5de4752fbf816b05ae0ba3",
+    "sourceUrl": "generated:elevenlabs:fronleichnam-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 501156,
     "localPath": "/imported/de/8f9f4a1df89218d2f4f6.png",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1391,6 +1629,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/04/christliche-Feiertage-800x440.jpg"
   },
   {
+    "bytes": 953407,
+    "localPath": "/imported/de/99d2c840e471a767414e.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "99d2c840e471a767414ed850599683c3b102ba0e8ef69e55dd36632ea3f4ec48",
+    "sourceUrl": "generated:elevenlabs:fastenzeit-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 204739,
     "localPath": "/imported/de/9ba79a98d04e9e9204f6.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1412,6 +1657,27 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2022/09/christliche-Filme-800x440.jpg"
   },
   {
+    "bytes": 916209,
+    "localPath": "/imported/de/a2f1d34d86a47042a598.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "a2f1d34d86a47042a598e74c595dd594e3e8cd327d07c51adb61d6de1f7366b2",
+    "sourceUrl": "generated:elevenlabs:christliche-geschenke-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1081303,
+    "localPath": "/imported/de/a34c1dcf7a2049b36162.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "a34c1dcf7a2049b361622be1d8efce42e47b7c64f02a38469a104c20e3a65160",
+    "sourceUrl": "generated:elevenlabs:top-10-staedte-christliche-singles-deutschland-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1052046,
+    "localPath": "/imported/de/a3586bb7886a6ff8e753.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "a3586bb7886a6ff8e7535884407accf50b6b22fb48a4548d3058d854f1ab5387",
+    "sourceUrl": "generated:elevenlabs:martin-niemoeller-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 504425,
     "localPath": "/imported/de/a57a70bdc03be923b1fa.png",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1426,6 +1692,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Umfrage-die-belebtesten-Weihnachtslieder-872x1024.jpeg"
   },
   {
+    "bytes": 948392,
+    "localPath": "/imported/de/aa70d8c04eeee8c02a42.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "aa70d8c04eeee8c02a427df2aec76e1ea0b6b35687cc0da917108a81d0587023",
+    "sourceUrl": "generated:elevenlabs:ostern-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 206743,
     "localPath": "/imported/de/b21714e15181494061b8.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1438,6 +1711,34 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "b3b5a4e90748a4444587ea6b6965fe57822c493984ff8b5b06cc60efbad31e58",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Karfreitag-Kreuzweg-Kreuzigung-733x1024.jpg"
+  },
+  {
+    "bytes": 1041597,
+    "localPath": "/imported/de/b3f58a76d8e96e075bcb.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "b3f58a76d8e96e075bcbdd1ec20abe7352a635f1c9a5b3396d781409e6e5b259",
+    "sourceUrl": "generated:elevenlabs:katholische-singles-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 908686,
+    "localPath": "/imported/de/b40eccf2284df14cce24.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "b40eccf2284df14cce2411d735a1a4bc83453f7aac5dc5b81ca4798bc7a8b963",
+    "sourceUrl": "generated:elevenlabs:christliche-neujahrswuensche-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 998129,
+    "localPath": "/imported/de/b4929672fe242569a95c.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "b4929672fe242569a95c82877c36f47687ffdfee2c0dd2092af49958d7679976",
+    "sourceUrl": "generated:elevenlabs:catholicsingles-com-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 1130204,
+    "localPath": "/imported/de/b4f51ea5cb0d7fcff08f.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "b4f51ea5cb0d7fcff08fdd4c482259871d8aed6c68e060bf189498ec22db6521",
+    "sourceUrl": "generated:elevenlabs:funkyfish-de-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 10343,
@@ -1468,6 +1769,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2023/07/candles-2903063_1280-800x440.jpg"
   },
   {
+    "bytes": 1054554,
+    "localPath": "/imported/de/bb473859c965a0ff17b4.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "bb473859c965a0ff17b42269aa119ab1d1285139a67e2f2b70ffec0020e2423e",
+    "sourceUrl": "generated:elevenlabs:martin-luthers-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 178251,
     "localPath": "/imported/de/bc59a98db664f17b555c.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1494,6 +1802,13 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "bfa25b2b94432419f99cdd71550b5cf820888c349618393acf38a0357fa12398",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2022/09/wer-hat-die-Bibel-geschrieben-800x440.jpg"
+  },
+  {
+    "bytes": 941705,
+    "localPath": "/imported/de/c172fa6dbf92c9d9b8f7.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "c172fa6dbf92c9d9b8f70ce725ac42401636ba040cd0d444fc6a316862e71d2d",
+    "sourceUrl": "generated:elevenlabs:die-10-gebote-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 187773,
@@ -1531,6 +1846,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2022/10/FunkyFish-800x440.png"
   },
   {
+    "bytes": 1029058,
+    "localPath": "/imported/de/c54afe34534e541430ea.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "c54afe34534e541430ea6606a345c08c4030f91c714702d7352815d869b241d2",
+    "sourceUrl": "generated:elevenlabs:samuel-koch-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 369107,
     "localPath": "/imported/de/c5b0124e13e4feaf48d4.png",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1564,6 +1886,13 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "caf5acc31f9c14f8c483e5b4b0194c0a9b53e1f4335a15d31baa6bf78d7269a7",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/04/Pfingsten-Pfingsrose-300x200.jpg"
+  },
+  {
+    "bytes": 883190,
+    "localPath": "/imported/de/cb01bf1c75b913c24bc8.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "cb01bf1c75b913c24bc845e2016f5cb7f65e4c62b4856c327cdc74aca50a86f4",
+    "sourceUrl": "generated:elevenlabs:christliche-tattoos-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 14881,
@@ -1636,11 +1965,25 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2022/01/Papst-Benedikt-XVI-800x440.jpg"
   },
   {
+    "bytes": 945884,
+    "localPath": "/imported/de/df22ccbdbd817e65d310.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "df22ccbdbd817e65d3103aa08a9d94215634532adaa8a17c75c5caebc2f98e06",
+    "sourceUrl": "generated:elevenlabs:bibelverse-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 12457,
     "localPath": "/imported/de/df5d0edc7e73ee10102e.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "df5d0edc7e73ee10102e6b4957eba149a329f6b90c85e9ae7445f0b082f617b7",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/06/der-2.-Advent-e1623307177463.jpg"
+  },
+  {
+    "bytes": 1011086,
+    "localPath": "/imported/de/e014e5807b183b905955.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "e014e5807b183b905955ee8c603b4bf051b2ce44f7f432078f45a64264638bd9",
+    "sourceUrl": "generated:elevenlabs:advent-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 57107,
@@ -1685,6 +2028,13 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/1A5C3ECEC13EE6384848CAA097FEC1EC7390A83F55DB9168818B032D0B4FB63D/1000/christliche-singles-würzburg-statistik.jpg"
   },
   {
+    "bytes": 926658,
+    "localPath": "/imported/de/e7e02e3f07b5fd7f0c0a.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "e7e02e3f07b5fd7f0c0adbd712909237e32b3292954f5a783716e6ab8d395bb4",
+    "sourceUrl": "generated:elevenlabs:kein-sex-vor-der-ehe-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 292987,
     "localPath": "/imported/de/e96102ba9ba23ca8c418.png",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1697,6 +2047,13 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "ea96c4cd320350a4e087d99e6802a1cf9350e3bca004633f50e2b1c6b4174936",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2023/04/CatholicSingles-1-800x440.png"
+  },
+  {
+    "bytes": 1007324,
+    "localPath": "/imported/de/eb2223e892f0f0b8939d.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "eb2223e892f0f0b8939d38168ba28a85139066cb652ba957a0da2100786a5545",
+    "sourceUrl": "generated:elevenlabs:corrie-ten-boom-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 17173,
@@ -1720,6 +2077,13 @@
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Statistik-Karneval-Fastnacht-Fasching-300x300.jpeg"
   },
   {
+    "bytes": 1130204,
+    "localPath": "/imported/de/ef6b6d17d230e942966e.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "ef6b6d17d230e942966eb53288d3e52c66b1c99850255e0d773b84b437ec3c7c",
+    "sourceUrl": "generated:elevenlabs:papst-benedikt-xvi-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 233842,
     "localPath": "/imported/de/f008490c15a783bdf6f3.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
@@ -1727,11 +2091,25 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/31482090CBA34C035B960056D0779EA16C6314903D0CD02CD82A5D89807E7B4D/1000/christliche-singles-mainz-statistik.jpg"
   },
   {
+    "bytes": 985590,
+    "localPath": "/imported/de/f027aac6cac6482b06ec.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "f027aac6cac6482b06ecaeab52c854309ffdbafb8030d30d1d31d909bd9e1196",
+    "sourceUrl": "generated:elevenlabs:john-mark-comer-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 45796,
     "localPath": "/imported/de/f02daaad438128e9b79e.jpg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "f02daaad438128e9b79e5e6d03777f8fb4a460b2a94e51e0cefd92eacc7e3a78",
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/3DD71CC89ACE7480F719BF1E5689D029B811470D39D4C74CA8DEFEF02A6264DC/iStock-1357517636.jpg"
+  },
+  {
+    "bytes": 976395,
+    "localPath": "/imported/de/f0319c0d2877ef518e28.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "f0319c0d2877ef518e28618e3d0636bd7cd392362a3d42445f5201cb2d834e6f",
+    "sourceUrl": "generated:elevenlabs:judas-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 12471,
@@ -1755,11 +2133,25 @@
     "sourceUrl": "https://static-cms.icony-hosting.de/cms/D21F4BAA0F753A300D3994DCC6DEE4D940AEE1032BA23F863E7AC2B02A097CBF/1000/christliche-singles-frankfurt-statistik.jpg"
   },
   {
+    "bytes": 1016101,
+    "localPath": "/imported/de/f1f38b06a5f5432c57c2.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "f1f38b06a5f5432c57c2b4cc4ef41d060ef3b4f4ccdee9300e0242ff67032fd1",
+    "sourceUrl": "generated:elevenlabs:christliche-filme-audio-zusammenfassung.mp3"
+  },
+  {
     "bytes": 35478,
     "localPath": "/imported/de/f436915be089b12d0430.jpeg",
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "f436915be089b12d0430b48885299c0e794c4a354b2f12690be792e342aa2066",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Umfrage-so-fasten-die-Deutschen.jpeg"
+  },
+  {
+    "bytes": 999383,
+    "localPath": "/imported/de/f4c47e928fd6b5b856f6.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "f4c47e928fd6b5b856f6fca9d7fec7db64f514ba853cbdce7dc4c698071773e6",
+    "sourceUrl": "generated:elevenlabs:karwoche-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 236423,
@@ -1774,6 +2166,20 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "f715bd2ee3795fe97ba152f347bddb77f9489e12890658772af80eb003b6c8ce",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2021/07/Dreikoenigsfest-die-heiligen-drei-Koenige.jpg"
+  },
+  {
+    "bytes": 936689,
+    "localPath": "/imported/de/f9ab35f5eb7e281c5349.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "f9ab35f5eb7e281c53499ce57a897d79e5195eb42241193a867ecbc41c4429ea",
+    "sourceUrl": "generated:elevenlabs:aschermittwoch-audio-zusammenfassung.mp3"
+  },
+  {
+    "bytes": 999383,
+    "localPath": "/imported/de/f9bd419227cd97e31185.mp3",
+    "rightsStatus": "eigene Audio-Zusammenfassung, ElevenLabs eleven_v4 (Stimme Doreen), erzeugt 2026-10-22",
+    "sha256": "f9bd419227cd97e311854466b0c631f08263263460da39ed1471876638b66022",
+    "sourceUrl": "generated:elevenlabs:wer-hat-die-bibel-geschrieben-audio-zusammenfassung.mp3"
   },
   {
     "bytes": 8560,
