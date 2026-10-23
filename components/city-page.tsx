@@ -70,7 +70,7 @@ export function CityPage({ page }: { page: PublicPage }) {
             <ol>{crumbs.map(crumb => <li key={crumb.label}>{crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span aria-current="page">{crumb.label}</span>}</li>)}</ol>
           </nav>
           {geo ? <span className={styles.regionBadge}><RegionShape market={page.market} region={geo.region} />{region} · {market.countryName}</span> : null}
-          <h1>{titleMain}{titleSub ? <span>{titleSub}</span> : null}</h1>
+          <h1>{titleMain}{titleSub ? <>{" "}<span>{titleSub}</span></> : null}</h1>
           {page.description ? <p className={styles.heroLead}>{page.description}</p> : null}
           <div className={styles.heroActions}>
             {/* „Singles in X finden“ verlinkt im Stadttext die Stadtseite; die Registrierung bekommt einen eigenen Text (Seobility). */}

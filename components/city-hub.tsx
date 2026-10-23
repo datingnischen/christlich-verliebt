@@ -71,7 +71,7 @@ export function CityHub({ page }: { page: PublicPage }) {
             <ol><li><a href={previewPath(page.market)}>Startseite</a></li><li><span aria-current="page">Partnersuche</span></li></ol>
           </nav>
           <p className={styles.heroEyebrow}>Christliche Partnersuche vor Ort · {market.countryName}</p>
-          <h1>{titleMain}{titleSub ? <span>{titleSub}</span> : null}</h1>
+          <h1>{titleMain}{titleSub ? <>{" "}<span>{titleSub}</span></> : null}</h1>
           {page.description ? <p className={styles.heroLead}>{page.description}</p> : null}
           <ul className={styles.hubStats}>
             <li><span className={styles.strongText}>{cities.length}</span> Städte</li>
