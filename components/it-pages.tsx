@@ -305,9 +305,9 @@ export function ItCityPage({ city }: { city: ItCity }) {
   return <main className={styles.page}>
     <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: "Incontri in Ticino", href: itCityUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} active={city.slug} />
 
-    <ItAudioSummary audio={getItAudio(`incontri/${city.slug}`)} heading={`${city.name} in un minuto`} />
-
     <Facts guide={city.guide} />
+
+    <ItAudioSummary audio={getItAudio(`incontri/${city.slug}`)} heading={`${city.name} in un minuto`} />
 
     <section className={styles.widget} data-icony-city-widget>
       <div className={styles.widgetCopy}>
