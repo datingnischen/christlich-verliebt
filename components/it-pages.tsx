@@ -7,6 +7,8 @@ import { IT_ABOUT_SLUG, IT_AUTHOR, IT_CANTON_NAMES, IT_CITIES, IT_GUIDE_COUNT, I
 import { getMarket, MARKET_CODES, publicUrl } from "@/lib/markets";
 import { Flag } from "@/components/site-shell";
 import { staticAsset } from "@/lib/static-asset";
+import { ItAudioSummary } from "@/components/it-audio";
+import { getItAudio } from "@/lib/it-audio";
 import shell from "./site-shell.module.css";
 import styles from "./city-page.module.css";
 import itStyles from "./it-pages.module.css";
@@ -302,6 +304,8 @@ export function ItCityPage({ city }: { city: ItCity }) {
   const nearest = nearestItCities(city.slug);
   return <main className={styles.page}>
     <Hero crumbs={[{ label: "Svizzera italiana", href: itPublicUrl() }, { label: "Incontri in Ticino", href: itCityUrl() }, { label: city.name, href: null }]} badge={`${city.region} · Ticino`} title={city.title} lead={city.lead} primary={`Conosci single cristiani a ${city.name}`} image={city.heroImage} imageAlt={city.heroImageAlt} active={city.slug} />
+
+    <ItAudioSummary audio={getItAudio(`incontri/${city.slug}`)} heading={`${city.name} in un minuto`} />
 
     <Facts guide={city.guide} />
 

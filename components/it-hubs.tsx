@@ -5,6 +5,8 @@ import { IT_ARTICLES, IT_MAGAZINE, formatItDate, type ItArticle } from "@/lib/it
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./city-page.module.css";
 import hub from "./it-hubs.module.css";
+import { ItAudioSummary } from "@/components/it-audio";
+import { getItAudio } from "@/lib/it-audio";
 
 /** Übersicht /incontri/: alle Tessiner Städte (wie /partnersuche/ auf christlich-verliebt). */
 export function ItCitiesPage() {
@@ -81,6 +83,7 @@ export function ItArticlePage({ article }: { article: ItArticle }) {
         <p className={hub.lead}>{article.lead}</p>
         <p className={hub.meta}>di <a href={itAuthorUrl()}>{article.author}</a> · Aggiornato il <time dateTime={article.modified}>{formatItDate(article.modified)}</time> · {article.readingMinutes} min di lettura</p>
       </header>
+      <ItAudioSummary audio={getItAudio(`magazine/${article.slug}`)} heading="L'articolo in breve" compact />
       <figure className={hub.figure}>
         <Image src={staticAsset(article.heroImage)} alt={article.heroImageAlt} width={1600} height={900} sizes="(max-width: 860px) 100vw, 820px" priority />
         <figcaption>Immagine illustrativa generata con IA</figcaption>
