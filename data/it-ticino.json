@@ -319,7 +319,7 @@
             "name": "Chiesa di Santa Maria degli Angioli",
             "denomination": "cattolica romana",
             "address": "Piazza Bernardino Luini 3, 6900 Lugano",
-            "text": "Chiesa dell'ex convento francescano fondato nel 1490. Sul tramezzo si trova la grande Passione e Crocifissione di Bernardino Luini (1529), allievo di Leonardo, considerata uno dei massimi affreschi rinascimentali della Svizzera; dello stesso autore anche un'Ultima Cena ispirata a Leonardo. All'interno è disponibile una guida storico-artistica del FAI Swiss in sei lingue.",
+            "text": "Chiesa dell'ex convento francescano fondato nel 1490. Sul tramezzo si trova la grande Passione e Crocifissione di Bernardino Luini (1529), seguace di Leonardo, considerata uno dei massimi affreschi rinascimentali della Svizzera; dello stesso autore anche un'Ultima Cena ispirata a Leonardo. All'interno è disponibile una guida storico-artistica del FAI Swiss in sei lingue.",
             "url": "https://www.parrocchialugano.ch/parrocchie/santa-maria-degli-angioli/"
           },
           {
@@ -438,7 +438,7 @@
           {
             "name": "Monte San Salvatore",
             "where": "Funicolare da Lugano-Paradiso (5 minuti a piedi dalla stazione FFS di Paradiso)",
-            "text": "In 12 minuti di funicolare si sale alla vetta, dove sorgono la chiesa del San Salvatore (ricostruita dal 1703 dalla Confraternita di Santa Marta e della Buona Morte) e un piccolo museo incluso nel biglietto (fonte storica: prospetto della Funicolare Monte San Salvatore, https://www.montesansalvatore.ch/wp-content/uploads/2025/03/2025-FSS-prospetto-A5-Storia-ITA.pdf). Stagione da marzo a novembre."
+            "text": "In 12 minuti di funicolare si sale alla vetta, dove sorgono la chiesa del San Salvatore (ricostruita dal 1703 dalla Confraternita di Santa Marta e della Buona Morte) e un piccolo museo incluso nel biglietto. Stagione da marzo a novembre."
           },
           {
             "name": "Monte Brè",
@@ -618,6 +618,10 @@
           {
             "title": "AutoPostale – Collina d'Oro (Museo Hermann Hesse, sentiero fino al cimitero di Gentilino)",
             "url": "https://www.postauto.ch/it/idee-per-escursioni/collina-d-oro"
+          },
+          {
+            "title": "Funicolare Monte San Salvatore – Prospetto storico (chiesa del San Salvatore)",
+            "url": "https://www.montesansalvatore.ch/wp-content/uploads/2025/03/2025-FSS-prospetto-A5-Storia-ITA.pdf"
           }
         ]
       }
@@ -1326,7 +1330,7 @@
         {
           "heading": "Le Processioni: vivere la fede insieme",
           "icon": "calendar",
-          "html": "<p>Le Processioni storiche del Giovedì e del Venerdì Santo, documentate da oltre quattro secoli e nella lista UNESCO del patrimonio immateriale dal 2019, coinvolgono circa 230 figuranti il Giovedì e oltre 800 partecipanti il Venerdì. Chi vuole partecipare si candida presso la <a href=\"https://www.mendrisiottoturismo.ch/processionimendrisio/\">Fondazione Processioni Storiche Mendrisio</a>, che cerca anche volontari per costumi, Trasparenti e logistica.</p><p>Preparare insieme un evento così è uno dei modi più autentici per conoscere persone del Borgo che condividono fede e tradizione.</p>"
+          "html": "<p>Le Processioni storiche del Giovedì e del Venerdì Santo, attestate dalla seconda metà del Seicento e nella lista UNESCO del patrimonio immateriale dal 2019, coinvolgono circa 230 figuranti il Giovedì e oltre 800 partecipanti il Venerdì. Chi vuole partecipare si candida presso la <a href=\"https://www.mendrisiottoturismo.ch/processionimendrisio/\">Fondazione Processioni Storiche Mendrisio</a>, che cerca anche volontari per costumi, Trasparenti e logistica.</p><p>Preparare insieme un evento così è uno dei modi più autentici per conoscere persone del Borgo che condividono fede e tradizione.</p>"
         },
         {
           "heading": "Essere single nel Mendrisiotto",
@@ -1443,7 +1447,7 @@
           {
             "name": "Processioni storiche della Settimana Santa",
             "when": "Sera del Giovedì Santo e del Venerdì Santo",
-            "text": "Il Giovedì la «Funzione dei Giudei», rappresentazione del cammino di Cristo verso il Calvario; il Venerdì una processione raccolta con confraternite, lanterne, il catafalco del Cristo morto e l'Addolorata. Percorso tra San Giovanni e i Cappuccini. Documentate da oltre quattro secoli, nella Lista rappresentativa del patrimonio culturale immateriale dell'UNESCO dal 2019. In caso di maltempo possono essere annullate."
+            "text": "Il Giovedì la «Funzione dei Giudei», rappresentazione del cammino di Cristo verso il Calvario; il Venerdì una processione raccolta con confraternite, lanterne, il catafalco del Cristo morto e l'Addolorata. Percorso tra San Giovanni e i Cappuccini. Attestate dalla seconda metà del Seicento, nella Lista rappresentativa del patrimonio culturale immateriale dell'UNESCO dal 2019. In caso di maltempo possono essere annullate."
           },
           {
             "name": "Trasparenti nel nucleo storico",
@@ -1753,7 +1757,7 @@
           {
             "name": "Processioni della Settimana Santa a Mendrisio",
             "when": "Giovedì e Venerdì Santo, la sera",
-            "text": "A pochi minuti da Chiasso: processioni attestate dalla seconda metà del Seicento, con il solenne 'Entierro' del Venerdì Santo e oltre settecento partecipanti in costume. Dal 2019 sono iscritte nel patrimonio culturale immateriale dell'UNESCO."
+            "text": "A pochi minuti da Chiasso: processioni attestate dalla seconda metà del Seicento, con il solenne 'Entierro' del Venerdì Santo e oltre ottocento partecipanti in costume. Dal 2019 sono iscritte nel patrimonio culturale immateriale dell'UNESCO."
           },
           {
             "name": "Festival di cultura e musica jazz",
@@ -2102,7 +2106,7 @@
           },
           {
             "name": "Via Crucis nel castagneto",
-            "where": "Dalla chiesa di San Carlo all'oratorio di Santa Petronilla, 6710 Biasca",
+            "where": "Dalla chiesa di San Carlo, passando dai Santi Pietro e Paolo, all'oratorio di Santa Petronilla, 6710 Biasca",
             "text": "Percorso facile di circa 2 km con 14 cappelle del 1742 tra castagni del Patriziato, registrati e numerati; lungo il cammino le tracce dell'antico acquedotto e di una cava di granito."
           },
           {
