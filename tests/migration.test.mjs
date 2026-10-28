@@ -75,9 +75,9 @@ test("every referenced imported asset exists on disk", async () => {
 
 test("every location card has a real local image with provenance", async () => {
   const locations = pages.filter(page => page.family === "location");
-  assert.equal(locations.length, 51);
+  assert.equal(locations.length, 56);
   assert.ok(locations.every(page => page.heroImage), "A location still uses the decorative fallback");
-  assert.equal(cityImageOverrides.images.length, 20);
+  assert.equal(cityImageOverrides.images.length, 25);
   for (const image of cityImageOverrides.images) {
     assert.match(image.sourcePage, /^https:\/\/commons\.wikimedia\.org\//);
     assert.ok(image.license || image.rightsStatus.includes("Public domain"));
@@ -200,7 +200,7 @@ test("every city page has coordinates and a region on the market map", async () 
   const { cityGeo } = await import("../lib/city-geo.ts");
   const cityMap = JSON.parse(await readFile(new URL("../data/city-map.json", import.meta.url), "utf8"));
   const locations = pages.filter(page => page.family === "location");
-  assert.equal(locations.length, 51);
+  assert.equal(locations.length, 56);
   for (const page of locations) {
     const geo = cityGeo(page.market, page.path);
     assert.ok(geo, `Missing coordinates for ${page.market}:${page.path}`);

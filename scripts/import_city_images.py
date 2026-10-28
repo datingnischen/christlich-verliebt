@@ -12,7 +12,7 @@ import requests
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = ROOT / "public" / "city-images" / "de"
+OUTPUT_ROOT = ROOT / "public" / "city-images"
 MANIFEST = ROOT / "data" / "city-image-overrides.json"
 API = "https://commons.wikimedia.org/w/api.php"
 USER_AGENT = "christlich-verliebt migration/1.0 (public city imagery)"
@@ -40,13 +40,24 @@ CITY_FILES = {
     "/partnersuche/wuerzburg/": ("Würzburg", "Würzburg_(2021).jpg"),
 }
 
+# Neue Schweizer Stadtseiten (2026-10-28): Motiv mit Kirche, passend zur Nische.
+CH_CITY_FILES = {
+    "/partnersuche/chur/": ("Chur", "Kathedrale_St._Maria_Himmelfahrt_(Chur).JPG"),
+    "/partnersuche/fribourg/": ("Fribourg", "Fribourg_-_depuis_le_plateau_de_Pérolles.jpg"),
+    "/partnersuche/schaffhausen/": ("Schaffhausen", "Allerheiligen_in_Schaffhausen_-_Blick_vom_Kreuzgang_in_den_Kräutergarten_(2015).jpg"),
+    "/partnersuche/solothurn/": ("Solothurn", "Aare_und_St._Ursen_Kathedrale_in_Solothurn_(2014).jpg"),
+    "/partnersuche/zug/": ("Zug", "2022-07-25_17-23-41_Schweiz_Zug_Altstadt_464.0.jpg"),
+}
+
+ALL_CITY_FILES = {("de", path): value for path, value in CITY_FILES.items()} | {("ch", path): value for path, value in CH_CITY_FILES.items()}
+
 
 def plain(value: str) -> str:
     return " ".join(re.sub(r"<[^>]+>", " ", html.unescape(value or "")).split())
 
 
 def metadata() -> dict[str, dict]:
-    titles = "|".join(f"File:{filename}" for _city, filename in CITY_FILES.values())
+    titles = "|".join(f"File:{filename}" for _city, filename in ALL_CITY_FILES.values())
     response = requests.get(
         API,
         params={
@@ -66,11 +77,11 @@ def metadata() -> dict[str, dict]:
 
 
 def main() -> None:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     pages = metadata()
     records = []
     expected = set()
-    for path, (city, filename) in sorted(CITY_FILES.items()):
+    for (market, path), (city, filename) in sorted(ALL_CITY_FILES.items()):
+        (OUTPUT_ROOT / market).mkdir(parents=True, exist_ok=True)
         page = pages.get(filename.replace(" ", "_"))
         if not page or "imageinfo" not in page:
             raise RuntimeError(f"Wikimedia file not found: {filename}")
@@ -92,7 +103,7 @@ def main() -> None:
             image.save(output, format="WEBP", quality=86, method=6)
         data = output.getvalue()
         slug = path.rstrip("/").split("/")[-1]
-        local_path = f"/city-images/de/{slug}.webp"
+        local_path = f"/city-images/{market}/{slug}.webp"
         destination = ROOT / "public" / local_path.lstrip("/")
         destination.write_bytes(data)
         expected.add(destination)
@@ -107,7 +118,7 @@ def main() -> None:
             "license": license_name,
             "licenseUrl": plain(extra.get("LicenseUrl", {}).get("value", "")),
             "localPath": local_path,
-            "market": "de",
+            "market": market,
             "path": path,
             "rightsStatus": f"Wikimedia Commons {license_name}; attribution: {artist}",
             "sha256": hashlib.sha256(data).hexdigest(),
@@ -117,7 +128,7 @@ def main() -> None:
         })
         print(f"IMPORTED {city}: {local_path}")
         time.sleep(1)
-    for existing in OUTPUT_DIR.glob("*.webp"):
+    for existing in OUTPUT_ROOT.glob("*/*.webp"):
         if existing not in expected:
             existing.unlink()
     MANIFEST.write_text(

@@ -357,6 +357,41 @@
       "postcode": "97070",
       "sourceUrl": "https://christlich-verliebt.de/partnersuche/wuerzburg/",
       "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebt&pc=CE302F&z=97070&ds=&ctr=49&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/chur/",
+      "postcode": "7000",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/chur/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=7000&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/fribourg/",
+      "postcode": "1700",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/fribourg/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=1700&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/schaffhausen/",
+      "postcode": "8200",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/schaffhausen/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=8200&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/solothurn/",
+      "postcode": "4500",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/solothurn/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=4500&ds=&ctr=41&it=1"
+    },
+    {
+      "market": "ch",
+      "path": "/partnersuche/zug/",
+      "postcode": "6300",
+      "sourceUrl": "https://christlich-verliebt.ch/partnersuche/zug/",
+      "widgetUrl": "https://js.icony.com/frame/?h=300&id=christlichverliebtch&pc=CE302F&z=6300&ds=&ctr=41&it=1"
     }
   ]
 }

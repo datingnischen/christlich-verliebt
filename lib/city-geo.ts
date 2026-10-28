@@ -56,6 +56,11 @@ export const CITY_GEO: Record<string, CityGeo> = {
   "ch:/partnersuche/thun/": { lat: 46.758, lon: 7.628, region: "CH-BE" },
   "ch:/partnersuche/winterthur/": { lat: 47.4988, lon: 8.7237, region: "CH-ZH" },
   "ch:/partnersuche/zuerich/": { lat: 47.3769, lon: 8.5417, region: "CH-ZH" },
+  "ch:/partnersuche/chur/": { lat: 46.8483, lon: 9.5322, region: "CH-GR" },
+  "ch:/partnersuche/fribourg/": { lat: 46.8034, lon: 7.1618, region: "CH-FR" },
+  "ch:/partnersuche/schaffhausen/": { lat: 47.6965, lon: 8.6339, region: "CH-SH" },
+  "ch:/partnersuche/solothurn/": { lat: 47.2081, lon: 7.5298, region: "CH-SO" },
+  "ch:/partnersuche/zug/": { lat: 47.1662, lon: 8.5155, region: "CH-ZG" },
 };
 
 export function cityGeo(market: MarketCode, path: string): CityGeo | null {
