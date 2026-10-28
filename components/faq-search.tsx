@@ -57,7 +57,7 @@ export function FaqSearch({ targetId, count }: { targetId: string; count: number
       <input ref={input} type="search" value={query} onChange={event => search(event.target.value)} placeholder="Frage suchen, z. B. Kosten, Kündigung, Fake-Profile …" autoComplete="off" />
       {query ? <button type="button" className={styles.clear} onClick={() => { search(""); input.current?.focus(); }} aria-label="Suche zurücksetzen">×</button> : null}
     </label>
-    <button type="button" className={styles.toggleAll} onClick={toggleAll} aria-controls={targetId}>{allOpen ? "Alle schließen" : "Alle öffnen"}</button>
+    <button type="button" className={styles.toggleAll} onClick={toggleAll} aria-controls={targetId}>{allOpen ? "Alle zuklappen" : "Alle aufklappen"}</button>
     <p className={styles.searchStatus} aria-live="polite">{query ? (matches ? `${matches} passende ${matches === 1 ? "Antwort" : "Antworten"}` : "Keine passende Frage gefunden – schau in die Hilfe oder schreib uns.") : `${count} Antworten durchsuchbar`}</p>
   </div>;
 }

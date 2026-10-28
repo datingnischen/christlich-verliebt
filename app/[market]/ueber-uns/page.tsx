@@ -157,7 +157,7 @@ export default async function AboutPage({ params }: Props) {
         <div className={pageStyles.sectionHeading}>
           <p className={pageStyles.eyebrow}>Bewertungen & Erfahrungen</p>
           <h2 id="bewertungen-title">Was andere über uns sagen</h2>
-          <p className={styles.intro}>Mitglieder und unabhängige Vergleichsportale bewerten christlich-verliebt regelmäßig. Hier findest Du die wichtigsten Einschätzungen.</p>
+          <p className={styles.intro}>Mitglieder und unabhängige Vergleichsportale bewerten christlich-verliebt immer wieder. Hier findest Du die wichtigsten Einschätzungen.</p>
         </div>
         <div className={styles.grid}>
           {REVIEW_PORTALS.map(portal => <a className={`${styles.card} ${styles.linkCard}`} href={portal.href} key={portal.href} target="_blank" rel="nofollow noopener noreferrer">
