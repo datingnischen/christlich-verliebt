@@ -88,3 +88,62 @@ details.magazine-sources .magazine-sources__body a {
     transition: none;
   }
 }
+
+/* Vergleichstabellen im Fliesstext (z. B. christliche Singlebörsen Schweiz): lesbar, ohne Worttrennung mitten im Namen. */
+article table.compare {
+  display: table;
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font: 15px/1.45 Arial, sans-serif;
+  overflow-wrap: normal;
+}
+
+table.compare th,
+table.compare td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+table.compare thead th {
+  background: var(--green-soft);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+table.compare tbody th {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  article table.compare,
+  table.compare tbody,
+  table.compare tr,
+  table.compare th,
+  table.compare td {
+    display: block;
+  }
+
+  table.compare thead {
+    display: none;
+  }
+
+  table.compare tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  table.compare th,
+  table.compare td {
+    padding: 2px 0;
+    border: 0;
+  }
+
+  table.compare td::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+  }
+}
