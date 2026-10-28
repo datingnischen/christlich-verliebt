@@ -751,6 +751,41 @@
   text-underline-offset: 3px;
 }
 
+/* Quellen im Stadtführer: klein und zugeklappt, Belege bleiben per Klick/Tastatur erreichbar. */
+.prose details {
+  margin: 2em 0 0;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--muted);
+  font: 13px/1.5 Arial, sans-serif;
+}
+
+.prose summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.prose details[open] summary {
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.prose details ul {
+  margin: 0;
+}
+
+.prose details li {
+  margin: 4px 0;
+  padding-left: 0;
+}
+
+.prose details li::before {
+  content: none;
+}
+
 .prose ul,
 .prose ol {
   padding-left: 0;
