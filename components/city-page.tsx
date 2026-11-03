@@ -5,6 +5,7 @@ import { CityStickyCta } from "@/components/city-sticky-cta";
 import { cityGeo } from "@/lib/city-geo";
 import { regionName } from "@/lib/city-map";
 import { marketCities, nearestCities, parseCityContent, sectionIcon } from "@/lib/city-page";
+import { cityQuizHint } from "@/lib/city-quiz-hint";
 import { getCityImageCredit, getCityWidget, locationName, registrationUrl, selectPageImage, type PublicPage } from "@/lib/content";
 import { getMarket, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
@@ -34,6 +35,7 @@ export function CityPage({ page }: { page: PublicPage }) {
   const wikimediaCredit = getCityImageCredit(page);
   const cityWidget = getCityWidget(page);
   const content = parseCityContent(page);
+  const quizHint = cityQuizHint(page.market, page.path);
   const geo = cityGeo(page.market, page.path);
   const region = geo ? regionName(page.market, geo.region) : "";
   const cities = marketCities(page);
@@ -156,6 +158,7 @@ export function CityPage({ page }: { page: PublicPage }) {
             <div className={styles.prose} dangerouslySetInnerHTML={{ __html: section.html }} />
           </article>
           : <div key={section.id} className={`${styles.prose} ${styles.intro}`} dangerouslySetInnerHTML={{ __html: section.html }} />)}
+        {quizHint ? <div className={styles.prose}><p>{quizHint.before}<a href={quizHint.href}>{quizHint.anchor}</a>{quizHint.after}</p></div> : null}
       </div>
     </section>
 
