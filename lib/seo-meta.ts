@@ -1,5 +1,6 @@
 import type { PublicPage } from "./content";
-import { stripBrandSuffix } from "./search";
+import { stripBrandSuffix } from "./search.ts";
+import citySeoData from "../data/partnersuche-seo.json" with { type: "json" };
 
 /**
  * Suchmaschinen-Titel und Meta-Descriptions zur Laufzeit glätten (Seobility-Crawl 16.10.2026), ohne die importierten
@@ -36,16 +37,35 @@ const TITLE_OVERRIDES: Record<string, string> = {
   "/magazin/antrag-ohne-ring/": "Antrag ohne Ring: Verlobung ohne großes Symbol",
 };
 
+/**
+ * Individuelle <title> und Descriptions der Stadtseiten (Christian, 4. November 2026: keine Schablone, in der nur die
+ * Stadt wechselt). Eigene Datei neben public-pages.json, damit der Import sie nicht überschreibt; die H1 bleibt.
+ */
+export type CitySeo = { city: string; metaTitle: string; description?: string };
+export const CITY_SEO = citySeoData as unknown as Record<string, Record<string, CitySeo> | string>;
+export const CITY_TITLE_MAX = 60;
+
+export function citySeo(page: Pick<PublicPage, "market" | "path">): CitySeo | undefined {
+  const market = CITY_SEO[page.market];
+  return typeof market === "object" ? market[page.path] : undefined;
+}
+
 /** Seitentitel ohne alte Domain-Anhänge („- Christlich-Verliebt.de“), mit Marke nur, wenn sie noch in 570 px passt. */
-export function seoTitle(page: Pick<PublicPage, "path" | "title">): string {
+export function seoTitle(page: Pick<PublicPage, "path" | "title"> & Partial<Pick<PublicPage, "market">>): string {
+  const city = page.market ? citySeo({ market: page.market, path: page.path }) : undefined;
+  if (city) {
+    const branded = `${city.metaTitle}${TITLE_SUFFIX}`;
+    return branded.length <= CITY_TITLE_MAX && titleWidth(branded) <= TITLE_MAX_WIDTH ? branded : city.metaTitle;
+  }
   const base = (TITLE_OVERRIDES[page.path] ?? stripBrandSuffix(page.title)).trim();
   if (/christlich[\s-]verliebt/i.test(base)) return base;
   const branded = `${base}${TITLE_SUFFIX}`;
   return titleWidth(branded) <= TITLE_MAX_WIDTH ? branded : base;
 }
 
-export function seoDescription(page: Pick<PublicPage, "description">): string {
-  return clampMetaDescription(page.description);
+export function seoDescription(page: Pick<PublicPage, "description"> & Partial<Pick<PublicPage, "market" | "path">>): string {
+  const city = page.market && page.path ? citySeo({ market: page.market, path: page.path }) : undefined;
+  return clampMetaDescription(city?.description ?? page.description);
 }
 
 export function clampMetaDescription(text?: string | null, max = META_DESCRIPTION_MAX): string {

@@ -1,0 +1,274 @@
+{
+  "_comment": "Individuelle <title> und Meta-Descriptions der Stadtseiten (Christian, 4. November 2026). Eigene Datei, damit import_public_pages.py sie nicht überschreibt; H1 und Seitentext bleiben aus public-pages.json. metaTitle ohne Marke, max. 60 Zeichen; das Suffix „ | Christlich-Verliebt“ hängt lib/seo-meta.ts nur an, wenn es noch hineinpasst. Jeder Titel nennt einen Ort oder Aspekt aus dem Seitentext. Nie „Christ sucht Christ“.",
+  "de": {
+    "/partnersuche/augsburg/": {
+      "city": "Augsburg",
+      "metaTitle": "Christliche Singles in Augsburg – vom Dom bis Göggingen",
+      "description": "Gläubige Singles in Augsburg: Augsburger Dom, Gemeinden in Göggingen, Haunstetten und Lechhausen und das Umland – wo Christen sich hier begegnen."
+    },
+    "/partnersuche/berlin/": {
+      "city": "Berlin",
+      "metaTitle": "Partnersuche für Christen in Berlin: Dom und St. Hedwig",
+      "description": "Christen in Berlin treffen: Berliner Dom, St.-Hedwigs-Kathedrale, Gedächtniskirche und weitere Treffpunkte, dazu Tipps für das christliche Dating."
+    },
+    "/partnersuche/bochum/": {
+      "city": "Bochum",
+      "metaTitle": "Gläubige Singles in Bochum: Propsteikirche und Ruhr-Uni",
+      "description": "Christliche Partnersuche in Bochum: über 70 Gemeinden, die Propsteikirche St. Peter und Paul, Wattenscheid, Langendreer und Kontakte ins Ruhrgebiet."
+    },
+    "/partnersuche/bonn/": {
+      "city": "Bonn",
+      "metaTitle": "Bonn: Christliche Singles in Hauskreisen und Gemeinden",
+      "description": "Christen in Bonn kennenlernen: 25 katholische Kirchengemeinden, evangelische und freie Gemeinden, Hauskreise und Kontakte bis Köln und Siegburg."
+    },
+    "/partnersuche/bremen/": {
+      "city": "Bremen",
+      "metaTitle": "Gläubige Singles in Bremen: 52 evangelische Gemeinden",
+      "description": "Partnersuche für Christen in Bremen: die Bremische Evangelische Kirche mit 52 Gemeinden, katholische und freie Gemeinden und Kontakte bis Oldenburg."
+    },
+    "/partnersuche/dortmund/": {
+      "city": "Dortmund",
+      "metaTitle": "Christliche Singles in Dortmund: von Hörde bis Aplerbeck",
+      "description": "Gläubige Singles in Dortmund: über 60 Gemeinden der katholischen Stadtkirche, evangelische Gemeinden, Stadtteile wie Hörde und Kontakte im Ruhrgebiet."
+    },
+    "/partnersuche/dresden/": {
+      "city": "Dresden",
+      "metaTitle": "Christliche Partnersuche Dresden: Frauenkirche & Neustadt",
+      "description": "Christen in Dresden begegnen: Frauenkirche und Kreuzkirche, Gemeinden in Altstadt, Neustadt, Blasewitz und Cotta sowie Kontakte im Dresdner Umland."
+    },
+    "/partnersuche/duesseldorf/": {
+      "city": "Düsseldorf",
+      "metaTitle": "Partnersuche für Christen in Düsseldorf und im Rheinland",
+      "description": "Gläubige Singles in Düsseldorf: evangelische Kirchengemeinden, 15 katholische Seelsorgebereiche, Hauskreise und Kontakte nach Neuss oder Ratingen."
+    },
+    "/partnersuche/essen/": {
+      "city": "Essen",
+      "metaTitle": "Christliche Singles in Essen: Dom, Rüttenscheid, Werden",
+      "description": "Christliche Partnersuche in Essen: Essener Dom, Gemeinden in Rüttenscheid, Werden, Borbeck und Steele und viele Kontakte im Herzen des Ruhrgebiets."
+    },
+    "/partnersuche/frankfurt-am-main/": {
+      "city": "Frankfurt",
+      "metaTitle": "Frankfurt am Main: Christliche Singles rund um den Kaiserdom",
+      "description": "Christen in Frankfurt am Main treffen: Kaiserdom, Katharinenkirche und Liebfrauenkirche, Sport in christlicher Gemeinschaft und Gottesdienste."
+    },
+    "/partnersuche/freiburg/": {
+      "city": "Freiburg",
+      "metaTitle": "Gläubige Singles in Freiburg: Münster und Gemeinden",
+      "description": "Christliche Partnersuche in Freiburg: das Freiburger Münster, katholische, evangelische und freie Gemeinden und Orte, an denen Gläubige sich begegnen."
+    },
+    "/partnersuche/hamburg/": {
+      "city": "Hamburg",
+      "metaTitle": "Christen in Hamburg kennenlernen: St. Petri und Mariendom",
+      "description": "Christliche Singles in Hamburg: St. Petri, St. Katharina, St. Marien-Dom und Christuskirche, Reisen mit der Gemeinde und Ideen für Dates übers Jahr."
+    },
+    "/partnersuche/hannover/": {
+      "city": "Hannover",
+      "metaTitle": "Gläubige Singles in Hannover: Marktkirche und Erlebniszoo",
+      "description": "Partnersuche für Christen in Hannover: Marktkirche, Christliches Zentrum Hannover, Erlebniszoo, Feste und Gottesdienste als Orte zum Kennenlernen."
+    },
+    "/partnersuche/karlsruhe/": {
+      "city": "Karlsruhe",
+      "metaTitle": "Christliche Singles in Karlsruhe: Stadtkirche und Durlach",
+      "description": "Gläubige Singles in Karlsruhe: Evangelische Stadtkirche, St. Stephan, Gemeinden in Durlach, Mühlburg und Neureut sowie Kontakte im Umland."
+    },
+    "/partnersuche/kassel/": {
+      "city": "Kassel",
+      "metaTitle": "Christen in Kassel treffen: Martinskirche und Renthof",
+      "description": "Christliche Partnersuche in Kassel: Martinskirche, Brüderkirche, der Renthof aus dem 13. Jahrhundert, Events und Gottesdienste in der Stadt."
+    },
+    "/partnersuche/leipzig/": {
+      "city": "Leipzig",
+      "metaTitle": "Gläubige Singles in Leipzig: Nikolai- und Thomaskirche",
+      "description": "Christen in Leipzig kennenlernen: über 90 Kirchengebäude, Nikolaikirche und Thomaskirche, studentische Gemeinden und Kontakte bis Halle und Grimma."
+    },
+    "/partnersuche/magdeburg/": {
+      "city": "Magdeburg",
+      "metaTitle": "Partnersuche für Christen in Magdeburg rund um den Dom",
+      "description": "Christliche Singles in Magdeburg: Magdeburger Dom, Kathedrale St. Sebastian, evangelische und freie Gemeinden und Kontakte in der ganzen Region."
+    },
+    "/partnersuche/mainz/": {
+      "city": "Mainz",
+      "metaTitle": "Christliche Singles in Mainz: Dom, Altstadt, Gonsenheim",
+      "description": "Gläubige Singles in Mainz: Mainzer Dom, Gemeinden in Altstadt, Gonsenheim, Bretzenheim und Hechtsheim sowie christliche Kontakte im Mainzer Umland."
+    },
+    "/partnersuche/muenchen/": {
+      "city": "München",
+      "metaTitle": "München: Christliche Singles von Frauenkirche bis CVJM",
+      "description": "Christen in München kennenlernen: Frauenkirche, katholische Gemeinden, Freikirchen wie ICF, der CVJM und weitere Treffpunkte für gläubige Singles."
+    },
+    "/partnersuche/muenster/": {
+      "city": "Münster",
+      "metaTitle": "Gläubige Singles in Münster: St.-Paulus-Dom & Gievenbeck",
+      "description": "Christliche Partnersuche in Münster: St.-Paulus-Dom, Gemeinden im Bistum Münster, Stadtteile wie Gievenbeck, Hiltrup und Handorf und das Umland."
+    },
+    "/partnersuche/nordrhein-westfalen/koeln/": {
+      "city": "Köln",
+      "metaTitle": "Christliche Partnersuche in Köln: Dom und Antoniterkirche",
+      "description": "Christliche Singles in Köln: Kölner Dom, Antoniterkirche, die eigene Gemeinde, Kirchentag, Kirche und Sport – Wege, gläubige Menschen zu treffen."
+    },
+    "/partnersuche/nuernberg/": {
+      "city": "Nürnberg",
+      "metaTitle": "Gläubige Singles in Nürnberg: über 70 Gemeinden der Stadt",
+      "description": "Christen in Nürnberg kennenlernen: über 70 Gemeinden, Kirchen der Innenstadt, Langwasser, Ziegelstein und St. Johannis sowie Fürth und Erlangen."
+    },
+    "/partnersuche/paderborn/": {
+      "city": "Paderborn",
+      "metaTitle": "Christliche Singles in Paderborn: Dom und Schloß Neuhaus",
+      "description": "Gläubige Singles in Paderborn: Paderborner Dom, Gemeinden in Schloß Neuhaus, Elsen und Wewer und christliche Kontakte in ganz Ostwestfalen."
+    },
+    "/partnersuche/stuttgart/": {
+      "city": "Stuttgart",
+      "metaTitle": "Christen in Stuttgart treffen: Hauskreise und Gemeinden",
+      "description": "Christliche Singles in Stuttgart: über 60 evangelische Gemeinden, katholische und freie Gemeinden, Hauskreise und Kontakte bis Ludwigsburg."
+    },
+    "/partnersuche/trier/": {
+      "city": "Trier",
+      "metaTitle": "Trier: Christliche Partnersuche rund um den Trierer Dom",
+      "description": "Gläubige Singles in Trier: der Trierer Dom als Bischofskirche, Gemeinden in Tarforst, Ehrang und Kürenz und christliche Kontakte im Umland."
+    },
+    "/partnersuche/wuerzburg/": {
+      "city": "Würzburg",
+      "metaTitle": "Christliche Singles in Würzburg: Dom und Frauenland",
+      "description": "Christen in Würzburg treffen: Würzburger Dom, Gemeinden im Frauenland, in Heidingsfeld und Lengfeld sowie christliche Kontakte im Würzburger Umland."
+    }
+  },
+  "at": {
+    "/partnersuche/amstetten/": {
+      "city": "Amstetten",
+      "metaTitle": "Amstetten: Christen treffen im Christlichen Zentrum",
+      "description": "Christliche Singles in Amstetten: Kirchen, das Christliche Zentrum, Kirchencafé, Chöre und die Buchhandlung Stöckl als Orte für echte Begegnungen."
+    },
+    "/partnersuche/bregenz/": {
+      "city": "Bregenz",
+      "metaTitle": "Christliche Singles in Bregenz: ICF und Sommerkirche",
+      "description": "Gläubige Singles in Bregenz: Sommerkirche, ICF Vorarlberg, Seepromenade am Bodensee und christliche Events als Gelegenheiten zum Kennenlernen."
+    },
+    "/partnersuche/dornbirn/": {
+      "city": "Dornbirn",
+      "metaTitle": "Gläubige Singles in Dornbirn: St. Martin und Bibelkreise",
+      "description": "Christen in Dornbirn kennenlernen: Stadtpfarre St. Martin, Freikirchen, Bibelkreise, Lobpreisabende und Cafés rund um das Stadtzentrum."
+    },
+    "/partnersuche/eisenstadt/": {
+      "city": "Eisenstadt",
+      "metaTitle": "Eisenstadt: Gläubige Singles bei Wallfahrten und im Café",
+      "description": "Christliche Singles in Eisenstadt: Wallfahrten der Dompfarre, Franziskanerkirche, Café Maskaron am Schloss Esterházy und Freizeitangebote."
+    },
+    "/partnersuche/graz/": {
+      "city": "Graz",
+      "metaTitle": "Christen in Graz treffen: Stadtkirche und Café Miteinander",
+      "description": "Partnersuche für Christen in Graz: Stadtkirche, kleinere Gemeinden, das Café Miteinander, Lobpreisabende und Sportvereine als Orte für Begegnungen."
+    },
+    "/partnersuche/innsbruck/": {
+      "city": "Innsbruck",
+      "metaTitle": "Innsbruck: Christen treffen im Haus der Begegnung",
+      "description": "Gläubige Singles in Innsbruck: Pfarre St. Nikolaus, Haus der Begegnung der Diözese, Freikirchen, Cafés und Vereine für Musik, Tanz und Sport."
+    },
+    "/partnersuche/klagenfurt/": {
+      "city": "Klagenfurt",
+      "metaTitle": "Gläubige Singles in Klagenfurt: GospelHouse & Wörthersee",
+      "description": "Christliche Partnersuche in Klagenfurt: LIFE Groups, GospelHouse, Kreuzberglkirche und gemeinsame Ausflüge an den Wörthersee für gläubige Singles."
+    },
+    "/partnersuche/leoben/": {
+      "city": "Leoben",
+      "metaTitle": "Christliche Singles in Leoben: LIFE Church und Murradweg",
+      "description": "Gläubige Singles in Leoben: LIFE Church, Freikirche, christliche Events, Sportvereine und Treffpunkte am Murradweg als Orte zum Kennenlernen."
+    },
+    "/partnersuche/linz/": {
+      "city": "Linz",
+      "metaTitle": "Christen in Linz treffen: Pfarre St. Martin und Lesungen",
+      "description": "Gläubige Singles in Linz: Evangelische Kirche A.B., Pfarre Linz-St. Martin, Lesungen im Christlichen Buchshop, Konzerte und christliche Sportvereine."
+    },
+    "/partnersuche/salzburg/": {
+      "city": "Salzburg",
+      "metaTitle": "Christliche Singles in Salzburg: Dom, Kloster, Konzerte",
+      "description": "Christen in Salzburg kennenlernen: Salzburger Dom, Franziskaner- und Kollegienkirche, Kirchenkonzerte und das Kloster Johannes-Schlössl."
+    },
+    "/partnersuche/st-poelten/": {
+      "city": "St. Pölten",
+      "metaTitle": "St. Pölten: Gläubige Singles am Dom und beim Jesus Run",
+      "description": "Christliche Singles in St. Pölten: Dom zu St. Pölten, Pfarrgemeinden, Nacht des Gebets, Lobpreisabende und Sport mit dem Team Jesus Run."
+    },
+    "/partnersuche/steyr/": {
+      "city": "Steyr",
+      "metaTitle": "Gläubige Singles in Steyr: Christkindlkirche & Stadtpfarre",
+      "description": "Christen in Steyr kennenlernen: Stadtpfarrkirche, Christkindlkirche, Michaelerkirche, Gebetsgruppen und Aktivitäten mit christlichem Bezug."
+    },
+    "/partnersuche/villach/": {
+      "city": "Villach",
+      "metaTitle": "Villach: Christliche Singles in Life Groups und Gemeinden",
+      "description": "Gläubige Singles in Villach: Life Groups der Life Church, evangelikale Gemeinde, evangelische Pfarrgemeinde am Stadtpark und Sportvereine."
+    },
+    "/partnersuche/wels/": {
+      "city": "Wels",
+      "metaTitle": "Gläubige Singles in Wels: Stadtpfarrkirche und Lobpreis",
+      "description": "Christliche Partnersuche in Wels: Stadtpfarrkirche, evangelische Kirche, Gebetskreise, Konzerte und Lobpreisabende als Orte für echte Begegnungen."
+    },
+    "/partnersuche/wien/": {
+      "city": "Wien",
+      "metaTitle": "Christen in Wien treffen: Stephansdom und Karlskirche",
+      "description": "Christliche Singles in Wien: Stephansdom, Karlskirche, Katholische und Evangelische Hochschulgemeinde, Lobpreisabende und Gruppen für Hobbys."
+    }
+  },
+  "ch": {
+    "/partnersuche/aarau/": {
+      "city": "Aarau",
+      "metaTitle": "Christliche Singles in Aarau: Stadtkirche und Aare"
+    },
+    "/partnersuche/basel/": {
+      "city": "Basel",
+      "metaTitle": "Christliche Singles in Basel: Gellertkirche und Taizé"
+    },
+    "/partnersuche/bern/": {
+      "city": "Bern",
+      "metaTitle": "Christen in Bern kennenlernen: Connected und EMK Young"
+    },
+    "/partnersuche/biel/": {
+      "city": "Biel",
+      "metaTitle": "Gläubige Singles in Biel: Pasquart und offenes Singen"
+    },
+    "/partnersuche/lausanne/": {
+      "city": "Lausanne",
+      "metaTitle": "Christliche Singles in Lausanne: Kathedrale und C3"
+    },
+    "/partnersuche/luzern/": {
+      "city": "Luzern",
+      "metaTitle": "Luzern: Gläubige Singles bei Taizé und Horizonte"
+    },
+    "/partnersuche/st-gallen/": {
+      "city": "St. Gallen",
+      "metaTitle": "Christliche Singles in St. Gallen: Stami 20+ und Kathedrale"
+    },
+    "/partnersuche/thun/": {
+      "city": "Thun",
+      "metaTitle": "Christen in Thun treffen: Kirche Scherzligen und Chöre"
+    },
+    "/partnersuche/winterthur/": {
+      "city": "Winterthur",
+      "metaTitle": "Winterthur: Junge Christen bei Feierabendbier und Bibel"
+    },
+    "/partnersuche/zuerich/": {
+      "city": "Zürich",
+      "metaTitle": "Christliche Singles in Zürich: aki und Taizé-Angebote"
+    },
+    "/partnersuche/chur/": {
+      "city": "Chur",
+      "metaTitle": "Gläubige Singles in Chur: Kathedrale und Adoray St. Luzi"
+    },
+    "/partnersuche/fribourg/": {
+      "city": "Fribourg",
+      "metaTitle": "Freiburg/Fribourg: Christliche Singles an der Kathedrale"
+    },
+    "/partnersuche/schaffhausen/": {
+      "city": "Schaffhausen",
+      "metaTitle": "Schaffhausen: Christliche Singles an Münster und Rhein"
+    },
+    "/partnersuche/solothurn/": {
+      "city": "Solothurn",
+      "metaTitle": "Gläubige Singles in Solothurn: St. Ursen und Verenaschlucht"
+    },
+    "/partnersuche/zug/": {
+      "city": "Zug",
+      "metaTitle": "Christliche Singles in Zug: Adoray und Zugersee"
+    }
+  }
+}
