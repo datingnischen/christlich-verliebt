@@ -175,6 +175,17 @@
   line-height: 1.25;
 }
 
+/* Unterzeile steht ausserhalb der H1 (Seobility: H1-Keywords im Text), sieht aus wie vorher (0.42 × H1-Grösse). */
+.heroSub {
+  max-width: 820px;
+  margin: 14px 0 0;
+  color: #cfe6cf;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 2.52vw, 30px);
+  font-style: italic;
+  line-height: 1.25;
+}
+
 .heroLead {
   max-width: 620px;
   margin: 20px 0 30px;
