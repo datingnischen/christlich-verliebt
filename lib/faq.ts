@@ -78,7 +78,7 @@ export function parseFaq(contentHtml: string): FaqContent | null {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Signatur bleibt, der Aufrufer übergibt die Seite.
 export function faqTitle(_page: Pick<PublicPage, "domain">): string {
   // Ohne Domain im Titel (Seobility); die Marke folgt als Suffix.
-  return "FAQ: Kosten, Sicherheit & Ablauf | Christlich-Verliebt";
+  return "FAQ: Kosten, Sicherheit & Anmeldung | Christlich-Verliebt";
 }
 
 export function faqDescription(_page: Pick<PublicPage, "domain">, faq: FaqContent): string {
