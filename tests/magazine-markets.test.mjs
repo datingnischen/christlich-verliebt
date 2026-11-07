@@ -16,6 +16,7 @@ test("AT und CH spiegeln das deutsche Magazin (gleiche Pfadstruktur je Land), Au
 test("Spiegelseiten stehen auf noindex und fehlen in der Länder-Sitemap", async () => {
   const page = await source("app/[market]/[[...slug]]/page.tsx");
   assert.match(page, /page\.mirrorOf \? \{ index: false, follow: true \}/);
+  assert.match(page, /page\.mirrorOf \? \{\} : \{ alternates: \{ canonical: page\.canonical \} \}/, "Spiegel tragen keinen Canonical auf eine fremde Domain");
   const sitemap = await source("app/[market]/sitemap-data.xml/route.ts");
   assert.match(sitemap, /filter\(page => !page\.mirrorOf\)/);
 });

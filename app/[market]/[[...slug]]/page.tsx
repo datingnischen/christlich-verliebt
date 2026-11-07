@@ -48,7 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: title },
     description,
-    alternates: { canonical: page.canonical },
+    // Spiegel (noindex) ohne Canonical: noindex plus Canonical auf .de widerspricht sich, Seobility wertet es als Fehler.
+    ...(page.mirrorOf ? {} : { alternates: { canonical: page.canonical } }),
     robots: page.mirrorOf ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: { title, description, url: page.canonical, locale: page.locale.replace("-", "_"), type: "website", ...(hero ? { images: [{ url: hero }] } : {}) },
   };
