@@ -47,3 +47,11 @@ test("FAQ JSON-LD exposes every question as FAQPage mainEntity", () => {
   }
   assert.ok(graph.some(node => node["@type"] === "BreadcrumbList"));
 });
+
+test("FAQ-Antworten ohne fettes Ja/Nein (Seobility: doppelte Strong-Tags)", () => {
+  const html = "<h2>Kosten</h2><strong>Ist es kostenlos?</strong><div><p><strong>Ja.</strong> Die Anmeldung kostet nichts.</p></div><strong>Gibt es ein Abo?</strong><div><p><strong>Nein.</strong> Nur wenn Du willst.</p></div><strong>Wer?</strong><div><p>Alle.</p></div>";
+  const faq = parseFaq(html);
+  const answers = faq.groups.flatMap(group => group.items.map(item => item.answerHtml)).join("");
+  assert.doesNotMatch(answers, /<strong>(Ja|Nein)/);
+  assert.match(answers, /Ja\. Die Anmeldung/);
+});

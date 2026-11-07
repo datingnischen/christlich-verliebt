@@ -42,6 +42,8 @@ function uniqueId(base: string, used: Set<string>): string {
 function cleanAnswer(html: string): string {
   return html
     .replace(/\s*\}\s*(?=<\/p>)/g, "")
+    // Fettes „Ja.“/„Nein.“ wiederholt sich in jeder Antwort (Seobility: doppelte Strong-Tags).
+    .replace(/<(strong|b)>\s*((?:Ja|Nein)\.?)\s*<\/\1>/g, "$2")
     .replace(/(?:&nbsp;|\s)*\|(?:&nbsp;|\s)*/g, " · ")
     .replace(/<p>\s*<\/p>/g, "")
     .trim();
