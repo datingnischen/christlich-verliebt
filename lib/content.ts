@@ -3,6 +3,7 @@ import editorialSnapshot from "@/data/editorial-pages.json";
 import categorySnapshot from "@/data/magazine-categories.json";
 import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
+import { naturalTimestamp } from "@/lib/natural-time";
 import wpPostSnapshot from "@/data/wp-posts.json";
 import { movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
@@ -143,7 +144,10 @@ export function articleDates(page: PublicPage): { published: string; modified: s
   const slug = page.path.match(/^\/magazin\/([a-z0-9-]+)\/$/)?.[1];
   const wp = slug ? wpPostDates.get(slug) : undefined;
   if (wp) return { published: wp.date, modified: wp.modified || wp.date };
-  return page.updated ? { published: page.updated, modified: page.updated } : null;
+  if (!page.updated) return null;
+  // Eigene Artikel haben nur ein Tagesdatum: gleiche slug-abhängige Uhrzeit wie im WP-REST-Endpunkt, nie T00:00:00.
+  const stamp = naturalTimestamp(slug ?? page.path, page.updated);
+  return { published: stamp, modified: stamp };
 }
 
 export function getMagazineCategories(): MagazineCategory[] {

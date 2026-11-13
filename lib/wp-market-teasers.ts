@@ -33,8 +33,9 @@ export const TEASER_CITIES: Record<MarketTeaserCode, { slug: string; width: numb
   ],
 };
 
-// Feste Datumswerte: Reihenfolge = Einwohnerzahl (neuester „Beitrag“ zuerst).
-const DATES = ["2026-10-20T12:00:00", "2026-10-20T11:00:00", "2026-10-20T10:00:00"];
+// Feste Datumswerte: Reihenfolge = Einwohnerzahl (neuester „Beitrag“ zuerst). Bewusst unregelmäßige Uhrzeiten,
+// keine runden Stunden (Christian, 2026-11-13: nach außen nie der Eindruck automatischer Erzeugung).
+const DATES = ["2026-10-20T17:21:46", "2026-10-20T13:52:08", "2026-10-20T09:44:31"];
 const ID_BASE: Record<MarketTeaserCode, number> = { at: 910_000, ch: 920_000 };
 
 export function isMarketTeaserCode(value: unknown): value is MarketTeaserCode {

@@ -43,9 +43,9 @@ test("IDs und Daten: echte WordPress-IDs aus dem Abzug, eigene Artikel mit fixie
   const trad = get("/wp/v2/posts", "slug=trad-wife-rollenbilder-dating").body[0];
   assert.equal(trad.id, 606);
   assert.equal(trad.featured_media, 607);
-  assert.equal(trad.date, "2026-07-11T07:02:22");
-  assert.equal(trad.date_gmt, "2026-07-11T05:02:22");
-  assert.equal(trad.modified, "2026-07-11T17:42:10");
+  assert.equal(trad.date, "2026-07-11T10:29:12");
+  assert.equal(trad.date_gmt, "2026-07-11T08:29:12");
+  assert.equal(trad.modified, "2026-07-11T10:29:12");
   assert.equal(trad.author, 2);
   assert.deepEqual(trad.categories, [12]);
 
@@ -53,7 +53,8 @@ test("IDs und Daten: echte WordPress-IDs aus dem Abzug, eigene Artikel mit fixie
   assert.equal(video.id, 357126, "abgeleitete ID für den Artikel ohne WordPress-Quelle");
   assert.equal(video.id, postIdForSlug("dating-unter-christen-gemeinsame-werte"));
   assert.equal(video.featured_media, mediaIdForPostId(357126));
-  assert.equal(video.date, "2026-09-28T00:00:00", "Datum aus updated");
+  assert.match(video.date, /^2026-09-28T(0[7-9]|1\d|2[0-2]):\d{2}:\d{2}$/, "Datum aus updated, natürliche Uhrzeit");
+  assert.notEqual(video.date, "2026-09-28T00:00:00", "nie Mitternacht");
   assert.ok(!snapshot.some((post) => post.id === video.id));
 
   const ids = get("/wp/v2/posts", "per_page=100").body.map((post) => post.id);

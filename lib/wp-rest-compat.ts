@@ -4,6 +4,7 @@ import categorySnapshot from "../data/magazine-categories.json" with { type: "js
 import mediaSnapshot from "../data/wp-media.json" with { type: "json" };
 import wpSnapshot from "../data/wp-posts.json" with { type: "json" };
 import { getMarket, isMarketCode, type MarketCode } from "./markets.ts";
+import { naturalTimestamp } from "./natural-time.ts";
 import { staticAsset } from "./static-asset.ts";
 
 import { teaserImageUrl } from "./teaser-image.ts";
@@ -186,7 +187,7 @@ export function buildMagazineSource(market: MarketCode): MagazineSource {
     const slug = articleSlug(page.path) as string;
     const wp = snapshot.get(slug);
     const id = wp?.id ?? postIdForSlug(slug);
-    const date = wp?.date ?? `${page.updated}T00:00:00`;
+    const date = wp?.date ?? naturalTimestamp(slug, page.updated as string);
     const modified = wp?.modified ?? date;
     const info = page.heroImage ? mediaInfo[page.heroImage] : undefined;
     const media: SourceMedia | null =
