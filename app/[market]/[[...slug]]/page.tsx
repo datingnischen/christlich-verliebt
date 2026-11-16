@@ -144,7 +144,7 @@ export default async function PublicPageRoute({ params }: Props) {
         {video
           ? <div className={styles.heroMedia}><a className={styles.heroVideo} href="#video"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span><strong>Video</strong><small>{videoDurationLabel(video)} mit Christian M. Haas</small></a></div>
           : heroImage
-          ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroTitle} width={640} height={640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
+          ? <div className={styles.heroMedia}><Image className={styles.heroImage} src={heroImage} alt={page.heroAlt ?? page.heroTitle} width={faq ? 1200 : 640} height={faq ? 675 : 640} priority />{heroCredit ? <p className={styles.heroCredit}>Bild: <a href={heroCredit.sourcePage} target="_blank" rel="nofollow noopener">{heroCredit.artist} · {heroCredit.license}</a></p> : null}</div>
           : <div className={styles.heroMark} aria-hidden="true"><span>✦</span><strong>Glaube</strong><small>Liebe · Vertrauen · Nähe</small></div>}
       </section>
       {faq ? <FaqPage faq={faq} market={page.market} registrationHref={register} /> : contentHtml.trim() ? <section className={styles.layout}>

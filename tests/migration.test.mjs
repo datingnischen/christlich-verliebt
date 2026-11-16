@@ -61,14 +61,14 @@ test("canonicals and imported resources stay market-specific", () => {
     assert.equal(new URL(page.canonical).hostname, page.domain);
     assert.equal(new URL(page.canonical).pathname, page.path);
     const sources = [...page.contentHtml.matchAll(/src=["']([^"']+)/gi)].map(match => match[1]);
-    assert.ok(sources.every(src => src.startsWith("/imported/")), `${page.path} has remote src`);
+    assert.ok(sources.every(src => src.startsWith("/imported/") || (page.path === "/faq/" && src === page.heroImage && /^\/pages\/faq(?:-ch)?\.webp$/.test(src))), `${page.path} has remote src`);
   }
 });
 
 test("every referenced imported asset exists on disk", async () => {
   const sources = new Set(pages.flatMap(page => [page.heroImage, ...[...page.contentHtml.matchAll(/src=["']([^"']+)/gi)].map(match => match[1])]).filter(Boolean));
   for (const source of sources) {
-    if (!source.startsWith("/imported/") && !source.startsWith("/city-images/")) continue;
+    if (!source.startsWith("/imported/") && !source.startsWith("/city-images/") && !source.startsWith("/pages/")) continue;
     await access(new URL(`../public${source}`, import.meta.url));
   }
 });

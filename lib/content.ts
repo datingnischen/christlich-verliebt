@@ -25,6 +25,7 @@ export type PublicPage = {
   description: string;
   heroTitle: string;
   heroImage: string | null;
+  heroAlt?: string;
   categories: string[];
   contentHtml: string;
   // Nur eigene redaktionelle Seiten (data/editorial-pages.json): eingebettetes Video (lib/videos.ts), sichtbares Datum.

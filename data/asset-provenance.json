@@ -2208,5 +2208,17 @@
     "rightsStatus": "legacy-brand-or-editorial-asset; verify provenance before production cutover",
     "sha256": "fddf851411498bf8c86df1d0361842d614ec645cb295eba89671023061faf0ed",
     "sourceUrl": "https://christlich-verliebt.de/magazin/wp-content/uploads/2023/04/Christlich-verliebt-1.jpeg"
+  },
+  {
+    "localPath": "/pages/faq.webp",
+    "rightsStatus": "KI-generiertes redaktionelles Symbolbild, OpenAI ImageGen, 2026-11-16",
+    "bytes": 158698,
+    "sha256": "517a3767ec10d689ec2e16b976cc97193a35ec20e3d57f144e859d6f9e8fb572"
+  },
+  {
+    "localPath": "/pages/faq-ch.webp",
+    "rightsStatus": "KI-generiertes redaktionelles Symbolbild, OpenAI ImageGen, 2026-11-16",
+    "bytes": 176086,
+    "sha256": "b846f043c33d3f4b2cf4f4095ff8de5636b324b73f386ae86751e5f4bd8e5c00"
   }
 ]
