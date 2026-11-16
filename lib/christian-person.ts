@@ -14,6 +14,7 @@ export function christianPerson() {
       "https://creators.spotify.com/pod/profile/christian-m-haas/",
       "https://www.amazon.com/author/christian-m-haas",
       "https://gravatar.com/automatic8c1daff973",
+      "https://www.wikidata.org/wiki/Q142183607",
     ],
   };
 }

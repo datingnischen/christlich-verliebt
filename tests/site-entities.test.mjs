@@ -93,7 +93,8 @@ test("magazine posts get a BlogPosting by Christian M. Haas with the profile @id
   assert.equal(article.author.name, "Christian M. Haas");
   assert.equal(article.author["@id"], AUTHOR_PERSON_ID);
   assert.equal(article.author.url, "https://datingnischen.de/christian/");
-  assert.equal(article.author.sameAs.length, 5);
+  assert.equal(article.author.sameAs.length, 6);
+  assert.ok(article.author.sameAs.includes("https://www.wikidata.org/wiki/Q142183607"));
   assert.equal(article.publisher["@id"], "https://christlich-verliebt.de/#operator");
   assert.equal(article.isPartOf["@id"], "https://christlich-verliebt.de/#website");
   assert.equal(article.datePublished, "2021-04-08T19:43:20+02:00");
