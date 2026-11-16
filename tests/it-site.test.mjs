@@ -12,7 +12,7 @@ const live = (path) => proxy(new NextRequest(`https://single-cristiani.ch${path}
 
 test("Chi siamo: eigene indexierbare Seite, in Sitemap, Navigation und Fußzeile, Meta-Längen eingehalten", async () => {
   assert.equal(itAuthorUrl(), "https://single-cristiani.ch/chi-siamo/");
-  assert.equal(itAuthorId(), "https://single-cristiani.ch/chi-siamo/#person");
+  assert.equal(itAuthorId(), "https://datingnischen.de/christian/#person");
   assert.ok(IT_ABOUT.metaTitle.length <= 60, `${IT_ABOUT.metaTitle.length}`);
   assert.ok(IT_ABOUT.description.length >= 110 && IT_ABOUT.description.length <= 155, `${IT_ABOUT.description.length}`);
   assert.match(live(`/${IT_ABOUT_SLUG}/`).headers.get("x-middleware-rewrite") ?? "", /\/ch\/it\/chi-siamo\/$/);

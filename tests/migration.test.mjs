@@ -158,9 +158,10 @@ test("Christian's canonical profile imports his book and renders a bounded safe 
   const source = await readFile(new URL("../app/[market]/magazin/christian-m-haas/page.tsx", import.meta.url), "utf8");
   assert.match(source, /PROFILE_PATH = "\/magazin\/christian-m-haas\/"/);
   assert.match(source, /market === "de" \? getPage\("de", PROFILE_PATH\)/);
-  for (const type of ["BreadcrumbList", "ProfilePage", "Person", "Book"]) assert.match(source, new RegExp(`@type["']?: ["']${type}["']`));
+  assert.match(source, /\.\.\.christianPerson\(\)/);
+  for (const type of ["BreadcrumbList", "ProfilePage", "Book"]) assert.match(source, new RegExp(`@type["']?: ["']${type}["']`));
   assert.match(source, /CANONICAL = "https:\/\/christlich-verliebt\.de\/magazin\/christian-m-haas\/"/);
-  assert.match(source, /PERSON_ID = `\$\{CANONICAL\}#person`/);
+  assert.match(source, /PERSON_ID = CHRISTIAN_PERSON_ID/);
   assert.match(source, /safeJsonLd/);
   assert.match(source, /dangerouslySetInnerHTML=\{\{ __html: safeJsonLd\(/);
 });

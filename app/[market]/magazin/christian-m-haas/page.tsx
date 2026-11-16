@@ -8,12 +8,13 @@ import { seoDescription } from "@/lib/seo-meta";
 import { previewPath, publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import { getVideo, videoJsonLd, YOUTUBE_CHANNEL } from "@/lib/videos";
+import { CHRISTIAN_PERSON_ID, christianPerson } from "@/lib/christian-person";
 import styles from "./profile.module.css";
 
 // Eigene Profilseite statt der Artikelvorlage; das Autorenprofil gibt es nur auf .de.
 const PROFILE_PATH = "/magazin/christian-m-haas/";
 const CANONICAL = "https://christlich-verliebt.de/magazin/christian-m-haas/";
-const PERSON_ID = `${CANONICAL}#person`;
+const PERSON_ID = CHRISTIAN_PERSON_ID;
 const PORTRAIT = staticAsset("/brand/christian-m-haas.jpg");
 const BOOK_URL = "https://www.amazon.de/dp/3696371211/";
 const REGISTRATION = "https://christlich-verliebt.de/registration/?AID=magazin";
@@ -116,14 +117,10 @@ function profileGraph(page: PublicPage) {
       },
       { "@type": "ProfilePage", "@id": `${CANONICAL}#profile-page`, url: CANONICAL, name: "Christian M. Haas", inLanguage: "de-DE", breadcrumb: { "@id": `${CANONICAL}#breadcrumb` }, mainEntity: { "@id": PERSON_ID } },
       {
-        "@type": "Person",
-        "@id": PERSON_ID,
-        name: "Christian M. Haas",
-        url: CANONICAL,
+        ...christianPerson(),
         image: PORTRAIT,
         jobTitle: "Datingexperte & Autor",
         knowsAbout: FOCUS.map(item => item.title),
-        sameAs: SOCIALS.map(social => social.href),
       },
       {
         "@type": "Book",

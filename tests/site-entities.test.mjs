@@ -92,7 +92,8 @@ test("magazine posts get a BlogPosting by Christian M. Haas with the profile @id
   assert.equal(article.author["@type"], "Person");
   assert.equal(article.author.name, "Christian M. Haas");
   assert.equal(article.author["@id"], AUTHOR_PERSON_ID);
-  assert.equal(article.author.url, "https://christlich-verliebt.de/magazin/christian-m-haas/");
+  assert.equal(article.author.url, "https://datingnischen.de/christian/");
+  assert.equal(article.author.sameAs.length, 5);
   assert.equal(article.publisher["@id"], "https://christlich-verliebt.de/#operator");
   assert.equal(article.isPartOf["@id"], "https://christlich-verliebt.de/#website");
   assert.equal(article.datePublished, "2021-04-08T19:43:20+02:00");
@@ -136,7 +137,7 @@ test("homepage, about pages, magazine and articles render the schema graphs", as
   assert.doesNotMatch(about, /#organization/);
   assert.match(await source("app/[market]/ueber-uns/suche/page.tsx"), /<SiteJsonLd /);
   // Das Autorenprofil behält seinen eigenen Graphen mit derselben Person-@id.
-  assert.match(await source("app/[market]/magazin/christian-m-haas/page.tsx"), /const PERSON_ID = `\$\{CANONICAL\}#person`/);
+  assert.match(await source("app/[market]/magazin/christian-m-haas/page.tsx"), /PERSON_ID = CHRISTIAN_PERSON_ID/);
 });
 
 test("imported magazine content carries no leftover AIOSEO or Yoast schema", async () => {

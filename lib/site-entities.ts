@@ -2,6 +2,8 @@
 // (sameAs aus SOCIAL_CHANNELS in lib/about.ts) und die Website je Länderdomain. Magazinbeiträge verweisen per @id darauf.
 // Reine Funktionen ohne @/-Importe, damit tests/site-entities.test.mjs sie direkt laden kann.
 
+import { CHRISTIAN_PERSON_ID, christianPerson } from "./christian-person.ts";
+
 export const BRAND_NAME = "christlich-verliebt";
 
 export const PLATFORM_OPERATOR = {
@@ -15,7 +17,7 @@ export const AUTHOR = {
   name: "Christian M. Haas",
   jobTitle: "Datingexperte & Autor",
   profileUrl: AUTHOR_PROFILE_URL,
-  personId: `${AUTHOR_PROFILE_URL}#person`,
+  personId: CHRISTIAN_PERSON_ID,
 } as const;
 
 export type Crumb = { name: string; url: string };
@@ -204,10 +206,7 @@ export function buildMagazineArticleGraph(input: MagazineArticleGraphInput) {
       ...(published ? { datePublished: published } : {}),
       ...(modified ? { dateModified: modified } : {}),
       author: {
-        "@type": "Person",
-        "@id": AUTHOR.personId,
-        name: AUTHOR.name,
-        url: AUTHOR.profileUrl,
+        ...christianPerson(),
         jobTitle: AUTHOR.jobTitle,
         ...(input.authorImage ? { image: input.authorImage } : {}),
       },

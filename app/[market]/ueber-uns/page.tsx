@@ -1,3 +1,4 @@
+import { christianPerson } from "@/lib/christian-person";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -70,7 +71,7 @@ function aboutPage(market: MarketCode): SiteGraphPage {
   };
 }
 
-const authorNode = { "@type": "Person", "@id": SCHEMA_AUTHOR.personId, name: AUTHOR.name, jobTitle: AUTHOR.jobTitle, url: SCHEMA_AUTHOR.profileUrl, image: AUTHOR.image, sameAs: AUTHOR.sameAs };
+const authorNode = { ...christianPerson(), jobTitle: AUTHOR.jobTitle, image: AUTHOR.image };
 
 export default async function AboutPage({ params }: Props) {
   const market = await activeMarket(params);

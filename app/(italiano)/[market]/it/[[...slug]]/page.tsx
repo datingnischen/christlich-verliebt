@@ -1,10 +1,11 @@
+import { christianPerson } from "@/lib/christian-person";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ItCityPage, ItHomePage, ItShell } from "@/components/it-pages";
 import { ItAboutPage } from "@/components/it-about";
 import { ItArticlePage, ItCitiesPage, ItMagazinePage } from "@/components/it-hubs";
 import { IT_LEGAL, ItLegalPage, type ItLegalSlug } from "@/components/it-legal";
-import { IT_ABOUT, IT_ABOUT_SLUG, IT_AUTHOR, IT_CITIES, IT_CITY_BASE, IT_HOME, IT_LEGAL_PAGES, IT_MAGAZINE_BASE, IT_PILOT_INDEXABLE, IT_PUBLISHER, getItCity, itAuthorId, itAuthorUrl, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
+import { IT_ABOUT, IT_ABOUT_SLUG, IT_AUTHOR, IT_CITIES, IT_CITY_BASE, IT_HOME, IT_LEGAL_PAGES, IT_MAGAZINE_BASE, IT_PILOT_INDEXABLE, IT_PUBLISHER, getItCity, itAuthorId, itCityUrl, itMagazineUrl, itPublicUrl } from "@/lib/it-pilot";
 import { IT_ARTICLES, IT_MAGAZINE, getItArticle } from "@/lib/it-magazine";
 import { safeJsonLd } from "@/lib/site-entities";
 import { staticAsset } from "@/lib/static-asset";
@@ -71,7 +72,7 @@ export default async function ItPilot({ params }: Props) {
   // Herausgeber (Marke single-cristiani.ch), Website und Autor als eigene Knoten; Artikel und Chi siamo verweisen per @id darauf.
   const organizationId = `${itPublicUrl()}#organization`;
   const websiteId = `${itPublicUrl()}#website`;
-  const author = { "@type": "Person", "@id": itAuthorId(), name: IT_AUTHOR.name, url: itAuthorUrl(), image: staticAsset(IT_AUTHOR.image), jobTitle: IT_AUTHOR.jobTitle, worksFor: { "@id": organizationId }, sameAs: IT_AUTHOR.sameAs };
+  const author = { ...christianPerson(), image: staticAsset(IT_AUTHOR.image), jobTitle: IT_AUTHOR.jobTitle, worksFor: { "@id": organizationId } };
   const graph = { "@context": "https://schema.org", "@graph": [
     { "@type": "Organization", "@id": organizationId, name: IT_PUBLISHER.name, url: itPublicUrl(), logo: { "@type": "ImageObject", url: staticAsset(IT_PUBLISHER.logo) } },
     { "@type": "WebSite", "@id": websiteId, url: itPublicUrl(), name: IT_PUBLISHER.name, inLanguage: "it-CH", publisher: { "@id": organizationId } },

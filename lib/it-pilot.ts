@@ -1,3 +1,4 @@
+import { CHRISTIAN_PERSON_ID } from "./christian-person.ts";
 import data from "../data/it-ticino.json" with { type: "json" };
 
 /**
@@ -134,7 +135,7 @@ export function itAuthorUrl(): string {
   return itPublicUrl(IT_ABOUT_SLUG);
 }
 export function itAuthorId(): string {
-  return `${itAuthorUrl()}#person`;
+  return CHRISTIAN_PERSON_ID;
 }
 
 /** ICONY-Profilfenster der Schweizer Plattform für eine Tessiner Postleitzahl (Format wie data/city-widgets.json). */

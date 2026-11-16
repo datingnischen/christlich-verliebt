@@ -1,3 +1,4 @@
+import { CHRISTIAN_PERSON_ID } from "./christian-person.ts";
 import { staticAsset } from "./static-asset.ts";
 
 // Eigene YouTube-Videos (Kanal „Datingnischen – Christian M. Haas“), die im Magazin und auf der
@@ -16,7 +17,7 @@ export type SiteVideo = {
 };
 
 export const YOUTUBE_CHANNEL = "https://www.youtube.com/@datingnischen";
-export const AUTHOR_PERSON_ID = "https://christlich-verliebt.de/magazin/christian-m-haas/#person";
+export const AUTHOR_PERSON_ID = CHRISTIAN_PERSON_ID;
 
 export const VIDEOS: Record<string, SiteVideo> = {
   pRVuae0ts00: {
