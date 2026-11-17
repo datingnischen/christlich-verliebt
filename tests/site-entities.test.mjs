@@ -121,7 +121,10 @@ test("magazine pages without a post date get WebPage and breadcrumb only", () =>
 });
 
 test("Berlin offset is added to zone-less dates, including date-only values", () => {
-  assert.equal(withBerlinOffset("2026-09-28"), "2026-09-28T00:00:00+02:00");
+  // A date-only value is no valid schema.org/DateTime: the time is derived from day and seed,
+  // never round and not the same second on every page (rule "Keine erkennbar automatischen Zeitstempel").
+  assert.match(withBerlinOffset("2026-09-28", "magazin/artikel"), /^2026-09-28T\d\d:\d\d:\d\d\+02:00$/);
+  assert.notEqual(withBerlinOffset("2026-09-28", "a"), withBerlinOffset("2026-09-28", "b"));
   assert.equal(withBerlinOffset("2026-12-24T18:00:00"), "2026-12-24T18:00:00+01:00");
   assert.equal(withBerlinOffset("2026-12-24T18:00:00Z"), "2026-12-24T18:00:00Z");
   assert.equal(withBerlinOffset(null), undefined);

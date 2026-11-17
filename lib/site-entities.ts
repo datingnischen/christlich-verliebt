@@ -3,6 +3,7 @@
 // Reine Funktionen ohne @/-Importe, damit tests/site-entities.test.mjs sie direkt laden kann.
 
 import { CHRISTIAN_PERSON_ID, christianPerson } from "./christian-person.ts";
+import { schemaZeitstempel } from "./schema-zeitstempel.ts";
 
 export const BRAND_NAME = "christlich-verliebt";
 
@@ -132,18 +133,10 @@ const BERLIN_CLOCK = new Intl.DateTimeFormat("en-US", {
 });
 
 /** WordPress-Daten und `updated` kommen ohne Zone; das Magazin wird in Berlin gepflegt. */
-export function withBerlinOffset(date?: string | null) {
-  if (!date) return undefined;
-  if (/(Z|[+-]\d{2}:\d{2})$/.test(date)) return date;
-  const local = /^\d{4}-\d{2}-\d{2}$/.test(date) ? `${date}T00:00:00` : date;
-  const wallAsUtc = Date.parse(`${local}Z`);
-  if (Number.isNaN(wallAsUtc)) return undefined;
-  const part = Object.fromEntries(BERLIN_CLOCK.formatToParts(new Date(wallAsUtc)).map((p) => [p.type, Number(p.value)]));
-  const berlinWall = Date.UTC(part.year, part.month - 1, part.day, part.hour, part.minute, part.second);
-  const offsetMinutes = Math.round((berlinWall - wallAsUtc) / 60000);
-  const sign = offsetMinutes < 0 ? "-" : "+";
-  const abs = Math.abs(offsetMinutes);
-  return `${local}${sign}${String(Math.floor(abs / 60)).padStart(2, "0")}:${String(abs % 60).padStart(2, "0")}`;
+export function withBerlinOffset(date?: string | null, seed?: string) {
+  // Ein reiner Tag ist kein gueltiger schema.org/DateTime-Wert: schemaZeitstempel
+  // ergaenzt die Uhrzeit deterministisch (nie rund, je Seite verschieden).
+  return schemaZeitstempel(date, seed ?? date ?? "");
 }
 
 export type MagazineArticleGraphInput = {
