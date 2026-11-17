@@ -21,8 +21,8 @@ import styles from "./page.module.css";
 
 type Props = { params: Promise<{ market: string; slug?: string[] }> };
 
-// Seiten mit eigener Route (z. B. app/[market]/magazin/christian-m-haas) nicht doppelt erzeugen.
-const DEDICATED_ROUTES = new Set(["de:/magazin/christian-m-haas/"]);
+// Seiten mit eigener Route (z. B. app/[market]/ueber-uns/christian-m-haas) nicht doppelt erzeugen.
+const DEDICATED_ROUTES = new Set(["de:/ueber-uns/christian-m-haas/"]);
 
 export function generateStaticParams() {
   return getPages().filter(page => !DEDICATED_ROUTES.has(`${page.market}:${page.path}`)).map(page => ({ market: page.market, slug: page.path === "/" ? undefined : page.path.split("/").filter(Boolean) }));
@@ -151,6 +151,13 @@ export default async function PublicPageRoute({ params }: Props) {
         <article className={styles.article}>
           {video ? <VideoEmbed video={video} priority /> : null}
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          {page.family === "magazine" ? <aside className={styles.authorBox} aria-label="Über den Autor">
+            <Image src={staticAsset("/brand/christian-m-haas.jpg")} alt="Christian M. Haas" width={80} height={96} />
+            <div><p className={styles.eyebrow}>Autor &amp; redaktionelle Begleitung</p><h2>Christian M. Haas</h2>
+              <p>Christian beschäftigt sich seit 2008 mit Online-Dating. Bei christlich-verliebt begleitet er das Magazin mit dem Schwerpunkt werteorientierte Partnersuche.</p>
+              <a href={page.market === "de" ? previewPath("de", "/ueber-uns/christian-m-haas/") : publicUrl("de", "/ueber-uns/christian-m-haas/")}>Mehr über Christian M. Haas →</a>
+            </div>
+          </aside> : null}
         </article>
         <aside className={styles.sidebar}>
           <div className={styles.cta}><span>Gemeinsame Werte</span><h2>Christliche Singles kennenlernen</h2><p>Erstelle kostenlos Dein Profil und entdecke Menschen, denen Glaube, Respekt und eine ehrliche Beziehung wichtig sind.</p><a href={register}>Jetzt kostenlos starten</a></div>

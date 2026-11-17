@@ -138,7 +138,7 @@ test("homepage, about pages, magazine and articles render the schema graphs", as
   assert.doesNotMatch(about, /#organization/);
   assert.match(await source("app/[market]/ueber-uns/suche/page.tsx"), /<SiteJsonLd /);
   // Das Autorenprofil behält seinen eigenen Graphen mit derselben Person-@id.
-  assert.match(await source("app/[market]/magazin/christian-m-haas/page.tsx"), /PERSON_ID = CHRISTIAN_PERSON_ID/);
+  assert.match(await source("app/[market]/ueber-uns/christian-m-haas/page.tsx"), /PERSON_ID = CHRISTIAN_PERSON_ID/);
 });
 
 test("imported magazine content carries no leftover AIOSEO or Yoast schema", async () => {

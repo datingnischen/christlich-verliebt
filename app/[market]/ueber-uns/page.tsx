@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const AUTHOR_PATH = "/magazin/christian-m-haas/";
+const AUTHOR_PATH = "/ueber-uns/christian-m-haas/";
 const AUTHOR = {
   name: "Christian M. Haas",
   jobTitle: "Datingexperte & Autor",

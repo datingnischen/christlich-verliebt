@@ -92,13 +92,13 @@ export const IT_PUBLISHER = {
   logo: "/brand/single-cristiani-ch.svg",
 } as const;
 
-/** Autor der Inhalte; dieselbe Person wie auf christlich-verliebt.de/magazin/christian-m-haas/ (erster sameAs-Eintrag). */
+/** Autor der Inhalte; dieselbe Person wie auf christlich-verliebt.de/ueber-uns/christian-m-haas/ (erster sameAs-Eintrag). */
 export const IT_AUTHOR = {
   name: "Christian M. Haas",
   jobTitle: "Responsabile dei contenuti",
   image: "/brand/christian-m-haas.jpg",
   sameAs: [
-    "https://christlich-verliebt.de/magazin/christian-m-haas/",
+    "https://christlich-verliebt.de/ueber-uns/christian-m-haas/",
     "https://www.linkedin.com/in/christian-m-haas-457323379",
     "https://www.amazon.com/author/christian-m-haas",
     "https://datingnischen.de/christian",

@@ -11,8 +11,8 @@ export const PLATFORM_OPERATOR = {
   url: "https://www.icony.com",
 } as const;
 
-// Autorenprofil gibt es nur auf .de (app/[market]/magazin/christian-m-haas); dieselbe @id wie dort und in lib/videos.ts.
-export const AUTHOR_PROFILE_URL = "https://christlich-verliebt.de/magazin/christian-m-haas/";
+// Autorenprofil gibt es nur auf .de (app/[market]/ueber-uns/christian-m-haas); dieselbe @id wie dort und in lib/videos.ts.
+export const AUTHOR_PROFILE_URL = "https://christlich-verliebt.de/ueber-uns/christian-m-haas/";
 export const AUTHOR = {
   name: "Christian M. Haas",
   jobTitle: "Datingexperte & Autor",

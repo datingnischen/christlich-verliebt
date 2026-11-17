@@ -8,12 +8,14 @@ import { seoDescription } from "@/lib/seo-meta";
 import { previewPath, publicUrl } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import { getVideo, videoJsonLd, YOUTUBE_CHANNEL } from "@/lib/videos";
+import { ABOUT_AUTHOR_PATH, ABOUT_ROOT_PATH } from "@/lib/about";
 import { CHRISTIAN_PERSON_ID, christianPerson } from "@/lib/christian-person";
 import styles from "./profile.module.css";
 
 // Eigene Profilseite statt der Artikelvorlage; das Autorenprofil gibt es nur auf .de.
-const PROFILE_PATH = "/magazin/christian-m-haas/";
-const CANONICAL = "https://christlich-verliebt.de/magazin/christian-m-haas/";
+// Seit 17.11.2026 unter „Über uns“ statt im Magazin; /magazin/christian-m-haas/ leitet per 308 hierher (lib/about.ts, next.config.ts).
+const PROFILE_PATH = ABOUT_AUTHOR_PATH;
+const CANONICAL = "https://christlich-verliebt.de" + ABOUT_AUTHOR_PATH;
 const PERSON_ID = CHRISTIAN_PERSON_ID;
 const PORTRAIT = staticAsset("/brand/christian-m-haas.jpg");
 const BOOK_URL = "https://www.amazon.de/dp/3696371211/";
@@ -111,7 +113,7 @@ function profileGraph(page: PublicPage) {
         "@id": `${CANONICAL}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Startseite", item: "https://christlich-verliebt.de/" },
-          { "@type": "ListItem", position: 2, name: "Magazin", item: "https://christlich-verliebt.de/magazin/" },
+          { "@type": "ListItem", position: 2, name: "Über uns", item: "https://christlich-verliebt.de" + ABOUT_ROOT_PATH },
           { "@type": "ListItem", position: 3, name: "Christian M. Haas", item: CANONICAL },
         ],
       },
@@ -171,7 +173,7 @@ export default async function ChristianProfilePage({ params }: Props) {
   return <SiteShell market="de" registrationHref={REGISTRATION}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profileGraph(page)) }} />
     <main className={styles.page}>
-      <nav className={styles.breadcrumbs} aria-label="Breadcrumb"><ol><li><a href={previewPath("de")}>Startseite</a></li><li><a href={previewPath("de", "/magazin/")}>Magazin</a></li><li><span aria-current="page">Christian M. Haas</span></li></ol></nav>
+      <nav className={styles.breadcrumbs} aria-label="Breadcrumb"><ol><li><a href={previewPath("de")}>Startseite</a></li><li><a href={previewPath("de", ABOUT_ROOT_PATH)}>Über uns</a></li><li><span aria-current="page">Christian M. Haas</span></li></ol></nav>
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>

@@ -8,7 +8,7 @@
 
 export const RELATED_COUNT = 4;
 const SAME_CATEGORY_SLOTS = 2;
-export const MAGAZINE_AUTHOR_PROFILE = "/magazin/christian-m-haas/";
+export const MAGAZINE_AUTHOR_PROFILE = "/ueber-uns/christian-m-haas/";
 
 export type RelatedCandidate = {
   path: string;

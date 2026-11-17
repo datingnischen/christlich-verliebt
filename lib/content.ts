@@ -5,7 +5,7 @@ import cityImageSnapshot from "@/data/city-image-overrides.json";
 import cityWidgetSnapshot from "@/data/city-widgets.json";
 import { naturalTimestamp } from "@/lib/natural-time";
 import wpPostSnapshot from "@/data/wp-posts.json";
-import { movedAboutPath } from "@/lib/about";
+import { ABOUT_AUTHOR_PATH, movedAboutPath } from "@/lib/about";
 import { staticAsset } from "@/lib/static-asset";
 import { collapseSourceSections } from "@/lib/collapse-sources";
 import { limitStrong, withImageAlt, withoutEmptyHeadings, withoutHeadingSkips } from "@/lib/html-cleanup";
@@ -71,7 +71,7 @@ const pages = rawPages.map((page) => linkedArticles.get(`${page.market}:${page.p
 // Canonical bleibt die deutsche Fassung, die Spiegel stehen auf noindex und fehlen in der Sitemap (kein Duplicate Content).
 // Das Autorenprofil hat eine eigene Route und gibt es nur auf .de.
 const MIRRORED_MAGAZINE_MARKETS: readonly MarketCode[] = ["at", "ch"];
-const MAGAZINE_MIRROR_EXCLUDED = new Set(["/magazin/christian-m-haas/"]);
+const MAGAZINE_MIRROR_EXCLUDED = new Set([ABOUT_AUTHOR_PATH]);
 const magazineMirrors: PublicPage[] = pages
   .filter((page) => page.market === "de" && (page.family === "magazine-hub" || page.family === "magazine") && !MAGAZINE_MIRROR_EXCLUDED.has(page.path))
   .flatMap((page) => MIRRORED_MAGAZINE_MARKETS.map((market): PublicPage => ({ ...page, market, domain: getMarket(market).domain, locale: getMarket(market).locale, mirrorOf: "de" })));

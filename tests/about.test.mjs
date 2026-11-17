@@ -6,9 +6,10 @@ const source = path => readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
 test("imported reviews and social pages move below /ueber-uns/ on .de only", async () => {
   const about = await source("lib/about.ts");
-  assert.match(about, /de: \{\s*"\/bewertungen-und-erfahrungen\/": ABOUT_REVIEWS_PATH,\s*"\/social-media\/": ABOUT_SOCIAL_PATH,\s*\}/);
+  assert.match(about, /de: \{\s*"\/bewertungen-und-erfahrungen\/": ABOUT_REVIEWS_PATH,\s*"\/social-media\/": ABOUT_SOCIAL_PATH,\s*"\/magazin\/christian-m-haas\/": ABOUT_AUTHOR_PATH,\s*\}/);
   assert.match(about, /ABOUT_REVIEWS_PATH = "\/ueber-uns\/bewertungen\/"/);
   assert.match(about, /ABOUT_SOCIAL_PATH = "\/ueber-uns\/social-media\/"/);
+  assert.match(about, /ABOUT_AUTHOR_PATH = "\/ueber-uns\/christian-m-haas\/"/);
   assert.doesNotMatch(about, /\b(at|ch): \{/);
 });
 

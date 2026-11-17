@@ -30,7 +30,7 @@ test("Chi siamo: eigene indexierbare Seite, in Sitemap, Navigation und Fußzeile
   assert.match(about, /strumenti di intelligenza artificiale/);
   assert.doesNotMatch(about, /href=\{IT_PLATFORM\.registrationUrl\}(?! hrefLang="de-CH")/);
   assert.ok(IT_AUTHOR.sameAs.includes("https://www.amazon.com/author/christian-m-haas"));
-  assert.ok(IT_AUTHOR.sameAs.includes("https://christlich-verliebt.de/magazin/christian-m-haas/"));
+  assert.ok(IT_AUTHOR.sameAs.includes("https://christlich-verliebt.de/ueber-uns/christian-m-haas/"));
 });
 
 test("Footer: Flaggen für Deutschland, Österreich und Schweiz verlinken die deutschen Plattformen", async () => {

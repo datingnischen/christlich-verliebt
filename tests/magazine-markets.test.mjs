@@ -7,7 +7,7 @@ const source = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8"
 test("AT und CH spiegeln das deutsche Magazin (gleiche Pfadstruktur je Land), Autorenprofil nur auf .de", async () => {
   const content = await source("lib/content.ts");
   assert.match(content, /MIRRORED_MAGAZINE_MARKETS: readonly MarketCode\[\] = \["at", "ch"\]/);
-  assert.match(content, /MAGAZINE_MIRROR_EXCLUDED = new Set\(\["\/magazin\/christian-m-haas\/"\]\)/);
+  assert.match(content, /MAGAZINE_MIRROR_EXCLUDED = new Set\(\[ABOUT_AUTHOR_PATH\]\)/);
   assert.match(content, /mirrorOf: "de"/);
   const mirrorBlock = content.slice(content.indexOf("const magazineMirrors"), content.indexOf("const pageIndex"));
   assert.doesNotMatch(mirrorBlock, /canonical/, "Spiegelseiten behalten die deutsche Canonical-URL");

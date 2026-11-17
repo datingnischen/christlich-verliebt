@@ -9,6 +9,8 @@ const exists = path => access(new URL(`../${path}`, import.meta.url)).then(() =>
 const editorial = JSON.parse(await source("data/editorial-pages.json"));
 const imported = JSON.parse(await source("data/public-pages.json")).pages;
 const knownPaths = new Set([...imported, ...editorial.pages].map(page => `${page.market}:${page.path}`));
+// Seiten, die lib/about.ts zur Laufzeit nach „Über uns“ hebt (Rohdaten behalten den Importpfad).
+for (const moved of ["/ueber-uns/bewertungen/", "/ueber-uns/social-media/", "/ueber-uns/christian-m-haas/"]) knownPaths.add(`de:${moved}`);
 
 test("editorial pages follow the imported page contract and never collide with WordPress pages", async () => {
   assert.ok(editorial.pages.length >= 1);
@@ -65,7 +67,7 @@ test("videos load YouTube only after a click and carry chapter markup", async ()
   const article = await source("app/[market]/[[...slug]]/page.tsx");
   assert.match(article, /<VideoEmbed video=\{video\}/);
   assert.match(article, /Aktualisiert am \{formatUpdated\(page\.updated\)\}/);
-  const profile = await source("app/[market]/magazin/christian-m-haas/page.tsx");
+  const profile = await source("app/[market]/ueber-uns/christian-m-haas/page.tsx");
   assert.match(profile, /<VideoEmbed video=\{video\}/);
   assert.match(profile, /videoJsonLd\(video/);
 });

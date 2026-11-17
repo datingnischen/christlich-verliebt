@@ -144,6 +144,7 @@ test("WordPress magazine articles retain local editorial images and audio", () =
 });
 
 test("Christian's canonical profile imports his book and renders a bounded safe entity graph", async () => {
+  // Die Rohdaten behalten den Importpfad; lib/about.ts hebt die Seite zur Laufzeit nach /ueber-uns/christian-m-haas/.
   const profile = pages.find(page => page.market === "de" && page.path === "/magazin/christian-m-haas/");
   assert.ok(profile, "Christian's canonical profile is missing");
   assert.match(profile.contentHtml, /Dating ohne Bullshit/);
@@ -155,12 +156,12 @@ test("Christian's canonical profile imports his book and renders a bounded safe 
   assert.ok(cover, "The imported local book cover is missing");
   assert.equal(sourceByAsset.get(cover), "https://christlich-verliebt.de/magazin/wp-content/uploads/2026/08/dating-ohne-bullshit-cover.jpg");
 
-  const source = await readFile(new URL("../app/[market]/magazin/christian-m-haas/page.tsx", import.meta.url), "utf8");
-  assert.match(source, /PROFILE_PATH = "\/magazin\/christian-m-haas\/"/);
+  const source = await readFile(new URL("../app/[market]/ueber-uns/christian-m-haas/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /PROFILE_PATH = ABOUT_AUTHOR_PATH/);
   assert.match(source, /market === "de" \? getPage\("de", PROFILE_PATH\)/);
   assert.match(source, /\.\.\.christianPerson\(\)/);
   for (const type of ["BreadcrumbList", "ProfilePage", "Book"]) assert.match(source, new RegExp(`@type["']?: ["']${type}["']`));
-  assert.match(source, /CANONICAL = "https:\/\/christlich-verliebt\.de\/magazin\/christian-m-haas\/"/);
+  assert.match(source, /CANONICAL = "https:\/\/christlich-verliebt\.de" \+ ABOUT_AUTHOR_PATH/);
   assert.match(source, /PERSON_ID = CHRISTIAN_PERSON_ID/);
   assert.match(source, /safeJsonLd/);
   assert.match(source, /dangerouslySetInnerHTML=\{\{ __html: safeJsonLd\(/);

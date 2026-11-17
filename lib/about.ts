@@ -3,12 +3,15 @@ import { getMarket, type MarketCode } from "./markets";
 export const ABOUT_ROOT_PATH = "/ueber-uns/";
 export const ABOUT_REVIEWS_PATH = "/ueber-uns/bewertungen/";
 export const ABOUT_SOCIAL_PATH = "/ueber-uns/social-media/";
+// Autorenseite liegt seit 17.11.2026 unter „Über uns“ (Christian: Autorenseite gehört in den ueber-uns-Bereich), vorher /magazin/christian-m-haas/.
+export const ABOUT_AUTHOR_PATH = "/ueber-uns/christian-m-haas/";
 
 // Importierte Hintergrundseiten, die jetzt unter „Über uns“ liegen (wie bei er-sucht-ihn und alleinerziehende-singles).
 export const ABOUT_PAGE_MOVES: Partial<Record<MarketCode, Record<string, string>>> = {
   de: {
     "/bewertungen-und-erfahrungen/": ABOUT_REVIEWS_PATH,
     "/social-media/": ABOUT_SOCIAL_PATH,
+    "/magazin/christian-m-haas/": ABOUT_AUTHOR_PATH,
   },
 };
 

@@ -17,7 +17,7 @@ const CATEGORY_META: Record<string, { label: string; intro: string; icon: CityIc
 };
 const LEAD_STORY = "/magazin/trad-wife-rollenbilder-dating/";
 const EDITOR_PICKS = ["/magazin/dating-unter-christen-gemeinsame-werte/", "/magazin/katholische-singles/", "/magazin/top-10-staedte-christliche-singles-deutschland/", "/magazin/antrag-ohne-ring/"];
-const AUTHOR_PROFILE = "/magazin/christian-m-haas/";
+const AUTHOR_PROFILE = "/ueber-uns/christian-m-haas/";
 // Aufmacher plus sechs Karten sichtbar, der Rest steckt aufklappbar darunter.
 const VISIBLE_CARDS = 7;
 

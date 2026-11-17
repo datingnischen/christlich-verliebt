@@ -94,7 +94,7 @@ export function HomePage({ page }: { page: PublicPage }) {
       <div>
         <p className={styles.eyebrow}>Begleitet von einem Experten</p>
         <p><strong>Christian M. Haas</strong> ist Datingexperte für werteorientierte Partnersuche und hilft christlichen Singles, Gleichgesinnte mit Herz und Glauben zu finden.</p>
-        <a href={page.market === "de" ? previewPath("de", "/magazin/christian-m-haas/") : `${publicUrl("de", "/magazin/christian-m-haas")}/`}>Mehr über Christian M. Haas <CityIcon name="arrow" /></a>
+        <a href={page.market === "de" ? previewPath("de", "/ueber-uns/christian-m-haas/") : `${publicUrl("de", "/ueber-uns/christian-m-haas")}/`}>Mehr über Christian M. Haas <CityIcon name="arrow" /></a>
       </div>
     </section>
 
