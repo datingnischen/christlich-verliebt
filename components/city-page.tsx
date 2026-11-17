@@ -7,7 +7,7 @@ import { regionName } from "@/lib/city-map";
 import { marketCities, nearestCities, parseCityContent, sectionIcon } from "@/lib/city-page";
 import { cityQuizHint } from "@/lib/city-quiz-hint";
 import { getCityImageCredit, getCityWidget, locationName, registrationUrl, selectPageImage, type PublicPage } from "@/lib/content";
-import { getMarket, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
+import { citySearchUrl, getMarket, previewPath, publicUrl, type MarketCode } from "@/lib/markets";
 import { staticAsset } from "@/lib/static-asset";
 import styles from "./city-page.module.css";
 
@@ -103,6 +103,7 @@ export function CityPage({ page }: { page: PublicPage }) {
         <h2>Wer in {city} gerade sucht</h2>
         <p>Christliche Singles aus {city} und Umgebung, denen Glaube, gemeinsame Werte und eine ehrliche Beziehung wichtig sind.</p>
         <a className={styles.buttonPrimary} href={register}>Jetzt kostenlos kennenlernen</a>
+        <a className={styles.buttonGhost} href={citySearchUrl(page.market, cityWidget.postcode)}>In {city} und Umgebung suchen</a>
       </div>
       <div className={styles.widgetFrame}>
         <iframe

@@ -48,6 +48,18 @@ export function individualSearchUrl(market: MarketCode): string {
   return `https://${getMarket(market).domain}/suche/?AID=location`;
 }
 
+/**
+ * Such-CTA einer Stadtseite: Die PLZ gehört immer mit in die ICONY-Suche, sonst startet sie ohne Umkreis
+ * (Christian, 18.11.2026). Jeder Markt sucht auf seiner eigenen Domain, darum passt die PLZ des Marktes:
+ * fünf Stellen in Deutschland, vier in Österreich und der Schweiz. Alles andere fällt auf die offene Suche zurück.
+ */
+export function citySearchUrl(market: MarketCode, postcode: string | null | undefined): string {
+  const pattern = market === "de" ? /^\d{5}$/ : /^\d{4}$/;
+  return pattern.test(String(postcode ?? ""))
+    ? `https://${getMarket(market).domain}/suche/?plz=${postcode}&AID=location`
+    : individualSearchUrl(market);
+}
+
 /** Vercel-Pfad einer Marktseite mit Länderpräfix: previewHref("at", "/faq") → "/at/faq/". */
 export function previewHref(market: MarketCode, pathname = "/"): string {
   const trimmed = pathname.replace(/^\/+/, "");
